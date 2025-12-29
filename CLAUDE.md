@@ -1,10 +1,10 @@
-# CLAUDE.md
+# Ron's Broadcast Cache - Broadcasting Some Notes on My Personal Projects to the World
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Overview
 
-This is Ronald's public thinking space—a digital garden published via **GitHub Pages** at `rjroy.github.io`. Built with **Quartz**, it supports Obsidian wiki-links, backlinks, and graph visualization natively.
+This is **Ron's Broadcast Cache**—a digital garden published via **GitHub Pages** at `rjroy.github.io`. Built with **Quartz**, it supports Obsidian wiki-links, backlinks, and graph visualization natively.
 
 ## Publishing
 
