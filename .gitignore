@@ -2,16 +2,22 @@
 .obsidian/
 .trash/
 
-# Drafts (optional - if you want to stage content locally before publishing)
-drafts/
-_drafts/
+# Quartz build output
+public/
+.quartz-cache/
+
+# Dependencies
+node_modules/
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+# Environment
+.env
+.env.*
+
+# Drafts (content you don't want published)
+private/
+drafts/
+_drafts/
