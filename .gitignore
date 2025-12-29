@@ -1,0 +1,17 @@
+# Obsidian
+.obsidian/
+.trash/
+
+# Drafts (optional - if you want to stage content locally before publishing)
+drafts/
+_drafts/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
