@@ -30,3 +30,18 @@ a.internal.tag-link {
     transform: translateY(-2px);
   }
 }
+
+// === Whimsy: Page title gradient (Nord pink-to-blue) ===
+article > h1:first-child {
+  background: linear-gradient(135deg, #BF616A, #81A1C1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// === Whimsy: Fading pink-to-blue HR ===
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #BF616A, #81A1C1, transparent);
+}
