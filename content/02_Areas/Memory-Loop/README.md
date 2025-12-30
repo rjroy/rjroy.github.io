@@ -7,7 +7,7 @@ description: A mobile-friendly interface for AI-powered interactions with Obsidi
 
 Memory Loop is a web application I built to solve a personal friction point: capturing thoughts and consulting my knowledge base from my phone. Obsidian is excellent on desktop, but mobile workflows are clunky—and I wanted Claude AI to have full access to my vault's context.
 
-![Vault Selection](screenshots/select-a-vault.webp)
+![Vault Selection](./screenshots/select-a-vault.webp)
 
 ## The Problem
 
@@ -27,25 +27,25 @@ The interface centers on four modes, each named to evoke the cognitive process:
 
 The home dashboard. Shows your current vault's goals (extracted from `CLAUDE.md`, which stores vault-specific context and instructions), AI-generated writing prompts, curated quotes for inspiration, and quick access to recent activity.
 
-![Ground - Home Dashboard](screenshots/ground.webp)
+![Ground - Home Dashboard](./screenshots/ground.webp)
 
 ### Capture
 
 Minimal friction note capture. Type a thought, tap capture, and it appends to your daily note with a timestamp. Drafts persist across sessions—start a thought on your phone, finish it later.
 
-![Capture - Quick Note Entry](screenshots/capture.webp)
+![Capture - Quick Note Entry](./screenshots/capture.webp)
 
 ### Think
 
 AI conversations powered by Claude, with full read access to your vault. Claude can search your files, follow wiki-links, and ground responses in your actual notes. The conversation shows which tools Claude used (expandable), making the AI's reasoning transparent.
 
-![Think - AI Chat](screenshots/think.webp)
+![Think - AI Chat](./screenshots/think.webp)
 
 ### Recall
 
 Browse your vault's file structure directly. Navigate folders, read markdown files, and follow wiki-links. Useful for reviewing what you've captured or finding context for a conversation.
 
-![Recall - File Browser](screenshots/recall.webp)
+![Recall - File Browser](./screenshots/recall.webp)
 
 ## Architecture
 
