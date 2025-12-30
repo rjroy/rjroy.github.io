@@ -19,7 +19,7 @@ Each area collects related thoughts, resources, and progress over time. Projects
 
 ## Current Areas
 
-- [[Adventure-Engine-of-Corvran/index.md|Adventure Engine of Corvran]]: RPG assisted AI tool
-- [[Memory-Loop/index.md|Memory Loop]]: A tool for modeling my thinking process: Ground->Capture->Think->Recall(/Adjust)
-- [[Vibe-Garden/index.md|Vibe Garden]]: Claude Code plugins and tools to expand my direct usage. Includes primarily tools to represent the producer and project manager roles when they do not exist.
-- [[Whimsy-for-Clarity/index.md|Whimsy for Clarity]]: The findings from my exploration of adding whimsy into my work environment to improve my imagination without disturbing my clarity.
+- [[02_Areas/Adventure-Engine-of-Corvran/index.md|Adventure Engine of Corvran]]: RPG assisted AI tool
+- [[02_Areas/Memory-Loop/index.md|Memory Loop]]: A tool for modeling my thinking process: Ground->Capture->Think->Recall(/Adjust)
+- [[02_Areas/Vibe-Garden/index.md|Vibe Garden]]: Claude Code plugins and tools to expand my direct usage. Includes primarily tools to represent the producer and project manager roles when they do not exist.
+- [[02_Areas/Whimsy-for-Clarity/index.md|Whimsy for Clarity]]: The findings from my exploration of adding whimsy into my work environment to improve my imagination without disturbing my clarity.
