@@ -1,3 +1,32 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+// === Whimsy: Subtle hover transforms on links ===
+a {
+  transition: transform 0.15s ease, color 0.2s ease;
+  display: inline-block;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+// === Whimsy: Styled blockquotes ===
+blockquote {
+  background: var(--highlight);
+  border-radius: 0 8px 8px 0;
+  padding: 0.75rem 1rem;
+  font-style: italic;
+}
+
+// === Whimsy: Tag pills with soft shadows ===
+a.internal.tag-link {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease, transform 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+}
