@@ -6,6 +6,9 @@ on:
       - master
   workflow_dispatch:
 
+env:
+  THEME_NAME: nord
+
 permissions:
   contents: read
   pages: write
@@ -29,6 +32,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Fetch Quartz Theme
+        run: curl -s -S https://raw.githubusercontent.com/saberzero1/quartz-themes/master/action.sh | bash -s -- $THEME_NAME
 
       - name: Build Quartz
         run: npx quartz build
