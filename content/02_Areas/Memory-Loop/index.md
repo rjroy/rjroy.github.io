@@ -96,6 +96,14 @@ The system runs as a local service on my home network, accessible from any devic
 
 **Mobile-first design**: Every interaction assumes a thumb on a phone screen. Large tap targets, simple navigation, draft persistence for interrupted sessions.
 
+## Why the Theme?
+
+Most productivity tools aim for minimalism—clean interfaces, muted colors, nothing to distract you from the work. That makes sense for tools designed to get out of your way.
+
+Memory Loop isn't that kind of tool for me. It's less about clearing distractions and more about creating a safe space. Somewhere I actually *want* to open, where capturing thoughts feels like settling into a familiar environment rather than filing paperwork.
+
+So I went with a dark synthwave aesthetic—neon accents against deep purples and blues, a detailed background with depth. It's a bit of fun, nostalgic, and deliberately not serious. The visual style signals that this is *my* space, separate from work tools and generic apps. That distinction matters when the goal is building a habit of reflection.
+
 ## Why I Built This
 
 Knowledge management tools often optimize for capture or retrieval, but the interesting space is the loop between them—the moment when a new thought connects to something you wrote months ago, or when reviewing old notes sparks new questions.
