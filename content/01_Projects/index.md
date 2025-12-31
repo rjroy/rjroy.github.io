@@ -20,6 +20,7 @@ If you don't define what done means, you'll never get there. Even for personal p
 
 ## Current Projects
 
-- [[01_Projects/Explorying-Whimsy/index|Explorying Whimsy]]: There is a philosophy  that minimalist design is what allows creativity. But what about color? Kooky fonts? Evocative imagery? Whimsy? Does this provide too much direction? Or open the door?
+- [[01_Projects/AI-as-Your-Partner/index|AI as Your Partner]]: Exploring what makes good AI rules files—not universal best practices, but personal configurations that make AI work for *you*.
+- [[01_Projects/Exploring-Whimsy/index|Exploring Whimsy]]: There is a philosophy that minimalist design is what allows creativity. But what about color? Kooky fonts? Evocative imagery? Whimsy? Does this provide too much direction? Or open the door?
 
 Any project thas completed is either [[04_Archive/index|archived]] because there's nothing left to be said, or its moved into [[02_Areas/index|maintence mode]] where I'm just fixing bugs and small tweaks. I may at a later date do a `2.0` of these now Areas which will be a new project here.
