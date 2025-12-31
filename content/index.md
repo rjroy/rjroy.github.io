@@ -6,6 +6,14 @@ A public window into how I organize my thoughts, projects, and ideas.
 
 This is my digital garden—a place where I capture, develop, and share my thinking. Unlike a blog with polished posts, this is a living workspace. You'll find ideas at various stages: some fully formed, others still germinating.
 
+## How It's Written
+
+I work with [Claude Code](https://claude.ai/code) as my ghost writer. I provide the ideas, direction, and editorial judgment—Claude helps me get words on the page.
+
+Sometimes I'll dictate rough thoughts and ask Claude to shape them into coherent prose. Other times I'll describe what I want to communicate and let Claude draft it. I always review, edit, and take responsibility for what gets published.
+
+This isn't about hiding AI involvement. It's about being transparent: the thinking is mine, the collaboration is real, and the tool is acknowledged. If you're curious about this workflow, that's part of what I'm exploring here.
+
 ## How It's Organized
 
 I use the PARA method to organize content:
@@ -26,12 +34,12 @@ This space is just getting started. You're seeing the scaffolding before the bui
 
 ## Navigating
 
-Feel free to explore any folder. Each has its own README explaining what you'll find there. Notes link to each other using `[[wiki links]]`—if you see these in raw markdown, they reference other notes in this collection.
+Feel free to explore any folder. Each has its own `index` explaining what you'll find there. Some notes link to each other using `[[wiki links]]`—if you see these in raw markdown, they reference other notes in this collection.
 
 ## About Me
 
-I'm Ronald. This vault reflects my professional interests, side projects, and ongoing learning.
+I'm Ron. This vault reflects my personal interests, side projects, and ongoing learning.
 
 ## License
 
-Content is shared for reading and inspiration. Please don't republish without attribution.
+Content is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). You're free to share and adapt with attribution.

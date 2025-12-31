@@ -1,12 +1,12 @@
 # Areas
 
-Ongoing interests and responsibilities I maintain over time.
+Ongoing interests, responsibilities, and completed projects I maintain over time.
 
 ## What You'll Find Here
 
 Areas are the continuous threads in my life—things I care about that don't have finish lines:
 
-- Professional domains I work in
+- Personal projects which are past MVP
 - Skills I'm developing
 - Interests I explore regularly
 - Responsibilities I maintain
@@ -15,7 +15,7 @@ Unlike projects, these evolve rather than complete.
 
 ## How Areas Work
 
-Each area collects related thoughts, resources, and progress over time. Projects often spawn from areas when I want to focus on something specific.
+Each area collects related thoughts, resources, and progress over time. Projects often spawn from areas when I want to focus on something specific. Sometimes an area is the result of an initial project that has reached a defined goal, the `1.0` stage.
 
 ## Current Areas
 
