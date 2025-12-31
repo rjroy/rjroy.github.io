@@ -7,7 +7,7 @@ description: A project to examine where playfulness and self-expression can enha
 
 ## Project Overview
 **Start Date**: 2024-12-30
-**Target Completion**: When it becomes an [[02_Areas/Whimsy-for-Clarity/index|Area]]
+**Target Completion**: When it becomes a ready to use [[02_Areas/Whimsy-for-Clarity/index|Area]]
 **Status**: Active
 
 ## Objectives
@@ -20,6 +20,8 @@ description: A project to examine where playfulness and self-expression can enha
 This project began with a question from [[02_Areas/Memory-Loop/index|Memory Loop]]:
 
 > "What aspects of your work or hobbies could benefit from less seriousness and more vibrant self-expression?"
+
+Originally I had added a dark synthwave theme to [[02_Areas/Memory-Loop/index|Memory Loop]] as just a bit of fun. But when this question was asked it made me really think: *why did I do that? Why did I make the background a landscape?*
 
 The question surfaced a tension I hadn't fully articulated: the difference between *calm* and *sterile*, between *professional* and *lifeless*. Nord themes, minimal interfaces, muted palettes—these choices optimize for not-distracting, but they may have overcorrected into not-feeling.
 
