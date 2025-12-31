@@ -61,7 +61,7 @@ This encodes a philosophy: you start from strength, the path is unclear, the cli
 - How do I know when whimsy crosses into distraction?
 
 ## Next Actions
-- [ ] Implement terminal prompt changes (⛰ success, 🏳 failure)
+- [x] Implement terminal prompt changes (⛰ success, 🏳 failure)
 - [ ] Document the philosophy as it develops
 - [ ] Graduate this to an Area when the pattern is clear
 
