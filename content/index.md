@@ -38,7 +38,7 @@ Feel free to explore any folder. Each has its own `index` explaining what you'll
 
 ## About Me
 
-I'm Ron. This vault reflects my personal interests, side projects, and ongoing learning.
+I'm Ron, a professional developer for nearly 30 years. The past year has brought a whirlwind of progress in AI-assisted development, and I'd be remiss not to explore it seriously. This space captures that exploration: projects I'm building with these tools, and reflections on what it means to work alongside AI.
 
 ## License
 
