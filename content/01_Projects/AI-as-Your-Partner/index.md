@@ -63,6 +63,8 @@ This project is complete when:
 - My existing rules: `~/.dotfiles/config/claude/rules/`
 - [[01_Projects/AI-as-Your-Partner/initial-audit|Initial Audit]] - Classification of rules as personal vs. universal
 - [[01_Projects/AI-as-Your-Partner/findings-2025-12-31|Session 1 Findings]] - Full analysis from first session
+- [[01_Projects/AI-as-Your-Partner/community-patterns-research|Community Patterns Research]] - How others structure AI rules
+- [[01_Projects/AI-as-Your-Partner/the-workflow|The Workflow]] - Why each step in Research → Plan → Execute → Test → Review exists
 
 ## Progress Log
 
@@ -77,10 +79,26 @@ This project is complete when:
 - Key insight: universal rules are *defensive* (prevent harm), personal rules are *generative* (build capability)
 - The 5-step workflow is the most personal element—it's a methodology, not a practice
 
+### 2025-12-31 - Community Research Complete
+- Researched AGENTS.md standard, Cursor rules, Aider conventions
+- Key insight: **format is converging (universal), content remains personal**
+- The six core areas: commands, testing, structure, style, git, boundaries
+- Specificity signals personality—vague rules are neither universal nor personal
+- Full findings: [[01_Projects/AI-as-Your-Partner/community-patterns-research|Community Patterns Research]]
+
+### 2025-12-31 - Workflow Deep Dive
+- Articulated *why* each step in the 5-step workflow exists
+- Key insight: each step focuses the AI by creating checkpoints for human input
+- The workflow isn't about AI—it's about good development practice made explicit
+- Full analysis: [[01_Projects/AI-as-Your-Partner/the-workflow|The Workflow]]
+
 ## Next Actions
 - [x] Audit my existing rules files for "personal" vs. "universal" characteristics
-- [ ] Research how others approach AI configuration (community patterns)
+- [x] Research how others approach AI configuration (community patterns)
+- [x] Dig into *why* the 5-step workflow feels right → [[01_Projects/AI-as-Your-Partner/the-workflow|The Workflow]]
 - [ ] Identify 2-3 rules that feel distinctly *me* and articulate why
+- [ ] Consider AGENTS.md migration for cross-tool compatibility
+- [ ] Evaluate if my rules are specific enough to be truly personal
 
 ---
 *This project graduates to an Area when the exploration becomes a documented framework.*
