@@ -1,17 +1,10 @@
 # Areas
 
-Ongoing interests, responsibilities, and completed projects I maintain over time.
+Ongoing interests and responsibilities (things I care about that don't have finish lines). Unlike projects, these evolve rather than complete.
 
 ## What You'll Find Here
 
-Areas are the continuous threads in my life—things I care about that don't have finish lines:
-
-- Personal projects which are past MVP
-- Skills I'm developing
-- Interests I explore regularly
-- Responsibilities I maintain
-
-Unlike projects, these evolve rather than complete.
+Areas are the continuous threads: personal projects past MVP, skills I'm developing, and interests I explore regularly.
 
 ## How Areas Work
 

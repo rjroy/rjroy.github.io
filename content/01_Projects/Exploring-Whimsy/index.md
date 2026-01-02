@@ -23,13 +23,13 @@ This project began with a question from [[02_Areas/Memory-Loop/index|Memory Loop
 
 Originally I had added a dark synthwave theme to [[02_Areas/Memory-Loop/index|Memory Loop]] as just a bit of fun. But when this question was asked it made me really think: *why did I do that? Why did I make the background a landscape?*
 
-The question surfaced a tension I hadn't fully articulated: the difference between *calm* and *sterile*, between *professional* and *lifeless*. Nord themes, minimal interfaces, muted palettes—these choices optimize for not-distracting, but they may have overcorrected into not-feeling.
+The question surfaced a tension I hadn't fully articulated: the difference between *calm* and *sterile*, between *professional* and *lifeless*. Nord themes, minimal interfaces, muted palettes: these choices optimize for not-distracting, but they may have overcorrected into not-feeling.
 
 ## The Dead Space Principle
 
 Memory Loop taught me something about sustainable whimsy: **dead space is what makes it work**.
 
-The app has a vibrant synthwave background, but it only peeks through the gaps. When I'm actively working—typing, reading, thinking—the content covers it. The expressiveness is *present* but doesn't *compete*. It's there when I need the reminder, hidden when I need the focus.
+The app has a vibrant synthwave background, but it only peeks through the gaps. When I'm actively working (typing, reading, thinking), the content covers it. The expressiveness is *present* but doesn't *compete*. It's there when I need the reminder, hidden when I need the focus.
 
 This isn't decoration. It's a design pattern: **expression that exists in the margins**.
 
@@ -44,7 +44,7 @@ Places I see constantly but others rarely do. Symbols that mean something to me.
 ## Initial Explorations
 
 - **Terminal prompts**: Personal symbols that convey state without demanding attention
-- **Project naming**: HEPCAT, Vibe Garden, Memory Loop—names that spark something
+- **Project naming**: HEPCAT, Vibe Garden, Memory Loop. Names that spark something
 - **Tool themes**: Have the calm defaults become invisible? Does invisible serve me?
 - **The gaps**: Backgrounds, session greetings, the spaces between work
 
@@ -52,7 +52,7 @@ Places I see constantly but others rarely do. Symbols that mean something to me.
 
 I have a shield. An uncertain path. A challenging mountain. But base camp is at the top.
 
-This encodes a philosophy: you start from strength, the path is unclear, the climb is hard—but you're already where you need to be. The question is how to carry that symbol through my tools without it becoming noise.
+This encodes a philosophy: you start from strength, the path is unclear, the climb is hard, but you're already where you need to be. The question is how to carry that symbol through my tools without it becoming noise.
 
 ## Open Questions
 
@@ -65,5 +65,4 @@ This encodes a philosophy: you start from strength, the path is unclear, the cli
 - [ ] Document the philosophy as it develops
 - [ ] Graduate this to an Area when the pattern is clear
 
----
-*This project graduates to [[02_Areas/Whimsy-for-Clarity/index|Whimsy for Clarity]] when the exploration becomes maintenance.*
+Graduates to [[02_Areas/Whimsy-for-Clarity/index|Whimsy for Clarity]] when the exploration becomes maintenance.

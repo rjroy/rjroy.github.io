@@ -41,16 +41,16 @@ Waystone treats quality as verifiable criteria, not just steps to follow.
 ## Key Components
 
 ### Agents
-- **Structural Auditor** — Checks metrics: size, coverage, logging
-- **Semantic Auditor** — Does the code do what it claims?
-- **API Contract Auditor** — Were docs read, or did AI guess and patch?
-- **Spec Tracer** — Can this code trace back to a requirement?
+- **Structural Auditor**: Checks metrics (size, coverage, logging)
+- **Semantic Auditor**: Does the code do what it claims?
+- **API Contract Auditor**: Were docs read, or did AI guess and patch?
+- **Spec Tracer**: Can this code trace back to a requirement?
 
 ### Commands
-- `/waystone:audit-init` — Build a checklist of files to audit
-- `/waystone:audit-run` — Process the checklist with agents
-- `/waystone:audit-dead-code` — Find orphaned, unreachable code
-- `/waystone:audit-connectedness` — Trace files to entry points
+- `/waystone:audit-init`: Build a checklist of files to audit
+- `/waystone:audit-run`: Process the checklist with agents
+- `/waystone:audit-dead-code`: Find orphaned, unreachable code
+- `/waystone:audit-connectedness`: Trace files to entry points
 
 ## Status
 
@@ -58,4 +58,4 @@ Planning phase. See [[PLAN|the full roadmap]] for details.
 
 ## Why "Waystone"?
 
-A waystone marks a path. This plugin marks where AI went wrong—and lights the way back.
+A waystone marks a path. This plugin marks where AI went wrong, and lights the way back.

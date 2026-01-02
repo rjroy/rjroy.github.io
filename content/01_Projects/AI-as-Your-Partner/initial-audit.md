@@ -28,29 +28,29 @@ Examining `~/.dotfiles/config/claude/rules/` to understand what's personal, what
 
 These are things *everyone* should probably do:
 
-- **"Never commit secrets"** — Not personal. Just correct.
-- **"Use .gitignore"** — Standard hygiene.
-- **"Write unit tests"** — Industry consensus.
-- **"Linting catches mistakes"** — Objectively true.
+- **"Never commit secrets"**: Not personal. Just correct.
+- **"Use .gitignore"**: Standard hygiene.
+- **"Write unit tests"**: Industry consensus.
+- **"Linting catches mistakes"**: Objectively true.
 
 ### Clearly Personal (Choices)
 
 These encode *preferences* that reasonable people might differ on:
 
-- **`uv` for Python, `bun` for TypeScript** — Opinionated tool choices. Many use pip/poetry, npm/yarn.
-- **`ruff` for linting** — Fast, but flake8/pylint still common.
-- **Research caching in `docs/research/`** — Unique workflow pattern. Most don't do this.
-- **"Use a sub-agent with fresh context to review"** — Novel practice I've never seen elsewhere.
-- **"Automated reviewers are frequently wrong"** — Earned skepticism, not universal wisdom.
-- **ADRs as mandatory** — Many teams skip these entirely.
+- **`uv` for Python, `bun` for TypeScript**: Opinionated tool choices. Many use pip/poetry, npm/yarn.
+- **`ruff` for linting**: Fast, but flake8/pylint still common.
+- **Research caching in `docs/research/`**: Unique workflow pattern. Most don't do this.
+- **"Use a sub-agent with fresh context to review"**: Novel practice I've never seen elsewhere.
+- **"Automated reviewers are frequently wrong"**: Earned skepticism, not universal wisdom.
+- **ADRs as mandatory**: Many teams skip these entirely.
 
 ### The Interesting Middle Ground
 
 Some rules *sound* universal but encode *values*:
 
-- **"The specific style matters less than having one and enforcing it"** — This is a *philosophy*, not a fact. Some would argue certain styles are objectively better.
-- **"A task is not complete until tests exist"** — Sounds universal, but *many* developers ship without tests. This is a standard you hold, not a universal truth.
-- **"All changes go on branches, never directly to main"** — Common, but solo devs often commit to main. This encodes a *team-shaped* workflow even for personal projects.
+- **"The specific style matters less than having one and enforcing it"**: This is a *philosophy*, not a fact. Some would argue certain styles are objectively better.
+- **"A task is not complete until tests exist"**: Sounds universal, but *many* developers ship without tests. This is a standard you hold, not a universal truth.
+- **"All changes go on branches, never directly to main"**: Common, but solo devs often commit to main. This encodes a *team-shaped* workflow even for personal projects.
 
 ---
 
@@ -100,7 +100,7 @@ UNIVERSAL ←——————————————————————�
     (Universal value, personal commitment)
 ```
 
-The interesting work isn't in the extremes—it's in the middle, where values meet practice.
+The interesting work isn't in the extremes. It's in the middle, where values meet practice.
 
 ---
 

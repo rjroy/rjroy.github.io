@@ -11,7 +11,7 @@ Research → Plan → Execute → Test → Review
 
 Each step exists to focus the AI. They also happen to be what I think is important as a human developer.
 
-This isn't a checklist. It's a methodology—a *way of thinking about work* that applies whether you're working alone, with another human, or with an AI.
+This isn't a checklist. It's a methodology, a *way of thinking about work* that applies whether you're working alone, with another human, or with an AI.
 
 ---
 
@@ -19,7 +19,7 @@ This isn't a checklist. It's a methodology—a *way of thinking about work* that
 
 **Start with research to focus the context and fill gaps.**
 
-Research solves the "confident but wrong" problem. Both humans and AI can make assumptions that seem reasonable but miss critical context—existing patterns in the codebase, domain-specific constraints, or current best practices that have evolved since training data was collected.
+Research solves the "confident but wrong" problem. Both humans and AI can make assumptions that seem reasonable but miss critical context: existing patterns in the codebase, domain-specific constraints, or current best practices that have evolved since training data was collected.
 
 For AI specifically, research anchors the work in reality rather than pattern-matched guesses. When the AI searches the web for current practices or reads through existing code first, it's building a foundation of *actual facts* rather than *plausible-sounding assumptions*.
 
@@ -53,7 +53,7 @@ This is the difference between "let me show you what I'm thinking" and "here's 5
 
 ### Why It Matters
 
-For AI, planning is crucial because it separates *interpretation* from *execution*. If the AI misunderstands the goal, you want to catch that at the plan stage—not after it's built something impressive but wrong.
+For AI, planning is crucial because it separates *interpretation* from *execution*. If the AI misunderstands the goal, you want to catch that at the plan stage, not after it's built something impressive but wrong.
 
 For humans, this is the same discipline. You've just internalized it enough that you don't always notice when you skip it.
 
@@ -63,7 +63,7 @@ For humans, this is the same discipline. You've just internalized it enough that
 
 **Then do the work.**
 
-With research and planning done, execution becomes surprisingly straightforward. You're not making decisions while coding—you're implementing decisions already made.
+With research and planning done, execution becomes surprisingly straightforward. You're not making decisions while coding; you're implementing decisions already made.
 
 This separation reduces cognitive load and error rates. The "what should I build?" question is already answered. Now you're just building it.
 
@@ -81,7 +81,7 @@ Execution without planning leads to "I'll figure it out as I go." That works for
 
 ## Test: The "Nice to Have" That Isn't
 
-**Testing is emphasized because it's often treated as "nice to have" or "low priority"—caused by the fact most people don't write tests.**
+**Testing is emphasized because it's often treated as "nice to have" or "low priority," caused by the fact most people don't write tests.**
 
 This is a cultural problem. When most developers ship without tests, skipping tests feels acceptable. The norm becomes "we should add tests later," which means "we won't add tests."
 
@@ -89,8 +89,8 @@ This is a cultural problem. When most developers ship without tests, skipping te
 
 - All production code requires unit tests
 - A task is not complete until tests exist and pass
-- "If you're about to say 'tests can be added later,' stop—add them now"
-- Unit tests must not require external resources—mock everything including time
+- "If you're about to say 'tests can be added later,' stop. Add them now"
+- Unit tests must not require external resources; mock everything including time
 
 ### Why It Matters
 
@@ -132,7 +132,7 @@ This workflow treats AI as a collaborator that needs the same discipline as a hu
 | Test | Proves the work actually works |
 | Review | Catches what the implementer missed |
 
-Each step constrains the AI in productive ways—not limiting capability, but channeling it toward reliable outcomes.
+Each step constrains the AI in productive ways, not limiting capability, but channeling it toward reliable outcomes.
 
 ---
 
@@ -148,6 +148,6 @@ These are the same disciplines that make human developers effective. The differe
 
 ## Related
 
-- [[01_Projects/AI-as-Your-Partner/index|AI as Your Partner]] — The parent project
-- [[01_Projects/AI-as-Your-Partner/initial-audit|Initial Audit]] — Where this workflow was identified as "the most personal element"
-- [[01_Projects/AI-as-Your-Partner/findings-2025-12-31|Session 1 Findings]] — Full analysis from first session
+- [[01_Projects/AI-as-Your-Partner/index|AI as Your Partner]]: The parent project
+- [[01_Projects/AI-as-Your-Partner/initial-audit|Initial Audit]]: Where this workflow was identified as "the most personal element"
+- [[01_Projects/AI-as-Your-Partner/findings-2025-12-31|Session 1 Findings]]: Full analysis from first session

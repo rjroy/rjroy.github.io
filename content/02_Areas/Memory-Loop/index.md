@@ -5,19 +5,19 @@ description: A mobile-friendly interface for AI-powered interactions with Obsidi
 
 # Memory Loop
 
-Memory Loop is a web application I built to solve a personal friction point: capturing thoughts and consulting my knowledge base from my phone. Obsidian is excellent on desktop, but mobile workflows are clunky—and I wanted Claude AI to have full access to my vault's context.
+Memory Loop is a web application I built to solve a personal friction point: capturing thoughts and consulting my knowledge base from my phone. Obsidian is excellent on desktop, but mobile workflows are clunky, and I wanted Claude AI to have full access to my vault's context.
 
 ![Vault Selection](/02_Areas/Memory-Loop/screenshots/select-a-vault.webp)
 
 ## The Problem
 
-I use Obsidian as my second brain, organized with the PARA method across multiple vaults—work knowledge, personal projects, hobbies. But when I'm away from my computer and have a thought worth capturing or a question my notes could answer, the friction is too high:
+I use Obsidian as my second brain, organized with the PARA method across multiple vaults (work knowledge, personal projects, hobbies). But when I'm away from my computer and have a thought worth capturing or a question my notes could answer, the friction is too high:
 
 - Obsidian mobile requires navigating folder structures
 - No AI assistant has access to my personal knowledge base
 - Quick captures interrupt whatever workflow I'm in
 
-I wanted something I could pull up on my phone, type a quick thought, and know it would land in the right place—or ask a question and have an AI that actually knows my context.
+I wanted something I could pull up on my phone, type a quick thought, and know it would land in the right place. Or ask a question and have an AI that actually knows my context.
 
 ## What Memory Loop Does
 
@@ -31,7 +31,7 @@ The home dashboard. Shows your current vault's goals (extracted from `CLAUDE.md`
 
 ### Capture
 
-Minimal friction note capture. Type a thought, tap capture, and it appends to your daily note with a timestamp. Drafts persist across sessions—start a thought on your phone, finish it later.
+Minimal friction note capture. Type a thought, tap capture, and it appends to your daily note with a timestamp. Drafts persist across sessions: start a thought on your phone, finish it later.
 
 ![Capture - Quick Note Entry](/02_Areas/Memory-Loop/screenshots/capture.webp)
 
@@ -78,13 +78,13 @@ The system runs as a local service on my home network, accessible from any devic
                                        └─────────────────┘
 ```
 
-**Frontend**: React 19 with Vite. Touch-friendly UI with 44px+ tap targets, works on screens as small as 320px. The synthwave aesthetic is purely personal preference—it makes the tool feel distinct from my other applications.
+**Frontend**: React 19 with Vite. Touch-friendly UI with 44px+ tap targets, works on screens as small as 320px. The synthwave aesthetic is purely personal preference; it makes the tool feel distinct from my other applications.
 
 **Backend**: Hono server running on Bun. Handles WebSocket connections and manages Claude sessions via the Agent SDK. The backend runs from TypeScript source rather than bundled code because the Claude Agent SDK requires it.
 
 **Shared**: Zod schemas define the WebSocket protocol, ensuring type safety between frontend and backend.
 
-**Claude Integration**: Uses Anthropic's Agent SDK with OAuth authentication through Claude's API. Claude gets file system tools scoped to the selected vault—it can read, search, and navigate but operates within the vault's boundaries.
+**Claude Integration**: Uses Anthropic's Agent SDK with OAuth authentication through Claude's API. Claude gets file system tools scoped to the selected vault (it can read, search, and navigate but operates within the vault's boundaries).
 
 ## Design Decisions
 
@@ -92,22 +92,20 @@ The system runs as a local service on my home network, accessible from any devic
 
 **WebSocket communication**: Real-time streaming of Claude's responses feels conversational. You see the AI thinking rather than waiting for a complete response.
 
-**Local deployment**: This runs on my home network, not a cloud service. My notes stay on my machines, and Claude accesses them through authenticated API calls—the data never leaves my control.
+**Local deployment**: This runs on my home network, not a cloud service. My notes stay on my machines, and Claude accesses them through authenticated API calls. The data never leaves my control.
 
 **Mobile-first design**: Every interaction assumes a thumb on a phone screen. Large tap targets, simple navigation, draft persistence for interrupted sessions.
 
 ## Why the Theme?
 
-Most productivity tools aim for minimalism—clean interfaces, muted colors, nothing to distract you from the work. That makes sense for tools designed to get out of your way.
+Most productivity tools aim for minimalism: clean interfaces, muted colors, nothing to distract you from the work. That makes sense for tools designed to get out of your way.
 
 Memory Loop isn't that kind of tool for me. It's less about clearing distractions and more about creating a safe space. Somewhere I actually *want* to open, where capturing thoughts feels like settling into a familiar environment rather than filing paperwork.
 
-So I went with a dark synthwave aesthetic—neon accents against deep purples and blues, a detailed background with depth. It's a bit of fun, nostalgic, and deliberately not serious. The visual style signals that this is *my* space, separate from work tools and generic apps. That distinction matters when the goal is building a habit of reflection.
+So I went with a dark synthwave aesthetic: neon accents against deep purples and blues, a detailed background with depth. It's a bit of fun, nostalgic, and deliberately not serious. The visual style signals that this is *my* space, separate from work tools and generic apps. That distinction matters when the goal is building a habit of reflection.
 
 ## Why I Built This
 
-Knowledge management tools often optimize for capture or retrieval, but the interesting space is the loop between them—the moment when a new thought connects to something you wrote months ago, or when reviewing old notes sparks new questions.
+Knowledge management tools optimize for either capture or retrieval. The loop between them (a new thought connecting to something you wrote months ago, old notes sparking new questions) gets less attention.
 
-Memory Loop is my attempt to keep that loop tight, even when I'm away from my desk. Quick capture reduces the friction of getting thoughts into the system. AI chat grounds conversations in accumulated context. File browsing lets me follow threads when I have time to think.
-
-It's a personal tool solving a personal problem, but the architecture might be useful to others building similar systems.
+Memory Loop keeps that loop tight from my phone. Quick capture reduces friction. AI chat grounds conversations in my actual notes. File browsing lets me follow threads when I have time.
