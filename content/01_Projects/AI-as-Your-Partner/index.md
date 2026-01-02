@@ -1,6 +1,6 @@
 ---
 title: AI as Your Partner
-description: Exploring what makes good AI rules files—not universal best practices, but personal configurations that make AI work for you
+description: Exploring what makes good AI rules files, not universal best practices, but personal configurations that make AI work for you
 ---
 
 # AI as Your Partner
@@ -17,11 +17,11 @@ description: Exploring what makes good AI rules files—not universal best pract
 
 ## Context
 
-Everyone talks about making AI "do the right thing"—follow best practices, avoid hallucinations, produce correct code. But there's a different question worth asking:
+Everyone talks about making AI "do the right thing": follow best practices, avoid hallucinations, produce correct code. But there's a different question worth asking:
 
 **How do you make AI do the right thing *for you*?**
 
-Rules files (CLAUDE.md, .cursorrules, etc.) aren't just about technical correctness. They encode *preferences*, *workflows*, *values*. The question is whether these are genuinely personal—reflecting how *you* think and work—or whether they should converge on universal patterns everyone uses.
+Rules files (CLAUDE.md, .cursorrules, etc.) aren't just about technical correctness. They encode *preferences*, *workflows*, *values*. The question is whether these are genuinely personal (reflecting how *you* think and work) or whether they should converge on universal patterns everyone uses.
 
 This project starts from a hypothesis: **the most effective AI configurations are deeply personal**, and that personalization is what transforms AI from a generic tool into something that feels like a collaborator.
 
@@ -63,7 +63,7 @@ This project is complete when:
 - My existing rules: `~/.dotfiles/config/claude/rules/`
 - [[01_Projects/AI-as-Your-Partner/initial-audit|Initial Audit]] - Classification of rules as personal vs. universal
 - [[01_Projects/AI-as-Your-Partner/findings-2025-12-31|Session 1 Findings]] - Full analysis from first session
-- [[01_Projects/AI-as-Your-Partner/community-patterns-research|Community Patterns Research]] - How others structure AI rules
+- [[01_Projects/AI-as-Your-Partner/research/community-patterns-research|Community Patterns Research]] - How others structure AI rules
 - [[01_Projects/AI-as-Your-Partner/the-workflow|The Workflow]] - Why each step in Research → Plan → Execute → Test → Review exists
 
 ## Progress Log
@@ -77,19 +77,19 @@ This project is complete when:
 - Classified all 7 rules files: [[01_Projects/AI-as-Your-Partner/initial-audit|Initial Audit]]
 - Refined hypothesis: rules exist on a spectrum, not a binary
 - Key insight: universal rules are *defensive* (prevent harm), personal rules are *generative* (build capability)
-- The 5-step workflow is the most personal element—it's a methodology, not a practice
+- The 5-step workflow is the most personal element: it's a methodology, not a practice
 
 ### 2025-12-31 - Community Research Complete
 - Researched AGENTS.md standard, Cursor rules, Aider conventions
 - Key insight: **format is converging (universal), content remains personal**
 - The six core areas: commands, testing, structure, style, git, boundaries
-- Specificity signals personality—vague rules are neither universal nor personal
+- Specificity signals personality; vague rules are neither universal nor personal
 - Full findings: [[01_Projects/AI-as-Your-Partner/community-patterns-research|Community Patterns Research]]
 
 ### 2025-12-31 - Workflow Deep Dive
 - Articulated *why* each step in the 5-step workflow exists
 - Key insight: each step focuses the AI by creating checkpoints for human input
-- The workflow isn't about AI—it's about good development practice made explicit
+- The workflow isn't about AI; it's about good development practice made explicit
 - Full analysis: [[01_Projects/AI-as-Your-Partner/the-workflow|The Workflow]]
 
 ## Next Actions
@@ -100,5 +100,4 @@ This project is complete when:
 - [ ] Consider AGENTS.md migration for cross-tool compatibility
 - [ ] Evaluate if my rules are specific enough to be truly personal
 
----
-*This project graduates to an Area when the exploration becomes a documented framework.*
+Graduates to an Area when the exploration becomes a documented framework.

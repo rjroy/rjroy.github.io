@@ -5,7 +5,7 @@ description: A Spec-Driven Development methodology plugin for Claude Code
 
 # Spiral Grove
 
-Spiral Grove is a Claude Code plugin that implements Spec-Driven Development (SDD)—a structured methodology for building complex features with AI assistance. It transforms vague ideas into working software through four explicit phases.
+Spiral Grove is a Claude Code plugin that implements Spec-Driven Development (SDD), a structured methodology for building complex features with AI assistance. Four phases: specify what, plan how, break into tasks, then implement.
 
 ## The Problem
 
@@ -16,7 +16,7 @@ AI coding assistants are remarkably capable but surprisingly literal. They'll bu
 - Multi-session work loses coherence
 - "Just one more thing" spirals into spaghetti
 
-I kept hitting the same failure mode: start enthusiastically, build something that mostly works, realize halfway through that I'd painted myself into a corner. The AI didn't fail—I failed to think through what I actually needed.
+I kept hitting the same failure mode: start enthusiastically, build something that mostly works, realize halfway through that I'd painted myself into a corner. The AI didn't fail. I failed to think through what I actually needed.
 
 Spiral Grove forces that thinking to happen before the coding starts.
 
@@ -26,10 +26,10 @@ Spiral Grove forces that thinking to happen before the coding starts.
 
 Define *what* to build, not *how*. The spec captures:
 
-- **Requirements** — Numbered, unambiguous, testable (REQ-F-001, REQ-NF-001)
-- **Success criteria** — Measurable outcomes ("95% of requests under 200ms")
-- **Constraints** — Explicit boundaries ("must not require database migration")
-- **Acceptance tests** — How you'll know it's done
+- **Requirements**: Numbered, unambiguous, testable (REQ-F-001, REQ-NF-001)
+- **Success criteria**: Measurable outcomes ("95% of requests under 200ms")
+- **Constraints**: Explicit boundaries ("must not require database migration")
+- **Acceptance tests**: How you'll know it's done
 
 The spec deliberately excludes implementation details. No tech stack choices, no architecture decisions. Those come later.
 
@@ -55,10 +55,10 @@ A validator agent reviews the spec before you can proceed, checking for measurab
 
 Design *how* to build it. Now implementation details matter:
 
-- **Architecture decisions** — With rationale for each choice
-- **Integration points** — How this connects to existing code
-- **Error handling strategy** — What happens when things fail
-- **Testing approach** — Unit, integration, load
+- **Architecture decisions**: With rationale for each choice
+- **Integration points**: How this connects to existing code
+- **Error handling strategy**: What happens when things fail
+- **Testing approach**: Unit, integration, load
 
 The plan maps back to spec requirements. Every architectural choice should trace to something you're trying to achieve.
 
@@ -78,10 +78,10 @@ Another validator ensures decisions have rationale and requirements are addresse
 
 Decompose the plan into discrete, testable work units:
 
-- **Independent tasks** — Each completable on its own
-- **T-shirt sizing** — XS/S/M/L/XL (not time estimates)
-- **Dependencies** — What blocks what
-- **Acceptance criteria** — Per-task definition of done
+- **Independent tasks**: Each completable on its own
+- **T-shirt sizing**: XS/S/M/L/XL (not time estimates)
+- **Dependencies**: What blocks what
+- **Acceptance criteria**: Per-task definition of done
 
 ```
 /task-breakdown
@@ -115,7 +115,7 @@ Claude: [Works through tasks, updates .sdd/progress/api-rate-limiter-progress.md
         - Used ioredis instead of redis (better TypeScript support)
 ```
 
-Progress documents capture what actually happened versus what was planned. Deviations aren't failures—they're discoveries worth recording.
+Progress documents capture what actually happened versus what was planned. Deviations aren't failures; they're discoveries worth recording.
 
 ## Validator Agents
 
@@ -126,7 +126,7 @@ Each phase transition triggers a specialized validator agent with fresh context.
 - **Tasks**: Missing acceptance criteria, oversized tasks
 - **Progress**: Untracked deviations, incomplete tasks marked done
 
-Fresh context matters. The validator sees the document without the accumulated conversation that produced it—closer to how a reviewer would see it.
+Fresh context matters. The validator sees the document without the accumulated conversation that produced it, closer to how a reviewer would see it.
 
 ## Parent/Child Hierarchies
 
@@ -204,17 +204,15 @@ Eight specialized agents handle validation and synthesis. Four built-in skills p
 
 Key design decisions:
 
-- **Fresh context per agent** — Prevents bloat during long workflows
-- **Mandatory validation** — Quality gates aren't optional
-- **Template externalization** — Skills provide templates, keeping commands focused
-- **Markdown artifacts** — Everything human-readable and version-controlled
+- **Fresh context per agent**: Prevents bloat during long workflows
+- **Mandatory validation**: Quality gates aren't optional
+- **Template externalization**: Skills provide templates, keeping commands focused
+- **Markdown artifacts**: Everything human-readable and version-controlled
 
 ## The Name
 
-A spiral grove is a pattern found in nature—trees planted in a spiral that creates both structure and organic growth. The methodology works similarly: structured phases that still allow discovery and adaptation.
+A spiral grove is a pattern found in nature: trees planted in a spiral that provides structure while leaving room for growth. The methodology works similarly: structured phases that still allow discovery.
 
-The spiral also reflects iteration. Specs get revised. Plans adapt to reality. The process moves forward while circling back to refine what came before.
+The spiral also reflects iteration. Specs get revised. Plans adapt to reality.
 
----
-
-*Spiral Grove is part of the [[02_Areas/Vibe-Garden/index|Vibe Garden]] toolkit. It integrates with [[02_Areas/Vibe-Garden/Compass-Rose/index|Compass Rose]] for backlog management—large items in Compass Rose can escalate to Spiral Grove's spec-writing workflow.*
+Part of the [[02_Areas/Vibe-Garden/index|Vibe Garden]] toolkit. Integrates with [[02_Areas/Vibe-Garden/Compass-Rose/index|Compass Rose]]; large backlog items can escalate to spec-writing.

@@ -5,11 +5,11 @@ A Claude Code plugin to enforce code quality and catch AI implementation failure
 ## Problem Statement
 
 AI-generated code suffers from recurring issues:
-1. **Dead code** — Files written but never connected to the application
-2. **Skipped research** — AI assumes API behavior instead of reading docs
-3. **Sledgehammer fixes** — Guessing and patching instead of understanding
-4. **Missing tests** — Structural coverage without behavioral verification
-5. **Spec drift** — Code that doesn't trace back to any requirement
+1. **Dead code**: Files written but never connected to the application
+2. **Skipped research**: AI assumes API behavior instead of reading docs
+3. **Sledgehammer fixes**: Guessing and patching instead of understanding
+4. **Missing tests**: Structural coverage without behavioral verification
+5. **Spec drift**: Code that doesn't trace back to any requirement
 
 ## Goals
 
@@ -176,16 +176,16 @@ Override/extend universal criteria.
 
 ## Implementation Order
 
-1. **Quality definition file schema** — Foundation everything references
-2. **Research requirements update** — Immediate improvement to CLAUDE.md
-3. **`structural-auditor` agent** — Simplest, proves the pattern
-4. **`audit-init` command** — Generates checklist
-5. **`audit-run` command** — Processes checklist
-6. **`audit-dead-code` command** — Catches orphaned files
-7. **`api-contract-auditor` agent** — Catches sledgehammer fixes
-8. **`semantic-auditor` agent** — Hardest, most valuable
-9. **`spec-tracer` agent** — Requires project to have specs
-10. **`audit-connectedness` command** — Detailed tracing
+1. **Quality definition file schema**: Foundation everything references
+2. **Research requirements update**: Immediate improvement to CLAUDE.md
+3. **`structural-auditor` agent**: Simplest, proves the pattern
+4. **`audit-init` command**: Generates checklist
+5. **`audit-run` command**: Processes checklist
+6. **`audit-dead-code` command**: Catches orphaned files
+7. **`api-contract-auditor` agent**: Catches sledgehammer fixes
+8. **`semantic-auditor` agent**: Hardest, most valuable
+9. **`spec-tracer` agent**: Requires project to have specs
+10. **`audit-connectedness` command**: Detailed tracing
 
 ---
 

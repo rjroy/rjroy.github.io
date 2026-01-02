@@ -30,7 +30,7 @@ Quick recommendation for what to work on. Queries items with "Ready" status, sor
 Recommendation: Item #1 (P0 priority, small scope, ready for work)
 ```
 
-Fast. Under 3 seconds. No deep analysis—just "here's what's most urgent."
+Fast. Under 3 seconds. No deep analysis, just "here's what's most urgent."
 
 ### `/add-item`
 
@@ -97,7 +97,7 @@ Batch updates after approval. Keeps the backlog in sync with reality.
 Compass Rose is lightweight by design:
 
 - **Configuration**: `.compass-rose/config.json` at repository root points to your GitHub Project
-- **Storage**: GitHub Projects is the source of truth—no separate database
+- **Storage**: GitHub Projects is the source of truth (no separate database)
 - **Agents**: Specialized sub-agents handle analysis (`backlog-analyzer`, `codebase-scanner`)
 - **Integration**: Uses `gh` CLI for all GitHub operations
 
@@ -107,7 +107,7 @@ The plugin doesn't try to replace GitHub Projects. It makes the existing system 
 
 Compass Rose handles *what* to work on. Spiral Grove handles *how* to build it.
 
-The integration point is item size. Small items (S/M) are straightforward—start coding. Large items (L/XL) benefit from specification, planning, and task breakdown before implementation.
+The integration point is item size. Small items (S/M) are straightforward: start coding. Large items (L/XL) benefit from specification, planning, and task breakdown before implementation.
 
 When `/start-work` detects a large item, it offers to hand off to Spiral Grove's `/spec-writing` command. You can decline and implement directly, but the prompt surfaces the choice.
 
@@ -126,6 +126,4 @@ Using existing infrastructure means:
 
 The tradeoff is dependence on GitHub's project structure and custom fields, but that's a reasonable constraint for personal projects.
 
----
-
-*Compass Rose is part of the [[02_Areas/Vibe-Garden/index|Vibe Garden]] toolkit and available through the vibe-garden plugin repository.*
+Part of the [[02_Areas/Vibe-Garden/index|Vibe Garden]] toolkit.

@@ -1,6 +1,6 @@
 ---
 title: Background as Worldview
-description: Why the content of background imagery matters—it's not decoration, it's orientation
+description: Why the content of background imagery matters. It's not decoration, it's orientation
 ---
 
 # Background as Worldview
@@ -15,7 +15,7 @@ Too complete.
 
 ## One World, One Cage
 
-The image presented a single destination. One view of reality. Beautiful, yes—but also subtly constraining. Every time the background peeked through the interface gaps, it whispered the same thing: *this is the world*. Not *a* world. *The* world.
+The image presented a single destination. One view of reality. Beautiful, yes, but also subtly constraining. Every time the background peeked through the interface gaps, it whispered the same thing: *this is the world*. Not *a* world. *The* world.
 
 The question surfaced: **Was this limiting imagination rather than sparking it?**
 
@@ -36,7 +36,7 @@ This changes everything about what the background *does*:
 
 ## Why the Fork Matters
 
-The Gothic mansion and steampunk city aren't just two options—they're two *modes* of exploration:
+The Gothic mansion and steampunk city aren't just two options. They're two *modes* of exploration:
 
 - **Decay vs. Industry**: One world asks "what happened here?" The other asks "what are we building?"
 - **Mystery vs. Invention**: One invites uncovering, the other invites creating
@@ -46,7 +46,7 @@ The tension between them is itself generative. Neither path is wrong. Neither is
 
 ## The Pattern: Choice as Invitation
 
-Without the crossroads, even the most beautiful background becomes another wall. Pretty, but closed. The choice—even an imaginary one, even one you'll never actually take—transforms the image from decoration into *orientation*.
+Without the crossroads, even the most beautiful background becomes another wall. Pretty, but closed. The choice (even an imaginary one, even one you'll never actually take) transforms the image from decoration into *orientation*.
 
 It says: **You are someone who chooses. The path is not predetermined.**
 
@@ -56,10 +56,8 @@ This principle extends:
 
 - **Project naming**: Names that suggest possibility, not just description
 - **Tool configuration**: Settings that enable, not just customize
-- **Personal symbols**: The shield with an uncertain path—it encodes choice, not arrival
+- **Personal symbols**: The shield with an uncertain path; it encodes choice, not arrival
 
 The question for any whimsical element: **Does this open a door or paint a wall?**
 
----
-
-*Related: [[index|Exploring Whimsy]], [[02_Areas/Memory-Loop/index|Memory Loop]]*
+Related: [[index|Exploring Whimsy]], [[02_Areas/Memory-Loop/index|Memory Loop]]

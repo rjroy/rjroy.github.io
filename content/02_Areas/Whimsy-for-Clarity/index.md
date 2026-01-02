@@ -1,11 +1,11 @@
 ---
 title: Whimsy for Clarity
-description: Practical implementations of personal expression in tools and workflows
+description: How I add personal touches to tools without cluttering the work itself
 ---
 
 # Whimsy for Clarity
 
-This area tracks how I've implemented personal expression across my tools—not as decoration, but as a way to make spaces feel *mine* while maintaining focus.
+This area tracks how I've implemented personal expression across my tools, not as decoration, but as a way to make spaces feel *mine* while maintaining focus.
 
 The philosophy is explored in [[01_Projects/Exploring-Whimsy/index|Exploring Whimsy]]. This page is the practical record.
 
@@ -18,7 +18,7 @@ The philosophy is explored in [[01_Projects/Exploring-Whimsy/index|Exploring Whi
 Whimsy should:
 - Be visible to me, invisible to the work
 - Convey meaning, not just color
-- Exist in dead space—present when idle, covered when active
+- Exist in dead space (present when idle, covered when active)
 
 ---
 
@@ -30,9 +30,9 @@ Names that spark something rather than describe something:
 
 | Project | Why It Works |
 |---------|--------------|
-| **HEPCAT** | Board game collection—evokes jazz-era cool, collection as curation |
-| **Memory Loop** | Knowledge capture—the cognitive process, not the technology |
-| **Vibe Garden** | Personal space—cultivation, not organization |
+| **HEPCAT** | Board game collection: evokes jazz-era cool, collection as curation |
+| **Memory Loop** | Knowledge capture: the cognitive process, not the technology |
+| **Vibe Garden** | Personal space: cultivation, not organization |
 
 The pattern: **metaphor over description**. A name should make me *feel* something when I see it in a file tree.
 
@@ -40,7 +40,7 @@ The pattern: **metaphor over description**. A name should make me *feel* somethi
 
 **Memory Loop's synthwave background**: A detailed, vibrant scene that exists behind the interface. When I'm working, content covers it. When I'm idle or transitioning, it peeks through. The background is *present* without *competing*.
 
-This is the dead space principle in action—expression lives where work doesn't.
+This is the dead space principle in action: expression lives where work doesn't.
 
 ### Terminal Prompt
 
@@ -54,7 +54,7 @@ error_symbol = "[🏳](bold red)"
 
 **⛰ (Mountain)**: Command succeeded. You reached the peak. The uncertain path led somewhere.
 
-**🏳 (White Flag)**: Command failed. Not defeat—a signal to regroup. Honest acknowledgment.
+**🏳 (White Flag)**: Command failed. Not defeat, a signal to regroup. Honest acknowledgment.
 
 **🛡 (Shield)**: The personal logo. Considering placement as:
 - Session greeting (appears once when shell opens)
