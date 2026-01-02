@@ -1,4 +1,4 @@
-# CLAUDE.md
+# Ron's Broadcast Cache - Broadcasting Some Notes on My Personal Projects to the workflow
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
