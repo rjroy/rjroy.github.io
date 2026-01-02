@@ -31,17 +31,21 @@ a.internal.tag-link {
   }
 }
 
-// === Whimsy: Page title gradient (Nord pink-to-blue) ===
+// === Whimsy: Page title gradient (moss green) ===
 article > h1:first-child {
-  background: linear-gradient(135deg, #BF616A, #81A1C1);
+  background: linear-gradient(135deg, #5f7f6a, #8fb29a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-// === Whimsy: Fading pink-to-blue HR ===
+// === Whimsy: Fading moss green HR ===
 hr {
   border: none;
   height: 2px;
-  background: linear-gradient(to right, transparent, #BF616A, #81A1C1, transparent);
+  background: linear-gradient(to right, transparent, #141a16, #5f7f6a, transparent);
+}
+
+hr [saved-theme="dark"] {
+  background: linear-gradient(to right, transparent, #5f7f6a, #9aa7a0, transparent);
 }
