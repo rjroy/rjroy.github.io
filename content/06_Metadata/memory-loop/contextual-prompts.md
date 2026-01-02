@@ -1,4 +1,4 @@
-<!-- last-generated: 2025-12-31 -->
+<!-- last-generated: 2026-01-01 -->
 
 - "How can you inject more 'fun' and playfulness into your creative projects to keep yourself inspired and engaged?"
 - "What aspects of your work or hobbies could benefit from less seriousness and more vibrant self-expression?"
@@ -10,3 +10,8 @@
 - "In what ways could experimenting with small changes, like adding a road to an image, lead to greater creative fulfillment or meaningful impact?"
 - "When facing a recurring technical issue, how might you approach the challenge with fresh eyes and an open mindset to uncover creative solutions?"
 - "As you revisit your goals in the future, what empowering mindsets or practices could help you adapt and evolve your work more freely?"
+- "How can you build a habit of reflection and iteration within your daily routines and thought processes?"
+- "What does it mean to you to 'capture' your ideas and experiences in a meaningful way? How can you make this process more intentional?"
+- "Explore the relationship between logging/documentation and the creative/iterative process. How can you find the right balance?"
+- "Imagine defining a framework for 'quality' that aligns with your values and goals. What would that look like, and how could you apply it to your projects?"
+- "What does it mean to you to 'audit' your own work or thought patterns? How could a structured review process lead to deeper insights and growth?"
