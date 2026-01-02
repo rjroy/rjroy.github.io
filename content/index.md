@@ -4,11 +4,11 @@ A public window into how I organize my thoughts, projects, and ideas.
 
 ## What is This?
 
-This is my digital garden—a place where I capture, develop, and share my thinking. Unlike a blog with polished posts, this is a living workspace. You'll find ideas at various stages: some fully formed, others still germinating.
+This is my digital garden, a place where I capture, develop, and share my thinking. Unlike a blog with polished posts, this is a living workspace. You'll find ideas at various stages: some fully formed, others still germinating.
 
 ## How It's Written
 
-I work with [Claude Code](https://claude.ai/code) as my ghost writer. I provide the ideas, direction, and editorial judgment—Claude helps me get words on the page.
+I work with [Claude Code](https://claude.ai/code) as my ghost writer. I provide the ideas, direction, and editorial judgment. Claude helps me get words on the page.
 
 Sometimes I'll dictate rough thoughts and ask Claude to shape them into coherent prose. Other times I'll describe what I want to communicate and let Claude draft it. I always review, edit, and take responsibility for what gets published.
 
@@ -34,7 +34,7 @@ This space is just getting started. You're seeing the scaffolding before the bui
 
 ## Navigating
 
-Feel free to explore any folder. Each has its own `index` explaining what you'll find there. Some notes link to each other using `[[wiki links]]`—if you see these in raw markdown, they reference other notes in this collection.
+Feel free to explore any folder. Each has its own `index` explaining what you'll find there. Some notes link to each other using `[[wiki links]]`. If you see these in raw markdown, they reference other notes in this collection.
 
 ## About Me
 
