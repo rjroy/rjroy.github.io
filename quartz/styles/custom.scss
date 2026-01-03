@@ -3,7 +3,8 @@
 // put your custom CSS here!
 
 // === Whimsy: Subtle hover transforms on links ===
-a {
+article a,
+.popover-hint a {
   transition: transform 0.15s ease, color 0.2s ease;
   display: inline-block;
 
