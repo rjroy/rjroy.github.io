@@ -106,14 +106,14 @@ The system runs as a local service on my home network, accessible from any devic
 
 ## Why the Theme?
 
-Most productivity tools aim for minimalism: clean interfaces, muted colors, nothing to distract you from the work. That makes sense for tools designed to get out of your way.
+I like color. Color evokes feeling, and I wanted to feel something when I open this tool.
 
-Memory Loop isn't that kind of tool for me. It's less about clearing distractions and more about creating a safe space. Somewhere I actually *want* to open, where capturing thoughts feels like settling into a familiar environment rather than filing paperwork.
+Memory Loop is more than a place to jot down notes. It's a place I want to be drawn to. If opening it feels inviting, using it becomes a habit. The images and UX should invite imagination, because much of what I do is about thinking past what I see.
 
-So I went with a dark synthwave aesthetic: neon accents against deep purples and blues, a detailed background with depth. It's a bit of fun, nostalgic, and deliberately not serious. The visual style signals that this is *my* space, separate from work tools and generic apps. That distinction matters when the goal is building a habit of reflection.
+I started by asking ChatGPT for a "retro futuristic note taking app mockup." That got me a dark synthwave aesthetic: fun, nostalgic, distinctly not a work tool. It's evolved since then into something like a mystical crossroads between realities. But the measure that matters is simple: I like looking at it, and that helps build the habit.
 
 ## Why I Built This
 
-Knowledge management tools optimize for either capture or retrieval. The loop between them (a new thought connecting to something you wrote months ago, old notes sparking new questions) gets less attention.
+Knowledge management tools optimize for either capture or retrieval. The loop between them gets less attention: a new thought connecting to something you wrote months ago, old notes sparking new questions.
 
 Memory Loop keeps that loop tight from my phone. Quick capture reduces friction. AI chat grounds conversations in my actual notes. File browsing lets me follow threads when I have time.
