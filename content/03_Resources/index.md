@@ -1,3 +1,11 @@
+---
+title: Resources
+description: Reference materials and evergreen knowledge
+tags:
+  - index
+  - resource
+---
+
 # Resources
 
 Reference materials and evergreen knowledge.

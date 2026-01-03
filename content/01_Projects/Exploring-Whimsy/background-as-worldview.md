@@ -1,6 +1,10 @@
 ---
 title: Background as Worldview
 description: Why the content of background imagery matters. It's not decoration, it's orientation
+tags:
+  - whimsy
+  - design
+  - philosophy
 ---
 
 # Background as Worldview

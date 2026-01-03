@@ -1,3 +1,11 @@
+---
+title: Open Tasks - December 2025
+date: 2025-12-31
+tags:
+  - open-tasks
+  - report
+---
+
 # Open Tasks - December 2025
 
 Generated: 2025-01-02

@@ -1,6 +1,11 @@
 ---
 title: Whimsy for Clarity
 description: How I add personal touches to tools without cluttering the work itself
+tags:
+  - area
+  - whimsy
+  - design
+  - philosophy
 ---
 
 # Whimsy for Clarity

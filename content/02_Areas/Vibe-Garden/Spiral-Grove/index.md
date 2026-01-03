@@ -1,6 +1,12 @@
 ---
 title: Spiral Grove
 description: A Spec-Driven Development methodology plugin for Claude Code
+tags:
+  - ai
+  - claude-code
+  - plugin
+  - methodology
+  - spec-driven-development
 ---
 
 # Spiral Grove

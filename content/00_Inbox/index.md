@@ -1,3 +1,11 @@
+---
+title: Inbox
+description: The capture zone for raw thoughts before they find their home
+tags:
+  - index
+  - inbox
+---
+
 # Inbox
 
 The capture zone—raw thoughts before they find their home.

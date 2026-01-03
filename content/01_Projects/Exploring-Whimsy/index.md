@@ -1,6 +1,11 @@
 ---
 title: Exploring Whimsy
 description: A project to examine where playfulness and self-expression can enhance clarity rather than distract from it
+tags:
+  - project
+  - whimsy
+  - design
+  - philosophy
 ---
 
 # Exploring Whimsy

@@ -1,6 +1,12 @@
 ---
 title: Vibe Garden
 description: A personal development toolkit ecosystem for AI-assisted software development with Claude Code
+tags:
+  - area
+  - ai
+  - claude-code
+  - plugin
+  - methodology
 ---
 
 # Vibe Garden

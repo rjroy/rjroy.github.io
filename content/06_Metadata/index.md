@@ -1,3 +1,11 @@
+---
+title: Metadata
+description: Documentation about this space itself
+tags:
+  - index
+  - metadata
+---
+
 # Metadata
 
 Documentation about this space itself.

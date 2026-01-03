@@ -1,6 +1,12 @@
 ---
 title: Memory Loop
 description: A mobile-friendly interface for AI-powered interactions with Obsidian vaults
+tags:
+  - area
+  - ai
+  - obsidian
+  - knowledge-management
+  - mobile
 ---
 
 # Memory Loop
