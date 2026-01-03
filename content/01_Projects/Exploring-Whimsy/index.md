@@ -67,7 +67,7 @@ This encodes a philosophy: you start from strength, the path is unclear, the cli
 
 ## Next Actions
 - [x] Implement terminal prompt changes (⛰ success, 🏳 failure)
-- [ ] Document the philosophy as it develops
+- [x] Document the philosophy as it develops → [[philosophy-of-whimsy|A Personal Philosophy of Whimsy in UX]]
 - [ ] Graduate this to an Area when the pattern is clear
 
 Graduates to [[02_Areas/Whimsy-for-Clarity/index|Whimsy for Clarity]] when the exploration becomes maintenance.
