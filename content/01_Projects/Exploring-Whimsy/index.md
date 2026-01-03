@@ -16,9 +16,9 @@ tags:
 **Status**: Active
 
 ## Objectives
-- [ ] Identify where "professional polish" has become invisible rather than intentional
-- [ ] Find the boundaries between expressive and distracting
-- [ ] Develop a personal philosophy of whimsy as a tool
+- [x] Identify where "professional polish" has become invisible rather than intentional
+- [x] Find the boundaries between expressive and distracting
+- [x] Develop a personal philosophy of whimsy as a tool
 
 ## Context
 

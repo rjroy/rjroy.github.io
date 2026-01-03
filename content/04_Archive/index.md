@@ -25,4 +25,6 @@ Past work informs future thinking. Completed projects show how I approached prob
 
 ## Current Archive
 
-Nothing archived yet—this space is being set up.
+### Completed Projects
+
+- [[waystone/index|Waystone]] — An AI code quality audit plugin to catch the failures AI won't catch itself. Completed 2025-01-03.
