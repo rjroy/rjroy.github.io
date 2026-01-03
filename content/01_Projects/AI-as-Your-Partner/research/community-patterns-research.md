@@ -2,6 +2,10 @@
 title: Community Patterns Research
 description: How the developer community structures AI coding rules - research findings
 date: 2025-12-31
+tags:
+  - ai
+  - claude-code
+  - research
 ---
 
 # Community Patterns Research

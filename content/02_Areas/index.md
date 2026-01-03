@@ -1,3 +1,11 @@
+---
+title: Areas
+description: Ongoing interests and responsibilities that evolve rather than complete
+tags:
+  - index
+  - area
+---
+
 # Areas
 
 Ongoing interests and responsibilities (things I care about that don't have finish lines). Unlike projects, these evolve rather than complete.

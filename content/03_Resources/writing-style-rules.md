@@ -1,3 +1,12 @@
+---
+title: Writing Style Rules
+description: My writing voice anchor and calibration examples
+tags:
+  - resource
+  - writing
+  - style-guide
+---
+
 ## Writing Voice Anchor
 
 **Tone**  

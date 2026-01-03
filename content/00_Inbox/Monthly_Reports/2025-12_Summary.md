@@ -1,3 +1,11 @@
+---
+title: Monthly Summary - December 2025
+date: 2025-12-31
+tags:
+  - monthly-summary
+  - report
+---
+
 # Monthly Summary - December 2025
 
 Generated: 2025-01-02

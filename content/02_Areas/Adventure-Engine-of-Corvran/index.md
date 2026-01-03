@@ -1,6 +1,12 @@
 ---
 title: Adventure Engine of Corvran
 description: A solo tabletop RPG with an AI game master for conversational gameplay
+tags:
+  - area
+  - ai
+  - rpg
+  - gaming
+  - solo-ttrpg
 ---
 
 # Adventure Engine of Corvran

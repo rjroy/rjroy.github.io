@@ -1,3 +1,11 @@
+---
+title: Projects
+description: Active endeavors with defined goals and timelines
+tags:
+  - index
+  - project
+---
+
 # Projects
 
 Active endeavors with defined goals and timelines.

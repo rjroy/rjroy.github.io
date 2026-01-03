@@ -1,3 +1,11 @@
+---
+title: Attachments
+description: Images, diagrams, and files referenced in notes
+tags:
+  - index
+  - attachment
+---
+
 # Attachments
 
 Images, diagrams, and files referenced in notes.

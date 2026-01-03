@@ -1,6 +1,11 @@
 ---
 title: Initial Rules Audit
 description: Analyzing existing rules files for personal vs. universal characteristics
+tags:
+  - ai
+  - claude-code
+  - methodology
+  - analysis
 ---
 
 # Initial Rules Audit

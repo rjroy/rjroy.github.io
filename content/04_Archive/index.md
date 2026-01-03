@@ -1,3 +1,11 @@
+---
+title: Archive
+description: Completed work and past explorations preserved for reference
+tags:
+  - index
+  - archive
+---
+
 # Archive
 
 Completed work and past explorations preserved for reference.

@@ -1,6 +1,10 @@
 ---
 title: The Workflow - Research, Plan, Execute, Test, Review
 description: Why each step in the 5-step workflow exists and what it does for AI collaboration
+tags:
+  - ai
+  - methodology
+  - workflow
 ---
 
 # The Workflow
