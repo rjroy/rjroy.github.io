@@ -13,6 +13,8 @@ tags:
 
 Memory Loop is a web application I built to solve a personal friction point: capturing thoughts and consulting my knowledge base from my phone. Obsidian is excellent on desktop, but mobile workflows are clunky, and I wanted Claude AI to have full access to my vault's context.
 
+**Source:** [github.com/rjroy/memory-loop](https://github.com/rjroy/memory-loop)
+
 ![Vault Selection](/02_Areas/Memory-Loop/screenshots/select-a-vault.webp)
 
 ## The Problem
