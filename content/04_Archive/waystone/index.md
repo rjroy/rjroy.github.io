@@ -2,11 +2,14 @@
 title: Waystone
 description: An AI code quality audit plugin to catch the failures AI won't catch itself
 date: 2024-12-31
+archived: 2025-01-03
+status: done
 tags:
   - ai
   - claude-code
   - plugin
   - code-quality
+  - archived
 ---
 
 # Waystone
@@ -54,7 +57,7 @@ Waystone treats quality as verifiable criteria, not just steps to follow.
 
 ## Status
 
-Planning phase. See [[PLAN|the full roadmap]] for details.
+**Completed.** See the [[waystone-impl-report|implementation report]] for the full build process and final deliverables.
 
 ## Why "Waystone"?
 
