@@ -14,6 +14,12 @@ A public window into how I organize my thoughts, projects, and ideas.
 
 This is my digital garden, a place where I capture, develop, and share my thinking. Unlike a blog with polished posts, this is a living workspace. You'll find ideas at various stages: some fully formed, others still germinating.
 
+### Current Focus
+
+[[02_Areas/Memory-Loop/index|Memory Loop]]: A mobile-friendly web app that connects Claude AI to my Obsidian vaults. Quick capture from my phone, AI conversations grounded in my actual notes, and file browsing when I need context. It solves a real friction point: consulting my knowledge base when I'm away from my desk.
+
+[[02_Areas/Whimsy-for-Clarity/index|Whimsy for Clarity]]: How I add personal touches to tools without cluttering the work. Project names that spark something (HEPCAT, Vibe Garden), terminal prompts with meaning, backgrounds that live in the margins. Work doesn't have to be sterile.
+
 ## How It's Written
 
 I work with [Claude Code](https://claude.ai/code) as my ghost writer. I provide the ideas, direction, and editorial judgment. Claude helps me get words on the page.
