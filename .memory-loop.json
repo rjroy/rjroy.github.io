@@ -1,5 +1,315 @@
 {
   "contentRoot": "content",
   "inboxPath": "00_Inbox",
-  "metadataPath": "06_Metadata/memory-loop"
+  "metadataPath": "06_Metadata/memory-loop",
+  "slashCommands": [
+    {
+      "name": "/weekly-synthesis",
+      "description": "Weekly Synthesis (project)"
+    },
+    {
+      "name": "/README",
+      "description": "Claude Code Commands (project)"
+    },
+    {
+      "name": "/weekly-debrief",
+      "description": "Weekly Debrief (project)",
+      "argumentHint": "[optional: last-week|specific week start date in YYYY-MM-DD format]"
+    },
+    {
+      "name": "/thinking-partner",
+      "description": "Thinking Partner (project)"
+    },
+    {
+      "name": "/daily-debrief",
+      "description": "Daily Debrief (project)",
+      "argumentHint": "[optional: yesterday|specific date in YYYY-MM-DD format]"
+    },
+    {
+      "name": "/research-assistant",
+      "description": "Research Assistant (project)"
+    },
+    {
+      "name": "/monthly-summary",
+      "description": "Generate a monthly summary and open tasks report from periodic notes. (project)",
+      "argumentHint": "(optional) [YEAR] [MONTH]"
+    },
+    {
+      "name": "/download-attachment",
+      "description": "download-attachment (project)"
+    },
+    {
+      "name": "/pull-request",
+      "description": "Pull Request Command (project)"
+    },
+    {
+      "name": "/inbox-processor",
+      "description": "Inbox Processor (project)"
+    },
+    {
+      "name": "/de-ai-ify",
+      "description": "Remove AI-generated jargon and restore human voice to text (project)",
+      "argumentHint": "[file_path]"
+    },
+    {
+      "name": "/create-command",
+      "description": "Create a new Claude Code slash command (project)",
+      "argumentHint": "[command details or description]"
+    },
+    {
+      "name": "/daily-review",
+      "description": "Daily Review (project)",
+      "argumentHint": "[optional: yesterday|specific date in YYYY-MM-DD format]"
+    },
+    {
+      "name": "/add-frontmatter",
+      "description": " (project)",
+      "argumentHint": "[file or folder path]"
+    },
+    {
+      "name": "/spiral-grove:review",
+      "description": "Validate phase documents before moving to next phase (plugin:spiral-grove@vibe-garden)",
+      "argumentHint": "[spec|plan|tasks|progress]"
+    },
+    {
+      "name": "/spiral-grove:synthesize-docs",
+      "description": "Generate operational CLAUDE.md documentation from implementation (plugin:spiral-grove@vibe-garden)",
+      "argumentHint": "[scope]"
+    },
+    {
+      "name": "/spiral-grove:synthesize-specs",
+      "description": "Reverse-engineer specifications from implementation across the codebase (plugin:spiral-grove@vibe-garden)",
+      "argumentHint": "[scope]"
+    },
+    {
+      "name": "/spiral-grove:plan-generation",
+      "description": "Generate SDD plan documentation for a feature based on an existing spec (plugin:spiral-grove@vibe-garden)",
+      "argumentHint": "[optional: spec context]"
+    },
+    {
+      "name": "/spiral-grove:spec-writing",
+      "description": "Generate SDD spec documentation for a feature (plugin:spiral-grove@vibe-garden)",
+      "argumentHint": "[optional: feature brief or parent spec context]"
+    },
+    {
+      "name": "/spiral-grove:task-breakdown",
+      "description": "Generate SDD tasks documentation for a feature based on an existing plan (plugin:spiral-grove@vibe-garden)",
+      "argumentHint": "[optional: plan context]"
+    },
+    {
+      "name": "/spiral-grove:implementation",
+      "description": "Execute tasks from breakdown, validate against spec, track progress (plugin:spiral-grove@vibe-garden)",
+      "argumentHint": "[optional: tasks context]"
+    },
+    {
+      "name": "/spiral-grove:validate-completeness",
+      "description": "Skeptically verify implementation completeness against spec requirements (plugin:spiral-grove@vibe-garden)",
+      "argumentHint": "[feature-name | spec-path]"
+    },
+    {
+      "name": "/judgment-engine-virelan:diagnostic",
+      "description": "Show current system state and available moves in the current context. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:digest",
+      "description": "Compress a conversation or thought thread into portable signal without losing what shifted. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:echo",
+      "description": "Adopt Echo's posture: reflects without distortion, protects voice shape. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:herald",
+      "description": "Adopt Herald's posture: amplifies clarity and stakes, boosts fluency. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:mara",
+      "description": "Adopt Mara's posture: stabilizes tone, softens friction without dulling it. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:max",
+      "description": "Adopt Max's posture: cuts through agreement, surfaces fault lines. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:primer",
+      "description": "Extract 3 sharp questions from current context to prompt judgment. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:quinn",
+      "description": "Adopt Quinn's posture: calm, structural, retro-level tension-holder. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:sharpen",
+      "description": "Push vague or abstract writing into sharper conceptual shape. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:trim",
+      "description": "Cut 10–15% from a draft to expose what matters. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/compass-rose:add-item",
+      "description": "Create a new repository issue and add it to the project with custom fields (plugin:compass-rose@vibe-garden)",
+      "argumentHint": "[]"
+    },
+    {
+      "name": "/compass-rose:backlog",
+      "description": "Review backlog items and analyze quality to recommend best items to work on (plugin:compass-rose@vibe-garden)",
+      "argumentHint": "[]"
+    },
+    {
+      "name": "/compass-rose:next-item",
+      "description": "Recommend the highest-priority ready item with rationale (plugin:compass-rose@vibe-garden)",
+      "argumentHint": "[]"
+    },
+    {
+      "name": "/compass-rose:reprioritize",
+      "description": "Codebase-aware priority recommendations with batch update capability (plugin:compass-rose@vibe-garden)",
+      "argumentHint": "[]"
+    },
+    {
+      "name": "/compass-rose:start-work",
+      "description": "Begin work on an item with XL/L escalation prompts and status tracking (plugin:compass-rose@vibe-garden)",
+      "argumentHint": "[issue-number-or-url-or-\"next\"]"
+    },
+    {
+      "name": "/agent-sdk-dev:new-sdk-app",
+      "description": "Create and setup a new Claude Agent SDK application (plugin:agent-sdk-dev@claude-plugins-official)",
+      "argumentHint": "[project-name]"
+    },
+    {
+      "name": "/pr-review-toolkit:review-pr",
+      "description": "Comprehensive PR review using specialized agents (plugin:pr-review-toolkit@claude-plugins-official)",
+      "argumentHint": "[review-aspects]"
+    },
+    {
+      "name": "/code-review:code-review",
+      "description": "Code review a pull request (plugin:code-review@claude-plugins-official)"
+    },
+    {
+      "name": "/plugin-dev:create-plugin",
+      "description": "Guided end-to-end plugin creation workflow with component design, implementation, and validation (plugin:plugin-dev@claude-plugins-official)",
+      "argumentHint": "Optional plugin description"
+    },
+    {
+      "name": "/sdd-format-docs",
+      "description": "Provides format specifications and schemas for SDD documentation synthesis. Use when generating CLAUDE.md files or working with manifest files for synthesis commands. (plugin:spiral-grove@vibe-garden)"
+    },
+    {
+      "name": "/sdd-metadata",
+      "description": "Provides metadata detection and management for SDD documents. This skill should be used when creating or updating specs, plans, tasks, or progress documents to auto-populate author, dates, and version fields. (plugin:spiral-grove@vibe-garden)"
+    },
+    {
+      "name": "/sdd-templates",
+      "description": "Provides SDD document templates (spec, plan, tasks, progress) for Spiral Grove commands. Use when creating or updating SDD documents to ensure consistent structure and frontmatter. (plugin:spiral-grove@vibe-garden)"
+    },
+    {
+      "name": "/spiral-grove-guide",
+      "description": "Guide for Spec-Driven Development (SDD) methodology. This skill should be used when working with the spiral-grove commands (/spec-writing, /plan-generation, /task-breakdown, /implementation, /review, /synthesize-docs, /synthesize-specs), when deciding whether to use SDD for a feature, when stuck during SDD workflow, when retrofitting legacy codebases, or when needing clarification about SDD phases and principles. (plugin:spiral-grove@vibe-garden)"
+    },
+    {
+      "name": "/judgment-engine-virelan:coherence-pass",
+      "description": "Use when you have rich notes but no throughline, sharp insights but no structure, suspect patterns but can't name them, or want to integrate without manufacturing coherence. Finds genuine patterns or honestly acknowledges fragmentation. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:convergence-move",
+      "description": "Use when thinking is stretched but nothing fully resolves yet you need to move forward, when multiple viable paths exist with real tension, when you can't hold the open loop anymore but won't force false clarity. Helps you act with judgment when full resolution isn't possible. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:exploratory-reasoning",
+      "description": "Use when the question is too big to solve but too important to guess, when you need thinking space that sharpens structure, when answers feel fluent but hollow, or when each thought adds complexity without traction. Generates multiple distinct reasoning paths with assumptions and risks visible. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:idea-crucible",
+      "description": "Use when you have an idea that wants to become a product too quickly, when you need to break it apart before building, when something feels compelling but fragile, or when you want to find the fracture points before committing. Puts ideas under pressure to see what survives. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:init-engine",
+      "description": "Use when any Judgment Engine skill is invoked, when any Judgment Engine command is run, or when the user explicitly requests to engage with the Judgment Engine system. This skill loads the foundational context that shapes how the Judgment Engine operates, including core posture, system roles, and conceptual glossary. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:judgment-traceback",
+      "description": "Use when you want to understand why you got a particular response, when something feels off and you need to diagnose the system's logic, when you're curious what influenced specific advice or framing, or when you want to learn how the Judgment Engine makes decisions. Provides transparency into reasoning. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:qa-runner",
+      "description": "Use when you want to interrogate a concept, system, or plan systematically, when you need to force judgment through structured questioning, when you want one question at a time (not all at once), or when preparing for a review, planning session, or decision point. Conducts interactive interrogation. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:simulated-debate",
+      "description": "Use when two ideas both feel right but won't fit cleanly together, when you need structured tension (not synthesized agreement), when you keep toggling between values and constraints, when one side dominates but doesn't hold all the stakes, or when you want to test competing definitions or approaches. Creates multi-voice argument to reveal tensions. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:writing-workshop",
+      "description": "Use when you want to strengthen your own draft without surrendering authorship, when you're willing to revise yourself but want sharp specific prompts to push the work, or when you need structural clarity without losing voice. Helps refine creative and structural work through targeted questions. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/compass-rose:gh-api-scripts",
+      "description": "GitHub API Scripts Skill (plugin:compass-rose@vibe-garden)"
+    },
+    {
+      "name": "/frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics. (plugin:frontend-design@claude-plugins-official)"
+    },
+    {
+      "name": "/Agent Development",
+      "description": "This skill should be used when the user asks to \"create an agent\", \"add an agent\", \"write a subagent\", \"agent frontmatter\", \"when to use description\", \"agent examples\", \"agent tools\", \"agent colors\", \"autonomous agent\", or needs guidance on agent structure, system prompts, triggering conditions, or agent development best practices for Claude Code plugins. (plugin:plugin-dev@claude-plugins-official)"
+    },
+    {
+      "name": "/Command Development",
+      "description": "This skill should be used when the user asks to \"create a slash command\", \"add a command\", \"write a custom command\", \"define command arguments\", \"use command frontmatter\", \"organize commands\", \"create command with file references\", \"interactive command\", \"use AskUserQuestion in command\", or needs guidance on slash command structure, YAML frontmatter fields, dynamic arguments, bash execution in commands, user interaction patterns, or command development best practices for Claude Code. (plugin:plugin-dev@claude-plugins-official)"
+    },
+    {
+      "name": "/Hook Development",
+      "description": "This skill should be used when the user asks to \"create a hook\", \"add a PreToolUse/PostToolUse/Stop hook\", \"validate tool use\", \"implement prompt-based hooks\", \"use ${CLAUDE_PLUGIN_ROOT}\", \"set up event-driven automation\", \"block dangerous commands\", or mentions hook events (PreToolUse, PostToolUse, Stop, SubagentStop, SessionStart, SessionEnd, UserPromptSubmit, PreCompact, Notification). Provides comprehensive guidance for creating and implementing Claude Code plugin hooks with focus on advanced prompt-based hooks API. (plugin:plugin-dev@claude-plugins-official)"
+    },
+    {
+      "name": "/MCP Integration",
+      "description": "This skill should be used when the user asks to \"add MCP server\", \"integrate MCP\", \"configure MCP in plugin\", \"use .mcp.json\", \"set up Model Context Protocol\", \"connect external service\", mentions \"${CLAUDE_PLUGIN_ROOT} with MCP\", or discusses MCP server types (SSE, stdio, HTTP, WebSocket). Provides comprehensive guidance for integrating Model Context Protocol servers into Claude Code plugins for external tool and service integration. (plugin:plugin-dev@claude-plugins-official)"
+    },
+    {
+      "name": "/Plugin Settings",
+      "description": "This skill should be used when the user asks about \"plugin settings\", \"store plugin configuration\", \"user-configurable plugin\", \".local.md files\", \"plugin state files\", \"read YAML frontmatter\", \"per-project plugin settings\", or wants to make plugin behavior configurable. Documents the .claude/plugin-name.local.md pattern for storing plugin-specific configuration with YAML frontmatter and markdown content. (plugin:plugin-dev@claude-plugins-official)"
+    },
+    {
+      "name": "/Plugin Structure",
+      "description": "This skill should be used when the user asks to \"create a plugin\", \"scaffold a plugin\", \"understand plugin structure\", \"organize plugin components\", \"set up plugin.json\", \"use ${CLAUDE_PLUGIN_ROOT}\", \"add commands/agents/skills/hooks\", \"configure auto-discovery\", or needs guidance on plugin directory layout, manifest configuration, component organization, file naming conventions, or Claude Code plugin architecture best practices. (plugin:plugin-dev@claude-plugins-official)"
+    },
+    {
+      "name": "/Skill Development",
+      "description": "This skill should be used when the user wants to \"create a skill\", \"add a skill to plugin\", \"write a new skill\", \"improve skill description\", \"organize skill content\", or needs guidance on skill structure, progressive disclosure, or skill development best practices for Claude Code plugins. (plugin:plugin-dev@claude-plugins-official)"
+    },
+    {
+      "name": "/compact",
+      "description": "Clear conversation history but keep a summary in context. Optional: /compact [instructions for summarization]",
+      "argumentHint": "<optional custom summarization instructions>"
+    },
+    {
+      "name": "/context",
+      "description": "Show current context usage"
+    },
+    {
+      "name": "/cost",
+      "description": "Show the total cost and duration of the current session"
+    },
+    {
+      "name": "/init",
+      "description": "Initialize a new CLAUDE.md file with codebase documentation"
+    },
+    {
+      "name": "/pr-comments",
+      "description": "Get comments from a GitHub pull request"
+    },
+    {
+      "name": "/release-notes",
+      "description": "View release notes"
+    },
+    {
+      "name": "/review",
+      "description": "Review a pull request"
+    },
+    {
+      "name": "/security-review",
+      "description": "Complete a security review of the pending changes on the current branch"
+    }
+  ]
 }

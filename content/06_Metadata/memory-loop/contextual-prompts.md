@@ -1,4 +1,4 @@
-<!-- last-generated: 2026-01-03 -->
+<!-- last-generated: 2026-01-05 -->
 
 - "How can you inject more 'fun' and playfulness into your creative projects to keep yourself inspired and engaged?"
 - "What aspects of your work or hobbies could benefit from less seriousness and more vibrant self-expression?"
@@ -25,3 +25,13 @@
 - "Step into a parallel universe where the laws of physics don't apply. What incredible inventions or miraculous abilities would you have?"
 - "Write a short story about a magical forest that comes alive at night, full of talking animals and glowing fireflies."
 - "Plan an art project using only found objects from around your home. How can you transform everyday items into something whimsical and unexpected?"
+- "Take a leisurely walk and notice 5 things you've never seen before, even in your own neighborhood."
+- "Gather some ordinary objects and see how many different ways you can use them - get as creative as possible!"
+- "Imagine you woke up in a completely different world. What does it look like? Who would you meet?"
+- "Spend an afternoon experimenting with a new artistic medium, whether it's painting, dancing, or even just doodling."
+- "Go on an unplanned adventure - get lost on purpose, try a new restaurant, or explore a part of town you've never visited."
+- "What personal rules or practices have you developed to guide your work or creative process? How do they differ from 'best practices' or universal guidelines?"
+- "How can you strike the right balance between personalization and standardization when configuring an AI assistant to be a true 'partner' in your workflow?"
+- "Reflecting on your existing habits and methods, what unwritten 'rules' or patterns have emerged that uniquely define your approach? How might you document these for others to learn from?"
+- "When does a personal preference or workflow quirk become a valuable insight that could benefit a wider community? How can you identify the differentiating factors that make certain rules or practices 'yours' versus 'ours'?"
+- "Imagine you were tasked with building an AI assistant from the ground up to be a true extension of your own way of working. What 'personal rules' would you enshrine in its core functionality, and why?"
