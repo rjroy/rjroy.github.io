@@ -71,4 +71,4 @@ Pushes to `master` trigger automatic deployment via GitHub Actions. The workflow
   - Projects: `content/01_Projects/`
   - Areas: `content/02_Areas/`
   - Resources: `content/03_Resources/`
-  - Archives: `content/04_Archives/`
+  - Archive: `content/04_Archive/`
