@@ -6,6 +6,12 @@
   "contentRoot": "content",
   "inboxPath": "00_Inbox",
   "metadataPath": "06_Metadata/memory-loop",
+  "badges": [
+    {
+      "text": "public",
+      "color": "red"
+    }
+  ],
   "slashCommands": [
     {
       "name": "/weekly-synthesis",
