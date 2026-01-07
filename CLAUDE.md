@@ -49,6 +49,25 @@ Pushes to `master` trigger automatic deployment via GitHub Actions. The workflow
 - **"goals"** → `content/06_Metadata/memory-loop/goals.md`
 - **"context"** or **"prompts"** → `content/06_Metadata/memory-loop/contextual-prompts.md`
 
+## Creating Projects and Areas
+
+**Project vs Area:**
+- **Project**: Something that can be completed. Has an end date or represents work-in-progress toward a specific outcome (e.g., an application that hasn't been built yet like `Guild-Hall`).
+- **Area**: An ongoing responsibility. In this vault, typically an application that has reached MVP, is functional, and is now in maintenance mode.
+
+When a note should become a project or area, create the proper folder structure:
+
+1. **Folder name**: Use Title Case with hyphens replacing spaces
+   - Example: "Home Lab Setup" → `Home-Lab-Setup/`
+2. **Main note**: Create an `index.md` inside the folder
+3. **Location**: Place in `content/01_Projects/` or `content/02_Areas/`
+
+**Examples:**
+- New project "Memory Loop" → `content/01_Projects/Memory-Loop/index.md`
+- New area "Board Gaming" → `content/02_Areas/Board-Gaming/index.md`
+
+Related notes for that project/area go as siblings to `index.md` within the same folder.
+
 ## Content Conventions
 
 - Use Obsidian wiki-link syntax: `[[Note Name]]`
