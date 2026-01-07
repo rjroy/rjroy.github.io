@@ -1,4 +1,4 @@
-<!-- last-generated: 2026-01-05 -->
+<!-- last-generated: 2026-01-07 -->
 
 - "How can you inject more 'fun' and playfulness into your creative projects to keep yourself inspired and engaged?"
 - "What aspects of your work or hobbies could benefit from less seriousness and more vibrant self-expression?"
@@ -35,3 +35,8 @@
 - "Reflecting on your existing habits and methods, what unwritten 'rules' or patterns have emerged that uniquely define your approach? How might you document these for others to learn from?"
 - "When does a personal preference or workflow quirk become a valuable insight that could benefit a wider community? How can you identify the differentiating factors that make certain rules or practices 'yours' versus 'ours'?"
 - "Imagine you were tasked with building an AI assistant from the ground up to be a true extension of your own way of working. What 'personal rules' would you enshrine in its core functionality, and why?"
+- "How can you apply the lessons of resilience and adaptability you've observed in nature to your own life and goals?"
+- "What untapped potential or hidden talents might you discover if you approached your daily routine with a more curious, playful mindset?"
+- "Reflect on the balance between productivity and self-care in your life. What small steps could you take to nurture your well-being alongside your ambitions?"
+- "Imagine the perspective-shifting insights you might gain by spending a day in quiet observation of the world around you. What new patterns or relationships might reveal themselves?"
+- "Consider the role of community in your life. Who are the people or groups that uplift and inspire you? How can you cultivate more of those nourishing connections?"

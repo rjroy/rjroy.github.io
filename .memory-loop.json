@@ -1,4 +1,8 @@
 {
+  "title": "Ron's Broadcast Cache",
+  "subtitle": "Publicly Shared Memory Loop",
+  "quotesPerWeek": 2,
+  "maxPoolSize": 25,
   "contentRoot": "content",
   "inboxPath": "00_Inbox",
   "metadataPath": "06_Metadata/memory-loop",
