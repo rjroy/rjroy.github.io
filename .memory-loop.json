@@ -8,43 +8,16 @@
       "description": "Weekly Synthesis (project)"
     },
     {
-      "name": "/README",
-      "description": "Claude Code Commands (project)"
-    },
-    {
-      "name": "/weekly-debrief",
-      "description": "Weekly Debrief (project)",
-      "argumentHint": "[optional: last-week|specific week start date in YYYY-MM-DD format]"
-    },
-    {
       "name": "/thinking-partner",
       "description": "Thinking Partner (project)"
-    },
-    {
-      "name": "/daily-debrief",
-      "description": "Daily Debrief (project)",
-      "argumentHint": "[optional: yesterday|specific date in YYYY-MM-DD format]"
     },
     {
       "name": "/research-assistant",
       "description": "Research Assistant (project)"
     },
     {
-      "name": "/monthly-summary",
-      "description": "Generate a monthly summary and open tasks report from periodic notes. (project)",
-      "argumentHint": "(optional) [YEAR] [MONTH]"
-    },
-    {
-      "name": "/download-attachment",
-      "description": "download-attachment (project)"
-    },
-    {
       "name": "/pull-request",
       "description": "Pull Request Command (project)"
-    },
-    {
-      "name": "/inbox-processor",
-      "description": "Inbox Processor (project)"
     },
     {
       "name": "/de-ai-ify",
@@ -57,14 +30,41 @@
       "argumentHint": "[command details or description]"
     },
     {
+      "name": "/add-frontmatter",
+      "description": " (project)",
+      "argumentHint": "[file or folder path]"
+    },
+    {
+      "name": "/download-attachment",
+      "description": "download-attachment (project)"
+    },
+    {
+      "name": "/inbox-processor",
+      "description": "Inbox Processor (project)"
+    },
+    {
       "name": "/daily-review",
       "description": "Daily Review (project)",
       "argumentHint": "[optional: yesterday|specific date in YYYY-MM-DD format]"
     },
     {
-      "name": "/add-frontmatter",
-      "description": " (project)",
-      "argumentHint": "[file or folder path]"
+      "name": "/daily-debrief",
+      "description": "Daily Debrief (project)",
+      "argumentHint": "[optional: yesterday|specific date in YYYY-MM-DD format]"
+    },
+    {
+      "name": "/monthly-summary",
+      "description": "Generate a monthly summary and open tasks report from periodic notes. (project)",
+      "argumentHint": "(optional) [YEAR] [MONTH]"
+    },
+    {
+      "name": "/weekly-debrief",
+      "description": "Weekly Debrief (project)",
+      "argumentHint": "[optional: last-week|specific week start date in YYYY-MM-DD format]"
+    },
+    {
+      "name": "/README",
+      "description": "Claude Code Commands (project)"
     },
     {
       "name": "/spiral-grove:review",
