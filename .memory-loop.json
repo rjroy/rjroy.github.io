@@ -14,12 +14,21 @@
   ],
   "slashCommands": [
     {
+      "name": "/README",
+      "description": "Claude Code Commands (project)"
+    },
+    {
       "name": "/weekly-synthesis",
       "description": "Weekly Synthesis (project)"
     },
     {
       "name": "/thinking-partner",
       "description": "Thinking Partner (project)"
+    },
+    {
+      "name": "/weekly-debrief",
+      "description": "Weekly Debrief (project)",
+      "argumentHint": "[optional: last-week|specific week start date in YYYY-MM-DD format]"
     },
     {
       "name": "/research-assistant",
@@ -30,9 +39,19 @@
       "description": "Pull Request Command (project)"
     },
     {
+      "name": "/daily-debrief",
+      "description": "Daily Debrief (project)",
+      "argumentHint": "[optional: yesterday|specific date in YYYY-MM-DD format]"
+    },
+    {
       "name": "/de-ai-ify",
       "description": "Remove AI-generated jargon and restore human voice to text (project)",
       "argumentHint": "[file_path]"
+    },
+    {
+      "name": "/monthly-summary",
+      "description": "Generate a monthly summary and open tasks report from periodic notes. (project)",
+      "argumentHint": "(optional) [YEAR] [MONTH]"
     },
     {
       "name": "/create-command",
@@ -56,25 +75,6 @@
       "name": "/daily-review",
       "description": "Daily Review (project)",
       "argumentHint": "[optional: yesterday|specific date in YYYY-MM-DD format]"
-    },
-    {
-      "name": "/daily-debrief",
-      "description": "Daily Debrief (project)",
-      "argumentHint": "[optional: yesterday|specific date in YYYY-MM-DD format]"
-    },
-    {
-      "name": "/monthly-summary",
-      "description": "Generate a monthly summary and open tasks report from periodic notes. (project)",
-      "argumentHint": "(optional) [YEAR] [MONTH]"
-    },
-    {
-      "name": "/weekly-debrief",
-      "description": "Weekly Debrief (project)",
-      "argumentHint": "[optional: last-week|specific week start date in YYYY-MM-DD format]"
-    },
-    {
-      "name": "/README",
-      "description": "Claude Code Commands (project)"
     },
     {
       "name": "/spiral-grove:review",
@@ -162,6 +162,11 @@
       "argumentHint": "[]"
     },
     {
+      "name": "/compass-rose:reprioritize",
+      "description": "Codebase-aware priority recommendations with batch update capability (plugin:compass-rose@vibe-garden)",
+      "argumentHint": "[]"
+    },
+    {
       "name": "/compass-rose:backlog",
       "description": "Review backlog items and analyze quality to recommend best items to work on (plugin:compass-rose@vibe-garden)",
       "argumentHint": "[]"
@@ -169,11 +174,6 @@
     {
       "name": "/compass-rose:next-item",
       "description": "Recommend the highest-priority ready item with rationale (plugin:compass-rose@vibe-garden)",
-      "argumentHint": "[]"
-    },
-    {
-      "name": "/compass-rose:reprioritize",
-      "description": "Codebase-aware priority recommendations with batch update capability (plugin:compass-rose@vibe-garden)",
       "argumentHint": "[]"
     },
     {
@@ -199,6 +199,10 @@
       "name": "/plugin-dev:create-plugin",
       "description": "Guided end-to-end plugin creation workflow with component design, implementation, and validation (plugin:plugin-dev@claude-plugins-official)",
       "argumentHint": "Optional plugin description"
+    },
+    {
+      "name": "/d20-system:init",
+      "description": "Initialize d20 system in the current adventure directory (plugin:d20-system@adventure-engine-corvran)"
     },
     {
       "name": "/sdd-format-docs",
@@ -287,6 +291,26 @@
     {
       "name": "/Skill Development",
       "description": "This skill should be used when the user wants to \"create a skill\", \"add a skill to plugin\", \"write a new skill\", \"improve skill description\", \"organize skill content\", or needs guidance on skill structure, progressive disclosure, or skill development best practices for Claude Code plugins. (plugin:plugin-dev@claude-plugins-official)"
+    },
+    {
+      "name": "/d20-combat",
+      "description": "This skill should be used when the GM needs to handle combat situations, including starting combat, rolling initiative, resolving attack rolls, managing combat encounters, rolling damage, tracking hit points, applying conditions, or running d20-style tactical combat. Provides combat flow, turn structure, attack resolution, and condition references. (plugin:d20-system@adventure-engine-corvran)"
+    },
+    {
+      "name": "/d20-magic",
+      "description": "This skill should be used when the GM needs to handle spellcasting situations, including resolving spell effects, managing spell slots, calculating spell save DCs, handling concentration, resolving spell attacks, determining spellcasting abilities, handling cantrips, or processing ritual casting. Provides spellcasting rules, formulas, and references for running magical gameplay. (plugin:d20-system@adventure-engine-corvran)"
+    },
+    {
+      "name": "/d20-monsters",
+      "description": "This skill should be used when the GM needs to create NPCs or monsters, generate stat blocks, determine enemy stats, design creatures, or generate adversaries for d20-style RPG encounters. Provides SRD 5.2 stat block format and NPC templates. (plugin:d20-system@adventure-engine-corvran)"
+    },
+    {
+      "name": "/d20-players",
+      "description": "This skill should be used when the GM needs to help players create characters, roll for stats, assign ability scores, handle leveling up, increase hit points, choose classes, pick proficiencies, or manage player character creation, advancement, or character sheet management. Provides templates and rules for SRD 5.2 character creation and leveling. (plugin:d20-system@adventure-engine-corvran)"
+    },
+    {
+      "name": "/d20-rules",
+      "description": "This skill should be used when the GM needs to look up rules, reference what the SRD says, find official rules, get exact wording, check RAW (rules as written), verify rules references, or understand how mechanics work in d20 5E. Provides authoritative rule clarification from the System Reference Document 5.2. (plugin:d20-system@adventure-engine-corvran)"
     },
     {
       "name": "/compact",
