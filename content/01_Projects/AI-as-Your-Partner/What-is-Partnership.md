@@ -6,7 +6,6 @@ tags:
   - claude-code
   - methodology
   - philosophy
-draft: true
 ---
 
 # What is Partnership?

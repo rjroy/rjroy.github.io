@@ -5,7 +5,6 @@ tags:
   - ai
   - research
   - philosophy
-draft: true
 ---
 
 # The philosophy of AI partnership: frameworks, critiques, and emerging practice

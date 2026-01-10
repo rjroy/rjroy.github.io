@@ -5,7 +5,6 @@ tags:
   - ai
   - research
   - philosophy
-draft: true
 ---
 
 # AI Collaboration as Partnership vs. Tool Use
