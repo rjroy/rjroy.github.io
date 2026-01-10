@@ -37,8 +37,9 @@ How to structure AI instructions, where to put them, what to include.
 What makes collaboration with AI feel like partnership rather than delegation.
 
 - [[What-is-Partnership|What is Partnership?]] — Working notes on the philosophy underneath the rules
-- [[Research-AI-Partnership-Perspectives|Research: AI Partnership (Claude)]] — Academic/philosophical synthesis
-- [[Research-AI-Partnership-ChatGPT|Research: AI Partnership (ChatGPT)]] — Practitioner-focused synthesis
+- [[research/Research-AI-Partnership-Perspectives|Research: AI Partnership (Claude)]] — Academic/philosophical synthesis
+- [[research/Research-AI-Partnership-ChatGPT|Research: AI Partnership (ChatGPT)]] — Practitioner-focused synthesis
+- [[research/Research-Human-Partnership-Patterns|Research: Human Partnership Patterns]] — Cross-domain patterns from marriage, business, creative, and high-stakes partnerships
 
 **Key insight:** With AI, you're not just defining the partnership contract. You're defining the partner. Rules files don't negotiate with an existing entity; they shape what entity shows up.
 
