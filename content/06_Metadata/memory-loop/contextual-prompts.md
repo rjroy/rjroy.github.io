@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-01-09 -->
+<!-- last-generated: 2026-01-10 -->
 
-- "Imagine you're a curious alien visiting Earth for the first time. What would you notice and find most intriguing about human life?"
-- "If you could explore any dream world, what fantastical landscapes and characters would you encounter?"
-- "Step into a parallel universe where the laws of physics don't apply. What incredible inventions or miraculous abilities would you have?"
-- "Write a short story about a magical forest that comes alive at night, full of talking animals and glowing fireflies."
-- "Plan an art project using only found objects from around your home. How can you transform everyday items into something whimsical and unexpected?"
 - "Take a leisurely walk and notice 5 things you've never seen before, even in your own neighborhood."
 - "Gather some ordinary objects and see how many different ways you can use them - get as creative as possible!"
 - "Imagine you woke up in a completely different world. What does it look like? Who would you meet?"
@@ -25,3 +20,8 @@
 - "How might you use metaphor and symbolism to imbue your digital experiences with a deeper sense of purpose and meaning?"
 - "In what ways can you use color, imagery, and other design elements to create a sense of 'home' in your digital workspace, without introducing distractions?"
 - "How can you strike a balance between professionalism and playfulness in the way you present yourself and your work to the world?"
+- "Imagine you just woke up on a different planet. What does it look like, and what would you do first?"
+- "Take a walk outside and observe the world as if you were seeing it for the very first time. What new details do you notice?"
+- "Create a story about a unique animal that has never been discovered before. What are its abilities and where does it live?"
+- "Build a fort or hideout in your living room using only household items. What kind of adventures can you have there?"
+- "Go on a sensory scavenger hunt - find 5 things that feel soft, 3 things that smell wonderful, and 2 things that make a surprising sound."
