@@ -12,97 +12,58 @@ tags:
 
 ## Project Overview
 **Start Date**: 2025-12-31
-**Target Completion**: When the philosophy is documented well enough to share as an Area
-**Status**: Active
+**Completion Date**: 2026-01-09
+**Status**: Complete
+
+## Summary
+
+This project explored the distinction between universal AI rules (best practices everyone should follow) and personal AI rules (configurations that make AI work for *you*). The central question: is "personal" just "universal rules I haven't discovered yet," or is there meaningful value in personalization?
+
+**Primary Output**: [[02_Areas/AI-as-Your-Partner/what-makes-good-ai-rules-files]]
+
+## Key Findings
+
+### The Spectrum Model
+
+Rules aren't binary. They exist on a spectrum from universal to personal:
+
+- **Universal (Defensive)**: Prevent harm. Don't commit secrets, use .gitignore, run linters. Everyone should do these.
+- **Personal (Generative)**: Build capability. Research caching, sub-agent review, specific tool choices. These reflect your workflow and values.
+- **Middle Ground**: Values disguised as practices. "Write tests" is universal as a value, personal as a commitment level and philosophy.
+
+### Three Categories of Guidance
+
+1. **Mechanics**: How-to knowledge that doesn't vary by person. Can be shared wholesale.
+2. **Quality Standards**: Your definition of done. Partly universal, partly personal.
+3. **Verification**: How you prove work is correct. Most commonly skipped, most important for AI.
+
+### Specificity Signals Personality
+
+Vague rules are neither universal nor personal. They're just weak. The more specific your rules, the more they encode actual judgment. "Write good tests" tells AI nothing. "Unit tests must not require external resources; mock everything including time" changes behavior.
+
+### Format Converges, Content Remains Personal
+
+AGENTS.md is emerging as a cross-tool standard (60,000+ repositories, 25+ AI tools). The six core areas that matter: commands, testing, project structure, code style, git workflow, and boundaries. Everyone needs to document these areas, but *how* you fill them out is personal.
 
 ## Objectives
-- [ ] Articulate the difference between "correct AI behavior" and "AI behavior that fits you"
-- [ ] Document the principles behind effective personal rules files
-- [ ] Create a shareable framework others can use to develop their own approach
 
-## Context
+- [x] Articulate the difference between "correct AI behavior" and "AI behavior that fits you"
+- [x] Document the principles behind effective personal rules files
+- [x] Create a shareable framework others can use to develop their own approach
 
-Everyone talks about making AI "do the right thing": follow best practices, avoid hallucinations, produce correct code. But there's a different question worth asking:
+## Research Summary
 
-**How do you make AI do the right thing *for you*?**
+The project involved three research phases:
 
-Rules files (CLAUDE.md, .cursorrules, etc.) aren't just about technical correctness. They encode *preferences*, *workflows*, *values*. The question is whether these are genuinely personal (reflecting how *you* think and work) or whether they should converge on universal patterns everyone uses.
+1. **Rules Audit**: Classified existing rules files as universal, personal, or middle-ground. Discovered the defensive/generative pattern.
 
-This project starts from a hypothesis: **the most effective AI configurations are deeply personal**, and that personalization is what transforms AI from a generic tool into something that feels like a collaborator.
+2. **Community Research**: Examined AGENTS.md standard, Cursor rules, Aider conventions. Found format convergence with content personalization.
 
-## The Central Question
-
-Is there a meaningful distinction between:
-- Universal rules (everyone should use these)
-- Personal rules (these work for *me*)
-
-Or is "personal" just "universal rules I haven't discovered yet"?
-
-## Initial Evidence
-
-I have a working set of rules in `~/.dotfiles/config/claude/rules/`:
-- Workflow rules (research caching, testing, git, PRs)
-- Language setup rules (Python, TypeScript)
-- Development basics
-
-These feel personal, but are they? Would anyone benefit from the same patterns?
-
-## Success Criteria
-
-This project is complete when:
-1. I can articulate *why* certain rules feel personal vs. universal
-2. I have documented patterns that help others build their own rules (not copy mine)
-3. The framework is clear enough to graduate to an Area for ongoing refinement
-
-## Open Questions
-
-- What makes a rule "personal" vs. "best practice"?
-- Do personal rules eventually converge toward best practices as you learn?
-- How do you discover what's personal about your workflow?
-- Is "AI as partner" a meaningful metaphor, or just anthropomorphization?
-- What's the cost of over-personalization? Under-personalization?
+3. **Workflow Analysis**: Articulated why the 5-step workflow (Research, Plan, Execute, Test, Review) exists. Each step creates checkpoints for human input and focuses AI toward reliable outcomes.
 
 ## Key Resources
 
-- [[02_Areas/index|Areas]] - Where this graduates when complete
-- My existing rules: `~/.dotfiles/config/claude/rules/`
-- [[01_Projects/AI-as-Your-Partner/initial-audit|Initial Audit]] - Classification of rules as personal vs. universal
-- [[01_Projects/AI-as-Your-Partner/findings-2025-12-31|Session 1 Findings]] - Full analysis from first session
-- [[01_Projects/AI-as-Your-Partner/research/community-patterns-research|Community Patterns Research]] - How others structure AI rules
-- [[01_Projects/AI-as-Your-Partner/the-workflow|The Workflow]] - Why each step in Research → Plan → Execute → Test → Review exists
-
-## Progress Log
-
-### 2025-12-31 - Project Initiated
-- Created project structure
-- Framed the central question: personal vs. universal AI configuration
-- Identified existing rules as initial evidence to examine
-
-### 2025-12-31 - Initial Audit Complete
-- Classified all 7 rules files: [[01_Projects/AI-as-Your-Partner/initial-audit|Initial Audit]]
-- Refined hypothesis: rules exist on a spectrum, not a binary
-- Key insight: universal rules are *defensive* (prevent harm), personal rules are *generative* (build capability)
-- The 5-step workflow is the most personal element: it's a methodology, not a practice
-
-### 2025-12-31 - Community Research Complete
-- Researched AGENTS.md standard, Cursor rules, Aider conventions
-- Key insight: **format is converging (universal), content remains personal**
-- The six core areas: commands, testing, structure, style, git, boundaries
-- Specificity signals personality; vague rules are neither universal nor personal
-- Full findings: [[01_Projects/AI-as-Your-Partner/community-patterns-research|Community Patterns Research]]
-
-### 2025-12-31 - Workflow Deep Dive
-- Articulated *why* each step in the 5-step workflow exists
-- Key insight: each step focuses the AI by creating checkpoints for human input
-- The workflow isn't about AI; it's about good development practice made explicit
-- Full analysis: [[01_Projects/AI-as-Your-Partner/the-workflow|The Workflow]]
-
-## Next Actions
-- [x] Audit my existing rules files for "personal" vs. "universal" characteristics
-- [x] Research how others approach AI configuration (community patterns)
-- [x] Dig into *why* the 5-step workflow feels right → [[01_Projects/AI-as-Your-Partner/the-workflow|The Workflow]]
-- [ ] Identify 2-3 rules that feel distinctly *me* and articulate why
-- [ ] Consider AGENTS.md migration for cross-tool compatibility
-- [ ] Evaluate if my rules are specific enough to be truly personal
-
-Graduates to an Area when the exploration becomes a documented framework.
+- [[02_Areas/AI-as-Your-Partner/what-makes-good-ai-rules-files|What Makes Good AI Rules Files]] - The published article
+- [AGENTS.md Specification](https://agents.md/)
+- [GitHub Blog: Lessons from 2,500+ Repositories](https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/)
+- [awesome-rules Repository](https://github.com/continuedev/awesome-rules)
