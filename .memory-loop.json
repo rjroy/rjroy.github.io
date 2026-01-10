@@ -14,8 +14,40 @@
   ],
   "slashCommands": [
     {
+      "name": "/research-assistant",
+      "description": "Research Assistant (project)"
+    },
+    {
+      "name": "/pull-request",
+      "description": "Pull Request Command (project)"
+    },
+    {
+      "name": "/de-ai-ify",
+      "description": "Remove AI-generated jargon and restore human voice to text (project)",
+      "argumentHint": "[file_path]"
+    },
+    {
+      "name": "/create-command",
+      "description": "Create a new Claude Code slash command (project)",
+      "argumentHint": "[command details or description]"
+    },
+    {
+      "name": "/add-frontmatter",
+      "description": " (project)",
+      "argumentHint": "[file or folder path]"
+    },
+    {
       "name": "/README",
       "description": "Claude Code Commands (project)"
+    },
+    {
+      "name": "/inbox-processor",
+      "description": "Inbox Processor (project)"
+    },
+    {
+      "name": "/daily-review",
+      "description": "Daily Review (project)",
+      "argumentHint": "[optional: yesterday|specific date in YYYY-MM-DD format]"
     },
     {
       "name": "/weekly-synthesis",
@@ -31,12 +63,9 @@
       "argumentHint": "[optional: last-week|specific week start date in YYYY-MM-DD format]"
     },
     {
-      "name": "/research-assistant",
-      "description": "Research Assistant (project)"
-    },
-    {
-      "name": "/pull-request",
-      "description": "Pull Request Command (project)"
+      "name": "/monthly-summary",
+      "description": "Generate a monthly summary and open tasks report from periodic notes. (project)",
+      "argumentHint": "(optional) [YEAR] [MONTH]"
     },
     {
       "name": "/daily-debrief",
@@ -44,37 +73,8 @@
       "argumentHint": "[optional: yesterday|specific date in YYYY-MM-DD format]"
     },
     {
-      "name": "/de-ai-ify",
-      "description": "Remove AI-generated jargon and restore human voice to text (project)",
-      "argumentHint": "[file_path]"
-    },
-    {
-      "name": "/monthly-summary",
-      "description": "Generate a monthly summary and open tasks report from periodic notes. (project)",
-      "argumentHint": "(optional) [YEAR] [MONTH]"
-    },
-    {
-      "name": "/create-command",
-      "description": "Create a new Claude Code slash command (project)",
-      "argumentHint": "[command details or description]"
-    },
-    {
-      "name": "/add-frontmatter",
-      "description": " (project)",
-      "argumentHint": "[file or folder path]"
-    },
-    {
       "name": "/download-attachment",
       "description": "download-attachment (project)"
-    },
-    {
-      "name": "/inbox-processor",
-      "description": "Inbox Processor (project)"
-    },
-    {
-      "name": "/daily-review",
-      "description": "Daily Review (project)",
-      "argumentHint": "[optional: yesterday|specific date in YYYY-MM-DD format]"
     },
     {
       "name": "/spiral-grove:review",
