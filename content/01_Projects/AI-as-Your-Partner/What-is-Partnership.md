@@ -94,6 +94,24 @@ ChatGPT's training toward helpfulness and collaboration shows up in its warmer e
 
 Both reports validate the core threads (trust calibration, context as currency, iteration over specification). The difference is in how much they lean into vs. qualify the partnership metaphor. This itself is useful data: the framing you adopt shapes what you see.
 
+### Reconciling the Frames
+
+The two framings aren't actually in conflict. They describe the same necessity from different angles.
+
+Whether you call it "partnership contract" (ChatGPT's alien colleague) or "interaction parameters" (Claude's functional collaboration), you're doing the same work: making explicit what would otherwise be implicit. With a human partner, you start with shared cultural assumptions, professional norms, maybe shared experiences. The contract fills gaps and handles edge cases. With AI, you're building more of the foundation from scratch.
+
+The difference isn't *whether* you define boundaries; it's *what* you have to define.
+
+**Human partnership:** You assume shared reasoning, then negotiate scope.
+- "We both understand what 'quality code' means; let's agree on who owns which parts."
+
+**AI partnership:** You define reasoning patterns, then the scope follows.
+- "Here's what 'quality code' means in this context, here's how to verify it, here's when to ask me."
+
+Workflow rules aren't just scope. They teach the AI *how to think about the work*, not just *what work to do*. "Research before acting" isn't a task boundary; it's a reasoning pattern. "Never skip tests" isn't scope; it's a value.
+
+**The real insight:** With AI, you're not just defining the partnership contract. You're defining the partner. The rules files aren't negotiating with an existing entity; they're shaping what entity shows up.
+
 ---
 
 *Working notes from a conversation exploring what partnership actually means with AI tools.*

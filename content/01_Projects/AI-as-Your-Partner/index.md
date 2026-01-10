@@ -1,6 +1,6 @@
 ---
 title: AI as Your Partner
-description: Exploring what makes good AI rules files, not universal best practices, but personal configurations that make AI work for you
+description: Exploring both the mechanics of AI rules files and the philosophy of what partnership with AI actually means
 tags:
   - project
   - ai
@@ -11,59 +11,45 @@ tags:
 # AI as Your Partner
 
 ## Project Overview
-**Start Date**: 2025-12-31
-**Completion Date**: 2026-01-09
-**Status**: Complete
 
-## Summary
+**Status**: Active
 
-This project explored the distinction between universal AI rules (best practices everyone should follow) and personal AI rules (configurations that make AI work for *you*). The central question: is "personal" just "universal rules I haven't discovered yet," or is there meaningful value in personalization?
+This project explores two related questions about working with AI tools:
 
-**Primary Output**: [[02_Areas/AI-as-Your-Partner/what-makes-good-ai-rules-files]]
+1. **How do you configure AI to work well?** (mechanics)
+2. **What does it mean to partner with AI?** (philosophy)
 
-## Key Findings
+The first question led to a published article on rules files. The second emerged from trying to understand *why* those rules work.
 
-### The Spectrum Model
+## Two Threads
 
-Rules aren't binary. They exist on a spectrum from universal to personal:
+### The Mechanics: What Makes Good Rules Files
 
-- **Universal (Defensive)**: Prevent harm. Don't commit secrets, use .gitignore, run linters. Everyone should do these.
-- **Personal (Generative)**: Build capability. Research caching, sub-agent review, specific tool choices. These reflect your workflow and values.
-- **Middle Ground**: Values disguised as practices. "Write tests" is universal as a value, personal as a commitment level and philosophy.
+How to structure AI instructions, where to put them, what to include.
 
-### Three Categories of Guidance
+- [[ai-rules-research-summary|Rules Research Summary]] — The original research on universal vs. personal rules, the spectrum model, format convergence
+- [[02_Areas/AI-as-Your-Partner/what-makes-good-ai-rules-files|What Makes Good AI Rules Files]] — The published article
 
-1. **Mechanics**: How-to knowledge that doesn't vary by person. Can be shared wholesale.
-2. **Quality Standards**: Your definition of done. Partly universal, partly personal.
-3. **Verification**: How you prove work is correct. Most commonly skipped, most important for AI.
+**Key insight:** Format converges (everyone needs the same sections), but content remains personal (how you fill them out reflects your values and workflow).
 
-### Specificity Signals Personality
+### The Philosophy: What is Partnership
 
-Vague rules are neither universal nor personal. They're just weak. The more specific your rules, the more they encode actual judgment. "Write good tests" tells AI nothing. "Unit tests must not require external resources; mock everything including time" changes behavior.
+What makes collaboration with AI feel like partnership rather than delegation.
 
-### Format Converges, Content Remains Personal
+- [[What-is-Partnership|What is Partnership?]] — Working notes on the philosophy underneath the rules
+- [[Research-AI-Partnership-Perspectives|Research: AI Partnership (Claude)]] — Academic/philosophical synthesis
+- [[Research-AI-Partnership-ChatGPT|Research: AI Partnership (ChatGPT)]] — Practitioner-focused synthesis
 
-AGENTS.md is emerging as a cross-tool standard (60,000+ repositories, 25+ AI tools). The six core areas that matter: commands, testing, project structure, code style, git workflow, and boundaries. Everyone needs to document these areas, but *how* you fill them out is personal.
+**Key insight:** With AI, you're not just defining the partnership contract. You're defining the partner. Rules files don't negotiate with an existing entity; they shape what entity shows up.
 
-## Objectives
+## The Connection
 
-- [x] Articulate the difference between "correct AI behavior" and "AI behavior that fits you"
-- [x] Document the principles behind effective personal rules files
-- [x] Create a shareable framework others can use to develop their own approach
+The mechanics article answers "how do I write good rules?" The philosophy work answers "why do those rules create something that feels like partnership?"
 
-## Research Summary
-
-The project involved three research phases:
-
-1. **Rules Audit**: Classified existing rules files as universal, personal, or middle-ground. Discovered the defensive/generative pattern.
-
-2. **Community Research**: Examined AGENTS.md standard, Cursor rules, Aider conventions. Found format convergence with content personalization.
-
-3. **Workflow Analysis**: Articulated why the 5-step workflow (Research, Plan, Execute, Test, Review) exists. Each step creates checkpoints for human input and focuses AI toward reliable outcomes.
+The answer: partnership emerges when you teach the AI *how to think about work*, not just *what work to do*. "Research before acting" isn't a task boundary; it's a reasoning pattern. "Never skip tests" isn't scope; it's a value. The rules are training, not just configuration.
 
 ## Key Resources
 
-- [[02_Areas/AI-as-Your-Partner/what-makes-good-ai-rules-files|What Makes Good AI Rules Files]] - The published article
 - [AGENTS.md Specification](https://agents.md/)
 - [GitHub Blog: Lessons from 2,500+ Repositories](https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/)
 - [awesome-rules Repository](https://github.com/continuedev/awesome-rules)
