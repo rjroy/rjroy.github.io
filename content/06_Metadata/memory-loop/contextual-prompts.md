@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-01-10 -->
+<!-- last-generated: 2026-01-11 -->
 
-- "Take a leisurely walk and notice 5 things you've never seen before, even in your own neighborhood."
-- "Gather some ordinary objects and see how many different ways you can use them - get as creative as possible!"
-- "Imagine you woke up in a completely different world. What does it look like? Who would you meet?"
-- "Spend an afternoon experimenting with a new artistic medium, whether it's painting, dancing, or even just doodling."
-- "Go on an unplanned adventure - get lost on purpose, try a new restaurant, or explore a part of town you've never visited."
 - "What personal rules or practices have you developed to guide your work or creative process? How do they differ from 'best practices' or universal guidelines?"
 - "How can you strike the right balance between personalization and standardization when configuring an AI assistant to be a true 'partner' in your workflow?"
 - "Reflecting on your existing habits and methods, what unwritten 'rules' or patterns have emerged that uniquely define your approach? How might you document these for others to learn from?"
@@ -25,3 +20,8 @@
 - "Create a story about a unique animal that has never been discovered before. What are its abilities and where does it live?"
 - "Build a fort or hideout in your living room using only household items. What kind of adventures can you have there?"
 - "Go on a sensory scavenger hunt - find 5 things that feel soft, 3 things that smell wonderful, and 2 things that make a surprising sound."
+- "Take a new route home today and notice the details you usually miss."
+- "Grab a sketchpad and draw the first thing that catches your eye, without planning or judgment."
+- "Close your eyes and imagine an entirely new world - what does it look like, sound like, feel like?"
+- "Go outside and observe the patterns in nature for 10 minutes. How can you incorporate those into a creative project?"
+- "Write a short story from the perspective of your favorite childhood toy."

@@ -14,6 +14,51 @@
   ],
   "slashCommands": [
     {
+      "name": "/Omarchy",
+      "description": "REQUIRED for ANY changes to Linux desktop, window manager, or system config. Use when editing ~/.config/hypr/, ~/.config/waybar/, ~/.config/walker/, ~/.config/alacritty/, ~/.config/kitty/, ~/.config/ghostty/, ~/.config/mako/, or ~/.config/omarchy/. Triggers: Hyprland, window rules, animations, keybindings, monitors, gaps, borders, blur, opacity, waybar, walker, terminal config, themes, wallpaper, night light, idle, lock screen, screenshots, layer rules, workspace settings, display config, or any omarchy-* commands.\n (user)"
+    },
+    {
+      "name": "/download-attachment",
+      "description": "download-attachment (project)"
+    },
+    {
+      "name": "/de-ai-ify",
+      "description": "Remove AI-generated jargon and restore human voice to text (project)",
+      "argumentHint": [
+        "file_path"
+      ]
+    },
+    {
+      "name": "/daily-review",
+      "description": "Daily Review (project)",
+      "argumentHint": [
+        {
+          "optional": "yesterday|specific date in YYYY-MM-DD format"
+        }
+      ]
+    },
+    {
+      "name": "/review-goals",
+      "description": "Review progress toward goals and update the goals file (project)"
+    },
+    {
+      "name": "/weekly-synthesis",
+      "description": "Weekly Synthesis (project)"
+    },
+    {
+      "name": "/weekly-debrief",
+      "description": "Weekly Debrief (project)",
+      "argumentHint": [
+        {
+          "optional": "last-week|specific week start date in YYYY-MM-DD format"
+        }
+      ]
+    },
+    {
+      "name": "/thinking-partner",
+      "description": "Thinking Partner (project)"
+    },
+    {
       "name": "/research-assistant",
       "description": "Research Assistant (project)"
     },
@@ -22,99 +67,104 @@
       "description": "Pull Request Command (project)"
     },
     {
-      "name": "/de-ai-ify",
-      "description": "Remove AI-generated jargon and restore human voice to text (project)",
-      "argumentHint": "[file_path]"
-    },
-    {
-      "name": "/create-command",
-      "description": "Create a new Claude Code slash command (project)",
-      "argumentHint": "[command details or description]"
-    },
-    {
-      "name": "/add-frontmatter",
-      "description": " (project)",
-      "argumentHint": "[file or folder path]"
-    },
-    {
-      "name": "/README",
-      "description": "Claude Code Commands (project)"
+      "name": "/monthly-summary",
+      "description": "Generate a monthly summary and open tasks report from periodic notes. (project)",
+      "argumentHint": "(optional) [YEAR] [MONTH]"
     },
     {
       "name": "/inbox-processor",
       "description": "Inbox Processor (project)"
     },
     {
-      "name": "/daily-review",
-      "description": "Daily Review (project)",
-      "argumentHint": "[optional: yesterday|specific date in YYYY-MM-DD format]"
+      "name": "/add-frontmatter",
+      "description": "Add or update YAML frontmatter properties to enhance note organization (project)",
+      "argumentHint": [
+        "file or folder path"
+      ]
     },
     {
-      "name": "/weekly-synthesis",
-      "description": "Weekly Synthesis (project)"
+      "name": "/README",
+      "description": "Claude Code Commands (project)"
     },
     {
-      "name": "/thinking-partner",
-      "description": "Thinking Partner (project)"
-    },
-    {
-      "name": "/weekly-debrief",
-      "description": "Weekly Debrief (project)",
-      "argumentHint": "[optional: last-week|specific week start date in YYYY-MM-DD format]"
-    },
-    {
-      "name": "/monthly-summary",
-      "description": "Generate a monthly summary and open tasks report from periodic notes. (project)",
-      "argumentHint": "(optional) [YEAR] [MONTH]"
+      "name": "/create-command",
+      "description": "Create a new Claude Code slash command (project)",
+      "argumentHint": [
+        "command details or description"
+      ]
     },
     {
       "name": "/daily-debrief",
       "description": "Daily Debrief (project)",
-      "argumentHint": "[optional: yesterday|specific date in YYYY-MM-DD format]"
-    },
-    {
-      "name": "/download-attachment",
-      "description": "download-attachment (project)"
+      "argumentHint": [
+        {
+          "optional": "yesterday|specific date in YYYY-MM-DD format"
+        }
+      ]
     },
     {
       "name": "/spiral-grove:review",
       "description": "Validate phase documents before moving to next phase (plugin:spiral-grove@vibe-garden)",
-      "argumentHint": "[spec|plan|tasks|progress]"
+      "argumentHint": [
+        "spec|plan|tasks|progress"
+      ]
     },
     {
       "name": "/spiral-grove:synthesize-docs",
       "description": "Generate operational CLAUDE.md documentation from implementation (plugin:spiral-grove@vibe-garden)",
-      "argumentHint": "[scope]"
+      "argumentHint": [
+        "scope"
+      ]
     },
     {
       "name": "/spiral-grove:synthesize-specs",
       "description": "Reverse-engineer specifications from implementation across the codebase (plugin:spiral-grove@vibe-garden)",
-      "argumentHint": "[scope]"
+      "argumentHint": [
+        "scope"
+      ]
     },
     {
       "name": "/spiral-grove:plan-generation",
       "description": "Generate SDD plan documentation for a feature based on an existing spec (plugin:spiral-grove@vibe-garden)",
-      "argumentHint": "[optional: spec context]"
+      "argumentHint": [
+        {
+          "optional": "spec context"
+        }
+      ]
     },
     {
       "name": "/spiral-grove:spec-writing",
       "description": "Generate SDD spec documentation for a feature (plugin:spiral-grove@vibe-garden)",
-      "argumentHint": "[optional: feature brief or parent spec context]"
+      "argumentHint": [
+        {
+          "optional": "feature brief or parent spec context"
+        }
+      ]
     },
     {
       "name": "/spiral-grove:task-breakdown",
       "description": "Generate SDD tasks documentation for a feature based on an existing plan (plugin:spiral-grove@vibe-garden)",
-      "argumentHint": "[optional: plan context]"
+      "argumentHint": [
+        {
+          "optional": "plan context"
+        }
+      ]
     },
     {
       "name": "/spiral-grove:implementation",
       "description": "Execute tasks from breakdown, validate against spec, track progress (plugin:spiral-grove@vibe-garden)",
-      "argumentHint": "[optional: tasks context]"
+      "argumentHint": [
+        {
+          "optional": "tasks context"
+        }
+      ]
     },
     {
       "name": "/spiral-grove:validate-completeness",
       "description": "Skeptically verify implementation completeness against spec requirements (plugin:spiral-grove@vibe-garden)",
-      "argumentHint": "[feature-name | spec-path]"
+      "argumentHint": [
+        "feature-name | spec-path"
+      ]
     },
     {
       "name": "/judgment-engine-virelan:diagnostic",
@@ -159,32 +209,36 @@
     {
       "name": "/compass-rose:add-item",
       "description": "Create a new repository issue and add it to the project with custom fields (plugin:compass-rose@vibe-garden)",
-      "argumentHint": "[]"
+      "argumentHint": []
     },
     {
       "name": "/compass-rose:reprioritize",
       "description": "Codebase-aware priority recommendations with batch update capability (plugin:compass-rose@vibe-garden)",
-      "argumentHint": "[]"
+      "argumentHint": []
     },
     {
       "name": "/compass-rose:backlog",
       "description": "Review backlog items and analyze quality to recommend best items to work on (plugin:compass-rose@vibe-garden)",
-      "argumentHint": "[]"
+      "argumentHint": []
     },
     {
       "name": "/compass-rose:next-item",
       "description": "Recommend the highest-priority ready item with rationale (plugin:compass-rose@vibe-garden)",
-      "argumentHint": "[]"
+      "argumentHint": []
     },
     {
       "name": "/compass-rose:start-work",
       "description": "Begin work on an item with XL/L escalation prompts and status tracking (plugin:compass-rose@vibe-garden)",
-      "argumentHint": "[issue-number-or-url-or-\"next\"]"
+      "argumentHint": [
+        "issue-number-or-url-or-\"next\""
+      ]
     },
     {
       "name": "/agent-sdk-dev:new-sdk-app",
       "description": "Create and setup a new Claude Agent SDK application (plugin:agent-sdk-dev@claude-plugins-official)",
-      "argumentHint": "[project-name]"
+      "argumentHint": [
+        "project-name"
+      ]
     },
     {
       "name": "/pr-review-toolkit:review-pr",
@@ -237,10 +291,6 @@
       "description": "Use when you have an idea that wants to become a product too quickly, when you need to break it apart before building, when something feels compelling but fragile, or when you want to find the fracture points before committing. Puts ideas under pressure to see what survives. (plugin:judgment-engine-virelan@wyrd-gateway)"
     },
     {
-      "name": "/judgment-engine-virelan:init-engine",
-      "description": "Use when any Judgment Engine skill is invoked, when any Judgment Engine command is run, or when the user explicitly requests to engage with the Judgment Engine system. This skill loads the foundational context that shapes how the Judgment Engine operates, including core posture, system roles, and conceptual glossary. (plugin:judgment-engine-virelan@wyrd-gateway)"
-    },
-    {
       "name": "/judgment-engine-virelan:judgment-traceback",
       "description": "Use when you want to understand why you got a particular response, when something feels off and you need to diagnose the system's logic, when you're curious what influenced specific advice or framing, or when you want to learn how the Judgment Engine makes decisions. Provides transparency into reasoning. (plugin:judgment-engine-virelan@wyrd-gateway)"
     },
@@ -255,6 +305,10 @@
     {
       "name": "/judgment-engine-virelan:writing-workshop",
       "description": "Use when you want to strengthen your own draft without surrendering authorship, when you're willing to revise yourself but want sharp specific prompts to push the work, or when you need structural clarity without losing voice. Helps refine creative and structural work through targeted questions. (plugin:judgment-engine-virelan@wyrd-gateway)"
+    },
+    {
+      "name": "/judgment-engine-virelan:init-engine",
+      "description": "Use when any Judgment Engine skill is invoked, when any Judgment Engine command is run, or when the user explicitly requests to engage with the Judgment Engine system. This skill loads the foundational context that shapes how the Judgment Engine operates, including core posture, system roles, and conceptual glossary. (plugin:judgment-engine-virelan@wyrd-gateway)"
     },
     {
       "name": "/compass-rose:gh-api-scripts",

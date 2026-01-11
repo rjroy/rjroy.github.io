@@ -1,9 +1,9 @@
 {
-  "completedAt": "2026-01-06T04:42:32.938Z",
-  "version": "1.0.0",
-  "commandsInstalled": [],
-  "paraCreated": [
-    "Archives"
+  "completedAt": "2026-01-11T15:27:03.588Z",
+  "version": "1.1.0",
+  "commandsInstalled": [
+    "review-goals.md"
   ],
+  "paraCreated": [],
   "claudeMdUpdated": true
 }
