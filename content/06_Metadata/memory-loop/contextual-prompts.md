@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-01-11 -->
+<!-- last-generated: 2026-01-12 -->
 
-- "What personal rules or practices have you developed to guide your work or creative process? How do they differ from 'best practices' or universal guidelines?"
-- "How can you strike the right balance between personalization and standardization when configuring an AI assistant to be a true 'partner' in your workflow?"
-- "Reflecting on your existing habits and methods, what unwritten 'rules' or patterns have emerged that uniquely define your approach? How might you document these for others to learn from?"
-- "When does a personal preference or workflow quirk become a valuable insight that could benefit a wider community? How can you identify the differentiating factors that make certain rules or practices 'yours' versus 'ours'?"
-- "Imagine you were tasked with building an AI assistant from the ground up to be a true extension of your own way of working. What 'personal rules' would you enshrine in its core functionality, and why?"
 - "How can you apply the lessons of resilience and adaptability you've observed in nature to your own life and goals?"
 - "What untapped potential or hidden talents might you discover if you approached your daily routine with a more curious, playful mindset?"
 - "Reflect on the balance between productivity and self-care in your life. What small steps could you take to nurture your well-being alongside your ambitions?"
@@ -25,3 +20,8 @@
 - "Close your eyes and imagine an entirely new world - what does it look like, sound like, feel like?"
 - "Go outside and observe the patterns in nature for 10 minutes. How can you incorporate those into a creative project?"
 - "Write a short story from the perspective of your favorite childhood toy."
+- "How could you start by building just one task source adapter (like GitHub issues) to validate whether the blackboard architecture actually solves the coordination problems you're trying to avoid with hierarchical systems?"
+- "What would the simplest possible 'Recruiter' monitoring loop look like, and what's the minimum viable persistence layer (file-based vs database) you'd need to test your core hypothesis?"
+- "If you had to choose between Python and TypeScript right now based on your team's strengths rather than technical purity, which would let you move fastest and get real feedback on the design?"
+- "When workers pick tasks from the blackboard, what could go wrong with race conditions in practice, and would a simple 'task lock' mechanism be sufficient before investing in atomic operations?"
+- "Imagine running this system with just 2-3 workers on a single project for a week—what metrics or observations would tell you whether the blackboard model is actually reducing complexity compared to your current approach?"
