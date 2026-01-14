@@ -1,7 +1,7 @@
 {
   "title": "Ron's Broadcast Cache",
   "subtitle": "Publicly Shared Memory Loop",
-  "quotesPerWeek": 2,
+  "quotesPerWeek": 1,
   "maxPoolSize": 25,
   "contentRoot": "content",
   "inboxPath": "00_Inbox",
@@ -399,5 +399,9 @@
       "name": "/security-review",
       "description": "Complete a security review of the pending changes on the current branch"
     }
-  ]
+  ],
+  "discussionModel": "opus",
+  "promptsPerGeneration": 5,
+  "recentCaptures": 6,
+  "recentDiscussions": 5
 }
