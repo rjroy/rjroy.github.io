@@ -1,0 +1,5 @@
+# Memory Loop cache and session files
+cache.db
+cache.db-shm
+cache.db-wal
+sessions/

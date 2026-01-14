@@ -84,10 +84,17 @@ Related notes for that project/area go as siblings to `index.md` within the same
 
 ## Memory Loop
 
-- **Inbox**: `content/00_Inbox/` — Daily notes created via the capture tab
-- **Goals**: `content/06_Metadata/memory-loop/goals.md` — Active goals and priorities
-- **PARA Organization**:
-  - Projects: `content/01_Projects/`
-  - Areas: `content/02_Areas/`
-  - Resources: `content/03_Resources/`
-  - Archive: `content/04_Archive/`
+This vault is integrated with Memory Loop for daily note capture and goal tracking.
+
+**Configuration:**
+- **Content root**: `/home/rjroy/Projects/Vaults/rjroy.github.io/content`
+- **Inbox**: `00_Inbox/` — Daily notes created via the capture tab
+- **Goals file**: `06_Metadata/memory-loop/goals.md` — Active goals and priorities
+
+**PARA Organization:**
+- **Projects**: `01_Projects/` — Active work with goals
+- **Areas**: `02_Areas/` — Ongoing responsibilities
+- **Resources**: `03_Resources/` — Reference materials
+- **Archive**: `04_Archive/` — Completed work
+
+Daily notes are automatically created in the inbox through Memory Loop's capture tab and can be organized into PARA directories as they mature.

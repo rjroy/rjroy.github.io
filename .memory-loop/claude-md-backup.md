@@ -84,10 +84,12 @@ Related notes for that project/area go as siblings to `index.md` within the same
 
 ## Memory Loop
 
-- **Inbox**: `content/00_Inbox/` — Daily notes created via the capture tab
-- **Goals**: `content/06_Metadata/memory-loop/goals.md` — Active goals and priorities
+Content root: `/home/rjroy/Projects/Vaults/rjroy.github.io/content`
+
+- **Inbox**: `00_Inbox/` — Daily notes created via the capture tab
+- **Goals**: `06_Metadata/memory-loop/goals.md` — Active goals and priorities
 - **PARA Organization**:
-  - Projects: `content/01_Projects/`
-  - Areas: `content/02_Areas/`
-  - Resources: `content/03_Resources/`
-  - Archive: `content/04_Archive/`
+  - Projects: `01_Projects/`
+  - Areas: `02_Areas/`
+  - Resources: `03_Resources/`
+  - Archive: `04_Archive/`
