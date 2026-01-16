@@ -1,7 +1,9 @@
 {
-  "completedAt": "2026-01-14T18:58:08.056Z",
-  "version": "1.1.0",
-  "commandsInstalled": [],
+  "completedAt": "2026-01-16T03:14:26.206Z",
+  "version": "1.2.0",
+  "commandsInstalled": [
+    "expand-note.md"
+  ],
   "paraCreated": [],
   "claudeMdUpdated": true,
   "gitignoreUpdated": true
