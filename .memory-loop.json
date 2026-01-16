@@ -403,5 +403,6 @@
   "discussionModel": "opus",
   "promptsPerGeneration": 5,
   "recentCaptures": 6,
-  "recentDiscussions": 5
+  "recentDiscussions": 5,
+  "order": 2
 }
