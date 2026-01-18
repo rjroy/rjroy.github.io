@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-01-17 -->
+<!-- last-generated: 2026-01-18 -->
 
-- "How could you start by building just one task source adapter (like GitHub issues) to validate whether the blackboard architecture actually solves the coordination problems you're trying to avoid with hierarchical systems?"
-- "What would the simplest possible 'Recruiter' monitoring loop look like, and what's the minimum viable persistence layer (file-based vs database) you'd need to test your core hypothesis?"
-- "If you had to choose between Python and TypeScript right now based on your team's strengths rather than technical purity, which would let you move fastest and get real feedback on the design?"
-- "When workers pick tasks from the blackboard, what could go wrong with race conditions in practice, and would a simple 'task lock' mechanism be sufficient before investing in atomic operations?"
-- "Imagine running this system with just 2-3 workers on a single project for a week—what metrics or observations would tell you whether the blackboard model is actually reducing complexity compared to your current approach?"
 - "Your project names like 'HEPCAT' and 'Memory Loop' spark emotion—what metaphor would capture the essence of a new project you're considering, and what feeling do you want it to evoke each time you see it?"
 - "You've mastered the art of 'expression in the margins'—how might you apply this principle of meaningful restraint to other areas of your life where you want to add personal touch without creating clutter?"
 - "The mountain (⛰) and white flag (🏳) symbols encode your philosophy of resilience and honesty; what other symbols or rituals could reinforce these values in your daily workflow?"
@@ -25,3 +20,8 @@
 - "Create something with your hands using only materials you find around you right now, with no plan or end goal in mind; let curiosity guide what it becomes."
 - "What would a conversation between two completely unexpected things sound like? (A cloud and a coffee cup? A shadow and a song?) Write or act out their dialogue."
 - "Take a walk and collect three things—a visual, a sound, and a feeling—that surprise you, then spend time exploring why each one caught your attention and what it makes you imagine."
+- "If your everyday life were a story, what would happen if you suddenly changed one small rule—like walking backwards for a day, eating meals in reverse order, or exploring your neighborhood with your eyes closed (safely)? What would you discover?"
+- "Imagine you're an archaeologist from 500 years in the future, visiting your home for the first time. What objects would puzzle you, and what wild theories might you create about how people actually lived based on the everyday items you find?"
+- "Choose a color you rarely think about, then spend an hour seeking it out in nature, your home, or your neighborhood. What mood does it create, what memories does it trigger, and where does it lead your curiosity?"
+- "If you could spend a day living as any non-human creature—real or imaginary—how would your perspective shift? Describe a simple activity (making breakfast, walking to a friend's house) from their completely alien point of view."
+- "Create something with no purpose: build, draw, write, or arrange something purely for the joy of making it, with zero plan for what it should be when you're done. What emerges when you remove the pressure of 'finishing' something?"
