@@ -24,6 +24,8 @@ A landscape without choice is a postcard. You look at it, appreciate it, move on
 
 ## The Crossroads
 
+![The Crossroads Background Image](/Projects/Memory-Loop/screenshots/bg-vault.webp)
+
 The replacement: a figure at a literal crossroads in an open valley, facing two paths. One curves toward a mysterious Gothic mansion shrouded in decay. The other leads to a gleaming steampunk city of brass and gold. Mountains rise in the distance. The sky suggests either dawn or dusk—another choice point.
 
 This changes everything about what the background *does*.
