@@ -6,7 +6,6 @@ tags:
   - philosophy
   - whimsy
   - cognitive-science
-draft: true
 ---
 
 # Background as Worldview

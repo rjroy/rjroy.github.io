@@ -1,5 +1,5 @@
 ---
-title: AI Doesn't Just Have Biases—It Has Architectural Predispositions
+title: AI Doesn't Just Have Biases
 description: When you ask AI to research something, you're not getting neutral synthesis—you're getting sources filtered through what that model was trained to value
 tags:
   - ai
