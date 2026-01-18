@@ -1,5 +1,5 @@
 ---
-title: You're Not Configuring a Tool: You're Training a Reasoning Partner
+title: You're Not Configuring a Tool- You're Training a Reasoning Partner
 description: Rules files don't constrain AI behavior. They build the cognitive infrastructure that shapes how AI thinks about work
 tags:
   - ai
