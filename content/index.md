@@ -16,9 +16,11 @@ This is my digital garden, a place where I capture, develop, and share my thinki
 
 ### Current Focus
 
-[[02_Areas/Memory-Loop/index|Memory Loop]]: A mobile-friendly web app that connects Claude AI to my Obsidian vaults. Quick capture from my phone, AI conversations grounded in my actual notes, and file browsing when I need context. It solves a real friction point: consulting my knowledge base when I'm away from my desk.
+[[Projects/Memory-Loop/index|Memory Loop]]: A mobile-friendly web app that connects Claude AI to my Obsidian vaults. Quick capture from my phone, AI conversations grounded in my actual notes, and file browsing when I need context. It solves a real friction point: consulting my knowledge base when I'm away from my desk.
 
-[[02_Areas/Whimsy-for-Clarity/index|Whimsy for Clarity]]: How I add personal touches to tools without cluttering the work. Project names that spark something (HEPCAT, Vibe Garden), terminal prompts with meaning, backgrounds that live in the margins. Work doesn't have to be sterile.
+[[Writing/AI-as-Your-Partner/index|AI as Your Partner]]: Why AI demands a different approach than any tool we've used before. It's not a tool that executes commands—it's a reasoning partner with architectural predispositions. That changes how you work with it.
+
+[[Writing/Expressive-Tools/index|Expressive Tools]]: How to add personality to tools without compromising function. When and where expressiveness belongs, what it should contain, and how to know it's working.
 
 ## How It's Written
 
@@ -30,17 +32,11 @@ This isn't about hiding AI involvement. It's about being transparent: the thinki
 
 ## How It's Organized
 
-I use the PARA method to organize content:
+Content is organized into three main areas:
 
-```
-00_Inbox/       → Fresh captures, unprocessed thoughts
-01_Projects/    → Active work with clear goals
-02_Areas/       → Ongoing interests and responsibilities
-03_Resources/   → Reference materials and evergreen notes
-04_Archive/     → Completed work and past explorations
-05_Attachments/ → Images and files
-06_Metadata/    → Templates and documentation
-```
+- **Ideas/** → Developing thoughts and explorations
+- **Projects/** → Things I'm building with clear goals
+- **Writing/** → Essays and longer-form pieces I've thought through
 
 ## Current State
 
@@ -48,7 +44,7 @@ This space is just getting started. You're seeing the scaffolding before the bui
 
 ## Navigating
 
-Feel free to explore any folder. Each has its own `index` explaining what you'll find there. Some notes link to each other using `[[wiki links]]`. If you see these in raw markdown, they reference other notes in this collection.
+Use the sidebar to explore by area, or follow links between related notes. Each major section has an index explaining what you'll find there.
 
 ## About Me
 

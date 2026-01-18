@@ -15,7 +15,7 @@ Memory Loop is a web application I built to solve a personal friction point: cap
 
 **Source:** [github.com/rjroy/memory-loop](https://github.com/rjroy/memory-loop)
 
-![Vault Selection](/02_Areas/Memory-Loop/screenshots/select-a-vault.webp)
+![Vault Selection](/Projects/Memory-Loop/screenshots/select-a-vault.webp)
 
 ## The Problem
 
