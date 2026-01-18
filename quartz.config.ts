@@ -15,7 +15,7 @@ const config: QuartzConfig = {
     analytics: null,
     locale: "en-US",
     baseUrl: "rjroy.github.io",
-    ignorePatterns: ["private", "templates", ".obsidian", "06_Metadata/Templates"],
+    ignorePatterns: ["private", "templates", ".obsidian", "Inbox", "Archive", "Resources", "Attachments", "Metadata"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",

@@ -1,0 +1,7 @@
+# Memory Loop cache and session files
+cache.db
+cache.db-shm
+cache.db-wal
+sessions/
+# Memory Loop cache and session files
+slash-commands.json

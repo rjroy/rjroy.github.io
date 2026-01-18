@@ -1,3 +1,6 @@
+# Claude files
+.claude/settings.local.json
+
 # Obsidian
 .obsidian/
 .trash/
@@ -21,3 +24,9 @@ Thumbs.db
 private/
 drafts/
 _drafts/
+
+# Obsidian workspace files (auto-generated, device-specific)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/vault-stats.json
+
