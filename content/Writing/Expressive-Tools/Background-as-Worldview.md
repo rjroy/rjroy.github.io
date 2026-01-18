@@ -14,6 +14,8 @@ When I redesigned the background for Memory Loop, I replaced a complete synthwav
 
 ## The Problem with Postcards
 
+![The Digital City Background Image](/Writing/Expressive-Tools/images/old-vault.webp)
+
 The original Memory Loop background was beautiful—a digital plain flowing into mountains, a neon city at center, sunset behind it, galaxies above. Evocative, atmospheric, complete.
 
 Too complete.
