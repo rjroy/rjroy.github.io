@@ -35,25 +35,25 @@ The interface centers on four modes, each named to evoke the cognitive process:
 
 The home dashboard. Shows your current vault's goals (extracted from `CLAUDE.md`, which stores vault-specific context and instructions), AI-generated writing prompts, curated quotes for inspiration, and quick access to recent activity.
 
-![Ground - Home Dashboard](/02_Areas/Memory-Loop/screenshots/ground.webp)
+![Ground - Home Dashboard](/Projects/Memory-Loop/screenshots/ground.webp)
 
 ### Capture
 
 Minimal friction note capture. Type a thought, tap capture, and it appends to your daily note with a timestamp. Drafts persist across sessions: start a thought on your phone, finish it later.
 
-![Capture - Quick Note Entry](/02_Areas/Memory-Loop/screenshots/capture.webp)
+![Capture - Quick Note Entry](/Projects/Memory-Loop/screenshots/capture.webp)
 
 ### Think
 
 AI conversations powered by Claude, with full read access to your vault. Claude can search your files, follow wiki-links, and ground responses in your actual notes. The conversation shows which tools Claude used (expandable), making the AI's reasoning transparent.
 
-![Think - AI Chat](/02_Areas/Memory-Loop/screenshots/think.webp)
+![Think - AI Chat](/Projects/Memory-Loop/screenshots/think.webp)
 
 ### Recall
 
 Browse your vault's file structure directly. Navigate folders, read markdown files, and follow wiki-links. Useful for reviewing what you've captured or finding context for a conversation.
 
-![Recall - File Browser](/02_Areas/Memory-Loop/screenshots/recall.webp)
+![Recall - File Browser](/Projects/Memory-Loop/screenshots/recall.webp)
 
 ## Architecture
 

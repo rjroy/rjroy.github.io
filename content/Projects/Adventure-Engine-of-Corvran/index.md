@@ -13,7 +13,7 @@ tags:
 
 A solo tabletop RPG experience powered by AI. Describe what your character does in plain language; the engine handles narration, NPCs, and dice.
 
-![Entry Screen](/02_Areas/Adventure-Engine-of-Corvran/screenshots/entry.webp)
+![Entry Screen](/Projects/Adventure-Engine-of-Corvran/screenshots/entry.webp)
 
 ## What Is This?
 
@@ -25,7 +25,7 @@ The project grew out of a desire to capture the feel of classic tabletop gaming 
 
 The engine acts as both narrator and referee. You describe what your character does in natural language, and it responds with story progression, NPC dialogue, and mechanical outcomes. The world of Corvran provides a consistent fantasy setting (ancient forests, competing factions, magical artifacts) while the AI handles the moment-to-moment storytelling.
 
-![Adventure Gameplay](/02_Areas/Adventure-Engine-of-Corvran/screenshots/adventure.webp)
+![Adventure Gameplay](/Projects/Adventure-Engine-of-Corvran/screenshots/adventure.webp)
 
 Characters persist across sessions. The sidebar shows your character sheet at a glance: class, ancestry, level, abilities. The system tracks domain cards (special abilities), equipment, and story progress so you can pick up where you left off.
 
@@ -33,11 +33,11 @@ Characters persist across sessions. The sidebar shows your character sheet at a 
 
 **Persistent Adventures**: Save and resume adventures at any point. Each save captures not just your character state but the narrative context, letting you maintain multiple ongoing stories.
 
-![Load Adventure](/02_Areas/Adventure-Engine-of-Corvran/screenshots/adventure-select.webp)
+![Load Adventure](/Projects/Adventure-Engine-of-Corvran/screenshots/adventure-select.webp)
 
 **Character Management**: Create new characters or continue with existing ones. The engine remembers characters across different adventures, so your seasoned delver can tackle new challenges while you experiment with a fresh build elsewhere.
 
-![Character Selection](/02_Areas/Adventure-Engine-of-Corvran/screenshots/new-character.webp)
+![Character Selection](/Projects/Adventure-Engine-of-Corvran/screenshots/new-character.webp)
 
 **Conversational Interface**: No menu-diving or complex commands. Just describe what you want to do. The AI interprets intent and handles the mechanical translations behind the scenes.
 
