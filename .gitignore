@@ -25,6 +25,9 @@ private/
 drafts/
 _drafts/
 
+# Personal chat logs
+content/Inbox/chats/
+
 # Obsidian workspace files (auto-generated, device-specific)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
