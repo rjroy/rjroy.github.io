@@ -1,0 +1,19 @@
+---
+id: "f33a7aae-efbc-47fa-ae95-ff210ca44b60"
+type: "qa"
+created_date: "2026-01-24"
+last_reviewed: null
+next_review: "2026-01-24"
+ease_factor: 2.5
+interval: 0
+repetitions: 0
+source_file: "Writing/index.md"
+---
+
+## Question
+
+What is the main topic of the 'Expressive Tools' writing section?
+
+## Answer
+
+How to add personality to tools without compromising function.

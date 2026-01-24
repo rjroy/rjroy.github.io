@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-01-19 -->
+<!-- last-generated: 2026-01-24 -->
 
-- "Your project names like 'HEPCAT' and 'Memory Loop' spark something special—what metaphor would best capture the essence of a tool or space you're building next, and what emotion do you want to feel when you see it in your file tree?"
-- "You've mastered the principle of 'expression in the margins'—where else in your digital or physical spaces could you apply this idea to add personal meaning without compromising focus or clarity?"
-- "Your terminal symbols (⛰ for success, 🏳 for setbacks) encode a philosophy of resilience and honesty; what other small, everyday moments in your workflow could benefit from this kind of intentional, symbolic representation?"
-- "You're contemplating adding warmth through an accent color while keeping Nord as your base—how might introducing one unexpected element of beauty in the margins transform the way you feel about your environment without overwhelming it?"
-- "Before adding whimsy, you ask four powerful questions about meaning and belonging; what existing element in your workspace do you take for granted that, upon reflection, might actually deserve to feel more *yours*?"
 - "If your weekend had a color, texture, and sound all its own, what would they be? Spend some time actually *becoming* that color, texture, and sound—what does the world look like from there?"
 - "Wander to a place you've never noticed before (a corner of your neighborhood, a section of a park, a room in your home you usually rush through) and spend 15 minutes observing it like an alien seeing Earth for the first time—what surprises you?"
 - "Pick something mundane you interact with daily and imagine its secret life: What does your coffee mug dream about? Where does your keys go when you're not looking? Create a short story from its perspective."
@@ -25,3 +20,8 @@
 - "Your Memory Loop Recall tab manages files through a simple interface; what would 'simple yet powerful' look like for this feature, and how could you test whether users find it truly intuitive or just basic?"
 - "The broken images highlight a gap in your testing or documentation process—how might you implement safeguards now to catch organizational changes before they ripple through your application?"
 - "You're questioning whether your file management interface is good enough; instead of wondering, how could you rapidly prototype 2-3 alternative approaches and conduct quick user tests to validate which direction resonates most?"
+- "If your day had a color, texture, and taste, what would they be, and how would you draw or build something that captures all three?"
+- "Wander somewhere familiar as if you've never been there before—what hidden details, patterns, or stories do you notice that you'd normally walk past?"
+- "Create something using only materials you find around your home that weren't designed for art—what unexpected combinations surprise you?"
+- "What question have you been too practical to ask yourself lately? Spend time exploring it without trying to solve it, just following your curiosity wherever it leads."
+- "Imagine a conversation between two things that wouldn't normally talk—a book and a shadow, a raindrop and a stone—what would they tell each other?"
