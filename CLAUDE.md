@@ -96,6 +96,13 @@ This vault is integrated with Memory Loop for daily note capture and goal tracki
 **Configuration:**
 - **Content root**: `/home/rjroy/Projects/Vaults/rjroy.github.io/content`
 - **Inbox**: `Inbox/` - Daily notes created via the capture tab
+- **Chat transcripts**: `Inbox/chats/` - AI conversations from the Think tab are saved here as searchable markdown
 - **Goals file**: `Metadata/memory-loop/goals.md` - Active goals and priorities
+
+**PARA directories:**
+- Projects: `Ideas/`
+- Areas: `Writing/`
+- Resources: `03_Resources/`
+- Archives: `04_Archive/`
 
 Daily notes are automatically created in the inbox through Memory Loop's capture tab and can be organized into the visible directories as they mature.

@@ -1,10 +1,15 @@
 {
-  "completedAt": "2026-01-16T03:14:26.206Z",
-  "version": "1.2.0",
-  "commandsInstalled": [
-    "expand-note.md"
+  "completedAt": "2026-01-25T04:40:35.007Z",
+  "version": "1.3.0",
+  "commandsInstalled": [],
+  "skillsInstalled": [
+    "vault-task-management",
+    "research-assistant"
   ],
-  "paraCreated": [],
+  "paraCreated": [
+    "Resources",
+    "Archives"
+  ],
   "claudeMdUpdated": true,
   "gitignoreUpdated": true
 }
