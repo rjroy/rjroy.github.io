@@ -12,7 +12,7 @@ tags:
 
 When working with AI on complex software, the temptation is to jump straight to code. The LLM is capable. You have an idea. Why not start implementing?
 
-Because capability without understanding produces fragile solutions. The AI will build what you ask for, but if you don't fully understand the problem, you'll ask for the wrong thing.
+If you don't fully understand the problem, you'll ask for the wrong thing. The AI will build it anyway.
 
 Lore Development is a methodology for gathering context in layers before implementation. It prevents overfit (solving the immediate symptom instead of the underlying problem) and creates knowledge that compounds across projects.
 
@@ -22,7 +22,7 @@ Lore Development evolved from an earlier methodology called Spec-Driven Developm
 
 The idea was sound: explicit specifications prevent implementation drift when working with AI. But in practice, SDD felt like bureaucracy.
 
-**SDD's core issue:** It appeared to be "documentation for AI" (specs defining what to build) but was actually "documentation for humans" (complete specs consumed all at once). It wasn't layered enough. The AI got everything upfront and overfitted to the initial specification instead of building understanding progressively.
+**SDD's core issue:** It appeared to be "documentation for AI" (specs defining what to build) but was actually "documentation for humans" (complete specs consumed all at once). The AI got everything upfront and overfitted to the initial specification instead of building understanding progressively.
 
 Lore Development fixes this through **layered context**. The AI doesn't get a complete spec upfront. Instead, context is disclosed progressively: the problem space (brainstorms), existing solutions (research), requirements (specs), and past learnings (retros). The AI builds understanding in layers, preventing overfit to incomplete information.
 
@@ -57,15 +57,15 @@ If you'd spent 20 minutes specifying requirements before asking Claude to code, 
 
 This is where you build understanding through **discovery modes** - different lenses for examining the problem. You cycle through them as understanding deepens, not in strict order.
 
-**Research** (`/lore-development:research`): What exists? What have others built? What libraries, patterns, or prior art apply? External context prevents reinventing poorly. The research agent automatically surfaces related retros - past learnings inform what to look for.
+**Research** (`/lore-development:research`): What exists? What have others built? What libraries, patterns, or prior art apply? External context prevents reinventing poorly.
 
-**Brainstorm** (`/lore-development:brainstorm`): What could we do? Why are we solving this? What wild options exist? What trade-offs matter? Exploration without commitment. You're questioning assumptions and mapping the possibility space. Related retros surface here too - "we tried something similar before, here's what we learned."
+**Brainstorm** (`/lore-development:brainstorm`): What could we do? Why are we solving this? What wild options exist? What trade-offs matter? Exploration without commitment.
 
-**Specify** (`/lore-development:specify`): What will we do? Synthesis step. Take the disparate ideas from research and brainstorming and turn them into something concrete. What are the requirements? What does "done" look like? Specification is decision-making. You commit: these are the requirements, these are the constraints, this is what success means. Again, retros surface automatically - past decisions inform current requirements.
+**Specify** (`/lore-development:specify`): What will we do? Synthesis step. Take the disparate ideas from research and brainstorming and turn them into something concrete. What are the requirements? What does "done" look like? Specification is decision-making.
 
-**This is a discovery loop, not a pipeline.** You research, realize you need to brainstorm approaches, discover a constraint that requires more research, then synthesize into a spec. Or you brainstorm first, then research to validate ideas. Or you specify a rough draft, realize gaps, and cycle back through research and brainstorming.
+**This is a discovery loop, not a pipeline.** You research, realize you need to brainstorm approaches, discover a constraint that requires more research, then synthesize into a spec. Or you brainstorm first, then research to validate ideas. Each mode can run multiple times.
 
-Each mode can run multiple times. Each iteration builds on accumulated context - the research docs, brainstorm notes, draft specs, and **past retros** all feed forward. The `lore-researcher` agent ensures related learnings surface at each step.
+Each iteration builds on accumulated context. The `lore-researcher` agent surfaces related retros automatically - past learnings inform current work at every step.
 
 The goal isn't following steps; it's building enough layered context to act without overfitting to the first idea.
 
@@ -93,43 +93,16 @@ Lessons can be "graduated" to higher scopes (feature → project → career) whe
 
 ## Why This Works: Progressive Discovery + Progressive Disclosure
 
-**Progressive Discovery (Human):** The human discovers the problem in layers through multiple modes, cycling until understanding emerges.
+**Progressive Discovery (Human):** You discover the problem in layers through multiple modes, cycling until understanding emerges. Research existing solutions, discover a pattern, realize you need to brainstorm how it applies. Brainstorm wild options, hit a constraint, research whether others solved it. Specify a rough draft, spot gaps, cycle back.
 
-You don't start with a complete spec. You might:
-- **Research** existing solutions, discover a pattern, realize you need to **brainstorm** how it applies to your context
-- **Brainstorm** wild options, hit a constraint, **research** whether others solved it, refine the brainstorm
-- **Specify** a rough draft, spot gaps, cycle back through **research** and **brainstorm** to fill them
-- Run each mode **multiple times** as understanding deepens
+This prevents overfit. You're building context in layers until the solution becomes obvious, not jumping to the first idea.
 
-Each mode builds on accumulated context. The `lore-researcher` agent surfaces related retros automatically - past learnings inform current research questions, brainstorm directions, and specification requirements.
+**Progressive Disclosure (AI):** The AI consumes context in layers, not everything at once. When you run `/lore-development:prep-plan`, the `lore-researcher` agent loads exactly what's needed: related retros, relevant research, applicable brainstorms, the current spec.
 
-This discovery loop prevents overfit. You're not jumping to solutions before understanding the problem. You're building context in layers until the solution becomes obvious.
+This mirrors how well-designed Claude Code skills work: progressive disclosure. Set the description, define the SKILL.md, add reference files as necessary. Only grab what you need.
 
-**Progressive Disclosure (AI):** The AI consumes context in layers, not everything at once.
+Lore Development applies this to the entire workflow. The human builds understanding by creating artifacts. The AI consumes them as layered context when executing.
 
-When you run `/lore-development:prep-plan`, the `lore-researcher` agent loads exactly what's needed: related retros, relevant research, applicable brainstorms, the current spec. The AI gets layered context progressively disclosed as it plans.
-
-This is the insight Claude Code plugin design teaches: good skills use progressive disclosure. Set the description, define the SKILL.md, add reference files as necessary to extend context. Only grab what you need.
-
-**Lore Development applies this pattern to the entire development workflow.** The artifacts (`.lore/research/`, `.lore/specs/`, `.lore/retros/`) are structured for layered consumption. The AI gets context progressively, building understanding as it needs each layer, rather than consuming a complete spec upfront and overfitting to it.
-
-The human builds understanding through the act of creating them. The AI consumes them as layered context when executing.
-
-The shift from SDD: **stop giving the AI everything at once. Layer the context so it builds understanding progressively, preventing overfit to incomplete specifications**.
-
-## Preventing Overfit
-
-Overfit happens when you solve the specific case without understanding the general pattern.
-
-Layered context gathering prevents this by forcing you to articulate what you're solving before you solve it.
-
-**Specification** asks: "What are the requirements?" If you can't answer clearly, you don't understand the problem well enough to build a good solution.
-
-**Planning** asks: "How will this fit into the existing system?" If you can't answer clearly, your implementation will be bolted on instead of integrated.
-
-**Retro** asks: "What did we learn?" If you don't capture lessons, the next feature will make the same mistakes.
-
-The layers create checkpoints. You can't skip to implementation without passing through specification. (You can, technically, but the workflow makes it feel wrong.)
 
 ## Compound Knowledge
 
@@ -149,29 +122,10 @@ New work starts
 
 Knowledge doesn't evaporate when the feature ships. It accumulates.
 
-## The Human Checkpoint
-
-AI is good at synthesis. It's good at generating plans from specs, code from plans, diagrams from descriptions.
-
-But AI is bad at knowing what you actually care about. It will infer from your prompt, but inference is guessing.
-
-The human checkpoint is specification. You, the human, articulate what matters. The AI builds from that foundation.
-
-This isn't about distrusting AI. It's about clarity. If you ask for "authentication," Claude will build something. But if you specify "OAuth 2.0 with PKCE, support for Google and GitHub providers, session persistence via HTTP-only cookies, token refresh on expiry," Claude will build exactly that.
-
-The difference is explicit requirements. The AI doesn't have to guess.
 
 ## When to Skip Layers
 
-Not every feature needs full ceremony.
-
-**Bug fixes:** Jump straight to implementation. You know what's broken and how to fix it.
-
-**Trivial features:** Adding a "dark mode" toggle doesn't need a spec. The requirement is obvious.
-
-**Exploratory spikes:** Sometimes you need to code to understand the problem. Do the spike, then write the spec based on what you learned.
-
-The workflow is a guide, not a rule. Use what fits.
+Bug fixes, trivial features, and exploratory spikes don't need full ceremony. Use what fits.
 
 ## Design Archaeology (Excavate)
 
@@ -226,26 +180,12 @@ This is why `/lore-development:prep-plan` just loads context and hands off to na
 
 The methodology won't break when Opus 5 or GPT-6 arrives. It'll just work better, because the structure is context, not control.
 
-## Why I Built This (And Why I Rebuilt It)
+## Why I Rebuilt This
 
-I kept solving the same problems repeatedly. I'd build a feature, ship it, then build something similar three months later and make the same mistakes.
+I kept solving the same problems repeatedly. Build a feature, ship it, build something similar three months later, make the same mistakes.
 
-SDD tried to solve this with rigid documentation: write a spec, write a plan, break it into tasks, follow the process. But it gave the AI everything upfront in a single spec. The AI would latch onto that initial understanding and overfit to it, missing context that only emerged during implementation.
+SDD tried to solve this with rigid documentation. The problem wasn't the concept (layered context prevents overfit). The problem was execution: specs were consumed all at once, not progressively.
 
-The problem wasn't the concept (layered context prevents overfit). The problem was the execution (specs were consumed all at once, not progressively).
+Lore Development creates affordances that make context-gathering the path of least resistance. You could skip straight to implementation, but the workflow nudges you toward progressive discovery.
 
-Lore Development strips to the basics and rebuilds around three principles:
-
-**1. Progressive Discovery:** The human discovers the problem in layers through discovery modes (research, brainstorm, specify), cycling until understanding emerges. This prevents jumping to solutions before understanding the problem.
-
-**2. Progressive Disclosure:** The AI consumes context in layers as needed. The `lore-researcher` agent loads exactly what's relevant when planning. Context builds progressively instead of being dumped all at once.
-
-**3. Trust the AI:** Don't overfit to current model limitations. Keep skills small (create affordances for context), let the AI handle what it's good at (planning, implementation). Build structure only for what compounds: context creation, storage, learning, retrieval.
-
-The artifacts serve both purposes. Research captures what exists. Brainstorms capture possibilities. Specs capture decisions. Retros capture lessons. The human builds understanding by creating them. The AI consumes them as layered context when executing.
-
-When you start new work, the `lore-researcher` agent surfaces related context automatically. Knowledge compounds.
-
-The methodology doesn't enforce discipline. It creates affordances that make context-gathering the path of least resistance. You could skip straight to implementation, but it feels wrong. The workflow nudges you toward progressive discovery.
-
-And progressive discovery, fed to the AI through progressive disclosure, produces better software - not just with today's models, but with whatever comes next.
+Progressive discovery, fed to the AI through progressive disclosure, produces better software - not just with today's models, but with whatever comes next.
