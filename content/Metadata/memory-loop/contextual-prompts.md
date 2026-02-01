@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-01-30 -->
+<!-- last-generated: 2026-02-01 -->
 
-- "If you could design a completely useless but delightful object, what would it do? Sketch it, describe it, imagine who would treasure it."
-- "Pick a random word from a book, then spend 15 minutes following wherever your mind goes—no judgment, no destination, just see what connects to it."
-- "Imagine a conversation between two things that would never normally talk: a lighthouse and a suitcase, a recipe and a storm, your childhood self and your favorite song."
-- "What if you remixed your favorite memory by changing one small detail? How does that ripple through everything else about it?"
-- "Wander through your day as if you're a curious alien seeing human rituals for the first time—what's strange about making breakfast, or the way people sit on trains, or how we organize our things?"
 - "If your weekend had a color, texture, and smell, what would they be? Design a sensory experience that matches."
 - "What would you build or make if failure wasn't possible and you had unlimited materials? Sketch it, describe it, or just daydream it into existence."
 - "Pick a random word from a book or sign you see. Follow the chain of associations—what memories, ideas, or possibilities does it unlock?"
@@ -25,3 +20,8 @@
 - "If clawd.bot handles Discord/Slack integration well, what would it take to bring similar affordances to your Obsidian vault interaction?"
 - "What gaps in your current tooling did this link surface, and is this worth a spike investigation or better left for later?"
 - "Could bot architecture principles apply to your local LLM work or the decision between delegation and automation in your team's AI adoption?"
+- "If your weekend had a color, texture, and sound—what would they be, and why? Spend time noticing what actually appeals to you instead of what should."
+- "Pick something mundane you see this weekend (a coffee cup, a shadow, a tree branch) and imagine its entire secret history—where it came from, who owned it, what it witnessed."
+- "What would you build, create, or explore if you had no audience, no judgment, and no need to finish it? Give yourself permission to start something just for the pleasure of it."
+- "Wander somewhere familiar but choose a detail you've never really looked at before—zoom in mentally, get strange with it, let your mind follow tangents about how it works or what it could become."
+- "What's something you were curious about as a kid but stopped wondering about? Spend time being genuinely curious about it again, without trying to become an expert—just play with the question."

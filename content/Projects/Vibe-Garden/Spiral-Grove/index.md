@@ -1,15 +1,26 @@
 ---
 title: Spiral Grove
-description: A Spec-Driven Development methodology plugin for Claude Code
+description: A Spec-Driven Development methodology plugin for Claude Code (retired - evolved into Lore Development)
 tags:
   - ai
   - claude-code
   - plugin
   - methodology
   - spec-driven-development
+  - retired
 ---
 
 # Spiral Grove
+
+> **Note:** Spiral Grove has been retired. The methodology evolved into [[Lore-Development]], which takes the core concept (layered context gathering) and rebuilds it around progressive discovery and progressive disclosure.
+>
+> See [[../../Writing/Lore-Development/index|Lore Development: Context Over Documentation]] for the philosophy behind the evolution.
+
+---
+
+**Historical documentation preserved below.**
+
+---
 
 Spiral Grove is a Claude Code plugin that implements Spec-Driven Development (SDD), a structured methodology for building complex features with AI assistance. Four phases: specify what, plan how, break into tasks, then implement.
 
