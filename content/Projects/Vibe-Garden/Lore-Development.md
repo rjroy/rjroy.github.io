@@ -1,6 +1,6 @@
 ---
 title: Lore Development
-description: A methodology plugin for building and organizing project context in layers
+description: A Claude Code plugin for context-driven development through progressive discovery
 tags:
   - project
   - claude-code
@@ -10,134 +10,101 @@ tags:
 
 # Lore Development
 
-Lore Development is a Claude Code plugin for building and organizing project context. It's not about enforcing process; it's about creating findable, structured knowledge that informs better work.
+Lore Development is a Claude Code plugin that helps you build understanding before jumping to implementation. It creates a persistent knowledge base - the "lore" - that compounds across features and prevents repeating past mistakes.
 
 **Source:** [github.com/rjroy/vibe-garden](https://github.com/rjroy/vibe-garden) (lore-development/)
 
-## The Problem
-
-AI-assisted development is powerful but chaotic without structure. Context gets lost between sessions. Decisions aren't documented. Lessons learned evaporate when the next feature starts.
-
-Lore Development solves this by creating a persistent knowledge base for your project: the "lore" that makes future work better informed.
-
 ## What It Does
+
+Lore Development builds context in layers before implementation. Research external solutions, brainstorm approaches, specify requirements. When you start building, the AI loads relevant past work automatically. After shipping, capture lessons. Next feature, the cycle repeats with accumulated knowledge.
+
+**Three phases:** Context → Execute → Verify / Learn
+
+Context prevents jumping to the first idea. Past work informs new work. Knowledge compounds instead of evaporating.
+
+## The Skills
+
+Lore Development provides composable skills, not a rigid workflow. Use what fits. Skip what doesn't.
 
 ### Research (`/lore-development:research`)
 
-Gather external context before building. Documentation, prior art, library exploration. The skill prompts for what you're researching and where to save findings.
+What exists? What have others built? What libraries, patterns, or prior art apply? External context prevents reinventing poorly.
 
 **Output:** `.lore/research/<topic>.md`
 
 ### Brainstorm (`/lore-development:brainstorm`)
 
-Explore ideas without commitment. "What if we used X?" thinking. Record possibilities before deciding on one.
+What could we do? Why are we solving this? What wild options exist? What trade-offs matter? Exploration without commitment.
 
 **Output:** `.lore/brainstorm/<idea>.md`
 
 ### Specify (`/lore-development:specify`)
 
-Define requirements and success criteria. What are you building? What does "done" look like? What constraints exist?
+What will we do? Synthesis step. Take disparate ideas from research and brainstorming and turn them into something concrete. Requirements, success criteria, constraints.
 
-Before you start, the `lore-researcher` agent automatically searches `.lore/` for related work (past specs, retros, brainstorms) and includes findings in the new spec.
+The `lore-researcher` agent automatically searches `.lore/` for related work before you start writing.
 
 **Output:** `.lore/specs/<feature>.md`
 
 ### Prep-Plan (`/lore-development:prep-plan`)
 
-Load project context, then enter Claude Code's native plan mode. When planning completes, the plan is saved to `.lore/plans/`.
+Load project lore (related specs, retros, brainstorms via `lore-researcher`), then hand off to Claude Code's native plan mode. Why reinvent something that works and will only get better?
 
-The `lore-researcher` agent runs first, surfacing related context before planning begins.
+When planning completes, the plan is saved to `.lore/plans/`.
 
 **Output:** `.lore/plans/<feature>.md`
 
 ### Retro (`/lore-development:retro`)
 
-Review completed work and capture lessons learned. What went well? What surprised you? What would you do differently?
+What did you learn? What surprised you? What would you do differently? Captures lessons while they're fresh. The spec told you what you thought you were building. The retro tells you what actually happened.
 
-Lessons can be "graduated" to higher scopes (feature → project → career) when they apply broadly.
+Lessons can be "graduated" to higher scopes (feature → project → career) when they apply broadly. This is how knowledge compounds.
 
 **Output:** `.lore/retros/<feature>.md`
 
 ### Excavate (`/lore-development:excavate`)
 
-Design archaeology for existing codebases. When you inherit or join a project, excavate discovers the lore that should have been documented.
+Design archaeology for existing codebases. When you inherit a project, the lore is implicit. Excavate inverts the workflow: start with code and work backward.
 
-Progressive discovery workflow:
-1. Survey entry points (routes, CLI commands, main files)
-2. Map features and capabilities
-3. Document architecture and design decisions
-4. Extract into `.lore/specs/` and `.lore/reference/`
+Progressive discovery: Survey entry points → Map features → Document architecture → Extract into specs and reference docs.
 
 **Output:** `.lore/excavations/<session>.md`, `.lore/reference/<feature>.md`
 
 ### Draw the Damn Picture (`/lore-development:ddp`)
 
-Visualize flows and relationships when text fails to communicate. Generates Mermaid diagrams for architecture, data flow, control flow, relationships.
+When text fails to communicate, visualize. Generates Mermaid diagrams for flows, relationships, and architecture.
 
 **Output:** `.lore/diagrams/<topic>.md`
 
 ### Tend (`/lore-development:tend`)
 
-Periodic hygiene for `.lore/` directories. Updates frontmatter status fields, retrofits old documents, ensures searchability.
+Periodic hygiene for `.lore/`. Updates frontmatter status fields, ensures searchability, identifies what's stale vs active vs abandoned.
 
-## The Philosophy
+**Output:** In-place updates to existing `.lore/` files
 
-### Gather Context in Layers
+## How It Works
 
-Prevent overfit by building understanding in stages:
-1. **Research** - What exists? What have others done?
-2. **Brainstorm** - What could we do?
-3. **Specify** - What will we do?
-4. **Plan** - How will we do it?
-5. **Implement** - (Claude Code native capabilities)
-6. **Retro** - What did we learn?
+### The Lore-Researcher Agent
 
-Each layer adds context without committing to implementation. The goal is understanding before action.
+When you run `/specify` or `/prep-plan`, the `lore-researcher` agent automatically searches `.lore/` for related work. Past specs, retros, brainstorms. It surfaces findings before you start, so the AI has context from previous features.
 
-### Two Modes of Operation
-
-**Forward Mode (Building New):**
-`research → brainstorm → specify → prep-plan → implement → retro`
-
-You know what you want to build. This creates lore as you work.
-
-**Backward Mode (Excavating Existing):**
-`excavate → document → extract`
-
-You inherit a codebase. This discovers the lore that should have been documented.
-
-The output is the same (specs, architecture docs), but the process is inverted.
-
-### Compound Knowledge
-
-Knowledge compounds when past learnings inform new work. Lore Development closes this loop automatically:
-
+This closes the knowledge loop:
 ```
-/specify or /prep-plan
-        │
-        ├─► lore-researcher agent searches .lore/
-        │   for related work
-        ▼
-   findings included in new spec/plan
-        │
-        ... work happens ...
-        │
-        ▼
-      /retro
-        │
-        └─► captures lessons → .lore/retros/
+New work starts
+    → lore-researcher finds related context
+    → context informs spec/plan
+    → work completes
+    → retro captures lessons
+    → lessons available for next cycle
 ```
 
-When you start new work, relevant retros and specs surface automatically. Lessons learned don't get lost.
+### Two Modes
 
-### Fresh Eyes Review
+**Forward (Building New):** Research → Brainstorm → Specify → Plan → Implement → Retro
 
-Long sessions create blind spots. Lore Development uses specialized review agents that operate with fresh context:
+**Backward (Excavating Existing):** Code → Survey → Features → Design → Specs
 
-- **spec-reviewer**: Reviews specs for clarity, completeness, gaps
-- **fresh-lore**: Provides Socratic questioning from outside your accumulated context
-
-These agents catch what you missed when too deep in implementation.
+Same outputs (`.lore/specs/`, design docs), different starting points.
 
 ## Artifact Storage
 
@@ -194,25 +161,11 @@ Next time you build something auth-related, `lore-researcher` will surface these
 
 ## Design Decisions
 
-### Why Not Enforce Process?
+**Composable skills, not rigid workflow.** Use what fits. Skip what doesn't. Bug fix? Jump straight to code. Complex system? Research → brainstorm → specify → plan → retro.
 
-Modern LLMs have strong native planning and implementation capabilities. Rigid process gets in the way. Lore Development creates affordances (skills for context gathering) without dictating workflow.
+**Separate documents.** Each artifact lives in its own file for searchability, linkability, version control, and browsing without special tools.
 
-### Why Separate Documents?
-
-Each artifact (research, spec, plan, retro) lives in its own file. This makes them:
-- Searchable by filename and frontmatter
-- Linkable from other documents
-- Version-controllable with meaningful diffs
-- Browsable without special tools
-
-### Why Frontmatter Schema?
-
-The `lore-researcher` agent searches by frontmatter (title, status, tags, modules). Documents without frontmatter are invisible. The schema is lightweight (5 fields) but enables powerful search.
-
-### Why Automatic Context Loading?
-
-You shouldn't have to remember "did I write something about this?" The `lore-researcher` agent runs automatically at the start of `/specify` and `/prep-plan`, surfacing relevant context without manual search.
+**Automatic context loading.** The `lore-researcher` agent runs at the start of `/specify` and `/prep-plan`. You don't have to remember what you wrote before.
 
 ## Installation
 
@@ -220,8 +173,6 @@ You shouldn't have to remember "did I write something about this?" The `lore-res
 /plugin install lore-development@vibe-garden
 ```
 
-## Why I Built This
+## Related
 
-I kept solving the same problems repeatedly because I forgot lessons learned three months ago. Specs existed but weren't findable when starting new features. Context lived in my head, not in the repository.
-
-Lore Development externalizes that knowledge. It makes past work visible to future work. The plugin doesn't enforce discipline; it creates affordances that make context-gathering the path of least resistance.
+For deeper philosophy and motivation, see [[Writing/Lore-Development/index|Lore Development: Context Over Documentation]].
