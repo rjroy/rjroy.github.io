@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-02-01 -->
+<!-- last-generated: 2026-02-02 -->
 
-- "If your weekend had a color, texture, and smell, what would they be? Design a sensory experience that matches."
-- "What would you build or make if failure wasn't possible and you had unlimited materials? Sketch it, describe it, or just daydream it into existence."
-- "Pick a random word from a book or sign you see. Follow the chain of associations—what memories, ideas, or possibilities does it unlock?"
-- "Imagine you're a character in a story you love. How would they spend this weekend differently than you normally would?"
-- "What small, ordinary thing in your environment could be completely reimagined? A coffee mug as a sculpture, a staircase as a landscape, a shadow as a map."
 - "Pick a skill or craft you've never tried before—woodworking, painting, cooking a cuisine you've never made, writing poetry. Spend an hour doing it badly on purpose. What felt surprising?"
 - "Find a place in your home or neighborhood you've never really looked at closely. Sit with it for 15 minutes. What details did you miss before? What story could that space tell?"
 - "Imagine one person from your life 20 years ago could see you now. What would genuinely surprise them? What would delight them? What would confuse them?"
@@ -25,3 +20,8 @@
 - "What would you build, create, or explore if you had no audience, no judgment, and no need to finish it? Give yourself permission to start something just for the pleasure of it."
 - "Wander somewhere familiar but choose a detail you've never really looked at before—zoom in mentally, get strange with it, let your mind follow tangents about how it works or what it could become."
 - "What's something you were curious about as a kid but stopped wondering about? Spend time being genuinely curious about it again, without trying to become an expert—just play with the question."
+- "What would 'recent articles' surface if you prioritized recency over relevance—and how might that change what you actually read versus what you think you should read?"
+- "Clawd.bot caught your attention on Jan 26, but you haven't circled back—what specifically were you investigating, and is it still worth the deep dive?"
+- "Your Memory Loop is already surfacing patterns through spaced repetition; would a 'recent articles' feed duplicate that work, or would it serve a different need (like serendipity or breaking routine)?"
+- "If you built a 'recent articles' feature, who would use it most—you, your team members, or both—and does that change how you'd design it?"
+- "You're externalizing thinking across multiple surfaces (vaults, Memory Loop, daily debriefs); where would 'recent articles' live to actually get used rather than becoming another doc to maintain?"
