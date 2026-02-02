@@ -8,6 +8,7 @@
 # Quartz build output
 public/
 .quartz-cache/
+*.tsbuildinfo
 
 # Dependencies
 node_modules/
