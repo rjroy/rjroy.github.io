@@ -1,0 +1,94 @@
+@use "../../styles/variables.scss" as *;
+
+.collapsible-recent-notes {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  flex: 0 auto;
+  min-height: 1.2rem;
+
+  @media all and ($mobile) {
+    display: none;
+  }
+
+  &.collapsed {
+    flex: 0 0 1.2rem;
+
+    & .fold {
+      transform: rotateZ(-90deg);
+    }
+
+    & .recent-notes-content {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  & .fold {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+  }
+}
+
+button.recent-notes-toggle {
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+
+  & h3 {
+    font-size: 1rem;
+    display: inline-block;
+    margin: 0.5rem 0 0 0;
+  }
+
+  & .fold {
+    margin-top: 0.5rem;
+  }
+}
+
+.recent-notes-content {
+  margin-top: 0.5rem;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  & > .recent-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & > li {
+      margin: 0.5rem 0;
+
+      .section > .desc > h3 {
+        margin: 0;
+
+        & > a {
+          background-color: transparent;
+        }
+      }
+
+      .section > .meta {
+        margin: 0 0 0.5rem 0;
+        opacity: 0.6;
+      }
+
+      .section > .tags {
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin: 0;
+
+        & > li > a {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

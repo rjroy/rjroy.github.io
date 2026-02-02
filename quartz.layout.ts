@@ -39,7 +39,7 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer(),
-    Component.RecentNotes({
+    Component.CollapsibleRecentNotes({
       title: "Recently Updated",
       limit: 5,
       showTags: false,
