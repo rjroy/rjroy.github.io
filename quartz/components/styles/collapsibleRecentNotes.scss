@@ -5,22 +5,20 @@
   flex-direction: column;
   overflow-y: hidden;
   flex: 0 auto;
-  min-height: 1.2rem;
 
   @media all and ($mobile) {
     display: none;
   }
 
   &.collapsed {
-    flex: 0 0 1.2rem;
+    flex: 0 0 auto;
 
     & .fold {
       transform: rotateZ(-90deg);
     }
 
     & .recent-notes-content {
-      visibility: hidden;
-      opacity: 0;
+      display: none;
     }
   }
 
