@@ -1,0 +1,24 @@
+{
+  "enabledPlugins": {
+    "claude-md-management@claude-plugins-official": true,
+    "claude-code-setup@claude-plugins-official": true,
+    "playground@claude-plugins-official": true,
+    "judgment-engine-virelan@wyrd-gateway": true,
+    "story-engine-wyrd@wyrd-gateway": true,
+    "music-engine-rowan@wyrd-gateway": true
+  },
+  "extraKnownModules": {
+    "wyrd-gateway": {
+      "source": {
+        "source": "github",
+        "url": "rjroy/wyrd-gateway"
+      }
+    },
+    "vibe-garden": {
+      "source": {
+        "source": "github",
+        "url": "rjroy/vibe-garden"
+      }
+    }
+  }
+}
