@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-02-02 -->
+<!-- last-generated: 2026-02-07 -->
 
-- "Pick a skill or craft you've never tried before—woodworking, painting, cooking a cuisine you've never made, writing poetry. Spend an hour doing it badly on purpose. What felt surprising?"
-- "Find a place in your home or neighborhood you've never really looked at closely. Sit with it for 15 minutes. What details did you miss before? What story could that space tell?"
-- "Imagine one person from your life 20 years ago could see you now. What would genuinely surprise them? What would delight them? What would confuse them?"
-- "Build something that serves no practical purpose—a structure, a collage, a soundscape, a garden arrangement. The only rule is that it has to make you smile or intrigue you. What did you learn about what appeals to you?"
-- "If your usual constraints (time, money, skill, location) disappeared for a day, what would you actually want to do? Not the fantasy vacation answer—what's the real thing pulling at you?"
 - "What specific problem were you hoping clawd.bot might solve for your current workflows—is it about local LLM access, API integration, or something else entirely?"
 - "How does clawd.bot's approach compare to your existing local GLM-4.7-Flash setup, and what would need to be true for you to switch or integrate it alongside your current tooling?"
 - "If you could design the ideal interface for local Claude access, what would make it fundamentally different from what's available now?"
@@ -25,3 +20,8 @@
 - "Your Memory Loop is already surfacing patterns through spaced repetition; would a 'recent articles' feed duplicate that work, or would it serve a different need (like serendipity or breaking routine)?"
 - "If you built a 'recent articles' feature, who would use it most—you, your team members, or both—and does that change how you'd design it?"
 - "You're externalizing thinking across multiple surfaces (vaults, Memory Loop, daily debriefs); where would 'recent articles' live to actually get used rather than becoming another doc to maintain?"
+- "If you could design a completely useless machine that's beautiful to watch, what would it do and why would people love it?"
+- "Pick a place you pass through regularly but never really see. Spend 15 minutes observing it like you're documenting an alien landscape for someone who's never been there."
+- "What would your ideal day look like if productivity didn't exist as a concept—no goals, no efficiency, just time and curiosity?"
+- "Imagine a conversation between two objects in your home that have never met. What would they discover about each other?"
+- "What's something you believed as a child that you've forgotten, and what if that belief was actually pointing at something true you've stopped noticing?"
