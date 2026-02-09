@@ -1,0 +1,24 @@
+---
+import { getCollection, render } from "astro:content"
+import ThoughtLayout from "../../layouts/ThoughtLayout.astro"
+
+export async function getStaticPaths() {
+  const thoughts = await getCollection("thoughts")
+  return thoughts.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
+const { Content } = await render(entry)
+---
+
+<ThoughtLayout
+  title={entry.data.title}
+  date={entry.data.date}
+  standalone={entry.data.standalone}
+  linkedIdea={entry.data.linkedIdea}
+>
+  <Content />
+</ThoughtLayout>

@@ -1,0 +1,43 @@
+---
+import BaseLayout from "./BaseLayout.astro"
+
+interface Props {
+  title: string
+  description: string
+  status: "active" | "maintained" | "archived"
+  tags: string[]
+}
+
+const { title, description, status, tags } = Astro.props
+---
+
+<BaseLayout title={title} description={description}>
+  <article>
+    <header class="mb-8">
+      <div class="flex items-center gap-3 mb-2">
+        <h1 class="mb-0">{title}</h1>
+        <span
+          class={`status-${status} text-sm font-heading uppercase tracking-wider`}
+        >
+          {status}
+        </span>
+      </div>
+      {description && <p class="text-[var(--color-text-muted)]">{description}</p>}
+      {
+        tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-3">
+            {tags.map((tag) => (
+              <span class="text-xs px-2 py-1 rounded bg-[var(--color-bg-lighter)] text-[var(--color-text-muted)]">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )
+      }
+    </header>
+
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

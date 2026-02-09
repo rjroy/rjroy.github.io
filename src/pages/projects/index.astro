@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import { getCollection } from "astro:content"
+
+const allProjects = await getCollection("projects")
+
+// Get top-level project pages (Astro strips "/index" from IDs, so top-level entries have no "/" in their ID)
+const topLevelProjects = allProjects
+  .filter((entry) => !entry.id.includes("/"))
+  .sort((a, b) => {
+    const statusOrder = { active: 0, maintained: 1, archived: 2 }
+    const diff = statusOrder[a.data.status] - statusOrder[b.data.status]
+    if (diff !== 0) return diff
+    return a.data.title.localeCompare(b.data.title)
+  })
+
+function entryIdToUrl(entryId: string): string {
+  return `/projects/${entryId}/`
+}
+---
+
+<BaseLayout title="Projects" description="Shipped projects and tools">
+  <h1>Projects</h1>
+  <p class="text-[var(--color-text-muted)] mb-8">
+    Shipped projects, maintained tools, and archived work.
+  </p>
+
+  <div class="space-y-4">
+    {topLevelProjects.map((project) => (
+      <a href={entryIdToUrl(project.id)} class="card block p-4 no-underline">
+        <div class="flex items-center gap-2 mb-1">
+          <h2 class="text-lg mb-0">{project.data.title}</h2>
+          <span class={`status-${project.data.status} text-xs font-heading uppercase tracking-wider`}>
+            {project.data.status}
+          </span>
+        </div>
+        {project.data.description && (
+          <p class="text-sm text-[var(--color-text-muted)] mb-0">{project.data.description}</p>
+        )}
+      </a>
+    ))}
+  </div>
+</BaseLayout>

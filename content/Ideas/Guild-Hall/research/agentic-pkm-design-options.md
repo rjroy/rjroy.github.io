@@ -1,3 +1,7 @@
+---
+title: "Agentic PKM for Memory Loop: Design Options"
+---
+
 # Agentic PKM for Memory Loop: Design Options
 
 ## The Core Insight

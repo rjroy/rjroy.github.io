@@ -1,6 +1,9 @@
 ---
-description: Community patterns for structuring AI coding assistant rules (CLAUDE.md, AGENTS.md, .cursorrules)
-download_date: 2025-12-31
+description: >-
+  Community patterns for structuring AI coding assistant rules (CLAUDE.md,
+  AGENTS.md, .cursorrules)
+download_date: 2025-12-31T00:00:00.000Z
+title: 'AI Coding Rules: Community Patterns'
 ---
 
 # AI Coding Rules: Community Patterns

@@ -5,9 +5,9 @@
 .obsidian/
 .trash/
 
-# Quartz build output
-public/
-.quartz-cache/
+# Astro build output
+dist/
+.astro/
 *.tsbuildinfo
 
 # Dependencies
@@ -33,4 +33,3 @@ content/Inbox/chats/
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/vault-stats.json
-

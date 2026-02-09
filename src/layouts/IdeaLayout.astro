@@ -1,0 +1,76 @@
+---
+import BaseLayout from "./BaseLayout.astro"
+import { getCollection } from "astro:content"
+
+interface Props {
+  title: string
+  description: string
+  status: "active" | "paused" | "graduated"
+  tags: string[]
+  id: string
+}
+
+const { title, description, status, tags, id } = Astro.props
+
+// Find sibling pages in the same folder
+const folder = id.split("/")[0]
+const allIdeas = await getCollection("ideas")
+const siblings = allIdeas
+  .filter((entry) => entry.id.startsWith(folder + "/") && entry.id !== id)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title))
+
+function entryIdToUrl(entryId: string): string {
+  return `/ideas/${entryId}/`
+}
+---
+
+<BaseLayout title={title} description={description}>
+  <article>
+    <header class="mb-8">
+      <div class="flex items-center gap-3 mb-2">
+        <h1 class="mb-0">{title}</h1>
+        <span
+          class={`status-${status} text-sm font-heading uppercase tracking-wider`}
+        >
+          {status}
+        </span>
+      </div>
+      {description && <p class="text-[var(--color-text-muted)]">{description}</p>}
+      {
+        tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-3">
+            {tags.map((tag) => (
+              <span class="text-xs px-2 py-1 rounded bg-[var(--color-bg-lighter)] text-[var(--color-text-muted)]">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )
+      }
+    </header>
+
+    <div class="prose">
+      <slot />
+    </div>
+
+    {
+      siblings.length > 0 && (
+        <nav class="mt-12 pt-8 border-t border-[var(--color-border)]">
+          <h2 class="text-lg mb-4">Related Pages</h2>
+          <ul class="list-none p-0 space-y-2">
+            {siblings.map((sibling) => (
+              <li>
+                <a
+                  href={entryIdToUrl(sibling.id)}
+                  class="card block p-3 no-underline"
+                >
+                  {sibling.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+  </article>
+</BaseLayout>

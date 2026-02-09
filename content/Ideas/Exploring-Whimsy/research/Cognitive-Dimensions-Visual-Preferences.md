@@ -1,3 +1,7 @@
+---
+title: "Cognitive Dimensions That Predict Visual Environment Preferences"
+---
+
 # Cognitive Dimensions That Predict Visual Environment Preferences
 
 Five research-backed psychological dimensions reliably predict individual differences in visual environment preferences: sensory processing sensitivity, arousal/stimulation needs, openness to experience, field dependence/independence, and abstract versus concrete thinking styles. These dimensions map directly onto preferences for visual complexity, color saturation, imagery type, and background busyness—providing actionable axes for offering different visual environments to different users.
