@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-02-07 -->
+<!-- last-generated: 2026-02-08 -->
 
-- "What specific problem were you hoping clawd.bot might solve for your current workflows—is it about local LLM access, API integration, or something else entirely?"
-- "How does clawd.bot's approach compare to your existing local GLM-4.7-Flash setup, and what would need to be true for you to switch or integrate it alongside your current tooling?"
-- "If you could design the ideal interface for local Claude access, what would make it fundamentally different from what's available now?"
-- "Given your teaching pattern of helping the team understand prompt engineering and model selection, how might clawd.bot become a tool for spreading that knowledge across your organization?"
-- "What's one constraint in your current local LLM workflow that, if removed, would unlock a capability you've been wanting to build?"
 - "What specific problem would clawd.bot solve for your Memory Loop workflow, and how does it compare to your current Claude Agent SDK integration?"
 - "How could bot automation patterns inform your thinking about pair writing mode or the Socratic questioner role in GCTR?"
 - "If clawd.bot handles Discord/Slack integration well, what would it take to bring similar affordances to your Obsidian vault interaction?"
@@ -25,3 +20,8 @@
 - "What would your ideal day look like if productivity didn't exist as a concept—no goals, no efficiency, just time and curiosity?"
 - "Imagine a conversation between two objects in your home that have never met. What would they discover about each other?"
 - "What's something you believed as a child that you've forgotten, and what if that belief was actually pointing at something true you've stopped noticing?"
+- "If you could design a completely fictional world with its own rules, geography, and culture, what would be the first thing you'd build in it and why?"
+- "Pick a random object in your home and imagine its entire secret life: where it came from, what it's witnessed, and where it wants to go next."
+- "What would you create if you had no audience, no judgment, and only 2 hours? Don't plan it yet—just sit with the question."
+- "If your ideal weekend had a color, texture, and sound, what would they be? Now build a single moment that captures all three."
+- "Imagine you're a character in a story someone else is writing about you. What would surprise them most about what you do when no one's watching?"
