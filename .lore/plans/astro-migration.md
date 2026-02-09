@@ -1,7 +1,7 @@
 ---
 title: Implementation plan for Astro migration
 date: 2026-02-08
-status: approved
+status: executed
 tags: [astro, migration, quartz, implementation, github-pages]
 related: [.lore/specs/astro-migration.md, .lore/brainstorm/blog-vs-garden.md, .lore/research/astro-migration-feasibility.md]
 ---

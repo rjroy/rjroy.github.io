@@ -1,7 +1,7 @@
 ---
 title: Migrate Broadcast Cache from Quartz 4 to Astro
 date: 2026-02-08
-status: approved
+status: implemented
 tags: [astro, migration, quartz, content-model, github-pages]
 related: [.lore/brainstorm/blog-vs-garden.md, .lore/research/astro-migration-feasibility.md]
 req-prefix: ASTRO
