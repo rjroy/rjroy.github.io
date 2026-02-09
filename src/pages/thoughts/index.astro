@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import { getCollection } from "astro:content"
+
+const thoughts = await getCollection("thoughts")
+const sortedThoughts = thoughts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+---
+
+<BaseLayout title="Thoughts" description="Short-form reflections and observations">
+  <h1>Thoughts</h1>
+  <p class="text-[var(--color-text-muted)] mb-8">
+    Short-form reflections, observations, and developing ideas.
+  </p>
+
+  {sortedThoughts.length > 0 ? (
+    <div class="space-y-8">
+      {sortedThoughts.map((thought) => (
+        <article class="border-l-2 border-[var(--color-border-accent)] pl-4">
+          <time datetime={thought.data.date.toISOString()} class="text-xs text-[var(--color-text-muted)]">
+            {thought.data.date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
+          </time>
+          <h2 class="text-lg mt-1 mb-1">
+            <a href={`/thoughts/${thought.id}/`}>{thought.data.title}</a>
+          </h2>
+        </article>
+      ))}
+    </div>
+  ) : (
+    <p class="text-[var(--color-text-dim)] italic">No thoughts yet. This is a new section.</p>
+  )}
+</BaseLayout>

@@ -1,0 +1,226 @@
+---
+const currentPath = Astro.url.pathname
+
+const navLinks = [
+  { label: "Ideas", href: "/ideas/" },
+  { label: "Writing", href: "/writing/" },
+  { label: "Projects", href: "/projects/" },
+]
+
+function isActive(href: string): boolean {
+  return currentPath.startsWith(href)
+}
+---
+
+<nav class="w-full border-b border-[var(--color-border)] bg-[var(--color-bg)]">
+  <div class="max-w-5xl mx-auto px-4 flex items-center justify-between h-14">
+    <!-- Site title -->
+    <a
+      href="/"
+      class="font-heading text-lg text-[var(--color-gold)] no-underline hover:text-[var(--color-brass)]"
+    >
+      Broadcast Cache
+    </a>
+
+    <!-- Desktop nav links -->
+    <div class="hidden md:flex items-center gap-6">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              "font-heading text-sm uppercase tracking-wider no-underline transition-colors",
+              isActive(link.href)
+                ? "text-[var(--color-gold)] border-b-2 border-[var(--color-gold)] pb-0.5"
+                : "text-[var(--color-text-muted)] hover:text-[var(--color-gold)]",
+            ]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+
+      <!-- Theme toggle -->
+      <button
+        id="theme-toggle"
+        type="button"
+        class="p-2 text-[var(--color-text-muted)] hover:text-[var(--color-gold)] transition-colors"
+        aria-label="Toggle theme"
+      >
+        <!-- Sun icon (shown in dark mode) -->
+        <svg
+          class="theme-icon-sun w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+          ></path>
+        </svg>
+        <!-- Moon icon (shown in light mode) -->
+        <svg
+          class="theme-icon-moon w-5 h-5 hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile controls -->
+    <div class="flex items-center gap-2 md:hidden">
+      <!-- Theme toggle (mobile) -->
+      <button
+        id="theme-toggle-mobile"
+        type="button"
+        class="p-2 text-[var(--color-text-muted)] hover:text-[var(--color-gold)] transition-colors"
+        aria-label="Toggle theme"
+      >
+        <svg
+          class="theme-icon-sun w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+          ></path>
+        </svg>
+        <svg
+          class="theme-icon-moon w-5 h-5 hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Hamburger button -->
+      <button
+        id="mobile-menu-button"
+        type="button"
+        class="p-2 text-[var(--color-text-muted)] hover:text-[var(--color-gold)] transition-colors"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <svg
+          class="hamburger-icon w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg
+          class="close-icon w-6 h-6 hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu overlay -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-[var(--color-border)] bg-[var(--color-bg)]"
+  >
+    <div class="px-4 py-4 space-y-3">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              "block font-heading text-sm uppercase tracking-wider no-underline py-2 transition-colors",
+              isActive(link.href)
+                ? "text-[var(--color-gold)] border-l-2 border-[var(--color-gold)] pl-3"
+                : "text-[var(--color-text-muted)] hover:text-[var(--color-gold)] pl-3",
+            ]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  // Theme toggle
+  function updateThemeIcons() {
+    const isLight = document.documentElement.classList.contains("light")
+    document.querySelectorAll(".theme-icon-sun").forEach(function (el) {
+      el.classList.toggle("hidden", isLight)
+    })
+    document.querySelectorAll(".theme-icon-moon").forEach(function (el) {
+      el.classList.toggle("hidden", !isLight)
+    })
+  }
+
+  function toggleTheme() {
+    const html = document.documentElement
+    html.classList.toggle("light")
+    const isLight = html.classList.contains("light")
+    localStorage.setItem("theme", isLight ? "light" : "dark")
+    updateThemeIcons()
+  }
+
+  document
+    .getElementById("theme-toggle")
+    ?.addEventListener("click", toggleTheme)
+  document
+    .getElementById("theme-toggle-mobile")
+    ?.addEventListener("click", toggleTheme)
+
+  // Initialize icons on load
+  updateThemeIcons()
+
+  // Mobile menu toggle
+  var menuButton = document.getElementById("mobile-menu-button")
+  var mobileMenu = document.getElementById("mobile-menu")
+
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener("click", function () {
+      var isOpen = !mobileMenu.classList.contains("hidden")
+      mobileMenu.classList.toggle("hidden")
+      menuButton.setAttribute("aria-expanded", String(!isOpen))
+      menuButton
+        .querySelector(".hamburger-icon")
+        ?.classList.toggle("hidden", !isOpen)
+      menuButton
+        .querySelector(".close-icon")
+        ?.classList.toggle("hidden", isOpen)
+    })
+  }
+</script>

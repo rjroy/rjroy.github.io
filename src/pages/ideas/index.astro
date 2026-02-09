@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import { getCollection } from "astro:content"
+
+const allIdeas = await getCollection("ideas")
+
+// Get unique "top-level" ideas (Astro strips "/index" from IDs, so top-level entries have no "/" in their ID)
+const topLevelIdeas = allIdeas
+  .filter((entry) => !entry.id.includes("/"))
+  .sort((a, b) => {
+    const statusOrder = { active: 0, paused: 1, graduated: 2 }
+    const diff = statusOrder[a.data.status] - statusOrder[b.data.status]
+    if (diff !== 0) return diff
+    return a.data.title.localeCompare(b.data.title)
+  })
+
+function entryIdToUrl(entryId: string): string {
+  return `/ideas/${entryId}/`
+}
+---
+
+<BaseLayout title="Ideas" description="Developing thoughts and explorations">
+  <h1>Ideas</h1>
+  <p class="text-[var(--color-text-muted)] mb-8">
+    Developing thoughts, explorations, and work in progress.
+  </p>
+
+  <div class="space-y-4">
+    {topLevelIdeas.map((idea) => (
+      <a href={entryIdToUrl(idea.id)} class="card block p-4 no-underline">
+        <div class="flex items-center gap-2 mb-1">
+          <h2 class="text-lg mb-0">{idea.data.title}</h2>
+          <span class={`status-${idea.data.status} text-xs font-heading uppercase tracking-wider`}>
+            {idea.data.status}
+          </span>
+        </div>
+        {idea.data.description && (
+          <p class="text-sm text-[var(--color-text-muted)] mb-0">{idea.data.description}</p>
+        )}
+      </a>
+    ))}
+  </div>
+</BaseLayout>

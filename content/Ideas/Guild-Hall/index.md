@@ -1,3 +1,7 @@
+---
+title: "Guild Hall"
+---
+
 # Guild Hall
 
 A multi-agent orchestration system using the blackboard architecture pattern.

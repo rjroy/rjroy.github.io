@@ -1,3 +1,7 @@
+---
+title: "How Choice Imagery Shapes Cognition: A Balanced Assessment"
+---
+
 # How Choice Imagery Shapes Cognition: A Balanced Assessment
 
 Background imagery depicting implicit choice points—crossroads, branching paths, open horizons—appears to activate different cognitive processes than imagery showing single destinations or complete scenes. **The hypothesis holds with important caveats**: moderate "openness" promotes exploratory cognition in many contexts, but the effect reverses under cognitive load, varies dramatically by personality, and habituation is surprisingly limited. The research converges on an optimal middle ground—what environmental psychologists call "mystery"—rather than maximum choice.

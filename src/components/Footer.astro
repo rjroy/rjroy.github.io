@@ -1,0 +1,26 @@
+---
+const currentYear = new Date().getFullYear()
+---
+
+<footer class="border-t border-[var(--color-border-accent)] mt-auto">
+  <div
+    class="max-w-5xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-[var(--color-text-muted)]"
+  >
+    <span>&copy; {currentYear} Ron Roy</span>
+    <div class="flex items-center gap-4">
+      <a
+        href="/rss.xml"
+        class="hover:text-[var(--color-gold)] transition-colors no-underline"
+      >
+        RSS
+      </a>
+      <span class="text-[var(--color-text-dim)]">
+        Built with <a
+          href="https://astro.build"
+          class="hover:text-[var(--color-gold)] transition-colors"
+          >Astro</a
+        >
+      </span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,139 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import { getCollection } from "astro:content"
+
+// Get all collections
+const thoughts = await getCollection("thoughts")
+const ideas = await getCollection("ideas")
+const writing = await getCollection("writing")
+const projects = await getCollection("projects")
+
+// Recent thoughts (newest 10)
+const recentThoughts = thoughts
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 10)
+
+// Helper: get top 3 items with featured priority
+function getTopItems(entries: any[], section: string) {
+  // Only top-level items (Astro strips "/index" from IDs, so top-level entries have no "/" in their ID)
+  const topLevel = entries.filter((e) => !e.id.includes("/"))
+  const featured = topLevel.filter((e) => e.data.featured)
+  const nonFeatured = topLevel.filter((e) => !e.data.featured)
+
+  // Sort both by date desc (entries without dates go last)
+  const sortByDate = (a: any, b: any) => {
+    if (a.data.date && b.data.date) return b.data.date.getTime() - a.data.date.getTime()
+    if (a.data.date) return -1
+    if (b.data.date) return 1
+    return a.data.title.localeCompare(b.data.title)
+  }
+
+  featured.sort(sortByDate)
+  nonFeatured.sort(sortByDate)
+
+  const result = [...featured.slice(0, 3)]
+  if (result.length < 3) {
+    result.push(...nonFeatured.slice(0, 3 - result.length))
+  }
+  return result
+}
+
+const topIdeas = getTopItems(ideas, "ideas")
+const topWriting = getTopItems(writing, "writing")
+const topProjects = getTopItems(projects, "projects")
+
+function entryIdToUrl(entryId: string, section: string): string {
+  return `/${section}/${entryId}/`
+}
+---
+
+<BaseLayout title="Home" description="Ron's Broadcast Cache - Ideas, writing, and projects">
+  <!-- Intro -->
+  <section class="mb-12">
+    <h1 class="text-3xl mb-4">Broadcast Cache</h1>
+    <p class="text-lg text-[var(--color-text-muted)]">
+      I'm Ron, a senior engineering manager exploring the intersection of AI, tooling, and how we think.
+      This is where developing ideas, finished writing, and shipped projects live.
+    </p>
+  </section>
+
+  <!-- Recent Thoughts -->
+  <section class="mb-12">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="mb-0">Recent Thoughts</h2>
+      {recentThoughts.length > 0 && (
+        <a href="/thoughts/" class="text-sm">See all &rarr;</a>
+      )}
+    </div>
+    {recentThoughts.length > 0 ? (
+      <div class="space-y-6">
+        {recentThoughts.map((thought) => (
+          <div class="border-l-2 border-[var(--color-border-accent)] pl-4">
+            <time datetime={thought.data.date.toISOString()} class="text-xs text-[var(--color-text-muted)]">
+              {thought.data.date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
+            </time>
+            <p class="mt-1 mb-0">{thought.data.title}</p>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <p class="text-[var(--color-text-dim)] italic">No thoughts yet. This is a new section.</p>
+    )}
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Ideas -->
+  <section class="mb-12">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="mb-0">Ideas</h2>
+      <a href="/ideas/" class="text-sm">See all &rarr;</a>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {topIdeas.map((idea) => (
+        <a href={entryIdToUrl(idea.id, "ideas")} class="card block p-4 no-underline">
+          <h3 class="text-base mb-1">{idea.data.title}</h3>
+          {idea.data.description && (
+            <p class="text-sm text-[var(--color-text-muted)] mb-0">{idea.data.description}</p>
+          )}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Writing -->
+  <section class="mb-12">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="mb-0">Writing</h2>
+      <a href="/writing/" class="text-sm">See all &rarr;</a>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {topWriting.map((piece) => (
+        <a href={entryIdToUrl(piece.id, "writing")} class="card block p-4 no-underline">
+          <h3 class="text-base mb-1">{piece.data.title}</h3>
+          {piece.data.description && (
+            <p class="text-sm text-[var(--color-text-muted)] mb-0">{piece.data.description}</p>
+          )}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="mb-12">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="mb-0">Projects</h2>
+      <a href="/projects/" class="text-sm">See all &rarr;</a>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {topProjects.map((project) => (
+        <a href={entryIdToUrl(project.id, "projects")} class="card block p-4 no-underline">
+          <h3 class="text-base mb-1">{project.data.title}</h3>
+          {project.data.description && (
+            <p class="text-sm text-[var(--color-text-muted)] mb-0">{project.data.description}</p>
+          )}
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

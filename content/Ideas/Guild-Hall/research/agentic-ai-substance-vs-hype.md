@@ -1,3 +1,7 @@
+---
+title: "Agentic AI in personal knowledge management: substance versus hype"
+---
+
 # Agentic AI in personal knowledge management: substance versus hype
 
 **The gap between AI agent promises and production reality remains vast.** Gartner found that only 4% of 3,000+ systems marketed as "AI agents" actually meet genuine agentic criteria—the rest are rebranded automation or assistants. For personal knowledge management specifically, the research reveals a paradox: the tasks where agency could genuinely help (continuous monitoring, cross-vault pattern detection) are precisely where autonomous intervention risks undermining the emergent, personal nature of knowledge work. Memory Loop's current architecture—combining assistant-style AI in Think mode with scheduled automation in Ground mode—may already represent the optimal design pattern for most PKM use cases.

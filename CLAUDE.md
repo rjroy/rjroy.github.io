@@ -4,32 +4,32 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-**Ron's Broadcast Cache** is a digital garden published via GitHub Pages at `rjroy.github.io`. Built with Quartz 4, it supports Obsidian wiki-links, backlinks, and graph visualization. Content is publicly visible: write for readers, not just personal reference.
+**Ron's Broadcast Cache** is a digital garden published via GitHub Pages at `rjroy.github.io`. Built with Astro, it supports Obsidian wiki-links via remark plugins and Tailwind CSS for styling. Content is publicly visible: write for readers, not just personal reference.
 
 ## Commands
 
 ```bash
 # Local development with hot reload
-npx quartz build --serve
+bun run dev
 
-# Build only (outputs to public/)
-npx quartz build
+# Build only (outputs to dist/)
+bun run build
 
-# Type check and formatting validation
-npm run check
+# Preview built site
+bun run preview
+
+# Type check
+bun run check
 
 # Auto-format files
-npm run format
-
-# Run tests
-npm run test
+bun run format
 ```
 
 ## Deployment
 
 Pushes to `master` trigger automatic deployment via GitHub Actions. The workflow:
-1. Fetches the Nord theme from `quartz-themes`
-2. Builds with `npx quartz build`
+1. Installs dependencies with Bun
+2. Builds with `bunx astro build`
 3. Deploys to GitHub Pages
 
 ## Content Organization
@@ -40,6 +40,7 @@ The site is organized for readers, not workflow machinery.
 - `content/Ideas/` - Developing thoughts and explorations
 - `content/Projects/` - Shipped projects (Memory Loop, Vibe Garden, etc.)
 - `content/Writing/` - Essays and longer-form pieces (Whimsy-for-Clarity)
+- `content/Thoughts/` - Short-form reflections, observations, and developing ideas
 
 **Hidden from navigation (still accessible via direct links):**
 - `content/Inbox/` - Fresh captures, daily notes
@@ -53,6 +54,7 @@ The site is organized for readers, not workflow machinery.
 - **"idea"** - `content/Ideas/`
 - **"project"** - `content/Projects/`
 - **"writing"** or **"essay"** - `content/Writing/`
+- **"thought"** - `content/Thoughts/`
 - **"goals"** - `content/Metadata/memory-loop/goals.md`
 - **"context"** or **"prompts"** - `content/Metadata/memory-loop/contextual-prompts.md`
 
@@ -78,16 +80,16 @@ Related notes go as siblings to `index.md` within the same folder.
 ## Content Conventions
 
 - Use Obsidian wiki-link syntax: `[[Note Name]]`
-- Quartz ignores: `Inbox/`, `Archive/`, `Resources/`, `Attachments/`, `Metadata/`
-- Mark drafts with frontmatter `draft: true` (excluded from build via `RemoveDrafts` plugin)
+- Directories not routed (`Inbox/`, `Archive/`, `Resources/`, `Attachments/`, `Metadata/`) are excluded from navigation
+- Mark drafts with frontmatter `draft: true` (excluded from build via content collection filtering)
 - Dates in filenames use `YYYY-MM-DD` format
 - Attachments go in `content/Attachments/`
 
 ## Configuration Files
 
-- `quartz.config.ts` - Site settings, plugins, theme colors
-- `quartz.layout.ts` - Page layout components (sidebar, graph, backlinks)
-- Don't edit files in `quartz/` directory (upstream Quartz source)
+- `astro.config.mjs` - Site settings, remark plugins, wiki-link resolution
+- `tailwind.config.mjs` - Tailwind theme and styling
+- `src/content.config.ts` - Content collection schemas (ideas, writing, projects, thoughts)
 
 ## Memory Loop
 
