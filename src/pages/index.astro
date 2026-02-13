@@ -72,7 +72,7 @@ function entryIdToUrl(entryId: string, section: string): string {
             <time datetime={thought.data.date.toISOString()} class="text-xs text-[var(--color-text-muted)]">
               {thought.data.date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
             </time>
-            <p class="mt-1 mb-0">{thought.data.title}</p>
+            <p class="mt-1 mb-0"><a href={`/thoughts/${thought.id}/`}>{thought.data.title}</a></p>
           </div>
         ))}
       </div>
