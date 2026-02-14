@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-02-08 -->
+<!-- last-generated: 2026-02-14 -->
 
-- "What specific problem would clawd.bot solve for your Memory Loop workflow, and how does it compare to your current Claude Agent SDK integration?"
-- "How could bot automation patterns inform your thinking about pair writing mode or the Socratic questioner role in GCTR?"
-- "If clawd.bot handles Discord/Slack integration well, what would it take to bring similar affordances to your Obsidian vault interaction?"
-- "What gaps in your current tooling did this link surface, and is this worth a spike investigation or better left for later?"
-- "Could bot architecture principles apply to your local LLM work or the decision between delegation and automation in your team's AI adoption?"
 - "If your weekend had a color, texture, and sound—what would they be, and why? Spend time noticing what actually appeals to you instead of what should."
 - "Pick something mundane you see this weekend (a coffee cup, a shadow, a tree branch) and imagine its entire secret history—where it came from, who owned it, what it witnessed."
 - "What would you build, create, or explore if you had no audience, no judgment, and no need to finish it? Give yourself permission to start something just for the pleasure of it."
@@ -25,3 +20,8 @@
 - "What would you create if you had no audience, no judgment, and only 2 hours? Don't plan it yet—just sit with the question."
 - "If your ideal weekend had a color, texture, and sound, what would they be? Now build a single moment that captures all three."
 - "Imagine you're a character in a story someone else is writing about you. What would surprise them most about what you do when no one's watching?"
+- "If you could design a completely new sense that humans don't have (not enhancing existing ones), what would it detect and how would it change the way you experience the world?"
+- "Pick a place you see every day but never really look at, then spend 10 minutes noticing things as if you've never been there before. What surprised you?"
+- "Imagine a conversation between two things that don't usually talk: maybe your coffee mug and your pillow, or the moon and your phone. What would they say to each other?"
+- "What would you do with a weekend if you had zero obligations and couldn't consume anything (no shows, no social media, no content)? What emerges when you're not being entertained?"
+- "If your ideal day had no time pressure and no schedule, what would naturally happen? Not what you think you *should* do, but what would you actually drift toward?"
