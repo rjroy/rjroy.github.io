@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro"
+import Comments from "../components/Comments.astro"
 import { getCollection } from "astro:content"
 
 interface Props {
@@ -72,5 +73,7 @@ function entryIdToUrl(entryId: string): string {
         </nav>
       )
     }
+
+    <Comments />
   </article>
 </BaseLayout>

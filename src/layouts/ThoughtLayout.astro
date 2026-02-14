@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro"
+import Comments from "../components/Comments.astro"
 
 interface Props {
   title: string
@@ -37,6 +38,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
         <div class="prose">
           <slot />
         </div>
+        <Comments />
       </article>
     ) : (
       <article class="py-4">

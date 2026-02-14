@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro"
+import Comments from "../components/Comments.astro"
 
 interface Props {
   title: string
@@ -39,5 +40,7 @@ const { title, description, status, tags } = Astro.props
     <div class="prose">
       <slot />
     </div>
+
+    <Comments />
   </article>
 </BaseLayout>
