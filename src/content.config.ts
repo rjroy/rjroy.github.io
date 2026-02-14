@@ -8,7 +8,6 @@ const thoughts = defineCollection({
     date: z.coerce.date(),
     tags: z.array(z.string()).default([]),
     linkedIdea: z.string().optional(),
-    standalone: z.boolean().default(false),
   }),
 })
 
