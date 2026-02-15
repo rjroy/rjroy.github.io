@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-02-14 -->
+<!-- last-generated: 2026-02-15 -->
 
-- "If your weekend had a color, texture, and sound—what would they be, and why? Spend time noticing what actually appeals to you instead of what should."
-- "Pick something mundane you see this weekend (a coffee cup, a shadow, a tree branch) and imagine its entire secret history—where it came from, who owned it, what it witnessed."
-- "What would you build, create, or explore if you had no audience, no judgment, and no need to finish it? Give yourself permission to start something just for the pleasure of it."
-- "Wander somewhere familiar but choose a detail you've never really looked at before—zoom in mentally, get strange with it, let your mind follow tangents about how it works or what it could become."
-- "What's something you were curious about as a kid but stopped wondering about? Spend time being genuinely curious about it again, without trying to become an expert—just play with the question."
 - "What would 'recent articles' surface if you prioritized recency over relevance—and how might that change what you actually read versus what you think you should read?"
 - "Clawd.bot caught your attention on Jan 26, but you haven't circled back—what specifically were you investigating, and is it still worth the deep dive?"
 - "Your Memory Loop is already surfacing patterns through spaced repetition; would a 'recent articles' feed duplicate that work, or would it serve a different need (like serendipity or breaking routine)?"
@@ -25,3 +20,8 @@
 - "Imagine a conversation between two things that don't usually talk: maybe your coffee mug and your pillow, or the moon and your phone. What would they say to each other?"
 - "What would you do with a weekend if you had zero obligations and couldn't consume anything (no shows, no social media, no content)? What emerges when you're not being entertained?"
 - "If your ideal day had no time pressure and no schedule, what would naturally happen? Not what you think you *should* do, but what would you actually drift toward?"
+- "If you could design a entirely new sense (beyond sight, sound, touch, taste, smell), what would it perceive and how would it change the way you experience the world?"
+- "Pick something ordinary you see every day, then imagine its secret life: what does it do when no one's looking, what does it want, what story would it tell?"
+- "What would a conversation sound like between two things that have never met but exist in the same space (a coffee cup and a window, a shoe and a shadow)?"
+- "Imagine you're meeting yourself from 10 years ago—not to give advice, but just to show them something completely unexpected about what became possible. What would you show them?"
+- "If emotions were places you could visit, what would the landscape of a feeling you rarely notice look like, and what would you discover walking through it?"
