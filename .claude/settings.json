@@ -7,19 +7,5 @@
     "story-engine-wyrd@wyrd-gateway": true,
     "music-engine-rowan@wyrd-gateway": true
   },
-  "plansDirectory": ".lore/plans",
-  "extraKnownModules": {
-    "wyrd-gateway": {
-      "source": {
-        "source": "github",
-        "url": "rjroy/wyrd-gateway"
-      }
-    },
-    "vibe-garden": {
-      "source": {
-        "source": "github",
-        "url": "rjroy/vibe-garden"
-      }
-    }
-  }
+  "plansDirectory": ".lore/plans"
 }
