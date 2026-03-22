@@ -1,4 +1,4 @@
-<!-- last-generated: 2026-03-14 (week 11) -->
+<!-- last-generated: 2026-03-16 (week 12) -->
 
 - "The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle." -- Steve Jobs
 - "Debugging is like being the detective in a crime movie where you are also the murderer." -- Filipe Fortes, Brazilian software engineer
@@ -14,3 +14,4 @@
 - "Move with conviction, turn with understanding." -- Leadership principle from the EOS SDK team charter
 - "The most effective way to deal with an uncertain future is to invent it." -- Alan Kay
 - "The impediment to action advances action. What stands in the way becomes the way." -- Marcus Aurelius
+- "Do what you can, with what you have, where you are." -- Theodore Roosevelt

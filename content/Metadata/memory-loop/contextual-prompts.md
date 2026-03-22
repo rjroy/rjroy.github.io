@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-03-15 -->
+<!-- last-generated: 2026-03-22 -->
 
-- "If you could design a completely new sense that humans don't have (not enhancing existing ones), what would it detect and how would it change the way you experience the world?"
-- "Pick a place you see every day but never really look at, then spend 10 minutes noticing things as if you've never been there before. What surprised you?"
-- "Imagine a conversation between two things that don't usually talk: maybe your coffee mug and your pillow, or the moon and your phone. What would they say to each other?"
-- "What would you do with a weekend if you had zero obligations and couldn't consume anything (no shows, no social media, no content)? What emerges when you're not being entertained?"
-- "If your ideal day had no time pressure and no schedule, what would naturally happen? Not what you think you *should* do, but what would you actually drift toward?"
 - "If you could design a entirely new sense (beyond sight, sound, touch, taste, smell), what would it perceive and how would it change the way you experience the world?"
 - "Pick something ordinary you see every day, then imagine its secret life: what does it do when no one's looking, what does it want, what story would it tell?"
 - "What would a conversation sound like between two things that have never met but exist in the same space (a coffee cup and a window, a shoe and a shadow)?"
@@ -25,3 +20,8 @@
 - "Spend an hour noticing what delights you without labeling it or explaining why—colors, sounds, textures, conversations, jokes—and see what pattern emerges about what actually captures your attention."
 - "Design the perfect day for someone you've never met, using only constraints that excite you (no money limit, no time limit, no 'practical' rules). What does it reveal about what you think matters?"
 - "What would you explore, build, or investigate if you had permission to fail spectacularly and nobody would ever know? Start there."
+- "If you could see your neighborhood through the eyes of someone visiting for the first time, what would they notice that you've walked past a hundred times? Follow that curiosity for an hour."
+- "What if you redesigned something ordinary in your life (your morning routine, your favorite room, how you get from place A to B) with no practical constraints—only what feels delightful?"
+- "Pick a random object, person, or place, and spend 15 minutes inventing its completely fictional history. Who was it before this moment? What secret does it hold?"
+- "What skill or craft have you always wondered about but never tried? Find one small thing you can learn or make just because it sounds fun, no goal required."
+- "Imagine a conversation between two things that don't usually talk: your favorite song and the sky, your coffee mug and a tree, your past self and future self. What would they tell each other?"
