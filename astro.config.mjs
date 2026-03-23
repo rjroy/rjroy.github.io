@@ -3,6 +3,8 @@ import tailwind from "@astrojs/tailwind"
 import remarkWikiLink from "@flowershow/remark-wiki-link"
 import remarkCallout from "remark-callout"
 import { globbySync } from "globby"
+import { cpSync } from "node:fs"
+import { join } from "node:path"
 
 // Build file lists for wiki-link resolution at config time.
 // The plugin matches wiki-link targets against these paths using
@@ -20,10 +22,33 @@ const attachmentFiles = globbySync("Attachments/**/*.*", { cwd: "content" })
 
 const allFiles = [...contentFiles, ...attachmentFiles]
 
+// Copies image files from content/ to the build output so that markdown
+// image references like /Projects/Guild-Hall/screenshots/img.webp resolve.
+// Astro content collections only process markdown, not sibling static files,
+// but this vault stores images alongside .md files for Obsidian compatibility.
+function copyContentImages() {
+  const imageFiles = globbySync(
+    "{Ideas,Writing,Projects,Thoughts,Attachments}/**/*.{webp,png,jpg,jpeg,gif,svg}",
+    { cwd: "content" },
+  )
+  return {
+    name: "copy-content-images",
+    hooks: {
+      "astro:build:done": ({ dir }) => {
+        for (const file of imageFiles) {
+          cpSync(join("content", file), join(dir.pathname, file), {
+            recursive: true,
+          })
+        }
+      },
+    },
+  }
+}
+
 export default defineConfig({
   site: "https://rjroy.github.io",
   output: "static",
-  integrations: [tailwind()],
+  integrations: [tailwind(), copyContentImages()],
   markdown: {
     remarkPlugins: [
       [
