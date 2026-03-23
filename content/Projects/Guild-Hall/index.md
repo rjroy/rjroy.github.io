@@ -117,16 +117,16 @@ Guild Hall is a monorepo with four systems:
 Guild Hall ships with a roster of specialist workers, each with a defined domain:
 
 - **Guild Master** -- Built-in coordinator. Manages commissions, generates briefings, dispatches work.
-- **Scribe (Sylva)** -- Writer. Drafting, editing, documentation.
-- **Researcher (Petra)** -- Investigator. Gathers context, maps prior art, synthesizes findings.
-- **Developer (Octavia)** -- Engineer. Implementation, debugging, code review.
-- **Reviewer** -- Quality. Adversarial review, gap analysis, spec compliance.
-- **Test Engineer** -- Coverage. Test design, edge case mapping.
-- **Steward** -- Operations. Maintenance, cleanup, process work.
-- **Visionary (Celeste)** -- Strategy. Vision documents, direction, long-range thinking.
-- **Illuminator** -- Image generation and analysis via Replicate.
+- **Octavia** -- Guild Chronicler. Keeper of the guild's living record. Documents what exists and prescribes how new lore should be shaped.
+- **Verity** -- Guild Pathfinder. Ventures beyond the guild walls to gather intelligence. Sees the wider world but never touches the forge.
+- **Dalton** -- Guild Artificer. Master craftsman. Builds what is commissioned, from foundation to finishing touch.
+- **Thorne** -- Guild Warden. Oversees all work with a critical eye. Inspects everything, alters nothing.
+- **Sable** -- Guild Breaker. Probes the seams of what was built, searching for where it gives.
+- **Edmund** -- Guild Steward. Manages the guild's household affairs and correspondence.
+- **Celeste** -- Guild Visionary. Imagines what the project could become. Proposes improvements grounded in evidence.
+- **Sienna** -- Guild Illuminator. Visual craft specialist. Turns prompts into images with creative intention.
 
-Workers can be extended with toolboxes -- packages that add capabilities like web search, image generation, calendar access, or external API integration.
+Workers can be extended with toolboxes -- packages that add capabilities like image generation, email access, or external API integration.
 
 ## Why I Built This
 
@@ -136,6 +136,6 @@ The Guild Master is that middle manager. You describe what you need, and it disp
 
 The interesting constraint was asynchrony. Synchronous AI tools (chat interfaces, code assistants) require you to be present while the work happens. I wanted to delegate something, close the window, and find it done later. That forced a real session lifecycle: commissions with defined deliverables, workers that run to completion without supervision, state that survives across interactions.
 
-The guild metaphor isn't decoration. Thinking of workers as craftspeople with identities and specializations changed how I write briefs. I write for Sylva differently than I write for Octavia. The posture shapes the output, and the identity makes the relationship consistent across hundreds of interactions.
+The guild metaphor isn't decoration. Thinking of workers as craftspeople with identities and specializations changed how I write briefs. I write for Octavia differently than I write for Dalton. The posture shapes the output, and the identity makes the relationship consistent across hundreds of interactions.
 
 It's also genuinely fun to use. The fantasy aesthetic wasn't the point, but it makes the tool feel distinct from work software. When a commission completes and the artifact appears in the tree, there's a small ceremony to it. That matters for something I use every day.
