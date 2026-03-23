@@ -1,5 +1,5 @@
 ---
-title: Implementation notes: astro-migration
+title: "Implementation notes: astro-migration"
 date: 2026-02-08
 status: complete
 tags: [implementation, notes, astro, migration]
