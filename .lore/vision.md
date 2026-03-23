@@ -9,8 +9,6 @@ last_reviewed: 2026-03-23
 
 # Vision: Ron's Broadcast Cache
 
-## What This Site Is Becoming
-
 Every piece of content on this site, every project described, every essay published, orbits the same question: **what does it look like when a practitioner builds with AI, uses what they build, and writes about what they learn?**
 
 The projects are the content pipeline. Memory Loop solves a friction point and produces the LLM-Integrated PKM idea. Guild Hall solves a delegation problem and produces thinking about multi-agent workflows. Vibe Garden solves developer workflow friction and produces thinking about intent-driven development. The essays aren't separate from the projects. They're what the projects taught.
