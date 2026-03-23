@@ -1,7 +1,7 @@
 ---
 title: Collapsible Recent Notes component
 date: 2026-02-01
-status: draft
+status: wontfix
 tags: [quartz, component, sidebar, ui]
 modules: [quartz-components]
 ---
