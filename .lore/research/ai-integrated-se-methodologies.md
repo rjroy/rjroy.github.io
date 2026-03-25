@@ -1,5 +1,6 @@
 ---
 status: active
+title: "AI-Integrated Software Engineering: Process Models and Methodologies"
 ---
 
 # AI-Integrated Software Engineering: Process Models and Methodologies
