@@ -1,5 +1,5 @@
 ---
-title: Implementation notes: giscus-placement
+title: "Implementation notes: giscus-placement"
 date: 2026-02-13
 status: complete
 tags: [implementation, notes]

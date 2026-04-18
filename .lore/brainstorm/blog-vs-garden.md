@@ -1,7 +1,7 @@
 ---
 title: Blog vs. garden structure for Broadcast Cache
 date: 2026-02-08
-status: open
+status: archived
 tags: [site-structure, quartz, astro, content-strategy, homepage, content-types]
 ---
 

@@ -1,3 +1,8 @@
+---
+status: active
+title: "AI-Integrated Software Engineering: Process Models and Methodologies"
+---
+
 # AI-Integrated Software Engineering: Process Models and Methodologies
 
 **Research date:** 2026-03-15

@@ -1,7 +1,7 @@
 ---
 title: Giscus comment placement across content layouts
 date: 2026-02-13
-status: draft
+status: executed 
 tags: [giscus, comments, layouts, content-types]
 modules: [layouts, components]
 related: [.lore/specs/giscus-placement.md, .lore/brainstorm/giscus-placement.md]

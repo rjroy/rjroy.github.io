@@ -1,7 +1,7 @@
 ---
 title: Astro migration feasibility for Broadcast Cache
 date: 2026-02-08
-status: active
+status: resolved
 tags: [astro, migration, quartz, wiki-links, content-collections, github-pages]
 related: [.lore/brainstorm/blog-vs-garden.md]
 ---
