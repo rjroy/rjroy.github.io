@@ -1,4 +1,4 @@
-<!-- last-generated: 2026-03-25 (week 13) -->
+<!-- last-generated: 2026-04-18 (week 16) -->
 
 - "The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle." -- Steve Jobs
 - "Debugging is like being the detective in a crime movie where you are also the murderer." -- Filipe Fortes, Brazilian software engineer
@@ -16,3 +16,4 @@
 - "The impediment to action advances action. What stands in the way becomes the way." -- Marcus Aurelius
 - "Do what you can, with what you have, where you are." -- Theodore Roosevelt
 - "The first principle is that you must not fool yourself, and you are the easiest person to fool." -- Richard Feynman
+- "Programs must be written for people to read, and only incidentally for machines to execute." -- Harold Abelson, *Structure and Interpretation of Computer Programs*

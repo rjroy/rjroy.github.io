@@ -95,3 +95,7 @@ This charter reflects my core. Time and experience can change this. Pressure wil
 ---
 
 *This is a living document. Update it when beliefs clarify or change.*
+
+---
+
+*Related thought: [[Trust Flows Both Ways]]*
