@@ -15,4 +15,4 @@ Feedback is care. "This isn't working" is the sentence I want said to me, not ma
 
 When reciprocity breaks, the relationship can't function. Trust that only flows one direction isn't trust. It's tolerance, and tolerance runs out.
 
-For the longer version: [[Personal Charter]].
+For the longer version: [[Writing/Personal-Charter/index|Personal Charter]].
