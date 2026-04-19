@@ -12,6 +12,10 @@ Essays and longer-form pieces on topics I've thought through.
 
 ## Current Writing
 
+### Personal Charter
+
+- [[Writing/Personal-Charter/index|Personal Charter]]: What I believe about trust, feedback, and how I lead.
+
 ### AI as Your Partner
 
 Why AI demands a different approach than any tool we've used before.

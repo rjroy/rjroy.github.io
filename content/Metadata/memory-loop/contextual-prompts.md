@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-03-22 -->
+<!-- last-generated: 2026-04-18 -->
 
-- "If you could design a entirely new sense (beyond sight, sound, touch, taste, smell), what would it perceive and how would it change the way you experience the world?"
-- "Pick something ordinary you see every day, then imagine its secret life: what does it do when no one's looking, what does it want, what story would it tell?"
-- "What would a conversation sound like between two things that have never met but exist in the same space (a coffee cup and a window, a shoe and a shadow)?"
-- "Imagine you're meeting yourself from 10 years ago—not to give advice, but just to show them something completely unexpected about what became possible. What would you show them?"
-- "If emotions were places you could visit, what would the landscape of a feeling you rarely notice look like, and what would you discover walking through it?"
 - "If your city or neighborhood was a character in a story, what would it be like? What would it do on a weekend when no one was watching?"
 - "Collect the most interesting sounds you can find around you for 20 minutes. What story could these fragments tell together?"
 - "Redesign your favorite everyday object with zero constraints. What would it look like if you prioritized joy and surprise over function?"
@@ -25,3 +20,8 @@
 - "Pick a random object, person, or place, and spend 15 minutes inventing its completely fictional history. Who was it before this moment? What secret does it hold?"
 - "What skill or craft have you always wondered about but never tried? Find one small thing you can learn or make just because it sounds fun, no goal required."
 - "Imagine a conversation between two things that don't usually talk: your favorite song and the sky, your coffee mug and a tree, your past self and future self. What would they tell each other?"
+- "If your weekend could have a color, texture, and sound all its own, what would they be—and what kind of day would deserve them?"
+- "Imagine you could only ask questions this weekend, never make statements. What would you become curious about that you usually take for granted?"
+- "What's something you loved doing as a kid that you've completely forgotten about? Spend time with it again, just to see what happens."
+- "Pick a place you pass by regularly but never really see—a corner, a building, a park bench. Spend an hour observing it like you're documenting another world."
+- "If you could have a conversation with someone from 100 years ago or 100 years in the future, what would surprise them most about how you spend your time right now?"
