@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-04-18 -->
+<!-- last-generated: 2026-04-19 -->
 
-- "If your city or neighborhood was a character in a story, what would it be like? What would it do on a weekend when no one was watching?"
-- "Collect the most interesting sounds you can find around you for 20 minutes. What story could these fragments tell together?"
-- "Redesign your favorite everyday object with zero constraints. What would it look like if you prioritized joy and surprise over function?"
-- "Pick two completely unrelated ideas (cooking and architecture, music and biology, fashion and geology). What could they inspire if you mashed them together?"
-- "Experience your weekend from the perspective of someone a century ago looking forward, or a century in the future looking back. What would they find strange, beautiful, or worth celebrating about right now?"
 - "If you could design a completely fictional cuisine by combining ingredients, cooking methods, and traditions from different imaginary cultures, what would it taste like and how would people gather around it?"
 - "Walk through your neighborhood or a familiar space as if you've never seen it before—what details have you been overlooking, and what story could you build around the strangest thing you notice?"
 - "Pick three unrelated things you love (a song, a texture, a time of day) and imagine what would happen if they had a conversation with each other. What would they argue about? What would they agree on?"
@@ -25,3 +20,8 @@
 - "What's something you loved doing as a kid that you've completely forgotten about? Spend time with it again, just to see what happens."
 - "Pick a place you pass by regularly but never really see—a corner, a building, a park bench. Spend an hour observing it like you're documenting another world."
 - "If you could have a conversation with someone from 100 years ago or 100 years in the future, what would surprise them most about how you spend your time right now?"
+- "If you could spend a day experiencing the world through someone else's senses—what they notice, what they ignore, how they perceive—whose perspective would you choose and what would surprise you most?"
+- "Spend an hour making something with no purpose: a drawing, a collage, a strange recipe, a story fragment. What emerges when you're not trying to make it 'good'?"
+- "Pick something ordinary in your space and study it as if you've never seen anything like it before. What is it actually doing? What story could it tell about how the world works?"
+- "If your life was a different medium—a song, a painting, a garden, a film—how would it look? What would change if you started thinking of this weekend that way?"
+- "Imagine a conversation between two things that can't normally speak to each other. What would they say? What do they notice about the world that you've stopped seeing?"

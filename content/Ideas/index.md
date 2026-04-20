@@ -21,5 +21,6 @@ Ideas are about figuring things out. Projects are about building things. When an
 ## Current Ideas
 
 - [[Ideas/AI-as-Your-Partner/index|AI as Your Partner]]: Exploring what makes good AI rules files. Not universal best practices, but personal configurations that make AI work for *you*.
+- [[Ideas/Daemon-First-Agent-Native/index|Daemon-First, Agent-Native]]: A design pattern I've now reached for three times in a row. This is me noticing that.
 - [[Ideas/Exploring-Whimsy/index|Exploring Whimsy]]: Does whimsy in design provide too much direction, or open the door to creativity?
 - [[Ideas/Guild-Hall/index|Guild Hall]]: Multi-agent orchestration for knowledge work

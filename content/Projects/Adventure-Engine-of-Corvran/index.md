@@ -1,6 +1,6 @@
 ---
 title: Adventure Engine of Corvran
-description: A solo tabletop RPG with an AI game master for conversational gameplay
+description: A space for collaborative storytelling between you and an AI game master
 tags:
   - area
   - ai
@@ -11,56 +11,61 @@ tags:
 
 # Adventure Engine of Corvran
 
-A solo tabletop RPG experience powered by AI. Describe what your character does in plain language; the engine handles narration, NPCs, and dice.
+A space for collaborative storytelling. You and an AI sit down together and make up a story, the way kids do. One of you also keeps track of the rules, the continuity, and the world's state. Not because it's in charge, but because someone has to remember that the bridge collapsed in scene three.
 
-![Entry Screen](/Projects/Adventure-Engine-of-Corvran/screenshots/entry.webp)
+![Adventure list showing several ongoing adventures with system tags, character names, and last-played timestamps](/Projects/Adventure-Engine-of-Corvran/screenshots/adventure-list.gif)
 
-## What Is This?
+## What It Is
 
-Adventure Engine of Corvran is an AI-driven game master that runs tabletop RPG adventures. Think of it as having a dedicated dungeon master available whenever you want to play, one that remembers your characters, tracks your progress, and weaves narrative around your choices.
+TTRPGs are shared narrative. At their core, it's kids playing make-believe but with rules. The AI here is one of the kids who also happens to maintain the rules. The rules create stakes, not authority. The story belongs to everyone at the table.
 
-The project grew out of a desire to capture the feel of classic tabletop gaming without needing to coordinate schedules with a full group. It's not trying to replace the social experience of gaming with friends, but rather to scratch that itch when solo play is the only option.
+The ambition is not an AI that runs a simulation. It's an AI that plays with you.
 
-## How It Works
+This is a greenfield reboot. An earlier version proved the core beliefs hold up under play. The current build rebuilds with those beliefs as the foundation rather than something discovered along the way.
 
-The engine acts as both narrator and referee. You describe what your character does in natural language, and it responds with story progression, NPC dialogue, and mechanical outcomes. The world of Corvran provides a consistent fantasy setting (ancient forests, competing factions, magical artifacts) while the AI handles the moment-to-moment storytelling.
+## Starting an Adventure
 
-![Adventure Gameplay](/Projects/Adventure-Engine-of-Corvran/screenshots/adventure.webp)
+Pick a system, write a sentence or two about your character or the world (or leave it blank and discover everything through play), name it, and go. The GM sets the scene from there.
 
-Characters persist across sessions. The sidebar shows your character sheet at a glance: class, ancestry, level, abilities. The system tracks domain cards (special abilities), equipment, and story progress so you can pick up where you left off.
+![New adventure wizard: choosing daggerheart, entering a concept, naming the adventure](/Projects/Adventure-Engine-of-Corvran/screenshots/new-adventure.gif)
 
-## Features
+Four systems ship with the engine:
 
-**Persistent Adventures**: Save and resume adventures at any point. Each save captures not just your character state but the narrative context, letting you maintain multiple ongoing stories.
+| System | What it is |
+|--------|-----------|
+| Freeform | No system. Pure collaborative fiction. |
+| d20 | Classic fantasy with classes, levels, and ability checks. |
+| Daggerheart | Hope and Fear dice. Narrative-first with mechanical stakes. |
+| Apocrypha | Characters defined by keyword phrases instead of stat blocks. |
 
-![Load Adventure](/Projects/Adventure-Engine-of-Corvran/screenshots/adventure-select.webp)
+Systems are plugins, not code. They're reference documents the AI reads before each session. Adding a new system means writing reference material, not shipping a release.
 
-**Character Management**: Create new characters or continue with existing ones. The engine remembers characters across different adventures, so your seasoned delver can tackle new challenges while you experiment with a fresh build elsewhere.
+## Playing
 
-![Character Selection](/Projects/Adventure-Engine-of-Corvran/screenshots/new-character.webp)
+The play interface is a two-panel conversation labeled YOU and GAME MASTER. The GM's responses stream in word by word. Dice rolls and other tool events appear inline as part of the narrative. The background image shifts with the mood of the scene.
 
-**Conversational Interface**: No menu-diving or complex commands. Just describe what you want to do. The AI interprets intent and handles the mechanical translations behind the scenes.
+![Play interface showing a GM narrative, player input, and the Files tab](/Projects/Adventure-Engine-of-Corvran/screenshots/play-interface.gif)
 
-**Visual Atmosphere**: AI-generated scene imagery and character portraits add visual context without breaking the text-adventure flow.
+When a campaign runs long, a Compact step archives older exchanges and replaces them with an AI-generated recap. The story is preserved; the context just gets summarized so the GM can keep what matters now in view.
 
-## Architecture
+A Files tab gives a read-only view of every markdown file the AI knows about: the adventure concept, the character, the world, the conversation history, the art direction. All of it is plain Markdown on disk under `~/.corvran/adventures/`. You can read it, edit it in your own editor, or back it all up with `cp -r`.
 
-The system is built as a client-server application:
+## Design Principles
 
-- **Frontend**: A GUI application providing the game interface (text display, input handling, character panels, and save management)
-- **Backend**: An AI service that maintains game state, processes player actions, and generates narrative responses
-- **Persistence**: Adventure state stored as structured data, enabling save/load functionality and character continuity
+A few decisions anchor the rebuild:
 
-The separation allows the AI processing to happen server-side while keeping the client responsive. Connection status is visible in the interface (that green "Connected" indicator), and the system handles reconnection gracefully.
+**The story is the product.** Background images, info panels, rule systems, atmospheric music: these serve the story. They are tools on the table, not the table itself. If a feature starts accumulating its own reasons for existing, it gets checked against this principle.
 
-## Why Build This?
+**Markdown is memory.** All game-meaningful state lives in markdown files. Not because markdown is a good database, but because it's the shared medium between the AI, the developer, and the player. All three can read it, understand it, and change it.
 
-Tabletop RPGs are fundamentally about collaborative storytelling, but the logistics of getting a group together regularly can be challenging. AI has reached a point where it can serve as a passable game master for solo play, not replacing human creativity but filling a gap.
+**Teach, don't code.** RPG mechanics are delivered as documents the AI reads, not logic the application executes. The bet is that an AI with good reference material makes better game-mastering decisions than hard-coded rules, because game mastering is judgment, not computation.
 
-This project is an exploration of that space: how good can AI-driven tabletop gaming get? What's lost without human players, and what unexpected benefits emerge? The answer so far: it's genuinely fun, surprisingly immersive, and scratches an itch that other solo RPG approaches (gamebooks, journaling games) don't quite reach.
+**Player agency is sacred.** The AI never decides what the player does. Never narrates their actions. Never resolves their choices for them. This is a boundary with the same gravity as security, not a style choice. The world pushes back so victories mean something. Agency means your decisions matter, not that you always win.
 
-The world of Corvran itself (with its ancient Thornwood, competing delver guilds, and mysterious relics) emerged through play. The setting has accumulated history and consistency as adventures have unfolded, creating something that feels like a living world rather than a procedurally generated backdrop.
+**Progressive simplification.** If the AI can do it with standard tools, the custom tool comes out. Every layer of custom machinery is a layer where the system's opinions can override the storytelling.
+
+**System-agnostic core.** The engine knows about stories, players, and a game master. It doesn't know about hit points or spell slots. The same engine could run high fantasy, sci-fi investigation, horror survival, or pure freeform with no rules at all.
 
 ---
 
-*Ongoing: the engine evolves as I play.*
+*Greenfield reboot in progress. The vision is settled; the specs are catching up.*
