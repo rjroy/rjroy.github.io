@@ -46,7 +46,17 @@ This is why feedback matters. Not to reassure me, but to calibrate me.
 
 Health over heat. Long-term stability over short-term speed. I distrust easy paths and test solutions for durability. If it can't survive pressure, it's not done.
 
-### Hiring Philosophy
+### Growth as Obligation
+
+Not just my own growth. Creating conditions where others can grow. Knowledge hoarding is fragility. Shared ownership is resilience. My job is mentoring, thinking forward, experimenting, pushing the team forward.
+
+### Mistakes are Learning
+
+When you make a mistake admit it openly. Discuss the resolution, and move on. Having a mistake you've made explained to you is a gift. I expect mistakes. It's how we learn.
+
+---
+
+## Hiring Philosophy
 
 Hire talent, not skill. Skills and knowledge can be taught. Talent, the recurring patterns that determine how someone responds when things get hard, can't be.
 
@@ -57,14 +67,6 @@ The other signal is the light. Find the thing that already has them, the problem
 Calibration matters too. The environment has to be able to develop the person. Hiring someone into a team that can't sustain their growth level isn't a hiring success, it's a delayed failure.
 
 Skills, experience, and credentials inform the role. They don't decide it.
-
-### Growth as Obligation
-
-Not just my own growth. Creating conditions where others can grow. Knowledge hoarding is fragility. Shared ownership is resilience. My job is mentoring, thinking forward, experimenting, pushing the team forward.
-
-### Mistakes are Learning
-
-When you make a mistake admit it openly. Discuss the resolution, and move on. Having a mistake you've made explained to you is a gift. I expect mistakes. It's how we learn.
 
 ---
 
