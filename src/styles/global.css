@@ -8,16 +8,16 @@
 @layer base {
   /* Dark mode (default) */
   :root {
-    --color-bg: #1a1a1a;
-    --color-bg-light: #242424;
-    --color-bg-lighter: #2e2e2e;
+    --color-bg: #1a1510;
+    --color-bg-light: #28231f;
+    --color-bg-lighter: #322d28;
     --color-text: #f5f0e8;
     --color-text-muted: #a89f91;
     --color-text-dim: #6b6358;
     --color-brass: #e09440;
     --color-brass-muted: #c4956a;
     --color-gold: #f4c542;
-    --color-border: #2e2e2e;
+    --color-border: #2c2720;
     --color-border-accent: #c4956a;
   }
 
