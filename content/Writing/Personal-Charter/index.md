@@ -10,17 +10,17 @@ tags:
 
 ## Core Belief
 
-Trust is the foundation. I extend it fully from the start. Everyone I work with gets my belief in their competence and good faith until they prove otherwise. In return, I expect trust back: trust in my intent when I give feedback, trust in my judgment when I name problems.
+Trust is the foundation. I extend it fully from the start. Everyone I work with gets my belief in their competence and good faith. That belief is who I am and I work as I am. It is not currency to be used.
 
-When that reciprocity breaks, the relationship can't function.
+What the job needs, separately, is a way to calibrate alignment. Feedback has to land. When it can't, that's the hardest part of the work.
 
 ---
 
 ## What I Value
 
-### Trust Given, Trust Expected
+### Trust Given Freely
 
-I don't make people earn my trust. I start with it. When I hire someone, I believe they are capable of far more than what the position is defined as. When I give feedback, I'm not calling that into question. I'm helping them to see how to achieve it. It's important the feedback is heard. Trust that doesn't flow both ways isn't trust.
+I don't make people earn my trust. I start with it. When I hire someone, I believe they are capable of far more than what the position is defined as. That belief doesn't depend on what comes back. I extend it because that is who I am, not because I demand the same.
 
 ### Reality Before Accommodation
 
@@ -30,7 +30,7 @@ I've had to translate this for organizational survival ("Assume the Possible" in
 
 ### Feedback Is Care
 
-When I tell you something is wrong, it comes from belief in you. I hired you. I think you're capable. The feedback is about the thing, not the person. If you hear an attack on your identity, you're hearing something I didn't say.
+When I tell you something is wrong, it comes from belief in you. I hired you. I think you're capable. The feedback is about the thing, not the person.
 
 This is how I want to receive feedback too. Tell me what's wrong. I'm not fragile.
 
@@ -50,7 +50,7 @@ Health over heat. Long-term stability over short-term speed. I distrust easy pat
 
 Not just my own growth. Creating conditions where others can grow. Knowledge hoarding is fragility. Shared ownership is resilience. My job is mentoring, thinking forward, experimenting, pushing the team forward.
 
-### Mistakes are Learning
+### Mistakes Are Learning
 
 When you make a mistake admit it openly. Discuss the resolution, and move on. Having a mistake you've made explained to you is a gift. I expect mistakes. It's how we learn.
 
@@ -70,6 +70,18 @@ Skills, experience, and credentials inform the role. They don't decide it.
 
 ---
 
+## Handling Misalignment
+
+These are my principles. I want others to share them. I understand not everyone does or can. I respect that. Misalignment still happens. 
+
+When feedback is given, I'm not calling their capability into question. I'm helping them see how to reach it.
+
+Feedback has to land. Not agreement, not compliance, just received and weighed. That's how we realign. That's how we build back the respect.
+
+When the misalignment persists and the work itself stops getting done, I can't help from that position anymore. This is the hardest part of the job: recognizing that the role is no longer the right one, and acting on it.
+
+---
+
 ## Navigating Ambiguity and Organizational Pressure
 
 Organizational direction is rarely clear. The honest answer is to read whatever signal exists, form the most reasonable hypothesis about where to go, and move toward it with full commitment. When better information arrives, turn without drama. This is how you operate in a system that can't always tell you what it needs.
@@ -77,8 +89,6 @@ Organizational direction is rarely clear. The honest answer is to read whatever 
 When the direction feels wrong, the response is specific: name the cost clearly, make the tradeoffs visible, then follow the direction anyway unless it requires compromising a core principle. The goal is to force the real decision upward, not to win the argument. Leadership sometimes changes direction when the costs are actually visible. Sometimes they don't. Either way, the record exists.
 
 Sustainability over heroics is a line, not a preference. Absorbing organizational pressure is part of the job. Transmitting it to the team is not. "Pressure makes diamonds" is a coping philosophy, not a management strategy. The team doesn't get that handed to them. They get honesty about what's real and clarity about what matters.
-
-This charter reflects my core. Time and experience can change this. Pressure will not change.
 
 ---
 
@@ -96,4 +106,8 @@ This charter reflects my core. Time and experience can change this. Pressure wil
 
 ---
 
-*This is a living document. Update it when beliefs clarify or change.*
+## The Certainty of Uncertainty
+
+This is a living document. My career path has many turns behind it and before it. How I apply my values changes, but their core does not: trust, learn, and humility. These simple words are what drive the rest of the values. They are also aspirations.
+
+This charter reflects my core. Time and experience can change this. Pressure will not change.
