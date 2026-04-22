@@ -15,7 +15,7 @@
       "color": "red"
     }
   ],
-  "discussionModel": "opus",
+  "discussionModel": "sonnet",
   "promptsPerGeneration": 5,
   "recentCaptures": 6,
   "recentDiscussions": 6,

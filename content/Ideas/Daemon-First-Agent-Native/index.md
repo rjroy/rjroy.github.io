@@ -43,23 +43,13 @@ Every time, the first instinct is to bundle decision logic into smart endpoints.
 
 ## Open Questions
 
-Writing this down mostly to see what I don't yet understand.
-
-When does this pattern break? When does file-based state actually fail? The reference material says transactions, concurrent writes from multiple processes, and non-hierarchical queries are the pressure points. I haven't hit any of those. What does the first real break look like?
-
-How thin should the web UI get? All three projects have web UIs doing real rendering work. None hold state, but they're not trivial. Is there a version where the web UI is just a chat interface over the agent layer, and rendering happens in whatever the agent returns? Adventure Engine is closest to that; Shelf Judge is furthest. I don't know which end of that spectrum I prefer.
-
-What's the right shape for shared infrastructure? Three daemons, three sockets, three data directories, three sets of TypeScript scaffolding. Some of that is clearly reusable. I haven't extracted it because I don't trust I've seen enough variation. Does this generalize outside personal tools? All three are single-user local-first. I suspect the agent-native layer survives a networked context, but the file-based state probably doesn't without rework.
+Agent Native Architecture suggests that features are added by adding prompts. I assess that's a waste of tokens, and that most systems are better served by concrete processes. How do I validate this? Am I over simplifying the concept? Or over complicating it?
 
 ## Where This Is Going
 
-Not ready to call this a framework or build a starter template. Three data points is a pattern, not a library.
+It's baked into my Guild Comendium. The skill based reference library all my agents have access to. Is this the right call?
 
-1. Let a fourth project test the shape before extracting anything.
-2. Write down the specific places I diverged across the three, and why. The differences are more interesting than the similarities.
-3. Watch for the first real break, the moment file-based state or agent-native composition actually fails, and see what replaces it.
-
-This has worked three times, by design. It's my default now. I'm going to keep using it until something breaks.
+That's what's next. Continue to build with it and evolve it. There's a nugget of truth here. I just need to find it.
 
 ## References
 
