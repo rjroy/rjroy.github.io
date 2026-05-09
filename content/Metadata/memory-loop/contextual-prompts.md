@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-04-19 -->
+<!-- last-generated: 2026-05-09 -->
 
-- "If you could design a completely fictional cuisine by combining ingredients, cooking methods, and traditions from different imaginary cultures, what would it taste like and how would people gather around it?"
-- "Walk through your neighborhood or a familiar space as if you've never seen it before—what details have you been overlooking, and what story could you build around the strangest thing you notice?"
-- "Pick three unrelated things you love (a song, a texture, a time of day) and imagine what would happen if they had a conversation with each other. What would they argue about? What would they agree on?"
-- "If your dreams had their own architecture and you could actually build something there, what would it look like? What would visitors experience when they walked through it?"
-- "Spend time remixing something ordinary (a recipe, a route you know, a genre of music) by adding constraints or rule changes—what becomes possible when you break it on purpose?"
 - "If your everyday life were a story, what character hasn't shown up yet—and what would they change about how you move through the world?"
 - "Pick something you see every day and imagine it was designed by someone from a completely different culture or time period; what would they have done differently, and why?"
 - "Spend an hour noticing what delights you without labeling it or explaining why—colors, sounds, textures, conversations, jokes—and see what pattern emerges about what actually captures your attention."
@@ -25,3 +20,8 @@
 - "Pick something ordinary in your space and study it as if you've never seen anything like it before. What is it actually doing? What story could it tell about how the world works?"
 - "If your life was a different medium—a song, a painting, a garden, a film—how would it look? What would change if you started thinking of this weekend that way?"
 - "Imagine a conversation between two things that can't normally speak to each other. What would they say? What do they notice about the world that you've stopped seeing?"
+- "If you could design a holiday that doesn't exist yet, what would people celebrate, and what strange traditions would they invent?"
+- "Pick something mundane you see every day and imagine what it would look like if it were designed by someone from 200 years ago—or 200 years in the future."
+- "What would happen if one of your skills or interests combined with something completely unrelated—like cooking meets architecture, or storytelling meets gardening?"
+- "Spend time noticing what makes you lose track of time, then ask: what is this really about, and where else could I find that feeling?"
+- "Imagine explaining something you love to someone from a completely different world—an alien, a time traveler, a character from a book you admire. What would you realize about it in the translation?"
