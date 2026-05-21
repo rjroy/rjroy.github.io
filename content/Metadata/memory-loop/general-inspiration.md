@@ -1,4 +1,4 @@
-<!-- last-generated: 2026-05-13 (week 20) -->
+<!-- last-generated: 2026-05-19 (week 21) -->
 
 - "The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle." -- Steve Jobs
 - "Debugging is like being the detective in a crime movie where you are also the murderer." -- Filipe Fortes, Brazilian software engineer
@@ -21,3 +21,4 @@
 - "The most important possible thing you can do is do a lot of work. Do a huge volume of work. Put yourself on a deadline so that every week you will finish one piece. It is only by going through a large volume of work that you will close that gap, and your work will be as good as your ambitions." -- Ira Glass
 - "The man who moves a mountain begins by carrying away small stones." -- Confucius
 - "I am always doing that which I cannot do, in order that I may learn how to do it." -- Pablo Picasso
+- "The test of a first-rate intelligence is the ability to hold two opposed ideas in mind at the same time and still retain the ability to function." -- F. Scott Fitzgerald
