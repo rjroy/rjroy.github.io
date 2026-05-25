@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-05-09 -->
+<!-- last-generated: 2026-05-23 -->
 
-- "If your everyday life were a story, what character hasn't shown up yet—and what would they change about how you move through the world?"
-- "Pick something you see every day and imagine it was designed by someone from a completely different culture or time period; what would they have done differently, and why?"
-- "Spend an hour noticing what delights you without labeling it or explaining why—colors, sounds, textures, conversations, jokes—and see what pattern emerges about what actually captures your attention."
-- "Design the perfect day for someone you've never met, using only constraints that excite you (no money limit, no time limit, no 'practical' rules). What does it reveal about what you think matters?"
-- "What would you explore, build, or investigate if you had permission to fail spectacularly and nobody would ever know? Start there."
 - "If you could see your neighborhood through the eyes of someone visiting for the first time, what would they notice that you've walked past a hundred times? Follow that curiosity for an hour."
 - "What if you redesigned something ordinary in your life (your morning routine, your favorite room, how you get from place A to B) with no practical constraints—only what feels delightful?"
 - "Pick a random object, person, or place, and spend 15 minutes inventing its completely fictional history. Who was it before this moment? What secret does it hold?"
@@ -25,3 +20,8 @@
 - "What would happen if one of your skills or interests combined with something completely unrelated—like cooking meets architecture, or storytelling meets gardening?"
 - "Spend time noticing what makes you lose track of time, then ask: what is this really about, and where else could I find that feeling?"
 - "Imagine explaining something you love to someone from a completely different world—an alien, a time traveler, a character from a book you admire. What would you realize about it in the translation?"
+- "Imagine you can communicate with one object in your home for a day - what would it tell you about your habits, and what secret would it reveal about itself?"
+- "Design a new holiday that celebrates something ordinary (like socks, streetlights, or morning light) - what rituals, foods, and traditions would surround it?"
+- "If you could insert a single impossible object into your favorite movie scene (a teapot in a spaceship, a door in the middle of the ocean), what would it be and how would it change the story?"
+- "Create a map of your neighborhood where streets are named after emotions instead of places - where would 'Curiosity Lane' lead, and what would you find on 'Quiet Joy Avenue'?"
+- "Invent a creature that lives in the space between your thoughts - what does it look like, what does it feed on, and what message does it leave when you're not paying attention?"
