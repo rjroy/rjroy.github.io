@@ -44,6 +44,12 @@ const projects = defineCollection({
     tags: z.array(z.string()).default([]),
     date: z.coerce.date().optional(),
     featured: z.boolean().default(false),
+    // Optional cover image for the homepage feature card. Site-absolute path to
+    // a file under content/ — case must match the file on disk (e.g.
+    // /Projects/Memory-Loop/screenshots/ground.webp), since astro.config's
+    // copyContentImages preserves path case into the build (page routes are
+    // lowercased, but these asset paths are not).
+    cover: z.string().optional(),
   }),
 })
 

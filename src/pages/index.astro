@@ -2,138 +2,245 @@
 import BaseLayout from "../layouts/BaseLayout.astro"
 import { getCollection } from "astro:content"
 
-// Get all collections
-const thoughts = await getCollection("thoughts")
 const ideas = await getCollection("ideas")
 const writing = await getCollection("writing")
 const projects = await getCollection("projects")
+const thoughts = await getCollection("thoughts")
 
-// Recent thoughts (newest 10)
-const recentThoughts = thoughts
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 10)
+// Top-level entries only. Astro strips "/index" from folder-based IDs, so a
+// top-level entry's ID has no slash; sub-notes look like "Folder/sub".
+const topLevel = (entries: any[]) => entries.filter((e) => !e.id.includes("/"))
 
-// Helper: get top 3 items with featured priority
-function getTopItems(entries: any[], section: string) {
-  // Only top-level items (Astro strips "/index" from IDs, so top-level entries have no "/" in their ID)
-  const topLevel = entries.filter((e) => !e.id.includes("/"))
-  const featured = topLevel.filter((e) => e.data.featured)
-  const nonFeatured = topLevel.filter((e) => !e.data.featured)
+const ideasTop = topLevel(ideas)
+const writingTop = topLevel(writing)
+const projectsTop = topLevel(projects)
 
-  // Sort both by date desc (entries without dates go last)
-  const sortByDate = (a: any, b: any) => {
-    if (a.data.date && b.data.date) return b.data.date.getTime() - a.data.date.getTime()
-    if (a.data.date) return -1
-    if (b.data.date) return 1
-    return a.data.title.localeCompare(b.data.title)
-  }
-
-  featured.sort(sortByDate)
-  nonFeatured.sort(sortByDate)
-
-  const result = [...featured.slice(0, 3)]
-  if (result.length < 3) {
-    result.push(...nonFeatured.slice(0, 3 - result.length))
-  }
-  return result
+const counts = {
+  ideas: ideasTop.length,
+  projects: projectsTop.length,
+  writing: writingTop.length,
+  thoughts: thoughts.length,
 }
 
-const topIdeas = getTopItems(ideas, "ideas")
-const topWriting = getTopItems(writing, "writing")
-const topProjects = getTopItems(projects, "projects")
-
-function entryIdToUrl(entryId: string, section: string): string {
-  return `/${section}/${entryId}/`
+// Sort by date (newest first); undated entries sort last, then alphabetically.
+const byDateDesc = (a: any, b: any) => {
+  if (a.data.date && b.data.date) return b.data.date.getTime() - a.data.date.getTime()
+  if (a.data.date) return -1
+  if (b.data.date) return 1
+  return a.data.title.localeCompare(b.data.title)
 }
+
+// Featured entries first, then most recent, capped at n.
+const curate = (entries: any[], n: number) => {
+  const featured = entries.filter((e) => e.data.featured).sort(byDateDesc)
+  const rest = entries.filter((e) => !e.data.featured).sort(byDateDesc)
+  return [...featured, ...rest].slice(0, n)
+}
+
+const leadProject = curate(projectsTop, 1)[0]
+const tendingWriting = curate(writingTop, 2)
+
+const url = (id: string, section: string) => `/${section}/${id.toLowerCase()}/`
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
+
+const areas = [
+  {
+    num: "01 / Ideas",
+    title: "Ideas",
+    body: "Developing thoughts and explorations — the ones still germinating in the dark.",
+    foot: `${counts.ideas} ${counts.ideas === 1 ? "entry" : "entries"}`,
+    href: "/ideas/",
+    accent: "var(--lapis-500)",
+  },
+  {
+    num: "02 / Projects",
+    title: "Projects",
+    body: "Things I've built with clear goals, from Memory Loop to the Guild Hall.",
+    foot: `${counts.projects} shipped`,
+    href: "/projects/",
+    accent: "var(--ember-500)",
+  },
+  {
+    num: "03 / Writing",
+    title: "Writing",
+    body: "Essays and longer pieces I've thought all the way through before publishing.",
+    foot: `${counts.writing} ${counts.writing === 1 ? "essay" : "essays"}`,
+    href: "/writing/",
+    accent: "var(--verdigris-500)",
+  },
+  {
+    num: "04 / Thoughts",
+    title: "Thoughts",
+    body: "Short reflections and observations, dated as they land on the page.",
+    foot: `${counts.thoughts} ${counts.thoughts === 1 ? "note" : "notes"}`,
+    href: "/thoughts/",
+    accent: "var(--brass-500)",
+  },
+]
 ---
 
-<BaseLayout title="Home" description="Ron's Broadcast Cache - Ideas, writing, and projects">
-  <!-- Intro -->
-  <section class="mb-12">
-    <h1 class="text-3xl mb-4">Broadcast Cache</h1>
-    <p class="text-lg text-[var(--color-text-muted)]">
-      I'm Ron, a senior engineering manager exploring the intersection of AI, tooling, and how we think.
-      This is where developing ideas, finished writing, and shipped projects live.
-    </p>
-  </section>
-
-  <!-- Recent Thoughts -->
-  <section class="mb-12">
-    <div class="flex items-center justify-between mb-6">
-      <h2 class="mb-0">Recent Thoughts</h2>
-      {recentThoughts.length > 0 && (
-        <a href="/thoughts/" class="text-sm">See all &rarr;</a>
-      )}
-    </div>
-    {recentThoughts.length > 0 ? (
-      <div class="space-y-6">
-        {recentThoughts.map((thought) => (
-          <div class="border-l-2 border-[var(--color-border-accent)] pl-4">
-            <time datetime={thought.data.date.toISOString()} class="text-xs text-[var(--color-text-muted)]">
-              {thought.data.date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
-            </time>
-            <p class="mt-1 mb-0"><a href={`/thoughts/${thought.id}/`}>{thought.data.title}</a></p>
-          </div>
-        ))}
+<BaseLayout
+  title="Home"
+  description="A working notebook for thinking and building alongside AI — half-formed ideas, shipped projects, and essays thought all the way through."
+  contained={false}
+>
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-inner">
+      <div class="container">
+        <div class="hero-kicker">
+          Ron's Broadcast Cache &nbsp;·&nbsp; a digital garden, tended since 2025
+        </div>
+        <h1>
+          A working notebook for thinking and <span class="gild">building</span>
+          alongside AI.
+        </h1>
+        <p class="hero-lead">
+          Thirty years a developer, now charting what the craft becomes when AI joins the work. This
+          is the public side of that workshop — half-formed ideas, shipped projects, and essays
+          thought all the way through.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/projects/">
+            Wander the garden
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg
+            >
+          </a>
+          <a class="btn btn-ghost btn-on-dark" href="#about">What is this place?</a>
+        </div>
       </div>
-    ) : (
-      <p class="text-[var(--color-text-dim)] italic">No thoughts yet. This is a new section.</p>
-    )}
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- Ideas -->
-  <section class="mb-12">
-    <div class="flex items-center justify-between mb-6">
-      <h2 class="mb-0">Ideas</h2>
-      <a href="/ideas/" class="text-sm">See all &rarr;</a>
     </div>
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {topIdeas.map((idea) => (
-        <a href={entryIdToUrl(idea.id, "ideas")} class="card block p-4 no-underline">
-          <h3 class="text-base mb-1">{idea.data.title}</h3>
-          {idea.data.description && (
-            <p class="text-sm text-[var(--color-text-muted)] mb-0">{idea.data.description}</p>
-          )}
-        </a>
-      ))}
-    </div>
-  </section>
+  </header>
 
-  <!-- Writing -->
-  <section class="mb-12">
-    <div class="flex items-center justify-between mb-6">
-      <h2 class="mb-0">Writing</h2>
-      <a href="/writing/" class="text-sm">See all &rarr;</a>
-    </div>
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {topWriting.map((piece) => (
-        <a href={entryIdToUrl(piece.id, "writing")} class="card block p-4 no-underline">
-          <h3 class="text-base mb-1">{piece.data.title}</h3>
-          {piece.data.description && (
-            <p class="text-sm text-[var(--color-text-muted)] mb-0">{piece.data.description}</p>
-          )}
-        </a>
-      ))}
+  <!-- Where to begin -->
+  <section class="section" id="areas">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Where to begin</span>
+        <h2>Four ways to wander in.</h2>
+        <p>
+          Unlike a blog of polished posts, this is a living workspace — ideas at every stage of
+          ripeness. Follow whichever door fits your curiosity.
+        </p>
+      </div>
+      <div class="areas">
+        {
+          areas.map((area) => (
+            <a class="area-card" href={area.href} style={`--accent: ${area.accent};`}>
+              <span class="area-num">{area.num}</span>
+              <h3>{area.title}</h3>
+              <p>{area.body}</p>
+              <span class="area-foot">
+                {area.foot} <span class="arrow">→</span>
+              </span>
+            </a>
+          ))
+        }
+      </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section class="mb-12">
-    <div class="flex items-center justify-between mb-6">
-      <h2 class="mb-0">Projects</h2>
-      <a href="/projects/" class="text-sm">See all &rarr;</a>
-    </div>
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {topProjects.map((project) => (
-        <a href={entryIdToUrl(project.id, "projects")} class="card block p-4 no-underline">
-          <h3 class="text-base mb-1">{project.data.title}</h3>
-          {project.data.description && (
-            <p class="text-sm text-[var(--color-text-muted)] mb-0">{project.data.description}</p>
-          )}
-        </a>
-      ))}
+  <!-- Currently tending -->
+  {
+    (leadProject || tendingWriting.length > 0) && (
+      <section class="section tending" id="tending">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Currently tending</span>
+            <h2>What's growing right now.</h2>
+            <p>The pieces I'm actively working on or pointing people toward this season.</p>
+          </div>
+          <div class="feature-grid">
+            {leadProject && (
+              <a class="feature-card lead-card" href={url(leadProject.id, "projects")}>
+                {leadProject.data.cover && (
+                  <div class="feature-thumb">
+                    <img
+                      src={leadProject.data.cover}
+                      alt={leadProject.data.title}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                )}
+                <div class="feature-body">
+                  <span class="kind">Project · {cap(leadProject.data.status)}</span>
+                  <h3>{leadProject.data.title}</h3>
+                  <p>{leadProject.data.description}</p>
+                </div>
+              </a>
+            )}
+            {tendingWriting.map((piece) => (
+              <a class="feature-card" href={url(piece.id, "writing")}>
+                <div class="feature-body">
+                  <span class="kind">Writing</span>
+                  <h3>{piece.data.title}</h3>
+                  <p>{piece.data.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- About -->
+  <section class="section" id="about" style="scroll-margin-top: 84px;">
+    <div class="container">
+      <div class="about">
+        <div class="about-portrait">
+          <img
+            src="/assets/guild-hall.webp"
+            alt="A workshop full of artisans, mages, and makers"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="frame-tint"></div>
+        </div>
+        <div>
+          <span class="eyebrow">About this place</span>
+          <h2>The public side of a private workshop.</h2>
+          <p>
+            I'm Ron — a developer for nearly thirty years. The past year brought a whirlwind of
+            progress in AI-assisted development, and I'd be remiss not to explore it seriously. This
+            space captures that exploration: the projects I'm building with these tools, and
+            reflections on what it means to work alongside them.
+          </p>
+          <p>
+            You're seeing the scaffolding before the building. Check back as the content develops.
+          </p>
+          <div class="ghost-note">
+            <strong>How this is written.</strong> I work with Claude Code as a ghostwriter. The ideas,
+            direction, and editorial judgment are mine; Claude helps get the words on the page. The thinking
+            is mine, the collaboration is real, and the tool is acknowledged.
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <div class="container">
+    <div class="flourish-rule">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><circle cx="12" cy="12" r="3"></circle><path
+          d="M12 2l1.8 4.2M12 22l-1.8-4.2M2 12l4.2-1.8M22 12l-4.2 1.8M5 5l3.5 3.5M19 19l-3.5-3.5M19 5l-3.5 3.5M5 19l3.5-3.5"
+        ></path></svg
+      >
+    </div>
+  </div>
 </BaseLayout>

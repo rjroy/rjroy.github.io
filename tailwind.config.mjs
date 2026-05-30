@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  darkMode: "class",
+  darkMode: ["selector", '[data-theme="dark"]'],
   theme: {
     extend: {
       colors: {
@@ -47,9 +47,10 @@ export default {
         },
       },
       fontFamily: {
-        heading: ['"Red Rose"', "serif"],
-        body: ['"Merriweather"', "serif"],
-        mono: ['"Victor Mono"', "monospace"],
+        // Match the new design tokens (see src/styles/tokens.css)
+        heading: ['"IM Fell English SC"', '"Cormorant Garamond"', "serif"],
+        body: ['"Vollkorn"', "Georgia", "serif"],
+        mono: ['"JetBrains Mono"', '"Menlo"', "monospace"],
       },
       typography: {
         DEFAULT: {
