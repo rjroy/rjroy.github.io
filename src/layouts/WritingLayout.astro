@@ -9,9 +9,10 @@ interface Props {
   date?: Date
   tags: string[]
   id: string
+  readingMinutes?: number
 }
 
-const { title, description, date, tags, id } = Astro.props
+const { title, description, date, tags, id, readingMinutes = 0 } = Astro.props
 
 // Check if this is a series index page (Astro strips "/index", so top-level entries have no "/" in their ID)
 const isSeriesIndex = !id.includes("/")
@@ -40,59 +41,61 @@ const formattedDate = date?.toLocaleDateString("en-US", {
   day: "numeric",
 })
 
-function entryIdToUrl(entryId: string): string {
-  return `/writing/${entryId}/`
-}
+// Drop vault-organization tags from the visible meta line.
+const structuralTags = new Set(["area", "project", "index"])
+const metaTags = tags.filter((t) => !structuralTags.has(t))
+
+const url = (entryId: string) => `/writing/${entryId.toLowerCase()}/`
 ---
 
-<BaseLayout title={title} description={description}>
-  <article>
-    <header class="mb-8">
+<BaseLayout title={title} description={description} contained={false}>
+  <div class="read-head">
+    <div class="container prose-col">
+      <div class="crumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="/writing/">Writing</a>
+        <span>/</span>
+        <span>{title}</span>
+      </div>
       <h1>{title}</h1>
-      {
-        formattedDate && (
-          <time
-            datetime={date?.toISOString()}
-            class="text-[var(--color-text-muted)] text-sm"
-          >
-            {formattedDate}
-          </time>
-        )
-      }
-      {description && <p class="text-[var(--color-text-muted)] mt-2">{description}</p>}
-    </header>
+      <div class="read-meta">
+        {formattedDate && <span>{formattedDate}</span>}
+        {formattedDate && readingMinutes > 0 && <span class="dot" />}
+        {readingMinutes > 0 && <span>{readingMinutes} min read</span>}
+        {metaTags.length > 0 && <span class="dot" />}
+        {metaTags.length > 0 && <span>{metaTags.join(" · ")}</span>}
+      </div>
+    </div>
+  </div>
 
-    <div class="prose">
+  <article class="article">
+    <div class="container prose-col">
+      {description && <p class="drop-lead">{description}</p>}
       <slot />
     </div>
-
-    {
-      seriesEssays.length > 0 && (
-        <nav class="mt-12 pt-8 border-t border-[var(--color-border)]">
-          <h2 class="text-lg mb-4">In This Series</h2>
-          <ol class="list-none p-0 space-y-3">
-            {seriesEssays.map((essay) => (
-              <li>
-                <a
-                  href={entryIdToUrl(essay.id)}
-                  class="card block p-3 no-underline"
-                >
-                  <span class="font-heading text-[var(--color-gold)]">
-                    {essay.data.title}
-                  </span>
-                  {essay.data.description && (
-                    <p class="text-sm text-[var(--color-text-muted)] mt-1 mb-0">
-                      {essay.data.description}
-                    </p>
-                  )}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
-      )
-    }
-
-    <Comments />
   </article>
+
+  {
+    seriesEssays.length > 0 && (
+      <div class="read-foot">
+        <div class="container">
+          <span class="eyebrow">In this series</span>
+          <div class="backlinks" style="margin-top: var(--space-6);">
+            {seriesEssays.map((essay) => (
+              <a class="backlink" href={url(essay.id)}>
+                <div class="bl-kind">Writing · Series</div>
+                <h4>{essay.data.title}</h4>
+                {essay.data.description && <p>{essay.data.description}</p>}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  <div class="container prose-col" style="margin-top: var(--space-12);">
+    <Comments />
+  </div>
 </BaseLayout>

@@ -16,25 +16,38 @@ const formattedDate = date.toLocaleDateString("en-US", {
 })
 ---
 
-<BaseLayout title={title}>
-  <article>
-    <header class="mb-8">
-      <h1 class="mb-2">{title}</h1>
-      <time
-        datetime={date.toISOString()}
-        class="text-[var(--color-text-muted)] text-sm"
-      >
-        {formattedDate}
-      </time>
-      {linkedIdea && (
-        <p class="mt-2 text-sm">
-          Related: <a href={linkedIdea}>{linkedIdea}</a>
-        </p>
-      )}
-    </header>
-    <div class="prose">
+<BaseLayout title={title} contained={false}>
+  <div class="read-head">
+    <div class="container prose-col">
+      <div class="crumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="/thoughts/">Thoughts</a>
+        <span>/</span>
+        <span>{title}</span>
+      </div>
+      <h1>{title}</h1>
+      <div class="read-meta">
+        <span>{formattedDate}</span>
+        {linkedIdea && <span class="dot" />}
+        {
+          linkedIdea && (
+            <span>
+              Related: <a href={linkedIdea}>{linkedIdea}</a>
+            </span>
+          )
+        }
+      </div>
+    </div>
+  </div>
+
+  <article class="article">
+    <div class="container prose-col">
       <slot />
     </div>
-    <Comments />
   </article>
+
+  <div class="container prose-col" style="margin-top: var(--space-12);">
+    <Comments />
+  </div>
 </BaseLayout>

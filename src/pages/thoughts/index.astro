@@ -4,28 +4,40 @@ import { getCollection } from "astro:content"
 
 const thoughts = await getCollection("thoughts")
 const sortedThoughts = thoughts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+
+const shortDate = (d: Date) =>
+  d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })
 ---
 
-<BaseLayout title="Thoughts" description="Short-form reflections and observations">
-  <h1>Thoughts</h1>
-  <p class="text-[var(--color-text-muted)] mb-8">
-    Short-form reflections, observations, and developing ideas.
-  </p>
-
-  {sortedThoughts.length > 0 ? (
-    <div class="space-y-8">
-      {sortedThoughts.map((thought) => (
-        <article class="border-l-2 border-[var(--color-border-accent)] pl-4">
-          <time datetime={thought.data.date.toISOString()} class="text-xs text-[var(--color-text-muted)]">
-            {thought.data.date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
-          </time>
-          <h2 class="text-lg mt-1 mb-1">
-            <a href={`/thoughts/${thought.id}/`}>{thought.data.title}</a>
-          </h2>
-        </article>
-      ))}
+<BaseLayout
+  title="Thoughts"
+  description="Short-form reflections, observations, and developing ideas."
+  contained={false}
+>
+  <div class="page-head">
+    <div class="container">
+      <span class="eyebrow">Marginalia</span>
+      <h1>Thoughts</h1>
+      <p class="page-lead">Short reflections and observations, dated as they land on the page.</p>
     </div>
-  ) : (
-    <p class="text-[var(--color-text-dim)] italic">No thoughts yet. This is a new section.</p>
-  )}
+  </div>
+
+  <section class="section-sm">
+    <div class="container">
+      {
+        sortedThoughts.length > 0 ? (
+          <div class="backlinks">
+            {sortedThoughts.map((thought) => (
+              <a class="backlink" href={`/thoughts/${thought.id}/`}>
+                <div class="bl-kind">{shortDate(thought.data.date)}</div>
+                <h4>{thought.data.title}</h4>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p class="caption">No thoughts yet. This is a new section.</p>
+        )
+      }
+    </div>
+  </section>
 </BaseLayout>

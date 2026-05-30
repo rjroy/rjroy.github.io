@@ -879,8 +879,19 @@ img[hidden],
 .status.archived {
   color: var(--fg-muted);
 }
-[data-theme="dark"] .status.maintained {
+/* Idea statuses (active is shared with projects above). */
+.status.paused {
+  color: var(--brass-500);
+}
+.status.graduated {
+  color: var(--success);
+}
+[data-theme="dark"] .status.maintained,
+[data-theme="dark"] .status.paused {
   color: var(--brass-300);
+}
+[data-theme="dark"] .status.graduated {
+  color: var(--moss-300);
 }
 
 /* =========================================================
