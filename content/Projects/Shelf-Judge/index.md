@@ -1,6 +1,7 @@
 ---
 title: Shelf Judge
 description: A board game collection tool for owners who want their shelf to be intentional, not accumulated
+cover: /Projects/Shelf-Judge/screenshots/collection.png
 tags:
   - area
   - boardgames
@@ -90,4 +91,4 @@ Existing BGG collections can be imported in bulk by username. The importer skips
 
 ---
 
-*Active development. The vision is settled; the shelf is still being judged.*
+_Active development. The vision is settled; the shelf is still being judged._
