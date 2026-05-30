@@ -45,12 +45,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
   <body class="flex flex-col min-h-screen">
     <Nav />
     {
+      /* min-w-0 lets the main flex item shrink below its content's intrinsic
+         width (e.g. a wide code block) instead of forcing horizontal overflow. */
       contained ? (
-        <main class="flex-1 w-full max-w-3xl mx-auto px-4 py-8">
+        <main class="flex-1 w-full min-w-0 max-w-3xl mx-auto px-4 py-8">
           <slot />
         </main>
       ) : (
-        <main class="flex-1 w-full">
+        <main class="flex-1 w-full min-w-0">
           <slot />
         </main>
       )

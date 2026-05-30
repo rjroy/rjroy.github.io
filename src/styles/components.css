@@ -1101,6 +1101,48 @@ img[hidden],
   .proj-thumb {
     aspect-ratio: 16/9;
   }
+
+  /* Reading view + section heads: trim the desktop padding so phones don't
+     open with a screen of empty space, and tighten body/code type. */
+  .read-head {
+    padding: var(--space-10) 0 var(--space-6);
+  }
+  .page-head {
+    padding: var(--space-10) 0 var(--space-8);
+  }
+  .article {
+    padding: var(--space-8) 0 var(--space-12);
+  }
+  .read-foot {
+    padding: var(--space-8) 0;
+  }
+  /* The status/tags row stacks on narrow screens; the inline separator dot
+     would dangle at the end of the status line, so drop it on mobile. */
+  .read-meta .dot {
+    display: none;
+  }
+  .read-head h1 {
+    font-size: clamp(1.9rem, 8vw, 2.4rem);
+  }
+  .page-head h1 {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+  .article p,
+  .article ol,
+  .article ul {
+    font-size: var(--text-base);
+  }
+  .article .drop-lead {
+    font-size: var(--text-xl);
+  }
+  /* Long code lines: a smaller mono size fits more before the block has to
+     scroll horizontally. The block still scrolls; it never widens the page. */
+  pre,
+  pre code,
+  .astro-code {
+    font-size: 13px;
+    max-width: 100%;
+  }
 }
 
 /* Respect a visitor's reduced-motion preference: kill the looping
