@@ -10,6 +10,9 @@ dist/
 .astro/
 *.tsbuildinfo
 
+# Design handoff bundles (claude.ai/design exports)
+*-handoff.zip
+
 # Dependencies
 node_modules/
 

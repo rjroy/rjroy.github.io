@@ -1,6 +1,7 @@
 ---
 title: Ink Mirror
 description: A journal where you write first and the AI reads second, observing your patterns without generating, correcting, or suggesting
+cover: /Projects/Ink-Mirror/screenshots/entries.png
 tags:
   - area
   - writing
@@ -93,4 +94,4 @@ All data lives in `~/.ink-mirror/`: one markdown file per entry, one JSON file p
 
 ---
 
-*Active development. The loop works; the profile deepens with every honest curation pass.*
+_Active development. The loop works; the profile deepens with every honest curation pass._

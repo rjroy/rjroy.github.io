@@ -6,13 +6,16 @@ import "../styles/global.css"
 interface Props {
   title: string
   description?: string
+  /** When false, the page renders full-bleed and manages its own
+      containers (e.g. the homepage hero). Defaults to a centered column. */
+  contained?: boolean
 }
 
-const { title, description = "Ron's Broadcast Cache" } = Astro.props
+const { title, description = "Ron's Broadcast Cache", contained = true } = Astro.props
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,27 +31,32 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
     <meta property="og:image" content={new URL("/og-image.png", Astro.site)} />
     <meta property="og:type" content="website" />
     <!-- RSS autodiscovery -->
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="Broadcast Cache"
-      href="/rss.xml"
-    />
-    <!-- Prevent flash of wrong theme -->
+    <link rel="alternate" type="application/rss+xml" title="Broadcast Cache" href="/rss.xml" />
+    <!-- Prevent flash of wrong theme. Default dark; honor the saved
+         preference (and migrate the legacy "theme" key if present). -->
     <script is:inline>
       ;(function () {
-        var theme = localStorage.getItem("theme")
-        if (theme === "light") {
-          document.documentElement.classList.add("light")
-        }
+        var t = localStorage.getItem("rbc-theme") || localStorage.getItem("theme")
+        if (t !== "light" && t !== "dark") t = "dark"
+        document.documentElement.setAttribute("data-theme", t)
       })()
     </script>
   </head>
   <body class="flex flex-col min-h-screen">
     <Nav />
-    <main class="flex-1 w-full max-w-3xl mx-auto px-4 py-8">
-      <slot />
-    </main>
+    {
+      /* min-w-0 lets the main flex item shrink below its content's intrinsic
+         width (e.g. a wide code block) instead of forcing horizontal overflow. */
+      contained ? (
+        <main class="flex-1 w-full min-w-0 max-w-3xl mx-auto px-4 py-8">
+          <slot />
+        </main>
+      ) : (
+        <main class="flex-1 w-full min-w-0">
+          <slot />
+        </main>
+      )
+    }
     <Footer />
   </body>
 </html>

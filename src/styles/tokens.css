@@ -1,0 +1,303 @@
+/* =========================================================
+   Development Adventures — Colors & Type
+   ---------------------------------------------------------
+   A warm, earthy, painterly system. Think guild halls,
+   parchment, candlelight, oxidized brass, and stained glass.
+
+   Source: handoff bundle (claude.ai/design). Font paths point
+   at /fonts (public/fonts) so the bundler doesn't rebase them.
+   ========================================================= */
+
+/* ---- Brand webfonts (local files in public/fonts) ---- */
+@font-face {
+  font-family: "IM Fell English SC";
+  src: url("/fonts/IMFellEnglishSC-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vollkorn";
+  src: url("/fonts/Vollkorn-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vollkorn";
+  src: url("/fonts/Vollkorn-Italic-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* =====================================================
+     COLOR — Earthy palette
+     Warm parchment grounds, ember accents, deep ink shadows.
+     All combos meet WCAG AA at body sizes when used as noted.
+     ===================================================== */
+
+  /* Parchment / paper grounds (lightest → deepest) */
+  --parchment-50: #fbf5e7; /* candle-lit page */
+  --parchment-100: #f4ead0; /* default page bg */
+  --parchment-200: #e8d9b0; /* aged paper */
+  --parchment-300: #d4be85; /* tea-stained */
+  --parchment-400: #b89a5e; /* worn leather */
+
+  /* Ink / wood (darkest → lightest) */
+  --ink-900: #1a140e; /* deepest ink */
+  --ink-800: #2a1f15; /* walnut */
+  --ink-700: #3d2d1f; /* dark oak */
+  --ink-600: #5a4632; /* aged wood */
+  --ink-500: #7a6248; /* faded ink */
+  --ink-400: #9b8467; /* gentle stroke */
+
+  /* Ember — primary accent, candlelight & ironwork */
+  --ember-50: #fbe4c9;
+  --ember-100: #f4c896;
+  --ember-300: #e29550;
+  --ember-500: #c56a1f; /* PRIMARY brand */
+  --ember-700: #8b4513; /* burnt sienna */
+  --ember-900: #4a2407; /* charred */
+
+  /* Oxblood — wax seal, cleric's robe */
+  --oxblood-300: #c8654e;
+  --oxblood-500: #9c2b1b;
+  --oxblood-700: #6b1a0f;
+
+  /* Brass — gilded clockwork, lamp glow */
+  --brass-300: #e8c77a;
+  --brass-500: #c9a24a;
+  --brass-700: #8c6f23;
+
+  /* Verdigris — oxidized copper, mage robe blue-teal */
+  --verdigris-300: #6fa39b;
+  --verdigris-500: #2f6e66;
+  --verdigris-700: #1a463f;
+
+  /* Lapis — wizard's blue, stained glass */
+  --lapis-300: #5e7ba8;
+  --lapis-500: #2e4a78;
+  --lapis-700: #1a2e4f;
+
+  /* Moss — forest, leather binding */
+  --moss-300: #8aa46a;
+  --moss-500: #4f6b36;
+  --moss-700: #2e4220;
+
+  /* =====================================================
+     SEMANTIC COLOR
+     Use these in components — never hardcode the scale.
+     ===================================================== */
+
+  /* Surfaces */
+  --bg: var(--parchment-100);
+  --bg-raised: var(--parchment-50);
+  --bg-sunken: var(--parchment-200);
+  --bg-inverse: var(--ink-800);
+
+  /* Foregrounds */
+  --fg: var(--ink-800); /* body */
+  --fg-1: var(--ink-900); /* headings */
+  --fg-2: var(--ink-600); /* secondary */
+  --fg-3: var(--ink-500); /* tertiary / captions */
+  --fg-muted: var(--ink-400); /* placeholder */
+  --fg-on-dark: var(--parchment-50);
+  --fg-on-ember: var(--parchment-50);
+
+  /* Borders / strokes */
+  --rule: var(--parchment-300);
+  --rule-strong: var(--ink-600);
+  --rule-soft: var(--parchment-200);
+
+  /* Brand & action */
+  --brand: var(--ember-500);
+  --brand-hover: var(--ember-700);
+  --brand-press: var(--ember-900);
+  --brand-soft: var(--ember-50);
+
+  /* Status — earthy versions of the standard set */
+  --success: var(--moss-500);
+  --success-soft: #dde6cc;
+  --warning: var(--brass-700);
+  --warning-soft: #f4e6bd;
+  --danger: var(--oxblood-500);
+  --danger-soft: #f0cfc9;
+  --info: var(--lapis-500);
+  --info-soft: #d2dcec;
+
+  /* Magical accent — only for special / "imaginative" surfaces */
+  --rune: var(--verdigris-500);
+  --rune-glow: #7fe0d0;
+
+  /* Scrim for modals (warm black) */
+  --scrim: rgba(26, 20, 14, 0.55);
+
+  /* =====================================================
+     TYPE — fonts, sizes, leading
+     ===================================================== */
+
+  /* Families */
+  --font-display:
+    "IM Fell English SC", "IM Fell English", "Cormorant Garamond", "Times New Roman", serif;
+  --font-serif: "Vollkorn", "IM Fell English", Georgia, "Times New Roman", serif;
+  --font-body: "Vollkorn", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", "Iosevka", "Menlo", "Consolas", monospace;
+
+  /* Modular scale — 1.250 (major third), generous for warmth */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 17px; /* body — slightly larger than default for serif comfort */
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 30px;
+  --text-3xl: 38px;
+  --text-4xl: 48px;
+  --text-5xl: 60px;
+  --text-6xl: 76px;
+
+  /* Leading */
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.7;
+
+  /* Tracking */
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.12em; /* for small caps display */
+
+  /* =====================================================
+     SPACING — based on 4px, with named "adventurer" steps
+     ===================================================== */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* =====================================================
+     RADIUS — soft, never aggressively round
+     The brand favors hand-cut, slightly irregular forms.
+     ===================================================== */
+  --radius-sm: 3px;
+  --radius: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  /* =====================================================
+     SHADOWS — warm, candle-lit. Tinted with ink, not gray.
+     ===================================================== */
+  --shadow-xs: 0 1px 0 rgba(42, 31, 21, 0.08);
+  --shadow-sm: 0 1px 2px rgba(42, 31, 21, 0.1), 0 1px 1px rgba(42, 31, 21, 0.06);
+  --shadow: 0 4px 8px rgba(42, 31, 21, 0.12), 0 1px 2px rgba(42, 31, 21, 0.08);
+  --shadow-md: 0 8px 18px rgba(42, 31, 21, 0.14), 0 2px 4px rgba(42, 31, 21, 0.08);
+  --shadow-lg: 0 18px 40px rgba(42, 31, 21, 0.2), 0 4px 8px rgba(42, 31, 21, 0.1);
+  --shadow-glow: 0 0 24px rgba(197, 106, 31, 0.35); /* candle */
+  --shadow-rune: 0 0 28px rgba(127, 224, 208, 0.45); /* magical */
+  --shadow-inset: inset 0 1px 2px rgba(42, 31, 21, 0.18);
+
+  /* =====================================================
+     MOTION
+     ===================================================== */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur: 200ms;
+  --dur-slow: 360ms;
+}
+
+/* Base element styles built on these tokens live in global.css,
+   inside @layer base, so Tailwind utilities can still override them
+   on the inner pages. This file is variables + fonts only. */
+
+/* =====================================================
+   DARK THEME — "the guild hall at night"
+   ----------------------------------------------------
+   Apply with <html data-theme="dark"> or any ancestor.
+   Strategy: parchment grounds become deep ink; ember
+   lifts one step (ember-300) for AA contrast on dark;
+   borders darken; shadows deepen and the lantern glow
+   does more visual work.
+   ===================================================== */
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* Surfaces — three tiers of warm darkness */
+  --bg: #14100b; /* night sky */
+  --bg-raised: #1f1810; /* table, lit by lantern */
+  --bg-sunken: #0d0a07; /* deep shadow */
+  --bg-inverse: var(--parchment-50);
+
+  /* Foregrounds — warm whites, never pure */
+  --fg: #efe2c5; /* body, slightly amber */
+  --fg-1: #fbf5e7; /* headings */
+  --fg-2: #c8b58f; /* secondary */
+  --fg-3: #9b8467; /* tertiary / captions */
+  --fg-muted: #6b5840; /* placeholder */
+  --fg-on-dark: var(--ink-900);
+  --fg-on-ember: #1a140e; /* on lifted ember-300 we use ink */
+
+  /* Borders */
+  --rule: #3a2e1f;
+  --rule-strong: #5a4632;
+  --rule-soft: #2a1f15;
+
+  /* Brand & action — lift one step on dark for AA */
+  --brand: var(--ember-300);
+  --brand-hover: var(--ember-100);
+  --brand-press: var(--ember-500);
+  --brand-soft: #3a2814;
+
+  /* Status — soft tints rebuilt against ink */
+  --success-soft: #243018;
+  --warning-soft: #3a2e10;
+  --danger-soft: #3a1612;
+  --info-soft: #16223a;
+
+  /* Status colors lift to readable values on dark */
+  --success: var(--moss-300);
+  --warning: var(--brass-300);
+  --danger: var(--oxblood-300);
+  --info: var(--lapis-300);
+
+  /* Rune glow reads more strongly on dark */
+  --rune: var(--verdigris-300);
+
+  /* Shadows — deeper, more contrast against dark */
+  --shadow-xs: 0 1px 0 rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45), 0 1px 1px rgba(0, 0, 0, 0.3);
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 18px rgba(0, 0, 0, 0.55), 0 2px 4px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 18px 40px rgba(0, 0, 0, 0.65), 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 28px rgba(226, 149, 80, 0.55); /* lantern, brighter */
+  --shadow-rune: 0 0 32px rgba(127, 224, 208, 0.5);
+  --shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+
+  --scrim: rgba(0, 0, 0, 0.7);
+}

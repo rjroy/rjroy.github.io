@@ -2,32 +2,38 @@
 const currentYear = new Date().getFullYear()
 ---
 
-<footer class="border-t border-[var(--color-border-accent)] mt-auto">
-  <div
-    class="max-w-5xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-[var(--color-text-muted)]"
-  >
-    <span>&copy; {currentYear} Ron Roy</span>
-    <div class="flex items-center gap-4">
-      <a
-        href="/rss.xml"
-        class="hover:text-[var(--color-gold)] transition-colors no-underline"
-      >
-        RSS
-      </a>
-      <span class="text-[var(--color-text-dim)]">
-        Built with <a
-          href="https://astro.build"
-          class="hover:text-[var(--color-gold)] transition-colors"
-          >Astro</a
+<footer class="foot">
+  <div class="container foot-inner">
+    <div class="foot-brand">
+      <div class="brand-name">Ron's Broadcast Cache</div>
+      <p>
+        A public window into how I organize my thoughts, projects, and ideas. Bring a question.
+        Leave with a map.
+      </p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="/ideas/">Ideas</a>
+        <a href="/projects/">Projects</a>
+        <a href="/writing/">Writing</a>
+        <a href="/thoughts/">Thoughts</a>
+      </div>
+      <div class="foot-col">
+        <h4>Elsewhere</h4>
+        <a href="https://github.com/rjroy" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/rjroy/memory-loop" target="_blank" rel="noopener"
+          >Memory Loop source</a
         >
-      </span>
-      <span class="text-[var(--color-text-dim)]">
-        Edited by <a
-          href="https://claude.ai/code"
-          class="hover:text-[var(--color-gold)] transition-colors"
-          >Claude</a
-        >
-      </span>
+        <a href="/rss.xml">RSS feed</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="foot-legal">
+      <span>&copy; {currentYear} Ron Roy</span>
+      <span>CC BY 4.0 — share and adapt with attribution</span>
+      <span>Built with Astro · hosted on GitHub Pages</span>
     </div>
   </div>
 </footer>

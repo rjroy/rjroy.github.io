@@ -4,40 +4,120 @@ import { getCollection } from "astro:content"
 
 const allProjects = await getCollection("projects")
 
-// Get top-level project pages (Astro strips "/index" from IDs, so top-level entries have no "/" in their ID)
-const topLevelProjects = allProjects
+// Top-level project pages only (Astro strips "/index" from folder IDs, so a
+// top-level entry's ID has no slash).
+const statusOrder: Record<string, number> = {
+  active: 0,
+  maintained: 1,
+  archived: 2,
+}
+const projects = allProjects
   .filter((entry) => !entry.id.includes("/"))
   .sort((a, b) => {
-    const statusOrder = { active: 0, maintained: 1, archived: 2 }
     const diff = statusOrder[a.data.status] - statusOrder[b.data.status]
     if (diff !== 0) return diff
     return a.data.title.localeCompare(b.data.title)
   })
 
-function entryIdToUrl(entryId: string): string {
-  return `/projects/${entryId}/`
-}
+const url = (id: string) => `/projects/${id.toLowerCase()}/`
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
+
+// Tags that describe vault organization rather than the project itself.
+const structuralTags = new Set(["area", "project", "index"])
+const displayTags = (tags: string[]) => tags.filter((t) => !structuralTags.has(t)).slice(0, 3)
+
+// Only offer filter chips for statuses that actually appear, and only when
+// there's real variety to filter on (otherwise the row is a no-op toggle).
+const present = new Set(projects.map((p) => p.data.status))
+const filters = ["all", "active", "maintained", "archived"].filter(
+  (f) => f === "all" || present.has(f),
+)
+const showFilters = present.size > 1
 ---
 
-<BaseLayout title="Projects" description="Shipped projects and tools">
-  <h1>Projects</h1>
-  <p class="text-[var(--color-text-muted)] mb-8">
-    Shipped projects, maintained tools, and archived work.
-  </p>
-
-  <div class="space-y-4">
-    {topLevelProjects.map((project) => (
-      <a href={entryIdToUrl(project.id)} class="card block p-4 no-underline">
-        <div class="flex items-center gap-2 mb-1">
-          <h2 class="text-lg mb-0">{project.data.title}</h2>
-          <span class={`status-${project.data.status} text-xs font-heading uppercase tracking-wider`}>
-            {project.data.status}
-          </span>
-        </div>
-        {project.data.description && (
-          <p class="text-sm text-[var(--color-text-muted)] mb-0">{project.data.description}</p>
-        )}
-      </a>
-    ))}
+<BaseLayout
+  title="Projects"
+  description="Things I've built with clear goals — tools for thinking, playing, and making."
+  contained={false}
+>
+  <div class="page-head">
+    <div class="container">
+      <span class="eyebrow">The workbench</span>
+      <h1>Projects</h1>
+      <p class="page-lead">
+        Things I've built with clear goals — tools for thinking, playing, and making, mostly born
+        from a real friction I wanted gone.
+      </p>
+      {
+        showFilters && (
+          <div class="filters">
+            {filters.map((f) => (
+              <button class:list={["chip", f === "all" && "active"]} data-filter={f}>
+                {f === "all" ? "All" : cap(f)}
+              </button>
+            ))}
+          </div>
+        )
+      }
+    </div>
   </div>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="proj-grid">
+        {
+          projects.map((project) => (
+            <a class="proj-card" href={url(project.id)} data-status={project.data.status}>
+              {project.data.cover ? (
+                <div class="proj-thumb">
+                  <img
+                    src={project.data.cover}
+                    alt={project.data.title}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              ) : (
+                <div class="proj-thumb placeholder">
+                  <img src="/assets/logo-shield-dark.png" alt={project.data.title} />
+                </div>
+              )}
+              <div class="proj-body">
+                <div class="proj-top">
+                  <span class:list={["status", project.data.status]}>
+                    {cap(project.data.status)}
+                  </span>
+                </div>
+                <h3>{project.data.title}</h3>
+                {project.data.description && <p>{project.data.description}</p>}
+                {displayTags(project.data.tags).length > 0 && (
+                  <div class="proj-tags">
+                    {displayTags(project.data.tags).map((t) => (
+                      <span class="tag">{t}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<script>
+  // Client-side status filtering for the chips.
+  const chips = document.querySelectorAll<HTMLButtonElement>(".filters .chip")
+  const cards = document.querySelectorAll<HTMLElement>(".proj-card")
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const filter = chip.dataset.filter
+      chips.forEach((c) => c.classList.toggle("active", c === chip))
+      cards.forEach((card) => {
+        const show = filter === "all" || card.dataset.status === filter
+        card.style.display = show ? "" : "none"
+      })
+    })
+  })
+</script>

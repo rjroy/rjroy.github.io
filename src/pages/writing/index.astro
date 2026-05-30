@@ -4,48 +4,46 @@ import { getCollection } from "astro:content"
 
 const allWriting = await getCollection("writing")
 
-// Get series index pages (Astro strips "/index" from IDs, so top-level entries have no "/" in their ID)
+// Series index pages only (Astro strips "/index", so top-level entries have no "/" in their ID)
 const seriesEntries = allWriting
   .filter((entry) => !entry.id.includes("/"))
   .sort((a, b) => {
-    // Sort by date desc (entries without dates go last)
     if (a.data.date && b.data.date) return b.data.date.getTime() - a.data.date.getTime()
     if (a.data.date) return -1
     if (b.data.date) return 1
     return a.data.title.localeCompare(b.data.title)
   })
 
-function entryIdToUrl(entryId: string): string {
-  return `/writing/${entryId}/`
-}
+const url = (id: string) => `/writing/${id.toLowerCase()}/`
+const shortDate = (d: Date) =>
+  d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })
 ---
 
-<BaseLayout title="Writing" description="Essays and longer-form pieces">
-  <h1>Writing</h1>
-  <p class="text-[var(--color-text-muted)] mb-8">
-    Essays, series, and longer-form pieces.
-  </p>
-
-  <div class="space-y-4">
-    {seriesEntries.map((piece) => (
-      <a href={entryIdToUrl(piece.id)} class="card block p-4 no-underline">
-        <h2 class="text-lg mb-1">{piece.data.title}</h2>
-        {piece.data.date && (
-          <time
-            datetime={piece.data.date.toISOString()}
-            class="text-xs text-[var(--color-text-muted)] block mb-1"
-          >
-            {piece.data.date.toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            })}
-          </time>
-        )}
-        {piece.data.description && (
-          <p class="text-sm text-[var(--color-text-muted)] mb-0">{piece.data.description}</p>
-        )}
-      </a>
-    ))}
+<BaseLayout title="Writing" description="Essays, series, and longer-form pieces." contained={false}>
+  <div class="page-head">
+    <div class="container">
+      <span class="eyebrow">The library</span>
+      <h1>Writing</h1>
+      <p class="page-lead">
+        Essays and longer pieces I've thought all the way through before publishing — some
+        standalone, some gathered into series.
+      </p>
+    </div>
   </div>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="backlinks">
+        {
+          seriesEntries.map((piece) => (
+            <a class="backlink" href={url(piece.id)}>
+              <div class="bl-kind">{piece.data.date ? shortDate(piece.data.date) : "Essay"}</div>
+              <h4>{piece.data.title}</h4>
+              {piece.data.description && <p>{piece.data.description}</p>}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </BaseLayout>

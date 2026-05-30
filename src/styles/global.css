@@ -1,129 +1,201 @@
-/* Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Victor+Mono:wght@400;700&display=swap");
+/* New design system: tokens (variables + fonts) and the component layer
+   from the claude.ai/design handoff. Imported first so PostCSS can hoist
+   them; element base styles live below in @layer base. */
+@import "./tokens.css";
+@import "./components.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  /* Dark mode (default) */
+  /* ---------------------------------------------------------------
+     Legacy variable bridge
+     Inner pages and Tailwind arbitrary values still reference the old
+     --color-* names. Map them onto the new semantic tokens, which already
+     flip between light and dark, so a single definition covers both themes.
+     --------------------------------------------------------------- */
   :root {
-    --color-bg: #1a1510;
-    --color-bg-light: #28231f;
-    --color-bg-lighter: #322d28;
-    --color-text: #f5f0e8;
-    --color-text-muted: #a89f91;
-    --color-text-dim: #6b6358;
-    --color-brass: #e09440;
-    --color-brass-muted: #c4956a;
-    --color-gold: #f4c542;
-    --color-border: #2c2720;
-    --color-border-accent: #c4956a;
+    --color-bg: var(--bg);
+    --color-bg-light: var(--bg-raised);
+    --color-bg-lighter: var(--bg-raised);
+    --color-text: var(--fg);
+    --color-text-muted: var(--fg-2);
+    --color-text-dim: var(--fg-3);
+    --color-brass: var(--brand);
+    --color-brass-muted: var(--rule-strong);
+    --color-gold: var(--brand);
+    --color-border: var(--rule);
+    --color-border-accent: var(--rule-strong);
   }
 
-  /* Light mode */
-  .light {
-    --color-bg: #f5f0e8;
-    --color-bg-light: #e8e0d4;
-    --color-bg-lighter: #d4c9b8;
-    --color-text: #2a2520;
-    --color-text-muted: #5c554b;
-    --color-text-dim: #8a8078;
-    --color-brass: #8c5d35;
-    --color-brass-muted: #6d4528;
-    --color-gold: #b48e20;
-    --color-border: #d4c9b8;
-    --color-border-accent: #8c5d35;
-  }
-
-  html {
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    font-family: "Merriweather", serif;
-    line-height: 1.75;
-    scroll-behavior: smooth;
-  }
-
+  /* ---------------------------------------------------------------
+     Base element styles (new design). Kept in @layer base so Tailwind
+     utilities applied on inner pages can still override them.
+     --------------------------------------------------------------- */
+  html,
   body {
-    min-height: 100vh;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
-  /* Headings */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: "Red Rose", serif;
-    color: var(--color-gold);
-    line-height: 1.3;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
+  h1,
+  .h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--text-5xl);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-wide);
+    color: var(--fg-1);
+    margin: 0 0 var(--space-4);
+  }
+  h2,
+  .h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--text-3xl);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-wide);
+    color: var(--fg-1);
+    margin: 0 0 var(--space-3);
+  }
+  h3,
+  .h3 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: var(--text-xl);
+    line-height: var(--leading-snug);
+    color: var(--fg-1);
+    margin: 0 0 var(--space-2);
+  }
+  h4,
+  .h4 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: var(--text-lg);
+    color: var(--fg-1);
+    margin: 0 0 var(--space-2);
   }
 
-  h1 { font-size: 2.25rem; font-weight: 700; }
-  h2 { font-size: 1.75rem; font-weight: 700; }
-  h3 { font-size: 1.375rem; font-weight: 700; }
-  h4 { font-size: 1.125rem; font-weight: 700; }
+  .lead {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: var(--text-xl);
+    line-height: var(--leading-snug);
+    color: var(--fg-2);
+  }
+  .caption {
+    font-size: var(--text-sm);
+    color: var(--fg-3);
+    font-style: italic;
+  }
 
-  /* Links */
+  /* Body paragraphs in prose contexts */
+  p {
+    text-wrap: pretty;
+    margin: 0 0 var(--space-4);
+  }
+
+  /* Code & mono */
+  code,
+  kbd,
+  pre,
+  .mono {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+  }
+  code {
+    background: var(--parchment-200);
+    padding: 0.1em 0.35em;
+    border-radius: var(--radius-sm);
+    color: var(--ember-900);
+    border: 1px solid var(--rule);
+  }
+  pre {
+    background: var(--ink-900);
+    color: var(--parchment-50);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    overflow-x: auto;
+    border: 1px solid var(--ink-700);
+    box-shadow: var(--shadow-inset);
+  }
+  pre code {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    padding: 0;
+  }
+  [data-theme="dark"] code {
+    background: #2a1f15;
+    color: var(--ember-100);
+    border-color: var(--rule);
+  }
+  [data-theme="dark"] pre {
+    background: #0d0a07;
+    border-color: var(--rule);
+  }
+
+  /* Links — underlined by default, ember on hover */
   a {
-    color: var(--color-brass);
+    color: var(--ember-700);
     text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-color: var(--color-brass-muted);
-    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    transition: color var(--dur) var(--ease-out);
   }
-
   a:hover {
-    color: var(--color-gold);
-    text-decoration-color: var(--color-gold);
+    color: var(--ember-500);
+  }
+  [data-theme="dark"] a {
+    color: var(--ember-300);
+  }
+  [data-theme="dark"] a:hover {
+    color: var(--ember-100);
   }
 
   /* Wiki-links: unresolved */
   a.new {
-    color: var(--color-text-dim);
+    color: var(--fg-muted);
     text-decoration-style: dashed;
     cursor: not-allowed;
   }
 
-  /* Code */
-  code {
-    font-family: "Victor Mono", monospace;
-    font-size: 0.875em;
-    background-color: var(--color-bg-light);
-    padding: 0.15em 0.35em;
-    border-radius: 0.25rem;
-    color: var(--color-brass);
+  /* Selection */
+  ::selection {
+    background: var(--ember-100);
+    color: var(--ink-900);
   }
-
-  pre {
-    font-family: "Victor Mono", monospace;
-    background-color: var(--color-bg-light) !important;
-    border: 1px solid var(--color-border);
-    border-radius: 0.5rem;
-    padding: 1rem;
-    overflow-x: auto;
-    line-height: 1.6;
-  }
-
-  pre code {
-    background: none;
-    padding: 0;
-    color: var(--color-text);
+  [data-theme="dark"] ::selection {
+    background: var(--ember-700);
+    color: var(--parchment-50);
   }
 
   /* Blockquotes */
   blockquote {
-    border-left: 3px solid var(--color-border-accent);
-    padding-left: 1rem;
-    color: var(--color-text-muted);
+    border-left: 3px solid var(--brand);
+    padding-left: var(--space-4);
+    color: var(--fg-2);
     font-style: italic;
     margin: 1.5em 0;
   }
 
   /* Horizontal rules */
   hr {
-    border: none;
-    border-top: 1px solid var(--color-border);
+    border: 0;
+    border-top: 1px solid var(--rule);
     margin: 2rem 0;
+  }
+  hr.flourish {
+    border: 0;
+    height: 14px;
+    background: center/contain no-repeat;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='14' viewBox='0 0 200 14'><g fill='none' stroke='%235A4632' stroke-width='1'><path d='M0 7 L80 7'/><path d='M120 7 L200 7'/><circle cx='100' cy='7' r='3'/><path d='M92 7 L88 4 M92 7 L88 10 M108 7 L112 4 M108 7 L112 10'/></g></svg>");
   }
 
   /* Tables */
@@ -132,26 +204,25 @@
     border-collapse: collapse;
     margin: 1.5em 0;
   }
-
   th {
-    font-family: "Red Rose", serif;
-    color: var(--color-gold);
+    font-family: var(--font-display);
+    letter-spacing: var(--tracking-wide);
+    color: var(--fg-1);
     text-align: left;
     padding: 0.75rem;
-    border-bottom: 2px solid var(--color-border-accent);
+    border-bottom: 2px solid var(--rule-strong);
   }
-
   td {
     padding: 0.75rem;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--rule);
   }
 
   /* Lists */
-  ul, ol {
+  ul,
+  ol {
     padding-left: 1.5em;
     margin: 1em 0;
   }
-
   li {
     margin: 0.25em 0;
   }
@@ -160,69 +231,75 @@
   img {
     max-width: 100%;
     height: auto;
-    border-radius: 0.5rem;
-    border: 1px solid var(--color-border);
+  }
+  /* Markdown content images get a frame; structural <img> (logos,
+     card thumbs) opt out via their component styles. */
+  .prose-content img,
+  article img {
+    border-radius: var(--radius);
+    border: 1px solid var(--rule);
   }
 
   /* Callout styles (from remark-callout) */
   .callout {
-    border: 1px solid var(--color-border-accent);
-    border-radius: 0.5rem;
-    padding: 1rem;
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius);
+    padding: var(--space-4);
     margin: 1.5em 0;
-    background-color: var(--color-bg-light);
+    background-color: var(--bg-raised);
   }
-
   .callout-title {
-    font-family: "Red Rose", serif;
-    font-weight: 700;
-    color: var(--color-gold);
+    font-family: var(--font-display);
+    letter-spacing: var(--tracking-wide);
+    color: var(--brand);
     margin-bottom: 0.5rem;
   }
 }
 
-/* Utility classes for the theme */
+/* Utility classes carried over for the inner pages */
 @layer components {
   /* Status indicators */
   .status-active {
-    color: #4ade80;
+    color: var(--success);
   }
-
   .status-paused {
-    color: var(--color-brass);
+    color: var(--brass-500);
   }
-
-  .status-graduated, .status-maintained {
-    color: var(--color-gold);
+  .status-graduated,
+  .status-maintained {
+    color: var(--brass-500);
   }
-
   .status-archived {
-    color: var(--color-text-dim);
+    color: var(--fg-muted);
+  }
+  [data-theme="dark"] .status-paused,
+  [data-theme="dark"] .status-graduated,
+  [data-theme="dark"] .status-maintained {
+    color: var(--brass-300);
   }
 
   /* Card component */
   .card {
-    background-color: var(--color-bg-light);
-    border: 1px solid var(--color-border);
-    border-radius: 0.5rem;
+    background-color: var(--bg-raised);
+    border: 1px solid var(--rule-soft);
+    border-radius: var(--radius-md);
     padding: 1.25rem;
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    box-shadow: var(--shadow-sm);
+    transition:
+      border-color var(--dur) var(--ease-out),
+      box-shadow var(--dur) var(--ease-out),
+      transform var(--dur) var(--ease-out);
   }
-
   .card:hover {
-    border-color: var(--color-border-accent);
+    border-color: var(--rule);
+    box-shadow: var(--shadow-md);
     transform: translateY(-2px);
   }
 
   /* Section divider with brass accent */
   .section-divider {
     height: 1px;
-    background: linear-gradient(
-      to right,
-      transparent,
-      var(--color-border-accent),
-      transparent
-    );
+    background: linear-gradient(to right, transparent, var(--rule-strong), transparent);
     margin: 3rem 0;
   }
 }
