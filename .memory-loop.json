@@ -20,6 +20,6 @@
   "recentCaptures": 6,
   "recentDiscussions": 6,
   "order": 2,
-  "cardsEnabled": true,
+  "cardsEnabled": false,
   "viMode": false
 }
