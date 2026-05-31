@@ -1,6 +1,7 @@
 ---
 title: Shelf Judge
 description: A board game collection tool for owners who want their shelf to be intentional, not accumulated
+date: 2026-04-19
 cover: /Projects/Shelf-Judge/screenshots/collection.png
 tags:
   - area
