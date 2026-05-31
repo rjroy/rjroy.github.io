@@ -10,32 +10,33 @@ tags: [ai, agents, llm, architecture, cost, model-agnostic]
 
 ## The meter is running
 
-The subscription model for AI was never meant to run a business on. What it does
-well is give hobbyists room to explore. We are all still learning what these
-systems can actually do, and the answer changes fast, sometimes day to day.
+The subscription model for AI was never meant to run a business on. It is good at
+one thing: giving hobbyists room to explore. Hobbyists are still learning what
+these systems can actually do, and the answer changes fast, sometimes day to day.
 Whether or not you like how the subscription model is shifting, the shift is
 inevitable.
 
-In December a new kind of agent harness arrived: OpenClaw. You give it a loose
-definition of your goals and let it work out the solution on its own, often while
-you sleep. That breaks the subscription model, because now you can burn far more
-tokens in a night than the subscription is worth.
+In December a new kind of agent harness arrived: OpenClaw. Instead of answering
+one prompt at a time, you hand it a loose goal and it runs unattended, planning
+and re-planning until the work is done, often overnight. The output is genuinely
+impressive. The token bill is the catch: a single night's run can cost more than
+a month of subscription.
 
-So now what? Once every token an application spends costs real money, what do you
-do? That is where this starts.
+Once every token costs real money, being locked to one model stops being a
+convenience and turns into a bill you cannot manage.
 
-## Unlock the agent
+## Choice over consistency
 
-You would think the SDK built by a model's own provider would be the best way to
-use that model. You would be right. It is also the thing that locks you to that
-provider. When I first made that call for my applications, it was mostly so I
-could run the subscription against the agents. With that option gone, switching
-to a provider-neutral SDK becomes the obvious move.
+You would think a model's own SDK is the best way to use that model. You would be
+right, and that is exactly the trap. The provider SDK is tuned for the provider,
+and it locks you to them. I chose it originally so I could run the subscription
+against the agents. With that gone, a provider-neutral SDK is the obvious move.
 
-For me it came down to choice. Now I decide which model runs when, and not just
-big, medium, or small. Free or local too. There are real trade-offs. The
-foundation-lab models are far more reliable and consistent, but you do not always
-need that consistency, and once in a while its absence is the point.
+What I did not expect was that choice would change how I build, not just what I
+pay. I now pick the model per task: big, medium, small, free, or local. The
+foundation-lab models are more reliable and more consistent. But consistency is
+not always what you want. For some work, a model that wanders off the obvious
+path is the feature, not the bug.
 
 ## The path I followed
 
@@ -51,8 +52,10 @@ remain. What it buys me is a fallback to free models when I run out of tokens. I
 would not run this in production, but for hobby exploration it is great.
 
 With that in place I can move between Anthropic, OpenAI, anything on OpenRouter,
-or local models through Ollama. It has shown me things about how models behave
-that I did not know before.
+or local models through Ollama. Running the same task through a frontier model,
+then a free one, then a local one is the fastest way to find where a model's
+competence actually ends. The cheap ones tend to hold up fine until the tool
+calls chain more than a few deep, and then they lose the thread.
 
 ## Making use of it
 
@@ -67,22 +70,21 @@ one to a backend behind a single async trait, which means model choice was not a
 feature I bolted on, it was the shape of the thing, and a second backend slots in
 beside the first without the runner noticing.
 
-The four retrofits went faster than I expected, and for the same reason each
-time: I had already kept every AI call behind a daemon, in one place, without
-planning for this. Memory Loop, the tool I use to capture into this very vault,
-talks to its model through a single session factory, so the swap touched one
-file's worth of wiring. Ink Mirror, which watches my journal entries and reflects
-my writing patterns back at me, has its daemon own every model call, so the
-provider change never leaked into the UI or the CLI. Shelf Judge leans on AI
-lightly, mostly to predict fitness for board games still on my wishlist, which
-made it the lowest-risk swap of the set. Adventure Engine of Corvran, where an AI
-plays a tabletop game alongside you, was the one I most wanted to get right, and
-even there the change stayed inside the backend because that was the only place
-the model ever lived.
+The four retrofits went faster than I expected, and for the same reason every
+time. I had already kept each one's AI calls behind a daemon, in a single place,
+without ever planning for a swap. Memory Loop, which I use to capture into this
+very vault, reaches its model through one session factory; the migration touched
+a single file. Ink Mirror keeps every model call in the daemon, so the change
+never reached the UI or the CLI. Shelf Judge barely touches AI. It predicts how a
+board game will land before I buy it and nothing else, which made it the
+lowest-risk swap of the set. The one I cared most about getting right was
+Adventure Engine of Corvran, where an AI runs a tabletop game with you, and even
+there the work never left the backend. The backend was the only place the model
+had ever lived.
 
-The thread tying all six together is simple. Owning your own state and keeping
-model calls in one place is what makes the provider swappable. Where I had already
-done that, going model-agnostic was nearly free.
+Owning your own state and keeping model calls in one place is what makes the
+provider swappable. Where I had already done that, going model-agnostic was
+nearly free.
 
 ## Related
 
