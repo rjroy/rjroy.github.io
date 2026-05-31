@@ -1,7 +1,6 @@
 ---
 title: AI as Your Partner
 description: Why AI demands a different approach than any tool we've used before
-featured: true
 tags:
   - ai
   - methodology

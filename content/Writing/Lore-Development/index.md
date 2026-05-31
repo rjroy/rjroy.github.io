@@ -1,6 +1,7 @@
 ---
 title: "Lore Development"
 description: Why layered context compounds across projects and prevents premature implementation
+featured: true
 tags:
   - writing
   - ai-development

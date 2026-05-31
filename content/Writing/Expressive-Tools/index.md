@@ -1,7 +1,6 @@
 ---
 title: Expressive Tools
 description: How to add personality to tools without compromising function
-featured: true
 tags:
   - design
   - philosophy
