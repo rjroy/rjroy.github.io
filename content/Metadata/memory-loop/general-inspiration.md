@@ -1,4 +1,4 @@
-<!-- last-generated: 2026-05-19 (week 21) -->
+<!-- last-generated: 2026-05-30 (week 22) -->
 
 - "The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle." -- Steve Jobs
 - "Debugging is like being the detective in a crime movie where you are also the murderer." -- Filipe Fortes, Brazilian software engineer
@@ -22,3 +22,4 @@
 - "The man who moves a mountain begins by carrying away small stones." -- Confucius
 - "I am always doing that which I cannot do, in order that I may learn how to do it." -- Pablo Picasso
 - "The test of a first-rate intelligence is the ability to hold two opposed ideas in mind at the same time and still retain the ability to function." -- F. Scott Fitzgerald
+- "The only way to do great work is to love what you do." -- Steve Jobs

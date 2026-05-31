@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-05-23 -->
+<!-- last-generated: 2026-05-30 -->
 
-- "If you could see your neighborhood through the eyes of someone visiting for the first time, what would they notice that you've walked past a hundred times? Follow that curiosity for an hour."
-- "What if you redesigned something ordinary in your life (your morning routine, your favorite room, how you get from place A to B) with no practical constraints—only what feels delightful?"
-- "Pick a random object, person, or place, and spend 15 minutes inventing its completely fictional history. Who was it before this moment? What secret does it hold?"
-- "What skill or craft have you always wondered about but never tried? Find one small thing you can learn or make just because it sounds fun, no goal required."
-- "Imagine a conversation between two things that don't usually talk: your favorite song and the sky, your coffee mug and a tree, your past self and future self. What would they tell each other?"
 - "If your weekend could have a color, texture, and sound all its own, what would they be—and what kind of day would deserve them?"
 - "Imagine you could only ask questions this weekend, never make statements. What would you become curious about that you usually take for granted?"
 - "What's something you loved doing as a kid that you've completely forgotten about? Spend time with it again, just to see what happens."
@@ -25,3 +20,8 @@
 - "If you could insert a single impossible object into your favorite movie scene (a teapot in a spaceship, a door in the middle of the ocean), what would it be and how would it change the story?"
 - "Create a map of your neighborhood where streets are named after emotions instead of places - where would 'Curiosity Lane' lead, and what would you find on 'Quiet Joy Avenue'?"
 - "Invent a creature that lives in the space between your thoughts - what does it look like, what does it feed on, and what message does it leave when you're not paying attention?"
+- "What if time flowed backward for just one hour? Describe what you would do during that reversed hour."
+- "Invent a new holiday that celebrates something ordinary, like clouds or sidewalk cracks. What traditions would it have?"
+- "Imagine you can talk to plants for a day. What would the oldest tree in your neighborhood tell you?"
+- "Design a board game where the goal is to collect moments of wonder instead of points or money."
+- "If your shadow had a secret life when you weren't looking, what adventures would it get up to?"
