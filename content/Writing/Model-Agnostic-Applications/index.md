@@ -57,7 +57,7 @@ then a free one, then a local one is the fastest way to find where a model's
 competence actually ends. The cheap ones tend to hold up fine until the tool
 calls chain more than a few deep, and then they lose the thread.
 
-## Making use of it
+## Putting it into practice
 
 Theory only goes so far. Here is what model-agnostic actually looked like across
 six of my projects: two built on it from the start, four retrofitted onto it.
@@ -85,6 +85,15 @@ had ever lived.
 Owning your own state and keeping model calls in one place is what makes the
 provider swappable. Where I had already done that, going model-agnostic was
 nearly free.
+
+## Final Thoughts
+
+This is one journey, mine, and it probably isn't a problem for most projects.
+But if there's a universal lesson here, it's this: be careful of the agent
+integration layer, and be careful of getting locked into it. The AI industry
+flips on its head every few months. To stay useful, an application has to be
+updated regularly, and that now covers more than the prompts you run it with. It
+covers the models and the providers too. Don't lock your application in.
 
 ## Related
 

@@ -1,10 +1,5 @@
-<!-- last-generated: 2026-05-30 -->
+<!-- last-generated: 2026-05-31 -->
 
-- "If your weekend could have a color, texture, and sound all its own, what would they be—and what kind of day would deserve them?"
-- "Imagine you could only ask questions this weekend, never make statements. What would you become curious about that you usually take for granted?"
-- "What's something you loved doing as a kid that you've completely forgotten about? Spend time with it again, just to see what happens."
-- "Pick a place you pass by regularly but never really see—a corner, a building, a park bench. Spend an hour observing it like you're documenting another world."
-- "If you could have a conversation with someone from 100 years ago or 100 years in the future, what would surprise them most about how you spend your time right now?"
 - "If you could spend a day experiencing the world through someone else's senses—what they notice, what they ignore, how they perceive—whose perspective would you choose and what would surprise you most?"
 - "Spend an hour making something with no purpose: a drawing, a collage, a strange recipe, a story fragment. What emerges when you're not trying to make it 'good'?"
 - "Pick something ordinary in your space and study it as if you've never seen anything like it before. What is it actually doing? What story could it tell about how the world works?"
@@ -25,3 +20,8 @@
 - "Imagine you can talk to plants for a day. What would the oldest tree in your neighborhood tell you?"
 - "Design a board game where the goal is to collect moments of wonder instead of points or money."
 - "If your shadow had a secret life when you weren't looking, what adventures would it get up to?"
+- "What if you could spend a day exploring your city as if you were an alien discovering Earth for the first time—what would fascinate you most, and how would you describe it to beings from another world?"
+- "Imagine you’ve found a mysterious box that appears only on weekends. Inside is an object that represents a forgotten memory you didn’t know you had—what is it, and what story does it tell?"
+- "Pick a mundane object in your home and invent an elaborate secret history for it—who made it, where has it traveled, and what quiet role has it played in human stories?"
+- "If your weekend had a soundtrack composed entirely of sounds you usually ignore (like humming appliances or distant traffic), what would the melody reveal about your pace of life?"
+- "Close your eyes and imagine a door that wasn’t there yesterday. Where does it lead, and what small, courageous step would you take to see what’s on the other side?"
