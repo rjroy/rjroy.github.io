@@ -2,7 +2,6 @@
 title: "Intent-Driven Development"
 description: "When AI handles implementation, the engineer's job becomes defining intent. What does that mean for how we build software?"
 date: 2026-03-15
-featured: true
 tags: [ai, software-engineering, process, intent-driven-development]
 ---
 
