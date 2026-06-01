@@ -15,7 +15,7 @@
       "color": "red"
     }
   ],
-  "discussionModel": "free",
+  "discussionModel": "text",
   "promptsPerGeneration": 5,
   "recentCaptures": 6,
   "recentDiscussions": 6,
