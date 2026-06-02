@@ -2,7 +2,7 @@
 title: Memory Loop
 description: A mobile-friendly interface for AI-powered interactions with Obsidian vaults
 date: 2025-12-29
-status: active
+status: maintained
 cover: /Projects/Memory-Loop/screenshots/ground.webp
 tags:
   - area

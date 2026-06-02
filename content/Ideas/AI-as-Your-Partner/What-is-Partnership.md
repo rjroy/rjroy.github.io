@@ -9,7 +9,7 @@ tags:
 
 # What is Partnership?
 
-These are working notes exploring the philosophy behind AI workflow rules. The published article [[02_Areas/AI-as-Your-Partner/what-makes-good-ai-rules-files|What Makes Good AI Rules Files]] covers the mechanics: where files go, what sections to include. This explores the *why*.
+These are working notes exploring the philosophy behind AI workflow rules. The published article [[what-makes-good-ai-rules-files|What Makes Good AI Rules Files]] covers the mechanics: where files go, what sections to include. This explores the *why*.
 
 ## The Question
 

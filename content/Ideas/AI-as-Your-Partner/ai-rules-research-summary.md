@@ -18,7 +18,7 @@ tags:
 
 This project explored the distinction between universal AI rules (best practices everyone should follow) and personal AI rules (configurations that make AI work for *you*). The central question: is "personal" just "universal rules I haven't discovered yet," or is there meaningful value in personalization?
 
-**Primary Output**: [[02_Areas/AI-as-Your-Partner/what-makes-good-ai-rules-files]]
+**Primary Output**: [[what-makes-good-ai-rules-files]]
 
 ## Key Findings
 
@@ -62,7 +62,7 @@ The project involved three research phases:
 
 ## Key Resources
 
-- [[02_Areas/AI-as-Your-Partner/what-makes-good-ai-rules-files|What Makes Good AI Rules Files]] - The published article
+- [[what-makes-good-ai-rules-files|What Makes Good AI Rules Files]] - The published article
 - [AGENTS.md Specification](https://agents.md/)
 - [GitHub Blog: Lessons from 2,500+ Repositories](https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/)
 - [awesome-rules Repository](https://github.com/continuedev/awesome-rules)

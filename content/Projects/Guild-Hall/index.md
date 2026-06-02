@@ -2,6 +2,7 @@
 title: Guild Hall
 description: A multi-agent workspace where a human delegates work to AI specialists and reviews what they produce
 date: 2026-03-22
+status: archived
 cover: /Projects/Guild-Hall/screenshots/gh-home.webp
 tags:
   - project

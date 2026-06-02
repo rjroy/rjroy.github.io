@@ -2,6 +2,7 @@
 title: Ink Mirror
 description: A journal where you write first and the AI reads second, observing your patterns without generating, correcting, or suggesting
 date: 2026-04-19
+status: maintained
 cover: /Projects/Ink-Mirror/screenshots/entries.png
 tags:
   - area

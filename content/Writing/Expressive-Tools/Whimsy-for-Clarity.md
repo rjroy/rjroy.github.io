@@ -12,7 +12,7 @@ tags:
 
 This area tracks how I've implemented personal expression across my tools, not as decoration, but as a way to make spaces feel *mine* while maintaining focus.
 
-The philosophy is explored in [[01_Projects/Exploring-Whimsy/index|Exploring Whimsy]]. This page is the practical record.
+The philosophy is explored in [[Exploring-Whimsy/index|Exploring Whimsy]]. This page is the practical record.
 
 ---
 

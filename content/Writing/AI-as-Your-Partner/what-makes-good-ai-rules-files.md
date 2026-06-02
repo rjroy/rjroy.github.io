@@ -257,4 +257,4 @@ GitHub's analysis of [2,500+ repositories](https://github.blog/ai-and-ml/github-
 
 ## Related
 
-- [[01_Projects/AI-as-Your-Partner/index|AI as Your Partner]] — Project summary and research notes
+- [[AI-as-Your-Partner/index|AI as Your Partner]] — Project summary and research notes

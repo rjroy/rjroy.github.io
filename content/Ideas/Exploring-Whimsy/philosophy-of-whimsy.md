@@ -28,7 +28,7 @@ Art, color, and shapes carry emotional weight that's been studied extensively. Y
 
 Some screens can't afford whimsy. Others need it.
 
-In [[02_Areas/Memory-Loop/index|Memory Loop]]:
+In [[Memory-Loop/index|Memory Loop]]:
 - **Capture tab**: No whimsy. Get in, make a note, get out.
 - **Inspiration tab**: Special backgrounds invoke introspection. You want the user to pause.
 - **Discussion tab**: Fancy borders on the AI chat invoke imagination. But because thinking is required, the whimsy stays on the fringes, not competing with content.

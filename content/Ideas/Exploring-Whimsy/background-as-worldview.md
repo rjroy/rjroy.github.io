@@ -13,7 +13,7 @@ tags:
 
 A background image isn't just "something nice to look at." It's a statement about where you are, where you're going, and what choices exist.
 
-This became clear when examining the original [[02_Areas/Memory-Loop/index|Memory Loop]] background: a synthwave landscape. Digital plain flowing into mountains, a digital city at center, sunset behind it, galaxies and stars above. Evocative, atmospheric, *complete*.
+This became clear when examining the original [[Memory-Loop/index|Memory Loop]] background: a synthwave landscape. Digital plain flowing into mountains, a digital city at center, sunset behind it, galaxies and stars above. Evocative, atmospheric, *complete*.
 
 Too complete.
 
@@ -64,4 +64,4 @@ This principle extends:
 
 The question for any whimsical element: **Does this open a door or paint a wall?**
 
-Related: [[index|Exploring Whimsy]], [[02_Areas/Memory-Loop/index|Memory Loop]]
+Related: [[Exploring-Whimsy/index|Exploring Whimsy]], [[Memory-Loop/index|Memory Loop]]

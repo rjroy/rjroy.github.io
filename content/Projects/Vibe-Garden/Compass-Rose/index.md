@@ -46,7 +46,7 @@ No context switch to the browser. Capture the idea while it's fresh.
 
 Begin implementation on a specific item. Takes an issue number, URL, or `next` to start the highest-priority ready item.
 
-Here's where Compass Rose connects to [[02_Areas/Vibe-Garden/Spiral-Grove/index|Spiral Grove]]: when you start work on a large item (L or XL), it prompts you to consider writing a spec first:
+Here's where Compass Rose connects to [[Spiral-Grove/index|Spiral Grove]]: when you start work on a large item (L or XL), it prompts you to consider writing a spec first:
 
 ```
 Large Item Detected: XL
@@ -130,4 +130,4 @@ Using existing infrastructure means:
 
 The tradeoff is dependence on GitHub's project structure and custom fields, but that's a reasonable constraint for personal projects.
 
-Part of the [[02_Areas/Vibe-Garden/index|Vibe Garden]] toolkit.
+Part of the [[Vibe-Garden/index|Vibe Garden]] toolkit.

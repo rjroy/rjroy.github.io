@@ -2,6 +2,7 @@
 title: Adventure Engine of Corvran
 description: A space for collaborative storytelling between you and an AI game master
 date: 2025-12-29
+status: maintained
 tags:
   - area
   - rpg

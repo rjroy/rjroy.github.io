@@ -231,4 +231,4 @@ A spiral grove is a pattern found in nature: trees planted in a spiral that prov
 
 The spiral also reflects iteration. Specs get revised. Plans adapt to reality.
 
-Part of the [[02_Areas/Vibe-Garden/index|Vibe Garden]] toolkit. Integrates with [[02_Areas/Vibe-Garden/Compass-Rose/index|Compass Rose]]; large backlog items can escalate to spec-writing.
+Part of the [[Vibe-Garden/index|Vibe Garden]] toolkit. Integrates with [[Compass-Rose/index|Compass Rose]]; large backlog items can escalate to spec-writing.

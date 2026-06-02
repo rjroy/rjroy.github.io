@@ -29,7 +29,7 @@ The first question led to a published article on rules files. The second emerged
 How to structure AI instructions, where to put them, what to include.
 
 - [[ai-rules-research-summary|Rules Research Summary]] — The original research on universal vs. personal rules, the spectrum model, format convergence
-- [[02_Areas/AI-as-Your-Partner/what-makes-good-ai-rules-files|What Makes Good AI Rules Files]] — The published article
+- [[what-makes-good-ai-rules-files|What Makes Good AI Rules Files]] — The published article
 
 **Key insight:** Format converges (everyone needs the same sections), but content remains personal (how you fill them out reflects your values and workflow).
 
