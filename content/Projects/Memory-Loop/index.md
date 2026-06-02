@@ -6,7 +6,6 @@ status: active
 cover: /Projects/Memory-Loop/screenshots/ground.webp
 tags:
   - area
-  - ai
   - obsidian
   - knowledge-management
   - mobile

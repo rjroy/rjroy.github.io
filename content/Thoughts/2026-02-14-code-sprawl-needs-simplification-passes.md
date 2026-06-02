@@ -2,7 +2,6 @@
 title: "Code Sprawl Needs Simplification Passes"
 date: 2026-02-14
 tags:
-  - ai
   - quality
   - tooling
 ---

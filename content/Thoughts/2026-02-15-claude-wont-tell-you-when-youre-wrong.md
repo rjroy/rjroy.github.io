@@ -2,7 +2,6 @@
 title: "Claude Won't Tell You When You're Wrong"
 date: 2026-02-15
 tags:
-  - ai
   - cognition
 ---
 

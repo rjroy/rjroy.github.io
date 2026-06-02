@@ -2,7 +2,6 @@
 title: Forced Parallelization vs Human Cognition
 date: 2026-02-13
 tags:
-  - ai
   - cognition
   - parallelization
   - orchestration

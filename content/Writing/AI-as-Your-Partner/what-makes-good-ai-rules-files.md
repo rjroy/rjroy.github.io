@@ -2,7 +2,6 @@
 title: What Makes Good AI Rules Files
 description: Not universal best practices, but a framework for building rules that make AI work for you
 tags:
-  - ai
   - claude-code
   - methodology
 ---

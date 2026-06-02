@@ -2,7 +2,6 @@
 title: Quality Gates That Can't Be Bypassed
 date: 2026-02-13
 tags:
-  - ai
   - quality
   - guardrails
   - tooling

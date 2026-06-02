@@ -4,7 +4,6 @@ description: Why layered context compounds across projects and prevents prematur
 date: 2026-02-01
 tags:
   - writing
-  - ai-development
   - methodology
   - software-engineering
 ---

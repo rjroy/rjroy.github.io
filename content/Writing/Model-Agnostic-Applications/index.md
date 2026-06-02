@@ -2,7 +2,7 @@
 title: "Model-Agnostic Applications"
 description: "Token costs are real and rising. For agentic applications, being locked to one model is no longer viable. Switching providers dynamically has become a basic feature, not an optimization."
 date: 2026-05-30
-tags: [ai, agents, llm, architecture, cost, model-agnostic]
+tags: [agents, llm, architecture, cost, model-agnostic]
 ---
 
 # Model-Agnostic Applications

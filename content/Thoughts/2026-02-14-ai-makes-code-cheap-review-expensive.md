@@ -2,7 +2,6 @@
 title: "AI Makes Code Cheap, Review Expensive"
 date: 2026-02-14
 tags:
-  - ai
   - quality
   - productivity
 ---

@@ -4,7 +4,6 @@ description: Cross-domain research on what makes partnerships work, with implica
 tags:
   - research
   - partnership
-  - ai
 ---
 
 # What Makes Partnerships Work: Cross-Domain Patterns and Implications for Human-AI Collaboration

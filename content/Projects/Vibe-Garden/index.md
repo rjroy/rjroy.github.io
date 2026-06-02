@@ -4,7 +4,6 @@ description: A collection of Claude Code plugins for project management and deve
 date: 2025-12-29
 tags:
   - project
-  - ai
   - claude-code
   - plugins
   - development-tools

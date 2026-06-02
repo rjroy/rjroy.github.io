@@ -2,7 +2,6 @@
 title: Spiral Grove
 description: A Spec-Driven Development methodology plugin for Claude Code (retired - evolved into Lore Development)
 tags:
-  - ai
   - claude-code
   - plugin
   - methodology

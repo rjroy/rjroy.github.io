@@ -3,6 +3,7 @@ title: LLM-Integrated PKM
 date: 2026-01-19
 created: 2025-01-19
 tags: [pkm, llm, knowledge-management, research]
+status: paused
 ---
 
 # LLM-Integrated PKM: Rethinking Personal Knowledge Management for AI Cognitive Partnership

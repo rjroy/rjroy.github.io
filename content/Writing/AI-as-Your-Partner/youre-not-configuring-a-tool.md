@@ -2,7 +2,6 @@
 title: You're Not Configuring a Tool
 description: Rules files don't constrain AI behavior. They build the cognitive infrastructure that shapes how AI thinks about work
 tags:
-  - ai
   - claude-code
   - methodology
   - partnership

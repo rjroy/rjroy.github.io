@@ -2,7 +2,6 @@
 title: What is Partnership?
 description: Notes on the philosophy underneath AI rules files, exploring what makes collaboration feel like partnership rather than delegation
 tags:
-  - ai
   - claude-code
   - methodology
   - philosophy

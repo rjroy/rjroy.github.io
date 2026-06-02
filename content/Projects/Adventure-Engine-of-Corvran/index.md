@@ -4,7 +4,6 @@ description: A space for collaborative storytelling between you and an AI game m
 date: 2025-12-29
 tags:
   - area
-  - ai
   - rpg
   - gaming
   - solo-ttrpg

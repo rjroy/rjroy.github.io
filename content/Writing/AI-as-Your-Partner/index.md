@@ -3,7 +3,6 @@ title: AI as Your Partner
 description: Why AI demands a different approach than any tool we've used before
 date: 2026-01-18
 tags:
-  - ai
   - methodology
   - partnership
   - index

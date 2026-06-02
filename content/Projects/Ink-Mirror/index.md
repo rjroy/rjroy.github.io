@@ -6,7 +6,6 @@ cover: /Projects/Ink-Mirror/screenshots/entries.png
 tags:
   - area
   - writing
-  - ai
   - journaling
   - style
 ---

@@ -2,7 +2,6 @@
 title: Personal Tooling as Competitive Advantage
 date: 2026-02-13
 tags:
-  - ai
   - tooling
   - customization
   - leverage

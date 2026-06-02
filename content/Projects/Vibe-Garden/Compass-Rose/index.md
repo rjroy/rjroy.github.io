@@ -2,7 +2,6 @@
 title: Compass Rose
 description: A Claude Code plugin for project management through GitHub Projects
 tags:
-  - ai
   - claude-code
   - plugin
   - project-management

@@ -1,33 +1,38 @@
 ---
 title: "Guild Hall"
 date: 2026-01-06
+status: graduated
+tags:
+  - multi-agent
+  - architecture
+  - orchestration
+  - claude
+  - distributed-systems
 ---
 
 # Guild Hall
 
-A multi-agent orchestration system using the blackboard architecture pattern.
-
-**Why "Guild Hall":** A place where skilled workers gather, check the board for available work, and coordinate without a central authority dictating assignments. The guild metaphor implies autonomous agents with expertise who self-select tasks rather than receiving top-down orders.
+A multi-agent orchestration system using the blackboard architecture pattern. The name comes from the medieval guild model: skilled workers check a shared board for available work and coordinate without a central authority assigning tasks. Agents have expertise, self-select what to pick up, and the board is the whole picture.
 
 ## Origin
 
-Explored Gastown (github.com/steveyegge/gastown), a multi-agent orchestration system by Steve Yegge. The core ideas are sound (git-backed persistence, work isolation via worktrees, task bundling). The implementation is opinionated, which is fine, but these aren't opinions I want to adopt: rigid metaphors (Mayor, Polecats, Rigs, Convoys), Go CLI dependency, tmux-centric workflow, and a forced hierarchical coordination model.
+Started from Gastown (github.com/steveyegge/gastown), Steve Yegge's multi-agent orchestration system. The core ideas are sound: git-backed persistence, work isolation via worktrees, task bundling. But the implementation is opinionated in ways I don't want to inherit. Rigid metaphors (Mayor, Polecats, Rigs, Convoys), a Go CLI dependency, tmux as the assumed interface, and a forced hierarchical coordination model.
 
-Wanted to extract the useful concepts without adopting the full framework.
+The goal here is to extract what's useful without pulling in the full framework.
 
 ## Blackboard Architecture
 
-A coordination pattern from 1970s-80s AI research (Hearsay-II speech recognition system).
+A coordination pattern from 1970s-80s AI research, originally from the Hearsay-II speech recognition system.
 
-**The metaphor:** Experts gathered around a physical blackboard. Each watches the board and contributes when they see something relevant. No direct agent-to-agent communication; everything flows through the shared board.
+The model: experts gathered around a physical blackboard, each watching and contributing when they see something relevant. No direct agent-to-agent communication. Everything flows through the shared board.
 
-**Properties:**
-- Decoupled agents (only know the blackboard format, not each other)
-- Incremental refinement (partial solutions accumulate)
-- Observable state (blackboard is the complete record)
-- Flexible participation (add/remove agents without rewiring)
+This gives you:
+- Decoupled agents (they only know the blackboard format, not each other)
+- Incremental refinement (partial solutions accumulate over time)
+- Observable state (the blackboard is the complete record)
+- Flexible participation (add or remove agents without rewiring)
 
-**Contrast with hierarchical (Mayor) model:**
+Contrast with the hierarchical model Gastown uses:
 
 | Hierarchical | Blackboard |
 |--------------|------------|
@@ -39,29 +44,15 @@ A coordination pattern from 1970s-80s AI research (Hearsay-II speech recognition
 
 ### Blackboard as a Service
 
-A central service that agents communicate with. Handles:
-- Project registry (what work exists)
-- Worker registry (who's working on what)
-- Task acquisition (pluggable per project)
-- Resource management (capacity limits, cleanup)
+A central service that agents communicate with. It handles the project registry (what work exists), the worker registry (who's working on what), task acquisition (pluggable per project), and resource management (capacity limits, cleanup).
 
 ### Core Entities
 
-**Projects** define:
-- Task source (GitHub issues, markdown file, Jira, etc.)
-- How to acquire available tasks
-- Worker capacity limits
+**Projects** define the task source (GitHub issues, markdown files, Jira, etc.), how to acquire available tasks, and worker capacity limits.
 
-**Workers** are ephemeral agents that:
-- Pick up a task from their assigned project
-- Record that they're working on it
-- Do the work (in a git worktree for isolation)
-- Report completion and exit
+**Workers** are ephemeral agents. Each one picks up a task from its assigned project, records that it's working on it, does the work in a git worktree for isolation, then reports completion and exits.
 
-**Recruiter** monitors the blackboard:
-- Checks each project's worker count vs capacity
-- Spawns workers when capacity available and tasks exist
-- Cleans up stale/dead workers
+**Recruiter** monitors the blackboard. It checks each project's worker count against capacity, spawns workers when capacity is available and tasks exist, and cleans up stale or dead workers.
 
 ### Example Blackboard State
 
@@ -90,33 +81,19 @@ completed:
 
 ## Open Questions
 
-**Implementation stack:**
-- Python or TypeScript?
-- Claude Agent SDK for worker agents
-- Git worktrees for isolation (one per task)
+**Stack:** Python or TypeScript? The Claude Agent SDK handles worker agents. Git worktrees handle isolation.
 
-**Blackboard service design:**
-- REST API? WebSocket for real-time updates?
-- Persistence layer (file, SQLite, Redis?)
-- How do workers authenticate/identify themselves?
+**Blackboard service:** REST or WebSocket? File, SQLite, or Redis for persistence? How do workers authenticate and identify themselves?
 
-**Task claiming:**
-- Race conditions if multiple workers grab the same task
-- Options: Recruiter pre-assigns, atomic locking, or task source tracks assignment
+**Task claiming:** Multiple workers can grab the same task concurrently. Options are Recruiter pre-assigns, atomic locking, or the task source tracks assignment.
 
-**Worker lifecycle:**
-- How does Recruiter spawn workers? (Agent SDK, subprocess, container?)
-- Heartbeat/timeout mechanism for detecting dead workers
-- Graceful shutdown vs crash recovery
+**Worker lifecycle:** How does Recruiter spawn workers (Agent SDK, subprocess, container)? What's the heartbeat/timeout mechanism for detecting dead workers? How do we handle graceful shutdown vs crash recovery?
 
-**Scope boundaries:**
-- What's a "project"? A repo? A category of work?
-- Can one worker handle multiple tasks sequentially?
-- How do we handle task dependencies?
+**Scope:** What counts as a "project" -- a repo, a category of work? Can one worker take multiple tasks sequentially? How do task dependencies get handled?
 
 ## Next Steps
 
-This needs to be broken into features and each feature spec'd out:
+This needs to be broken into features, each specced out:
 
 1. **Blackboard service** - API design, persistence, resource management
 2. **Task sources** - Pluggable adapters for GitHub, markdown, etc.

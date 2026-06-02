@@ -3,7 +3,6 @@ title: AI as Your Partner
 description: Exploring what makes good AI rules files, not universal best practices, but personal configurations that make AI work for you
 tags:
   - project
-  - ai
   - claude-code
   - methodology
 ---

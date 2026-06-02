@@ -1,9 +1,8 @@
 ---
 title: Leveraging Local LLMs
 date: 2026-01-24
-draft: false
+status: paused
 tags:
-  - ai
   - local-models
   - llm
 ---
