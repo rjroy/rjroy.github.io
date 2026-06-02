@@ -1,5 +1,6 @@
 ---
 title: "Guild Hall"
+date: 2026-01-06
 ---
 
 # Guild Hall

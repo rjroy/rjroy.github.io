@@ -252,6 +252,7 @@ img[hidden],
 .btn-on-dark {
   color: var(--parchment-50);
   border-color: rgba(251, 245, 231, 0.45);
+  text-shadow: 1px 1px 2px var(--brass-700), 0 0 1em var(--ink-900), 0 0 0.2em var(--ink-900); 
 }
 .btn-on-dark:hover {
   background: rgba(251, 245, 231, 0.12);
@@ -380,6 +381,7 @@ img[hidden],
   text-transform: uppercase;
   color: var(--brass-300);
   margin-bottom: var(--space-5);
+  text-shadow: 1px 1px 2px var(--brass-700), 0 0 1em var(--ink-900), 0 0 0.2em var(--ink-900); 
 }
 .hero-kicker::before {
   content: "";
@@ -393,7 +395,7 @@ img[hidden],
   line-height: 1.04;
   max-width: 16ch;
   margin: 0 0 var(--space-6);
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55);
+  text-shadow: 1px 1px 2px var(--brass-700), 0 0 1em var(--ink-900), 0 0 0.2em var(--ink-900); 
 }
 .hero h1 .gild {
   color: var(--brass-300);
@@ -405,7 +407,7 @@ img[hidden],
   color: var(--parchment-100);
   max-width: 52ch;
   margin: 0 0 var(--space-8);
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 2px var(--brass-700), 0 0 1em var(--ink-900), 0 0 0.2em var(--ink-900); 
 }
 .cta-row {
   display: flex;

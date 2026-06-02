@@ -1,5 +1,6 @@
 ---
 title: "Daemon-First, Agent-Native"
+date: 2026-04-19
 description: I've found a project setup that is working for me. It feels proven after three uses. I want to share what I found.
 tags:
   - architecture

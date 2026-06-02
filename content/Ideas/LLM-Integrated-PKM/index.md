@@ -1,5 +1,6 @@
 ---
 title: LLM-Integrated PKM
+date: 2026-01-19
 created: 2025-01-19
 tags: [pkm, llm, knowledge-management, research]
 ---

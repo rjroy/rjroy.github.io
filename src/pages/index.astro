@@ -37,8 +37,10 @@ const curate = (entries: any[], n: number) => {
   return [...featured, ...rest].slice(0, n)
 }
 
-const leadProject = curate(projectsTop, 1)[0]
+const tendingProjects = curate(projectsTop, 1)
+const leadProject = tendingProjects.length > 0 ? tendingProjects[0] : null
 const tendingWriting = curate(writingTop, 2)
+const tendingIdeas = curate(ideasTop, 1)
 
 const url = (id: string, section: string) => `/${section}/${id.toLowerCase()}/`
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
@@ -99,64 +101,25 @@ const areas = [
         </h1>
         <p class="hero-lead">
           Thirty years a developer, now charting what the craft becomes when AI joins the work. This
-          is the public side of that workshop — half-formed ideas, shipped projects, and essays
-          thought all the way through.
+          is the public side of that workshop — working ideas, functional projects, and deliberate essays.
         </p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="/projects/">
-            Wander the garden
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.75"
-              stroke-linecap="round"
-              stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg
-            >
-          </a>
+          <a class="btn btn-primary" href="#areas"> Wander the garden </a>
           <a class="btn btn-ghost btn-on-dark" href="#about">What is this place?</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Where to begin -->
-  <section class="section" id="areas">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Where to begin</span>
-        <h2>Four ways to wander in.</h2>
-        <p>
-          Unlike a blog of polished posts, this is a living workspace — ideas at every stage of
-          ripeness. Follow whichever door fits your curiosity.
-        </p>
-      </div>
-      <div class="areas">
-        {
-          areas.map((area) => (
-            <a class="area-card" href={area.href} style={`--accent: ${area.accent};`}>
-              <span class="area-num">{area.num}</span>
-              <h3>{area.title}</h3>
-              <p>{area.body}</p>
-              <span class="area-foot">
-                {area.foot} <span class="arrow">→</span>
-              </span>
-            </a>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
   <!-- Currently tending -->
   {
-    (leadProject || tendingWriting.length > 0) && (
+    (leadProject || tendingWriting.length > 0 || tendingIdeas.length > 0) && (
       <section class="section tending" id="tending">
         <div class="container">
           <div class="section-head">
             <span class="eyebrow">Currently tending</span>
-            <h2>What's growing right now.</h2>
-            <p>The pieces I'm actively working on or pointing people toward this season.</p>
+            <h2>What's sprouting right now.</h2>
+            <p>Recent pieces and projects, fresh from the workshop.</p>
           </div>
           <div class="feature-grid">
             {leadProject && (
@@ -187,11 +150,48 @@ const areas = [
                 </div>
               </a>
             ))}
+            {tendingIdeas.map((idea) => (
+              <a class="feature-card" href={url(idea.id, "ideas")}>
+                <div class="feature-body">
+                  <span class="kind">Idea</span>
+                  <h3>{idea.data.title}</h3>
+                  <p>{idea.data.description}</p>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
     )
   }
+
+  <!-- Where to begin -->
+  <section class="section" id="areas">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Where to begin</span>
+        <h2>Four ways to wander in.</h2>
+        <p>
+          Unlike a blog of polished posts, this is a living workspace — ideas at every stage of
+          ripeness. Follow whichever door fits your curiosity.
+        </p>
+      </div>
+      <div class="areas">
+        {
+          areas.map((area) => (
+            <a class="area-card" href={area.href} style={`--accent: ${area.accent};`}>
+              <span class="area-num">{area.num}</span>
+              <h3>{area.title}</h3>
+              <p>{area.body}</p>
+              <span class="area-foot">
+                {area.foot} <span class="arrow">→</span>
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 
   <!-- About -->
   <section class="section" id="about" style="scroll-margin-top: 84px;">
@@ -216,12 +216,15 @@ const areas = [
             reflections on what it means to work alongside them.
           </p>
           <p>
-            You're seeing the scaffolding before the building. Check back as the content develops.
+            Writing is not the primary output of my hobby, personal learning is. But writing is the
+            best way to share the work in a way that's accessible and lasting. I hope you'll find
+            something useful here, or at least make you think of your own answers to the questions I'm asking.
           </p>
           <div class="ghost-note">
-            <strong>How this is written.</strong> I work with Claude Code as a ghostwriter. The ideas,
-            direction, and editorial judgment are mine; Claude helps get the words on the page. The thinking
-            is mine, the collaboration is real, and the tool is acknowledged.
+            <strong>How this is written.</strong> I work with Claude Code as an editor and ghostwriter.
+            The ideas, direction, and editorial judgment are mine; Claude helps get the words on the page.
+            The thinking is mine, the collaboration is real, and the tool is acknowledged. My long term
+            goal is to take more and more ownership of the writing process as another benefit of this process.
           </div>
         </div>
       </div>

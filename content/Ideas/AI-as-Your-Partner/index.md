@@ -1,5 +1,6 @@
 ---
 title: AI as Your Partner
+date: 2025-12-31
 description: Exploring both the mechanics of AI rules files and the philosophy of what partnership with AI actually means
 tags:
   - project

@@ -1,5 +1,6 @@
 ---
 title: Exploring Whimsy
+date: 2025-12-30
 description: A project to examine where playfulness and self-expression can enhance clarity rather than distract from it
 tags:
   - project
