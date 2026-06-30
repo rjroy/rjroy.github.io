@@ -12,6 +12,10 @@ Essays and longer-form pieces on topics I've thought through.
 
 ## Current Writing
 
+### What Building a Game with AI Taught Me
+
+- [[Writing/Building-A-Game-With-AI/index|What Building a Game with AI Taught Me]]: Lessons from shipping a typed, tested, CI-backed roguelite deckbuilder where AI wrote most of the code, art, music, and sound.
+
 ### Personal Charter
 
 - [[Writing/Personal-Charter/index|Personal Charter]]: What I believe about trust, feedback, and how I lead.
