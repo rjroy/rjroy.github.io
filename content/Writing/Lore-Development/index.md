@@ -8,7 +8,7 @@ tags:
   - software-engineering
 ---
 
-# Lore Development: Context Over Documentation
+# [Lore Development](https://github.com/rjroy/vibe-garden/tree/main/lore-development): Context Over Documentation
 
 When working with AI on complex software, the temptation is to jump straight to code. The LLM is capable. You have an idea. Why not start implementing?
 
