@@ -2,6 +2,7 @@
 title: "The Road to Wisdom"
 description: "AI should transform engineering work, not simply replace it. As implementation becomes increasingly automated, the human role becomes applying judgment: defining intent, evaluating tradeoffs, and deciding what good work looks like. What does that require, and how do we get there?"
 date: 2026-08-23
+featured: true
 tags: [software-engineering, agents, process, wisdom, service-design]
 ---
 

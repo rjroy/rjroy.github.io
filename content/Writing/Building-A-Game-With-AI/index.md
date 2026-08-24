@@ -7,7 +7,6 @@ tags:
   - methodology
   - ai-development
   - game-design
-featured: true
 ---
 # What Building a Game with AI Taught Me
 
