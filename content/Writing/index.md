@@ -12,6 +12,12 @@ Essays and longer-form pieces on topics I've thought through.
 
 ## Current Writing
 
+### AI-Native Engineering
+
+- [[Writing/The-Road-to-Wisdom/index|The Road to Wisdom]]: The next steps of AI is to rethink our jobs, not replace them. The new job is about providing your unique value-add. This can be summed up for most  of us as judgement or wisdom. What does this mean? And how do we get there?
+
+- [[Writing/Intent-Driven-Development/index|Intent-Driven Development]]: How AI shifts engineering work from implementation toward intent definition and verification.
+
 ### What Building a Game with AI Taught Me
 
 - [[Writing/Building-A-Game-With-AI/index|What Building a Game with AI Taught Me]]: Lessons from shipping a typed, tested, CI-backed roguelite deckbuilder where AI wrote most of the code, art, music, and sound.
