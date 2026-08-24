@@ -14,7 +14,7 @@ Essays and longer-form pieces on topics I've thought through.
 
 ### AI-Native Engineering
 
-- [[Writing/The-Road-to-Wisdom/index|The Road to Wisdom]]: The next steps of AI is to rethink our jobs, not replace them. The new job is about providing your unique value-add. This can be summed up for most  of us as judgement or wisdom. What does this mean? And how do we get there?
+- [[Writing/The-Road-to-Wisdom/index|The Road to Wisdom]]: AI should transform engineering work, not simply replace it. As implementation becomes increasingly automated, the human role becomes applying judgment: defining intent, evaluating tradeoffs, and deciding what good work looks like. What does that require, and how do we get there?
 
 - [[Writing/Intent-Driven-Development/index|Intent-Driven Development]]: How AI shifts engineering work from implementation toward intent definition and verification.
 

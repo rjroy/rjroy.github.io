@@ -1,6 +1,6 @@
 ---
 title: "The Road to Wisdom"
-description: "The next step for AI is to rethink our jobs, not replace them. The new job is about providing your unique value-add. This can be summed up for most of us as judgment or wisdom. What does this mean? And how do we get there?"
+description: "AI should transform engineering work, not simply replace it. As implementation becomes increasingly automated, the human role becomes applying judgment: defining intent, evaluating tradeoffs, and deciding what good work looks like. What does that require, and how do we get there?"
 date: 2026-08-23
 tags: [software-engineering, agents, process, wisdom, service-design]
 ---
