@@ -9,7 +9,7 @@ tags: [software-engineering, agents, process, wisdom, service-design]
 
 ## Where Are We Going?
 
-I have a lot of questions about where we go next. We've built this AI thing. We are told it will replace all our jobs, or that it cannot replace any.
+I have a lot of questions about where we go next. We've built this AI thing. We are told it will replace all our jobs, or that it cannot replace any. If we boil this problem down its: what will the job of human's be? My answer is: to use our wisdom to apply judgement.
 
 We are asked to create a system where leadership can issue the prompt, "Make me a game which can support 100 million players concurrently, targeting the 18 to 30 demographic." Put more simply, the ask is to create the Easy Button. We have AI. You can have it write the specs, write the design, write the implementation, review it all along the way, fix the bugs, test it, and even ship it. It should be easy, right?
 
@@ -25,7 +25,9 @@ To really transform what it is to be an engineer, we need to get to a point wher
 
 Asking an LLM to generate an implementation for a feature or a fix is pretty straightforward now. At this point, you can open just about any model and it will get you something that will likely fit the bill. We can even add systems that test and review the results, then loop until the validation criteria are met. This sounds like the Easy Button. Reducing it to that would miss a few crucial questions. Who defined the feature? Who defined the validation criteria? Put simply, this is where human wisdom lies.
 
-When you start up any harness, this is where you are now. You have to give the AI the request to define the feature. Then you iterate with it and poke at it, making sure the validation criteria are met. Except, if you are just using a bare harness, you are also spending a lot of time going over the implementation and reviewing the code.
+I'm even simplifing the problem by simply calling it *wisdom*. Any engineer at any level brings to the interaction with AI everything they have learned. From the moment they learned to walk to the moment they started typing to now, they have gained context that would be impossible, or impracticle at least, to feed into the LLM. This includes all the facts they know, but also layered in there are their believes and tastes. This caserole of context is what I refer to as *wisdom*.
+
+When you start up any harness today, you get this base environment. You give the AI the request to define the feature. Then you iterate with it and poke at it, making sure the validation criteria are met. Except, if you are just using a bare harness, you are also spending a lot of time going over the implementation and reviewing the code. If we want to reinvent and move forward, we need to rethink this.
 
 ## Defining the Destination
 
@@ -37,7 +39,9 @@ What does it look like to actually have humans in the loop only providing wisdom
 
 *Human provides intent. AI proposes a solution. Human approves. AI starts an implementation and review loop. AI escalates completion or a blocker (i.e., the solution won't work).* This process spreads out the loop just a little bit and defines concrete checkpoints. For me, this is as close as we are going to get to humans applying only wisdom.
 
-There's a lot of talk about the evolution of AI engineering from prompt to context to loops to graph. We could map my definitions to these, but I have always found the vague definition of "graph engineering" insufficient to actually get to implementation. Also, both loop and graph engineering assume one important thing: infinite tokens. The definitions are just not that useful in the real world.
+There's a lot of talk about the evolution of AI engineering from prompt to context to loops to graph. The three proposals I give above could map roughly onto that evolution. It might be useful to consider that. However, consider that many of the definitions of loop and graph engineering out there silently assume infinite tokens.
+
+Let's focus on the last definition where it spreads the process out slightly. It's the most complete and provides more points for architecture. The goal cannot be simply to make sure that *wisdom is the work*, but that *consistently and repeatably the work is to apply wisdom*.
 
 ## Making the Journey
 
@@ -78,7 +82,7 @@ This isn't about giving them busy work so they learn. It does mean acknowledging
 
 It might be easier to consider this stage as the intern stage. The new engineering levels become about the size of the features that the engineer is asked to make decisions about.
 
-It's a tough road ahead for us. There's a lot of work to do and define. We won't get there without thinking and making the tough decisions.
+I don't know all the questions we need to ask, and know even fewer of the answers. It's a tough road ahead for us. There's a lot of work to do and define. We won't get there without thinking and making the tough decisions.
 
 ## Related
 
