@@ -36,3 +36,9 @@ content/Inbox/chats/
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/vault-stats.json
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key
+.beads/proxieddb/
