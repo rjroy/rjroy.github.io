@@ -7,19 +7,6 @@ const thoughts = defineCollection({
     title: z.string(),
     date: z.coerce.date(),
     tags: z.array(z.string()).default([]),
-    linkedIdea: z.string().optional(),
-  }),
-})
-
-const ideas = defineCollection({
-  loader: glob({ pattern: "*/**/*.md", base: "./content/Ideas" }),
-  schema: z.object({
-    title: z.string(),
-    status: z.enum(["active", "paused", "graduated"]).default("active"),
-    description: z.string().default(""),
-    tags: z.array(z.string()).default([]),
-    date: z.coerce.date().optional(),
-    featured: z.boolean().default(false),
   }),
 })
 
@@ -53,4 +40,4 @@ const projects = defineCollection({
   }),
 })
 
-export const collections = { thoughts, ideas, writing, projects }
+export const collections = { thoughts, writing, projects }

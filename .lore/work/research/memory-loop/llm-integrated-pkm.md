@@ -203,7 +203,7 @@ The central question remains: Can "AI-native PKM" preserve learning while levera
 
 ## Research Documents
 
-- [[Prompts/PKM-LLM-Integration-Research|Landscape Research Prompt]]
-- [[Prompts/Critique-Request|Critique Research Prompt]]
-- [[Research/Landscape-Results|Landscape Research Results]]
-- [[Research/Critique-Results|Critique Research Results]]
+- [[PKM-LLM-Integration-Research|Landscape Research Prompt]]
+- [[Critique-Request|Critique Research Prompt]]
+- [[Landscape-Results|Landscape Research Results]]
+- [[Critique-Results|Critique Research Results]]

@@ -31,6 +31,10 @@ The specific pain points:
 - AI work and human work share the same branch, creating noise and risk.
 - There's no structured delegation -- tasks exist, but commissions with deliverables do not.
 
+## From Blackboard to Guild
+
+Guild Hall began with an exploration of a blackboard architecture: a shared workspace where specialized agents could contribute to and react to evolving work. That investigation informed the project, but the shipped system took a more human-centered shape. It became a delegation workspace where persistent workers receive commissions and produce artifacts for a person to review and direct.
+
 ## What Guild Hall Does
 
 The interface is organized around projects, workers, meetings, and commissions.

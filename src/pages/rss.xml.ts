@@ -41,7 +41,7 @@ export async function GET(context: APIContext) {
 
   return rss({
     title: "Broadcast Cache",
-    description: "Ideas, writing, and projects from Ron Roy",
+    description: "Thoughts, writing, and projects from Ron Roy",
     site: context.site!,
     items,
   })

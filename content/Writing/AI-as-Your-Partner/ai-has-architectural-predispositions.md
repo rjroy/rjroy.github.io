@@ -155,4 +155,4 @@ The goal isn't to find the "objective" answer or the "right" AI for the job. The
 
 - [[youre-not-configuring-a-tool|You're Not Configuring a Tool—You're Training a Reasoning Partner]]
 - [[what-makes-good-ai-rules-files|What Makes Good AI Rules Files]]
-- [[Ideas/AI-as-Your-Partner/index|AI as Your Partner]]
+- [[Writing/AI-as-Your-Partner/index|AI as Your Partner]]

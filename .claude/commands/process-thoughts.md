@@ -29,6 +29,10 @@ For each inbox file, extract individual thought candidates:
 - The entire note is one thought candidate
 - Preserve the core content
 
+**Long-form material** (a developed argument, essay, or exploratory article):
+- Do not force it into a Thought
+- Propose it as Writing in `content/Writing/`, including when it is exploratory rather than polished
+
 **Skip these entries:**
 - One-line action items or tasks (e.g., "Investigate https://...")
 - Questions without substance (e.g., "Is there a way to have X?")
@@ -96,7 +100,7 @@ tags: [tag1, tag2]
 
 **Filename:** `content/Thoughts/the-thought-title.md` (kebab-case)
 
-Do NOT set `linkedIdea` or `standalone` unless the content clearly relates to an existing idea in `content/Ideas/`.
+Do not add fields beyond this frontmatter format.
 
 ## Step 6: Report
 

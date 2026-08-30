@@ -37,10 +37,9 @@ Pushes to `master` trigger automatic deployment via GitHub Actions. The workflow
 The site is organized for readers, not workflow machinery.
 
 **Visible in navigation:**
-- `content/Ideas/` - Developing thoughts and explorations
-- `content/Projects/` - Shipped projects (Memory Loop, Vibe Garden, etc.)
-- `content/Writing/` - Essays and longer-form pieces (Whimsy-for-Clarity)
-- `content/Thoughts/` - Short-form reflections, observations, and developing ideas
+- `content/Thoughts/` - Short-form reflections and observations
+- `content/Projects/` - Built and maintained work (Memory Loop, Vibe Garden, etc.)
+- `content/Writing/` - Essays, series, and exploratory long-form work
 
 **Hidden from navigation (still accessible via direct links):**
 - `content/Inbox/` - Fresh captures, daily notes
@@ -51,9 +50,8 @@ The site is organized for readers, not workflow machinery.
 
 ## Terminology Mapping
 
-- **"idea"** - `content/Ideas/`
 - **"project"** - `content/Projects/`
-- **"writing"** or **"essay"** - `content/Writing/`
+- **"writing"**, **"essay"**, or **"exploratory article"** - `content/Writing/`
 - **"thought"** - `content/Thoughts/`
 - **"goals"** - `content/Metadata/memory-loop/goals.md`
 - **"context"** or **"prompts"** - `content/Metadata/memory-loop/contextual-prompts.md`
@@ -66,14 +64,13 @@ When a note should become a standalone piece, create the proper folder structure
    - Example: "Home Lab Setup" - `Home-Lab-Setup/`
 2. **Main note**: Create an `index.md` inside the folder
 3. **Location**: Choose based on content type:
-   - Ideas (developing) - `content/Ideas/`
-   - Projects (shipped) - `content/Projects/`
-   - Writing (essays) - `content/Writing/`
+    - Thoughts (short, dated reflections) - `content/Thoughts/`
+    - Projects (built and maintained work) - `content/Projects/`
+    - Writing (essays, series, and exploratory long-form work) - `content/Writing/`
 
 **Examples:**
-- New idea "Guild Hall Architecture" - `content/Ideas/Guild-Hall/index.md`
 - New project "Memory Loop" - `content/Projects/Memory-Loop/index.md`
-- New essay "On Whimsy" - `content/Writing/On-Whimsy/index.md`
+- New exploratory article "On Whimsy" - `content/Writing/On-Whimsy/index.md`
 
 Related notes go as siblings to `index.md` within the same folder.
 
@@ -89,7 +86,7 @@ Related notes go as siblings to `index.md` within the same folder.
 
 - `astro.config.mjs` - Site settings, remark plugins, wiki-link resolution
 - `tailwind.config.mjs` - Tailwind theme and styling
-- `src/content.config.ts` - Content collection schemas (ideas, writing, projects, thoughts)
+- `src/content.config.ts` - Content collection schemas (writing, projects, thoughts)
 
 ## Memory Loop
 
@@ -102,7 +99,7 @@ This vault is integrated with Memory Loop for daily note capture and goal tracki
 - **Goals file**: `Metadata/memory-loop/goals.md` - Active goals and priorities
 
 **PARA directories:**
-- Projects: `Ideas/`
+- Projects: `Projects/`
 - Areas: `Writing/`
 - Resources: `03_Resources/`
 - Archives: `04_Archive/`

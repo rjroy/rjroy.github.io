@@ -96,4 +96,4 @@ Memory Loop's crossroads opens two doors, in an open valley, at a pregnant momen
 
 ---
 
-*Related: [[../Ideas/Exploring-Whimsy/index|Exploring Whimsy]], [[../Writing/Whimsy-for-Clarity/index|Whimsy for Clarity]]*
+*Related: [[Writing/Expressive-Tools/Whimsy-for-Clarity|Whimsy for Clarity]]*

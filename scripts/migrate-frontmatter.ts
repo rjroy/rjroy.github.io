@@ -1,7 +1,7 @@
 /**
  * Migration script for Astro content collections.
  *
- * Scans Ideas, Writing, and Projects content directories for frontmatter
+ * Scans Writing and Projects content directories for frontmatter
  * issues that would break Zod schema validation. Fixes what it can,
  * reports what it can't.
  *
@@ -14,7 +14,7 @@ import path from "node:path"
 import matter from "gray-matter"
 
 const CONTENT_ROOT = path.resolve(import.meta.dirname, "../content")
-const COLLECTIONS = ["Ideas", "Writing", "Projects"] as const
+const COLLECTIONS = ["Writing", "Projects"] as const
 const DRY_RUN = process.argv.includes("--dry-run")
 
 type FixAction = {

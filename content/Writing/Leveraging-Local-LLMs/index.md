@@ -1,15 +1,20 @@
 ---
-title: Leveraging Local LLMs
+title: "Leveraging Local LLMs: A January 2026 Experiment"
+description: "A dated January 2026 local-model experiment: performance observations, hardware failures, and questions that remained open."
 date: 2026-01-24
-status: paused
 tags:
   - local-models
   - llm
+  - experiments
 ---
+
+# Leveraging Local LLMs: A January 2026 Experiment
+
+This records a local-model experiment conducted in January 2026. The observations and conclusions below describe that test environment and are not current model-selection guidance.
 
 ## Context
 
-The local LLM landscape is shifting. Models like GLM-4.7-Flash (released January 19, 2026) are achieving competitive performance with significantly smaller active parameter counts through MoE architecture, making them viable for consumer hardware.
+At the time of testing, the local LLM landscape was shifting. Models like GLM-4.7-Flash (released January 19, 2026) appeared to offer competitive performance with significantly smaller active parameter counts through MoE architecture, making them viable to investigate on consumer hardware.
 
 ## Key Discoveries
 
@@ -46,7 +51,7 @@ The local LLM landscape is shifting. Models like GLM-4.7-Flash (released January
 
 **Conclusion**: bf16 is unusably slow. The reported benchmarks (43-82 tok/s) are likely using quantized versions (int4/int8). Switching to q4_K_M to test speed vs quality tradeoff.
 
-**Learning**: bf16 is for training, not inference. It has the same exponent range as fp32 (handles gradient updates without overflow) and dedicated GPU tensor cores make training faster. For inference, the precision is overkill—q4/q5 quantization gives 4-8x speed improvement with minimal quality loss.
+**Learning**: In this test configuration, bf16's observed latency made it unsuitable for the simple queries tried. q4_K_M was selected for a follow-up comparison; its speed and quality tradeoff had not yet been measured.
 
 ### System Stability Issues
 

@@ -1,18 +1,17 @@
 ---
 title: Ron's Broadcast Cache
-description: A public window into how I organize my thoughts, projects, and ideas
+description: A public window into my thoughts, projects, and writing
 tags:
   - index
-  - digital-garden
 ---
 
 # Ron's Broadcast Cache
 
-A public window into how I organize my thoughts, projects, and ideas.
+A public window into my thoughts, projects, and writing.
 
 ## What is This?
 
-This is my digital garden, a place where I capture, develop, and share my thinking. Unlike a blog with polished posts, this is a living workspace. You'll find ideas at various stages: some fully formed, others still germinating.
+This is a place to share what I am building and learning. Some pieces are polished essays; others are exploratory work still taking shape.
 
 ### Current Focus
 
@@ -34,9 +33,9 @@ This isn't about hiding AI involvement. It's about being transparent: the thinki
 
 Content is organized into three main areas:
 
-- **Ideas/** → Developing thoughts and explorations
-- **Projects/** → Things I'm building with clear goals
-- **Writing/** → Essays and longer-form pieces I've thought through
+- **Thoughts/** → Short, dated reflections and observations
+- **Projects/** → Built and maintained work, including the conclusions and future directions that explain it
+- **Writing/** → Long-form work, including essays, series, and exploratory writing
 
 ## Current State
 

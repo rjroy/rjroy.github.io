@@ -6,7 +6,7 @@ tags: [memory-loop, ai-pkm, implementation, spaced-repetition, pair-writing]
 
 # From Research to Practice: Building on the Ground → Capture → Think → Recall Framework
 
-The [[LLM-Integrated-PKM/index|LLM-Integrated PKM research]] identified both the novelty and the vulnerabilities of treating LLMs as cognitive partners in personal knowledge management. This document captures the concrete features and design decisions that emerged from confronting those findings.
+The [[llm-integrated-pkm|LLM-Integrated PKM research]] identified both the novelty and the vulnerabilities of treating LLMs as cognitive partners in personal knowledge management. This document captures the concrete features and design decisions that emerged from confronting those findings.
 
 ## The Core Tension
 
@@ -215,6 +215,6 @@ The research tension—task performance vs. learning outcomes—resolves when yo
 
 ## Related Documents
 
-- [[LLM-Integrated-PKM/index|Main LLM-Integrated PKM Research]]
-- [[Research/Landscape-Results|Landscape Research Results]]
-- [[Research/Critique-Results|Critique Research Results]]
+- [[llm-integrated-pkm|Main LLM-Integrated PKM Research]]
+- [[Landscape-Results|Landscape Research Results]]
+- [[Critique-Results|Critique Research Results]]

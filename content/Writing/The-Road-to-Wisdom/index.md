@@ -88,4 +88,4 @@ I don't know all the questions we need to ask, and know even fewer of the answer
 ## Related
 
 - [[Writing/Intent-Driven-Development/index|Intent-Driven Development]] — the earlier argument that AI compresses implementation and shifts engineering work toward defining intent and verifying results.
-- [[Ideas/Daemon-First-Agent-Native/agent-native-layer|Agent-Native Layer]] — a related architectural distinction between stable system primitives and agent judgment.
+- [[Writing/Daemon-First-Agent-Native/index|Daemon-First, Agent-Native]] — a related architectural distinction between stable system primitives and agent judgment.

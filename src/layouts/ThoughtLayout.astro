@@ -5,10 +5,9 @@ import Comments from "../components/Comments.astro"
 interface Props {
   title: string
   date: Date
-  linkedIdea?: string
 }
 
-const { title, date, linkedIdea } = Astro.props
+const { title, date } = Astro.props
 const formattedDate = date.toLocaleDateString("en-US", {
   year: "numeric",
   month: "long",
@@ -29,14 +28,6 @@ const formattedDate = date.toLocaleDateString("en-US", {
       <h1>{title}</h1>
       <div class="read-meta">
         <span>{formattedDate}</span>
-        {linkedIdea && <span class="dot" />}
-        {
-          linkedIdea && (
-            <span>
-              Related: <a href={linkedIdea}>{linkedIdea}</a>
-            </span>
-          )
-        }
       </div>
     </div>
   </div>

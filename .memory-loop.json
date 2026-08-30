@@ -5,7 +5,7 @@
   "maxPoolSize": 25,
   "contentRoot": "content",
   "inboxPath": "Inbox",
-  "projectPath": "Ideas",
+  "projectPath": "Projects",
   "areaPath": "Writing",
   "attachmentPath": "Attachments",
   "metadataPath": "Metadata/memory-loop",

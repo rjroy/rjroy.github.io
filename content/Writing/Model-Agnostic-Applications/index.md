@@ -96,5 +96,5 @@ covers the models and the providers too. Don't lock your application in.
 
 ## Related
 
-- [[Ideas/Daemon-First-Agent-Native/index|Daemon-First, Agent-Native]] — owning the model layer is the natural completion of owning your own state. That piece admitted a gap (decomposition done, agents not yet wired into the composition); the new builds are where that closes.
-- [[Ideas/Leveraging-Local-LLMs/index|Leveraging Local LLMs]] — why a local fallback is genuinely viable now, not a toy.
+- [[Writing/Daemon-First-Agent-Native/index|Daemon-First, Agent-Native]] — owning the model layer is the natural completion of owning your own state. That piece admitted a gap (decomposition done, agents not yet wired into the composition); the new builds are where that closes.
+- [[Writing/Leveraging-Local-LLMs/index|Leveraging Local LLMs]] — why a local fallback is genuinely viable now, not a toy.

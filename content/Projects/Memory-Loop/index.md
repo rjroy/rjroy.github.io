@@ -57,6 +57,12 @@ Browse your vault's file structure directly. Navigate folders, read markdown fil
 
 ![Recall - File Browser](/Projects/Memory-Loop/screenshots/recall.webp)
 
+## What the Workflow Is Teaching Me
+
+The useful tension is between making capture and AI-assisted synthesis nearly frictionless and preserving the desirable difficulty that makes learning stick. A system that always summarizes, retrieves, or writes for me can make my notes more available while leaving less of the knowledge in my head.
+
+That tension points to unshipped project work: retrieval practice and spaced repetition, extracting durable artifacts from AI conversations, and alternative cognitive modes for different kinds of thinking. Pair Writing Mode is another proposed capability, not something Memory Loop ships today.
+
 ## Architecture
 
 The system runs as a local service on my home network, accessible from any device:

@@ -53,7 +53,7 @@ You cannot open AI and say "make me a game." It doesn't work that way. Every cho
 
 ## Epilogue
 
-I decided the game needed an ending that answered, *Why is the Walker fleeing the Destiny?* This exploration ended with me setting up the last three worlds. ***Questions*** you ask when facing grief. ***Answers*** you want to hear but are wrong. ***The Beginning*** of healing when you finally acknowledge what has happened. Writing the copy for the AI to build the world, to build the music, and playtesting it brought up some feelings. Who knew an exploration of AI would lead here? I added a little [message](https://github.com/rjroy/shattered-worlds/blob/master/.lore/work/brainstorm/player-support-message.md) to the game for anyone who needs support for similar feelings.
+I decided the game needed an ending that answered, *Why is the Walker fleeing the Destiny?* This exploration ended with me setting up the last three worlds. ***Questions*** you ask when facing grief. ***Answers*** you want to hear but are wrong. ***The Beginning*** of healing when you finally acknowledge what has happened. Writing the copy for the AI to build the world, to build the music, and playtesting it brought up some feelings. Who knew an exploration of AI would lead here? I added a short message to the game for anyone who needs support for similar feelings.
 
 ---
 

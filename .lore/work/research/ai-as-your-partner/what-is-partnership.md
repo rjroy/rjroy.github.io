@@ -9,7 +9,7 @@ tags:
 
 # What is Partnership?
 
-These are working notes exploring the philosophy behind AI workflow rules. The published article [[what-makes-good-ai-rules-files|What Makes Good AI Rules Files]] covers the mechanics: where files go, what sections to include. This explores the *why*.
+These are working notes exploring the philosophy behind AI workflow rules. The published article [What Makes Good AI Rules Files](/writing/ai-as-your-partner/what-makes-good-ai-rules-files/) covers the mechanics: where files go, what sections to include. This explores the *why*.
 
 ## The Question
 
@@ -67,11 +67,11 @@ Someone could read the first article and copy structure without understanding wh
 
 Two parallel research reports explore how others think about this question:
 
-**[[research/Research-AI-Partnership-Perspectives]]** (Claude) — More academic/philosophical framing. Includes Licklider's "man-computer symbiosis," the Hybrid Intelligence framework, and sharper structural critiques (stochastic parrots, labor exploitation, responsibility diffusion). Lands on "functional collaboration" as the central frame.
+**[[Research-AI-Partnership-Perspectives]]** (Claude) — More academic/philosophical framing. Includes Licklider's "man-computer symbiosis," the Hybrid Intelligence framework, and sharper structural critiques (stochastic parrots, labor exploitation, responsibility diffusion). Lands on "functional collaboration" as the central frame.
 
-**[[research/Research-AI-Partnership-ChatGPT]]** (ChatGPT) — More practitioner-heavy. Extensive quotes from developers and writers in the trenches. Leans into the partnership metaphor more directly, concluding with "alien colleague." Softer on critiques, stronger on actionable patterns.
+**[[Research-AI-Partnership-ChatGPT]]** (ChatGPT) — More practitioner-heavy. Extensive quotes from developers and writers in the trenches. Leans into the partnership metaphor more directly, concluding with "alien colleague." Softer on critiques, stronger on actionable patterns.
 
-**[[research/Research-Human-Partnership-Patterns]]** (Claude) — Cross-domain research on what makes human partnerships work: marriage, business co-founders, creative collaborations, high-stakes teams, mentorship, cross-cultural partnerships. Six foundational patterns emerge, with direct implications for human-AI collaboration.
+**[[Research-Human-Partnership-Patterns]]** (Claude) — Cross-domain research on what makes human partnerships work: marriage, business co-founders, creative collaborations, high-stakes teams, mentorship, cross-cultural partnerships. Six foundational patterns emerge, with direct implications for human-AI collaboration.
 
 The divergence itself is instructive: each AI synthesized through its own training lens. Claude hedges toward bounded autonomy and human oversight; ChatGPT embraces the teammate framing more readily. Neither is wrong, but the comparison reveals how much the tool shapes the synthesis.
 

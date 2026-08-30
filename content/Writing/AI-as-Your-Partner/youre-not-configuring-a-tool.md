@@ -127,4 +127,4 @@ The rules file is the training ground. What shows up to work afterward is shaped
 
 - [[what-makes-good-ai-rules-files|What Makes Good AI Rules Files]]
 - [[ai-has-architectural-predispositions|AI Doesn't Just Have Biases—It Has Architectural Predispositions]]
-- [[Ideas/AI-as-Your-Partner/index|AI as Your Partner]]
+- [[Writing/AI-as-Your-Partner/index|AI as Your Partner]]

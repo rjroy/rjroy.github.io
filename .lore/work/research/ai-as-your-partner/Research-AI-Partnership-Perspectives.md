@@ -1,8 +1,6 @@
 ---
 title: Exploring Whimsy
-date: 2025-12-30
 description: A project to examine where playfulness and self-expression can enhance clarity rather than distract from it
-status: active
 tags:
   - project
   - whimsy
@@ -14,7 +12,7 @@ tags:
 
 ## Project Overview
 **Start Date**: 2024-12-30
-**Target Completion**: When it becomes a ready to use [[Whimsy-for-Clarity|Area]]
+**Target Completion**: When it becomes a ready to use [[Writing/Expressive-Tools/Whimsy-for-Clarity|Area]]
 **Status**: Active
 
 ## Objectives
@@ -24,11 +22,11 @@ tags:
 
 ## Context
 
-This project began with a question from [[Memory-Loop/index|Memory Loop]]:
+This project began with a question from [[Projects/Memory-Loop/index|Memory Loop]]:
 
 > "What aspects of your work or hobbies could benefit from less seriousness and more vibrant self-expression?"
 
-Originally I had added a dark synthwave theme to [[Memory-Loop/index|Memory Loop]] as just a bit of fun. But when this question was asked it made me really think: *why did I do that? Why did I make the background a landscape?*
+Originally I had added a dark synthwave theme to [[Projects/Memory-Loop/index|Memory Loop]] as just a bit of fun. But when this question was asked it made me really think: *why did I do that? Why did I make the background a landscape?*
 
 The question surfaced a tension I hadn't fully articulated: the difference between *calm* and *sterile*, between *professional* and *lifeless*. Nord themes, minimal interfaces, muted palettes: these choices optimize for not-distracting, but they may have overcorrected into not-feeling.
 
@@ -69,7 +67,11 @@ This encodes a philosophy: you start from strength, the path is unclear, the cli
 
 ## Next Actions
 - [x] Implement terminal prompt changes (⛰ success, 🏳 failure)
-- [x] Document the philosophy as it develops → [[philosophy-of-whimsy|A Personal Philosophy of Whimsy in UX]]
-- [ ] Graduate this to an Area when the pattern is clear
+- [x] Document the philosophy as it develops → [[../expressive-tools/philosophy-of-whimsy|A Personal Philosophy of Whimsy in UX]]
+- [x] Graduate this to an Area when the pattern is clear
 
-Graduates to [[Whimsy-for-Clarity|Whimsy for Clarity]] when the exploration becomes maintenance.
+Graduates to [[Writing/Expressive-Tools/Whimsy-for-Clarity|Whimsy for Clarity]] when the exploration becomes maintenance.
+
+## Correction Notes
+
+- 2026-08-29: Corrected both `Memory Loop` links to `[[Projects/Memory-Loop/index|Memory Loop]]`.

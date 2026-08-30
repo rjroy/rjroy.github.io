@@ -13,7 +13,7 @@ import { join } from "node:path"
 
 // Markdown content files (for [[page-name]] links)
 const contentFiles = globbySync(
-  "{Ideas,Writing,Projects,Thoughts}/**/*.md",
+  "{Writing,Projects,Thoughts}/**/*.md",
   { cwd: "content" },
 )
 
@@ -28,7 +28,7 @@ const allFiles = [...contentFiles, ...attachmentFiles]
 // but this vault stores images alongside .md files for Obsidian compatibility.
 function copyContentImages() {
   const imageFiles = globbySync(
-    "{Ideas,Writing,Projects,Thoughts,Attachments}/**/*.{webp,png,jpg,jpeg,gif,svg}",
+    "{Writing,Projects,Thoughts,Attachments}/**/*.{webp,png,jpg,jpeg,gif,svg}",
     { cwd: "content" },
   )
   return {

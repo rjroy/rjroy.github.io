@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro"
 import { getCollection } from "astro:content"
 
-const ideas = await getCollection("ideas")
 const writing = await getCollection("writing")
 const projects = await getCollection("projects")
 const thoughts = await getCollection("thoughts")
@@ -11,12 +10,10 @@ const thoughts = await getCollection("thoughts")
 // top-level entry's ID has no slash; sub-notes look like "Folder/sub".
 const topLevel = (entries: any[]) => entries.filter((e) => !e.id.includes("/"))
 
-const ideasTop = topLevel(ideas)
 const writingTop = topLevel(writing)
 const projectsTop = topLevel(projects)
 
 const counts = {
-  ideas: ideasTop.length,
   projects: projectsTop.length,
   writing: writingTop.length,
   thoughts: thoughts.length,
@@ -40,22 +37,13 @@ const curate = (entries: any[], n: number) => {
 const tendingProjects = curate(projectsTop, 1)
 const leadProject = tendingProjects.length > 0 ? tendingProjects[0] : null
 const tendingWriting = curate(writingTop, 2)
-const tendingIdeas = curate(ideasTop, 1)
 
 const url = (id: string, section: string) => `/${section}/${id.toLowerCase()}/`
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
 
 const areas = [
   {
-    num: "01 / Ideas",
-    title: "Ideas",
-    body: "Developing thoughts and explorations. Half-formed, still in progress.",
-    foot: `${counts.ideas} ${counts.ideas === 1 ? "entry" : "entries"}`,
-    href: "/ideas/",
-    accent: "var(--lapis-500)",
-  },
-  {
-    num: "02 / Projects",
+    num: "01 / Projects",
     title: "Projects",
     body: "Things I've built with clear goals, from Memory Loop to the Guild Hall.",
     foot: `${counts.projects} shipped`,
@@ -63,15 +51,15 @@ const areas = [
     accent: "var(--ember-500)",
   },
   {
-    num: "03 / Writing",
+    num: "02 / Writing",
     title: "Writing",
-    body: "Essays and longer pieces I've thought all the way through before publishing.",
-    foot: `${counts.writing} ${counts.writing === 1 ? "essay" : "essays"}`,
+    body: "Essays and exploratory long-form work, published while the thinking is still in motion.",
+    foot: `${counts.writing} ${counts.writing === 1 ? "piece" : "pieces"}`,
     href: "/writing/",
     accent: "var(--verdigris-500)",
   },
   {
-    num: "04 / Thoughts",
+    num: "03 / Thoughts",
     title: "Thoughts",
     body: "Short reflections and observations, dated as they land on the page.",
     foot: `${counts.thoughts} ${counts.thoughts === 1 ? "note" : "notes"}`,
@@ -83,7 +71,7 @@ const areas = [
 
 <BaseLayout
   title="Home"
-  description="A working notebook for thinking and building alongside AI: half-formed ideas, shipped projects, and essays thought all the way through."
+  description="A working notebook for thinking and building alongside AI: short reflections, shipped projects, and long-form writing."
   contained={false}
 >
   <!-- Hero -->
@@ -101,7 +89,7 @@ const areas = [
         </h1>
         <p class="hero-lead">
           Thirty years a developer, now working out what the craft becomes when AI is part of the work. This
-          is the public side of that workshop: ideas still forming, projects that shipped, and essays thought all the way through.
+          is the public side of that workshop: short reflections, projects that shipped, and long-form writing that includes exploratory work.
         </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#areas"> Wander the garden </a>
@@ -113,7 +101,7 @@ const areas = [
 
   <!-- Currently tending -->
   {
-    (leadProject || tendingWriting.length > 0 || tendingIdeas.length > 0) && (
+    (leadProject || tendingWriting.length > 0) && (
       <section class="section tending" id="tending">
         <div class="container">
           <div class="section-head">
@@ -150,15 +138,6 @@ const areas = [
                 </div>
               </a>
             ))}
-            {tendingIdeas.map((idea) => (
-              <a class="feature-card" href={url(idea.id, "ideas")}>
-                <div class="feature-body">
-                  <span class="kind">Idea</span>
-                  <h3>{idea.data.title}</h3>
-                  <p>{idea.data.description}</p>
-                </div>
-              </a>
-            ))}
           </div>
         </div>
       </section>
@@ -170,10 +149,9 @@ const areas = [
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Where to begin</span>
-        <h2>Four places to start.</h2>
+          <h2>Three places to start.</h2>
         <p>
-          Unlike a blog, this is a working space. Some entries are finished, some aren't. Start
-          wherever the curiosity lands.
+          Projects, long-form writing, and shorter reflections. Start wherever the curiosity lands.
         </p>
       </div>
       <div class="areas">
