@@ -19,6 +19,7 @@ const writing = defineCollection({
     tags: z.array(z.string()).default([]),
     order: z.number().optional(),
     featured: z.boolean().default(false),
+    personallyWritten: z.boolean().default(false),
   }),
 })
 

@@ -23,6 +23,10 @@ bd close <id>         # Complete work
 bd dolt push          # Push beads data to remote
 ```
 
+## Attributing Writing
+
+When Ron asks to attribute an article or essay to him, find its `content/Writing/<Article>/index.md` and set `personallyWritten: true` in its frontmatter. This opt-in flag displays “Written by Ronald Roy” on the article page. It means Ron wrote roughly 90% or more of the piece; do not infer it from the article's voice, subject, or site ownership. Leave other articles unmarked unless Ron explicitly names them. For an existing article, this is normally a one-file metadata change: do not redesign the page or revisit the attribution system. If the title could identify multiple articles, ask which one.
+
 ## Non-Interactive Shell Commands
 
 **ALWAYS use non-interactive flags** with file operations to avoid hanging on confirmation prompts.

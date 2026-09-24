@@ -31,6 +31,7 @@ const readingMinutes = words > 0 ? Math.max(1, Math.round(words / 200)) : 0
   tags={entry.data.tags}
   id={entry.id}
   readingMinutes={readingMinutes}
+  personallyWritten={entry.data.personallyWritten}
 >
   <Content />
 </WritingLayout>

@@ -10,9 +10,10 @@ interface Props {
   tags: string[]
   id: string
   readingMinutes?: number
+  personallyWritten?: boolean
 }
 
-const { title, description, date, tags, id, readingMinutes = 0 } = Astro.props
+const { title, description, date, tags, id, readingMinutes = 0, personallyWritten = false } = Astro.props
 
 // Check if this is a series index page (Astro strips "/index", so top-level entries have no "/" in their ID)
 const isSeriesIndex = !id.includes("/")
@@ -63,6 +64,8 @@ const url = (entryId: string) => `/writing/${entryId.toLowerCase()}/`
         {formattedDate && <span>{formattedDate}</span>}
         {formattedDate && readingMinutes > 0 && <span class="dot" />}
         {readingMinutes > 0 && <span>{readingMinutes} min read</span>}
+        {personallyWritten && <span class="dot" aria-hidden="true" />}
+        {personallyWritten && <span class="authorship">Written by Ronald Roy</span>}
         {metaTags.length > 0 && <span class="dot" />}
         {metaTags.length > 0 && <span>{metaTags.join(" · ")}</span>}
       </div>
