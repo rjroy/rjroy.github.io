@@ -7,11 +7,17 @@ tags: [software-engineering, ai, judgment]
 
 # Retaining Judgment With AI
 
-## The tension
+## There is still work to be done
 
-- AI can produce code faster than a person can build the understanding that would justify accepting it.
-- A change can be immediately correct while still leaving a system harder to evolve, explain, or trust.
-- The question may not be whether AI can write code, but what lets people retain judgment over what that code does to a system.
+We despretely want to be able to click the button and get a solution. The current LLM form of AI is where we are looking for that solution. For easy or one off problems this works. For anything you need to build up and maintain overtime this becomes harder. For software of a legacy system written in C++ this is down right impossible.
+
+Maybe that's not even the right way of thinking about this. The LLM will generate code quickly. Rather that code is correct, safe, or maintainable is highly suspect. And maybe that's okay. Maybe the real question is how does the user retain the judgement over the project? With that judgement they can maintain the correctness, safety, and maintainability of the code.
+
+## It doesn't matter what we do but what we do
+
+How much judgement we need to inject matters greatly on the work being done. Many developers are seeing great returns simply because they are using TypeScript and the corpus of training data is vast. Others are leaning into languages state have safety guarantees built in like Rust. Then you have C++ where by its nature anything goes, and therefore you have every way to fail. Then you have to consider why type of software you are developing. Maybe you aren't even doing software.
+
+We can talk in generalities and it may work, but that's not going to be the end of the discussion. The specific work that you do can and should influence the solution you use to allow you to retain judgement.
 
 ## What kind of work is this?
 
