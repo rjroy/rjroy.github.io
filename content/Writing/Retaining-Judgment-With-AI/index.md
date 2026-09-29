@@ -46,6 +46,7 @@ We can talk in generalities and it may work, but that's not going to be the end 
 ## What judgment might mean in an AI workflow
 
 - Retaining judgment could mean staying accountable for outcomes rather than merely approving generated artifacts.
+- A useful framing, often attributed to George Lucas: "It's not the how, it's the why." AI is another how. The human supplies the why, which is the source of the judgment that decides whether its output belongs in the work.
 - It could mean knowing what evidence supports a decision, what tradeoffs were chosen, and what remains uncertain.
 - Review risks becoming ceremonial when the reviewer is asked to bless a large change without the context or time to challenge it.
 - There may also be a slower cost: implementation is where many engineers build the instincts that later make review and design possible. If that practice erodes, what replaces it?
