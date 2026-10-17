@@ -16,6 +16,8 @@ tags:
 
 Shining Stars is a browser rhythm game about performing music to help save Brightvale from Twilight. It's also an experiment in how far I can push AI beyond writing application code.
 
+I built it over nine days, working in the evenings.
+
 I had two particular questions. Could it build useful 3D models, not just attractive concept images? And could it reason through turning songs into rhythm-game charts that actually feel good to play?
 
 Those questions got the project started. Most of the work around them became game design: deciding what a performance means, what the player should notice, and when a technically correct result still isn't the right result.
