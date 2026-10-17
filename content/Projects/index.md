@@ -12,6 +12,7 @@ Software projects that have reached a working state. These are tools I use and m
 
 ## Current Projects
 
+- [[Projects/Shining-Stars/index|Shining Stars]]: A rhythm game exploring AI-assisted modeling, music analysis, and game design
 - [[Projects/Adventure-Engine-of-Corvran/index|Adventure Engine of Corvran]]: AI-powered tabletop RPG game master
 - [[Projects/Ink-Mirror/index|Ink Mirror]]: A journal that observes your writing patterns instead of generating text
 - [[Projects/Memory-Loop/index|Memory Loop]]: Mobile web interface for Obsidian vaults via Claude AI
