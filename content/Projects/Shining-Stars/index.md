@@ -24,6 +24,8 @@ Those questions got the project started. Most of the work around them became gam
 
 **Play:** [Shining Stars](https://rjroy.github.io/shining-stars/) | **Source:** [GitHub](https://github.com/rjroy/shining-stars)
 
+**Follow-up:** [Building Brightvale Again](Distant-City-Modeling.md), revisiting the distant city with smaller concept pieces and an iterative modeling process.
+
 ![Three collection emblems above Brightvale in the Observatory](screenshots/observatory-collections.webp)
 
 *The Observatory brings the three song collections into the city itself.*
