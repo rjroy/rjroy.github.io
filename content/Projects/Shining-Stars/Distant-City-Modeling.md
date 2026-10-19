@@ -2,7 +2,6 @@
 title: Building Brightvale Again
 description: How breaking a city into connected parts and treating the model, not its scripts, as the product improved an AI-assisted Blender experiment
 date: 2026-10-18
-status: draft
 tags:
   - game
   - ai
