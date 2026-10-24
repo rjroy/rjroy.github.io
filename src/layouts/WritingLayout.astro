@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "./BaseLayout.astro"
-import Comments from "../components/Comments.astro"
 import { getCollection } from "astro:content"
 
 interface Props {
@@ -97,8 +96,4 @@ const url = (entryId: string) => `/writing/${entryId.toLowerCase()}/`
       </div>
     )
   }
-
-  <div class="container prose-col" style="margin-top: var(--space-12);">
-    <Comments />
-  </div>
 </BaseLayout>

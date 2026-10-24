@@ -36,10 +36,20 @@ const shortDate = (d: Date) =>
       <div class="backlinks">
         {
           seriesEntries.map((piece) => (
-            <a class="backlink" href={url(piece.id)}>
-              <div class="bl-kind">{piece.data.date ? shortDate(piece.data.date) : "Essay"}</div>
-              <h4>{piece.data.title}</h4>
-              {piece.data.description && <p>{piece.data.description}</p>}
+            <a
+              class:list={["backlink", "writing-card", piece.data.cover && "writing-card--covered"]}
+              href={url(piece.id)}
+            >
+              {piece.data.cover && (
+                <div class="writing-card-thumb">
+                  <img src={piece.data.cover} alt="" loading="lazy" decoding="async" />
+                </div>
+              )}
+              <div class="writing-card-body">
+                <div class="bl-kind">{piece.data.date ? shortDate(piece.data.date) : "Essay"}</div>
+                <h4>{piece.data.title}</h4>
+                {piece.data.description && <p>{piece.data.description}</p>}
+              </div>
             </a>
           ))
         }

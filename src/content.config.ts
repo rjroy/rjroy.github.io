@@ -20,6 +20,9 @@ const writing = defineCollection({
     order: z.number().optional(),
     featured: z.boolean().default(false),
     personallyWritten: z.boolean().default(false),
+    // Optional listing cover. Use a site-absolute content image path with the
+    // same case as the file on disk; copyContentImages preserves asset paths.
+    cover: z.string().optional(),
   }),
 })
 

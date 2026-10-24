@@ -2,6 +2,7 @@
 title: "Personal Charter"
 description: "What I believe about trust, feedback, and how I lead."
 date: 2026-04-18
+cover: /Writing/Personal-Charter/personal-charter.webp
 featured: true
 personallyWritten: true
 tags:

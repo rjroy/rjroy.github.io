@@ -2,6 +2,7 @@
 title: "Excellence Through Questions"
 description: "Start typing, ask questions, and validate the answers."
 date: 2026-09-18
+cover: /Writing/Execellence-Through-Questions/excellence-through-questions.webp
 featured: true
 personallyWritten: true
 tags: [software-engineering, ai, judgment]

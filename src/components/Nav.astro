@@ -17,8 +17,7 @@ function isActive(href: string): boolean {
 <nav class="nav">
   <div class="nav-inner">
     <a class="brand" href="/">
-      <img class="shield-dark" src="/assets/logo-shield-dark.png" alt="Crest" />
-      <img class="shield-light" src="/assets/logo-shield-light.png" alt="Crest" />
+      <img src="/assets/personal-grayscale.webp" alt="" width="34" height="34" />
       <span class="brand-name">Broadcast Cache<small>Ron's working notebook</small></span>
     </a>
 
@@ -107,8 +106,8 @@ function isActive(href: string): boolean {
   ;(function () {
     var root = document.documentElement
 
-    // The crest and sun/moon icons swap purely in CSS off [data-theme], so the
-    // toggle only has to flip the attribute and persist the choice.
+    // Sun/moon icons swap purely in CSS off [data-theme], so the toggle only
+    // has to flip the attribute and persist the choice.
     var toggle = document.getElementById("themeToggle")
     if (toggle) {
       toggle.addEventListener("click", function () {

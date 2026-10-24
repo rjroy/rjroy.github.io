@@ -182,21 +182,6 @@ img[hidden],
   display: block;
 }
 
-/* Crest swaps with the theme, same CSS mechanism as the sun/moon icons —
-   no JS, no flash for a light-preference visitor. */
-.shield-dark {
-  display: none;
-}
-.shield-light {
-  display: block;
-}
-[data-theme="dark"] .shield-dark {
-  display: block;
-}
-[data-theme="dark"] .shield-light {
-  display: none;
-}
-
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;
@@ -1045,6 +1030,32 @@ img[hidden],
   margin: 0;
 }
 
+/* Writing listing only: text-only cards need no reserved image space. */
+.writing-card:not(.writing-card--covered) {
+  align-self: start;
+}
+.writing-card--covered {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.writing-card .writing-card-thumb {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-sunken);
+}
+.writing-card .writing-card-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.writing-card--covered .writing-card-body {
+  padding: var(--space-6);
+}
+
 /* ---------- Mobile nav (added for the multi-page Astro shell) ---------- */
 .nav-toggle {
   display: none;
@@ -1101,6 +1112,12 @@ img[hidden],
     grid-template-columns: 1fr;
   }
   .proj-thumb {
+    aspect-ratio: 16/9;
+  }
+  .writing-card--covered {
+    grid-template-columns: 1fr;
+  }
+  .writing-card .writing-card-thumb {
     aspect-ratio: 16/9;
   }
 

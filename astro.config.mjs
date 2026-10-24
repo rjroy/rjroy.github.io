@@ -4,7 +4,8 @@ import remarkWikiLink from "@flowershow/remark-wiki-link"
 import remarkCallout from "remark-callout"
 import { globbySync } from "globby"
 import { cpSync } from "node:fs"
-import { join } from "node:path"
+import { readFile, realpath, stat } from "node:fs/promises"
+import { extname, isAbsolute, join, relative, resolve, sep } from "node:path"
 
 // Build file lists for wiki-link resolution at config time.
 // The plugin matches wiki-link targets against these paths using
@@ -21,6 +22,99 @@ const contentFiles = globbySync(
 const attachmentFiles = globbySync("Attachments/**/*.*", { cwd: "content" })
 
 const allFiles = [...contentFiles, ...attachmentFiles]
+const imageTypes = new Map([
+  [".webp", "image/webp"],
+  [".png", "image/png"],
+  [".jpg", "image/jpeg"],
+  [".jpeg", "image/jpeg"],
+  [".gif", "image/gif"],
+  [".svg", "image/svg+xml"],
+])
+
+function isWithinDirectory(directory, candidate) {
+  const relativePath = relative(directory, candidate)
+  return relativePath === "" || (relativePath !== ".." && !relativePath.startsWith(`..${sep}`) && !isAbsolute(relativePath))
+}
+
+// Content images are copied into the build output below. During development,
+// serve the same files directly, but only from the supported content folders.
+function contentImageDevServer() {
+  return {
+    name: "content-image-dev-server",
+    configureServer(server) {
+      const contentDirectory = join(server.config.root, "content")
+
+      server.middlewares.use(async (request, response, next) => {
+        if (request.method !== "GET" && request.method !== "HEAD") return next()
+
+        let pathname
+        try {
+          pathname = decodeURIComponent(new URL(request.url, "http://localhost").pathname)
+        } catch {
+          response.statusCode = 404
+          return response.end()
+        }
+
+        const pathParts = pathname.slice(1).split("/")
+        if (pathParts.some((part) => part === "." || part === ".." || part.includes("\\") || part.includes("\0"))) {
+          response.statusCode = 404
+          return response.end()
+        }
+
+        const [requestedDirectory, ...fileParts] = pathParts
+        const directory = requestedDirectory === "attachments"
+          ? "Attachments"
+          : ["Writing", "Projects", "Thoughts"].includes(requestedDirectory)
+            ? requestedDirectory
+            : undefined
+        if (!directory) return next()
+
+        const type = imageTypes.get(extname(fileParts.at(-1) ?? "").toLowerCase())
+        if (!type || fileParts.length === 0 || fileParts.some((part) => part.length === 0)) {
+          response.statusCode = 404
+          return response.end()
+        }
+
+        try {
+          const contentRoot = await realpath(contentDirectory)
+          const requestedDirectory = join(contentRoot, directory)
+          const resolvedDirectory = await realpath(requestedDirectory)
+          if (
+            resolvedDirectory !== requestedDirectory ||
+            !isWithinDirectory(contentRoot, resolvedDirectory)
+          ) {
+            response.statusCode = 404
+            return response.end()
+          }
+
+          const filePath = await realpath(resolve(requestedDirectory, ...fileParts))
+          if (
+            !isWithinDirectory(resolvedDirectory, filePath) ||
+            !imageTypes.has(extname(filePath).toLowerCase())
+          ) {
+            response.statusCode = 404
+            return response.end()
+          }
+
+          const details = await stat(filePath)
+          if (!details.isFile()) {
+            response.statusCode = 404
+            return response.end()
+          }
+
+          const contents = await readFile(filePath)
+          response.statusCode = 200
+          response.setHeader("Content-Type", type)
+          response.setHeader("Content-Length", contents.length)
+          return response.end(request.method === "HEAD" ? undefined : contents)
+        } catch {
+          response.statusCode = 404
+          return response.end()
+        }
+      })
+    },
+  }
+}
 
 // Copies image files from content/ to the build output so that markdown
 // image references like /Projects/Guild-Hall/screenshots/img.webp resolve.
@@ -49,6 +143,9 @@ export default defineConfig({
   site: "https://rjroy.github.io",
   output: "static",
   integrations: [tailwind(), copyContentImages()],
+  vite: {
+    plugins: [contentImageDevServer()],
+  },
   markdown: {
     remarkPlugins: [
       [

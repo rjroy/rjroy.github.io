@@ -2,6 +2,7 @@
 title: "What Building a Game with AI Taught Me"
 description: Lessons from shipping a typed, tested, CI-backed roguelite deckbuilder where AI wrote most of the code, art, music, and sound
 date: 2026-07-09
+cover: /Writing/Building-A-Game-With-AI/building-a-game-with-ai.webp
 tags:
   - writing
   - methodology
