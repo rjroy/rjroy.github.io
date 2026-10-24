@@ -14,6 +14,8 @@ Essays and longer-form pieces on topics I've thought through.
 
 ### AI-Native Engineering
 
+- [[Writing/Execellence-Through-Questions/index|Excellence Through Questions]]: Start typing, ask questions, and validate the answers. How to learn through using AI while retaining your own judgement.
+
 - [[Writing/The-Road-to-Wisdom/index|The Road to Wisdom]]: AI should transform engineering work, not simply replace it. As implementation becomes increasingly automated, the human role becomes applying judgment: defining intent, evaluating tradeoffs, and deciding what good work looks like. What does that require, and how do we get there?
 
 - [[Writing/Intent-Driven-Development/index|Intent-Driven Development]]: How AI shifts engineering work from implementation toward intent definition and verification.
