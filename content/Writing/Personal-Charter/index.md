@@ -11,6 +11,8 @@ tags:
 
 # Personal Charter
 
+![A lighthouse keeper tends a beacon above sailboats in a sheltered harbor, while waves break against the seawall.](./personal-charter.webp)
+
 ## Core Belief
 
 Trust is the foundation. I extend it fully from the start. Everyone I work with gets my belief in their competence and good faith. That belief is who I am and I work as I am. It is not currency to be used.

@@ -10,6 +10,8 @@ tags:
 ---
 # What Building a Game with AI Taught Me
 
+![A person and robot assistants build a miniature fantasy world of castles, bridges, and floating islands in a workshop.](./building-a-game-with-ai.webp)
+
 Over about a month I built [Shattered Worlds](https://rjroy.github.io/shattered-worlds/), a roguelite deckbuilder that I wanted to play. There are multiple worlds, each using the game's mechanics slightly differently. One of the core concepts is that it's a game designed around trying not to lose instead of trying to win. And AI wrote most of it. Multiple agents wrote the TypeScript-based Phaser code, generated all the art content, and even music and FX. I provided goals and directions. I rarely reviewed the code, but did extensive playtesting. When the AI just couldn't fix it, I'd step in and do the final tweaks.
 
 I want to share what I learned. Not because I have some keen insight, but because multiple perspectives are important. AI is amazing and it is overhyped. Don't use it blindly, but don't be afraid to let it run. The number one lesson to learn, to use AI well you have to understand the domain to know how much pressure to apply and where.

@@ -2,7 +2,7 @@
 title: Vibe Garden
 description: A collection of Claude Code plugins for project management and development workflows
 date: 2025-12-29
-status: active
+status: archived
 tags:
   - project
   - claude-code

@@ -9,7 +9,7 @@ tags: [software-engineering, ai, judgment]
 
 # Excellence Through Questions
 
-![A person at a desk explores a question branching into several answers, with checkmarks marking validated results.](/Attachments/excellence-through-questions.webp)
+![A person at a desk explores a question branching into several answers, with checkmarks marking validated results.](excellence-through-questions.webp)
 
 AI can be transformative, and it can help you excel at what you already do. It doesn't have to replace who you are. You will likely need to rethink how you do your work. Don't know where to begin? Just start typing.
 

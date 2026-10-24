@@ -2,7 +2,7 @@
 title: Shattered Worlds
 description: A roguelite deckbuilder where each world remakes how you build, and a Destiny thread carries across the shattering
 date: 2026-06-02
-status: active
+status: maintained
 tags:
   - game
   - roguelite

@@ -8,6 +8,8 @@ tags: [software-engineering, agents, process, wisdom, service-design]
 
 # The Road to Wisdom
 
+![Two travelers study a branching stone road spanning a mountain valley at sunrise, with sections still under construction.](the-road-to-wisdom.webp)
+
 ## Where Are We Going?
 
 I have a lot of questions about where we go next. We've built this AI thing. We are told it will replace all our jobs, or that it cannot replace any. If we boil this problem down its: what will the job of human's be? My answer is: to use our wisdom to apply judgement.

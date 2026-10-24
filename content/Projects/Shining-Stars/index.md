@@ -3,6 +3,7 @@ title: Shining Stars
 description: A rhythm game built to explore AI-assisted modeling, music analysis, and the design work between a generated result and something worth playing
 date: 2026-10-16
 status: active
+cover: /Projects/Shining-Stars/screenshots/observatory-collections.webp
 tags:
   - game
   - rhythm
