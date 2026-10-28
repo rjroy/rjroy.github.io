@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
 import { getCollection } from "astro:content"
+import { SITE_NAME } from "../site"
 
 const writing = await getCollection("writing")
 const projects = await getCollection("projects")
@@ -48,7 +49,7 @@ const areas = [
     body: "Things I've built with clear goals, from Memory Loop to the Guild Hall.",
     foot: `${counts.projects} shipped`,
     href: "/projects/",
-    accent: "var(--ember-500)",
+    accent: "var(--lantern)",
   },
   {
     num: "02 / Writing",
@@ -56,7 +57,7 @@ const areas = [
     body: "Essays and exploratory long-form work, published while the thinking is still in motion.",
     foot: `${counts.writing} ${counts.writing === 1 ? "piece" : "pieces"}`,
     href: "/writing/",
-    accent: "var(--verdigris-500)",
+    accent: "var(--horizon)",
   },
   {
     num: "03 / Thoughts",
@@ -64,7 +65,7 @@ const areas = [
     body: "Short reflections and observations, dated as they land on the page.",
     foot: `${counts.thoughts} ${counts.thoughts === 1 ? "note" : "notes"}`,
     href: "/thoughts/",
-    accent: "var(--brass-500)",
+    accent: "var(--lantern)",
   },
 ]
 ---
@@ -81,15 +82,16 @@ const areas = [
     <div class="hero-inner">
       <div class="container">
         <div class="hero-kicker">
-          Ron's Broadcast Cache &nbsp;·&nbsp; a digital garden since 2025
+          {SITE_NAME} &nbsp;·&nbsp; a digital garden since 2025
         </div>
         <h1>
           A working notebook for thinking and <span class="gild">building</span>
           alongside AI.
         </h1>
         <p class="hero-lead">
-          Thirty years a developer, now working out what the craft becomes when AI is part of the work. This
-          is the public side of that workshop: short reflections, projects that shipped, and long-form writing that includes exploratory work.
+          Thirty years a developer, now working out what the craft becomes when AI is part of the
+          work. This is the public side of that workshop: short reflections, projects that shipped,
+          and long-form writing that includes exploratory work.
         </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#areas"> Wander the garden </a>
@@ -149,7 +151,7 @@ const areas = [
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Where to begin</span>
-          <h2>Three places to start.</h2>
+        <h2>Three places to start.</h2>
         <p>
           Projects, long-form writing, and shorter reflections. Start wherever the curiosity lands.
         </p>

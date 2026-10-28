@@ -110,19 +110,19 @@
     font-size: 0.92em;
   }
   code {
-    background: var(--parchment-200);
+    background: var(--bg-sunken);
     padding: 0.1em 0.35em;
     border-radius: var(--radius-sm);
-    color: var(--ember-900);
+    color: var(--fg);
     border: 1px solid var(--rule);
   }
   pre {
-    background: var(--ink-900);
-    color: var(--parchment-50);
+    background: var(--night);
+    color: var(--parchment);
     padding: var(--space-4);
     border-radius: var(--radius);
     overflow-x: auto;
-    border: 1px solid var(--ink-700);
+    border: 1px solid var(--rule);
     box-shadow: var(--shadow-inset);
   }
   pre code {
@@ -131,32 +131,24 @@
     color: inherit;
     padding: 0;
   }
-  [data-theme="dark"] code {
-    background: #2a1f15;
-    color: var(--ember-100);
-    border-color: var(--rule);
-  }
-  [data-theme="dark"] pre {
-    background: #0d0a07;
-    border-color: var(--rule);
-  }
-
-  /* Links — underlined by default, ember on hover */
+  /* Links stay readable on both themes; accents are not light-mode ink. */
   a {
-    color: var(--ember-700);
+    color: var(--link);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
     transition: color var(--dur) var(--ease-out);
   }
   a:hover {
-    color: var(--ember-500);
+    color: var(--link-hover);
+    text-decoration-thickness: 2px;
   }
-  [data-theme="dark"] a {
-    color: var(--ember-300);
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 4px;
   }
-  [data-theme="dark"] a:hover {
-    color: var(--ember-100);
+  .hero :focus-visible {
+    outline-color: var(--parchment);
   }
 
   /* Wiki-links: unresolved */
@@ -168,12 +160,8 @@
 
   /* Selection */
   ::selection {
-    background: var(--ember-100);
-    color: var(--ink-900);
-  }
-  [data-theme="dark"] ::selection {
-    background: var(--ember-700);
-    color: var(--parchment-50);
+    background: var(--lantern);
+    color: var(--night);
   }
 
   /* Blockquotes */
@@ -195,7 +183,7 @@
     border: 0;
     height: 14px;
     background: center/contain no-repeat;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='14' viewBox='0 0 200 14'><g fill='none' stroke='%235A4632' stroke-width='1'><path d='M0 7 L80 7'/><path d='M120 7 L200 7'/><circle cx='100' cy='7' r='3'/><path d='M92 7 L88 4 M92 7 L88 10 M108 7 L112 4 M108 7 L112 10'/></g></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='14' viewBox='0 0 200 14'><g fill='none' stroke='%23031315' stroke-width='1'><path d='M0 7 L80 7'/><path d='M120 7 L200 7'/><circle cx='100' cy='7' r='3'/><path d='M92 7 L88 4 M92 7 L88 10 M108 7 L112 4 M108 7 L112 10'/></g></svg>");
   }
 
   /* Tables */
@@ -263,21 +251,15 @@
     color: var(--success);
   }
   .status-paused {
-    color: var(--brass-500);
+    color: var(--warning);
   }
   .status-graduated,
   .status-maintained {
-    color: var(--brass-500);
+    color: var(--warning);
   }
   .status-archived {
     color: var(--fg-muted);
   }
-  [data-theme="dark"] .status-paused,
-  [data-theme="dark"] .status-graduated,
-  [data-theme="dark"] .status-maintained {
-    color: var(--brass-300);
-  }
-
   /* Card component */
   .card {
     background-color: var(--bg-raised);

@@ -1,10 +1,14 @@
-# Ron's Broadcast Cache
+# Assume the Possible
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Overview
 
-**Ron's Broadcast Cache** is a digital garden published via GitHub Pages at `rjroy.github.io`. Built with Astro, it supports Obsidian wiki-links via remark plugins and Tailwind CSS for styling. Content is publicly visible: write for readers, not just personal reference.
+**Assume the Possible** is a digital garden published via GitHub Pages at `rjroy.github.io`. Built with Astro, it supports Obsidian wiki-links via remark plugins and Tailwind CSS for styling. Content is publicly visible: write for readers, not just personal reference.
+
+## Brand identity
+
+Follow `brand/BRAND.md` and the scoped integration notes in `brand/README.md`. Use the approved `brand/assets/approved-a5.svg` unchanged; the public copy must remain byte-identical. Brand artwork is excluded from the site's CC BY license. Do not regenerate, recolor, crop, texture, or alter the mark. A.1 artwork and homepage recomposition require separate approval.
 
 ## Commands
 

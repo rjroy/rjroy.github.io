@@ -1,6 +1,6 @@
 /* =========================================================
-   Ron's Broadcast Cache — redesign
-   Component layer on top of the Development Adventures tokens.
+   Assume the Possible — shared components
+   Component layer on top of The Guide palette tokens.
    Source: handoff bundle (claude.ai/design) site.css. Tokens are
    imported separately via tokens.css; image paths point at /assets.
    ========================================================= */
@@ -21,22 +21,6 @@ body {
   transition:
     background-color var(--dur-slow) var(--ease-soft),
     color var(--dur-slow) var(--ease-soft);
-}
-
-/* Faint paper grain felt over everything */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-}
-[data-theme="dark"] body::after {
-  mix-blend-mode: screen;
-  opacity: 0.035;
 }
 
 img {
@@ -67,10 +51,6 @@ img[hidden],
   text-transform: uppercase;
   margin: 0 0 var(--space-4);
 }
-[data-theme="dark"] .eyebrow {
-  color: var(--ember-300);
-}
-
 /* ---------- Top bar ---------- */
 .nav {
   position: sticky;
@@ -102,7 +82,7 @@ img[hidden],
   width: 34px;
   height: 34px;
   object-fit: contain;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  flex-shrink: 0;
 }
 .brand-name {
   font-family: var(--font-display);
@@ -144,9 +124,8 @@ img[hidden],
 }
 .nav-link.active {
   color: var(--brand);
-}
-[data-theme="dark"] .nav-link.active {
-  color: var(--ember-300);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
 }
 
 .icon-btn {
@@ -206,23 +185,21 @@ img[hidden],
   height: 18px;
 }
 .btn-primary {
-  background: var(--brand);
-  color: var(--fg-on-ember);
-  box-shadow: var(--shadow-glow);
+  background: var(--action);
+  color: var(--on-action);
+  border-color: var(--night);
+  box-shadow: var(--shadow-sm);
   animation: lantern 3.4s var(--ease-soft) infinite;
 }
 .btn-primary:hover {
-  background: var(--brand-hover);
-  color: var(--fg-on-ember);
+  background: var(--action-hover);
+  color: var(--on-action);
   transform: translateY(-1px);
 }
 .btn-primary:active {
-  background: var(--brand-press);
+  background: var(--action-press);
   transform: translateY(1px);
   box-shadow: var(--shadow-sm);
-}
-[data-theme="dark"] .btn-primary {
-  color: #1a140e;
 }
 .btn-ghost {
   background: transparent;
@@ -235,22 +212,23 @@ img[hidden],
   border-color: var(--fg-2);
 }
 .btn-on-dark {
-  color: var(--parchment-50);
-  border-color: rgba(251, 245, 231, 0.45);
-  text-shadow: 1px 1px 2px var(--ink-700), 0 0 1em var(--ink-900), 0 0 0.2em var(--ink-900); 
+  color: var(--parchment);
+  border-color: var(--parchment);
+  background: color-mix(in srgb, var(--night) 72%, transparent);
+  text-shadow: 1px 1px 2px var(--night);
 }
 .btn-on-dark:hover {
-  background: rgba(251, 245, 231, 0.12);
-  color: #fff;
+  background: var(--night);
+  color: var(--parchment);
 }
 
 @keyframes lantern {
   0%,
   100% {
-    box-shadow: 0 0 18px rgba(197, 106, 31, 0.3);
+    box-shadow: 0 0 18px rgba(239, 184, 63, 0.3);
   }
   50% {
-    box-shadow: 0 0 30px rgba(226, 149, 80, 0.55);
+    box-shadow: 0 0 30px rgba(239, 184, 63, 0.55);
   }
 }
 
@@ -287,7 +265,7 @@ img[hidden],
 .flourish-rule svg {
   width: 30px;
   height: 30px;
-  color: var(--brass-500);
+  color: var(--brand);
   flex-shrink: 0;
 }
 
@@ -313,6 +291,7 @@ img[hidden],
 
 /* ---------- HERO ---------- */
 .hero {
+  --hero-edge-opacity: 0.35;
   position: relative;
   min-height: 86vh;
   display: flex;
@@ -322,7 +301,7 @@ img[hidden],
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url("/assets/two-cities.webp");
+  background-image: url("/assets/guide-landscape.webp");
   background-size: cover;
   background-position: center 38%;
   transform: scale(1.04);
@@ -333,11 +312,16 @@ img[hidden],
   background:
     linear-gradient(
       to top,
-      var(--bg) 2%,
-      color-mix(in srgb, var(--bg) 30%, transparent) 30%,
+      var(--night) 2%,
+      color-mix(in srgb, var(--night) 30%, transparent) 30%,
       transparent 62%
     ),
-    linear-gradient(to right, rgba(10, 8, 5, 0.78) 0%, rgba(10, 8, 5, 0.3) 42%, transparent 72%);
+    linear-gradient(
+      to right,
+      rgba(3, 19, 21, 0.88) 0%,
+      rgba(3, 19, 21, 0.78) 42%,
+      rgba(3, 19, 21, var(--hero-edge-opacity)) 72%
+    );
 }
 [data-theme="dark"] .hero-vignette {
   background:
@@ -347,7 +331,12 @@ img[hidden],
       color-mix(in srgb, var(--bg) 45%, transparent) 28%,
       transparent 60%
     ),
-    linear-gradient(to right, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.4) 42%, transparent 74%);
+    linear-gradient(
+      to right,
+      rgba(3, 19, 21, 0.88) 0%,
+      rgba(3, 19, 21, 0.78) 42%,
+      rgba(3, 19, 21, var(--hero-edge-opacity)) 74%
+    );
 }
 .hero-inner {
   position: relative;
@@ -364,35 +353,44 @@ img[hidden],
   font-size: var(--text-sm);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--brass-300);
+  color: var(--lantern);
   margin-bottom: var(--space-5);
-  text-shadow: 1px 1px 2px var(--ink-700), 0 0 1em var(--ink-900), 0 0 0.2em var(--ink-900); 
+  text-shadow:
+    1px 1px 2px var(--night),
+    0 0 1em var(--night),
+    0 0 0.2em var(--night);
 }
 .hero-kicker::before {
   content: "";
   width: 28px;
   height: 1px;
-  background: var(--brass-500);
+  background: var(--lantern);
 }
 .hero h1 {
-  color: var(--parchment-50);
+  color: var(--parchment);
   font-size: clamp(2.6rem, 6vw, var(--text-6xl));
   line-height: 1.04;
   max-width: 16ch;
   margin: 0 0 var(--space-6);
-  text-shadow: 1px 1px 2px var(--ink-700), 0 0 1em var(--ink-900), 0 0 0.2em var(--ink-900); 
+  text-shadow:
+    1px 1px 2px var(--night),
+    0 0 1em var(--night),
+    0 0 0.2em var(--night);
 }
 .hero h1 .gild {
-  color: var(--brass-300);
+  color: var(--lantern);
 }
 .hero-lead {
   font-family: var(--font-serif);
   font-size: clamp(1.05rem, 1.6vw, var(--text-xl));
   line-height: var(--leading-snug);
-  color: var(--parchment-100);
+  color: var(--parchment);
   max-width: 52ch;
   margin: 0 0 var(--space-8);
-  text-shadow: 1px 1px 2px var(--brass-700), 0 0 1em var(--ink-900), 0 0 0.2em var(--ink-900); 
+  text-shadow:
+    1px 1px 2px var(--night),
+    0 0 1em var(--night),
+    0 0 0.2em var(--night);
 }
 .cta-row {
   display: flex;
@@ -569,9 +567,6 @@ img[hidden],
   color: var(--brand);
   margin-bottom: var(--space-3);
 }
-[data-theme="dark"] .feature-body .kind {
-  color: var(--ember-300);
-}
 .feature-body h3 {
   margin: 0 0 var(--space-3);
   color: var(--fg-1);
@@ -606,7 +601,7 @@ img[hidden],
 .about-portrait .frame-tint {
   position: absolute;
   inset: 0;
-  box-shadow: inset 0 0 60px rgba(26, 20, 14, 0.5);
+  box-shadow: inset 0 0 60px rgba(3, 19, 21, 0.5);
   pointer-events: none;
 }
 .about h2 {
@@ -740,12 +735,9 @@ img[hidden],
   color: var(--fg-1);
 }
 .chip.active {
-  background: var(--brand);
-  color: var(--fg-on-ember);
-  border-color: var(--brand);
-}
-[data-theme="dark"] .chip.active {
-  color: #1a140e;
+  background: var(--action);
+  color: var(--on-action);
+  border-color: var(--night);
 }
 
 .proj-grid {
@@ -792,14 +784,13 @@ img[hidden],
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at 40% 30%, var(--ink-700), var(--ink-900));
+  background: var(--night);
 }
 .proj-thumb.placeholder img {
   width: 56px;
   height: 56px;
   object-fit: contain;
   transform: none;
-  opacity: 0.85;
 }
 .proj-body {
   padding: var(--space-6);
@@ -861,24 +852,17 @@ img[hidden],
   color: var(--success);
 }
 .status.maintained {
-  color: var(--brass-500);
+  color: var(--warning);
 }
 .status.archived {
   color: var(--fg-muted);
 }
 /* Idea statuses (active is shared with projects above). */
 .status.paused {
-  color: var(--brass-500);
+  color: var(--warning);
 }
 .status.graduated {
   color: var(--success);
-}
-[data-theme="dark"] .status.maintained,
-[data-theme="dark"] .status.paused {
-  color: var(--brass-300);
-}
-[data-theme="dark"] .status.graduated {
-  color: var(--moss-300);
 }
 
 /* =========================================================
@@ -982,9 +966,6 @@ img[hidden],
   line-height: var(--leading-snug);
   letter-spacing: var(--tracking-wide);
   color: var(--fg-1);
-}
-[data-theme="dark"] .pull {
-  border-color: var(--ember-300);
 }
 
 .read-foot {
@@ -1105,6 +1086,35 @@ img[hidden],
   }
 }
 @media (max-width: 560px) {
+  .hero {
+    --hero-edge-opacity: 0.62;
+  }
+  .hero-bg {
+    background-position: 72% 38%;
+  }
+  /* The approved name is longer; keep both controls inside the same nav. */
+  .nav-inner {
+    gap: var(--space-2);
+    padding-inline: var(--space-4);
+  }
+  .brand {
+    flex-shrink: 1;
+    min-width: 0;
+    margin-right: auto;
+    gap: var(--space-2);
+  }
+  .brand-name {
+    font-size: var(--text-base);
+    line-height: 1.1;
+  }
+  .brand-name small {
+    font-size: 9px;
+    letter-spacing: var(--tracking-wide);
+  }
+  .nav .icon-btn {
+    flex-shrink: 0;
+    margin-left: 0;
+  }
   .areas {
     grid-template-columns: 1fr;
   }

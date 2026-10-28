@@ -1,15 +1,16 @@
 ---
+import { SITE_NAME } from "../site"
+
 const currentYear = new Date().getFullYear()
 ---
 
 <footer class="foot">
   <div class="container foot-inner">
     <div class="foot-brand">
-      <div class="brand-name">Ron's Broadcast Cache</div>
+      <div class="brand-name">{SITE_NAME}</div>
       <p>
-        A place to share a curated selection of what I'm learning
-        about working with AI, and reflections on what it means
-        to work with it.
+        A place to share a curated selection of what I'm learning about working with AI, and
+        reflections on what it means to work with it.
       </p>
     </div>
     <div class="foot-cols">
@@ -32,7 +33,9 @@ const currentYear = new Date().getFullYear()
   <div class="container">
     <div class="foot-legal">
       <span>&copy; {currentYear} Ron Roy</span>
-      <span>CC BY 4.0 — share and adapt with attribution</span>
+      <span
+        >Content: CC BY 4.0 · <a href="/brand-artwork-license.txt">Brand artwork excluded</a></span
+      >
       <span>Built with Astro · hosted on GitHub Pages</span>
     </div>
   </div>

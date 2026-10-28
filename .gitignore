@@ -13,6 +13,9 @@ dist/
 # Design handoff bundles (claude.ai/design exports)
 *-handoff.zip
 
+# Local visual verification captures (keep design contracts tracked)
+.impeccable/review/
+
 # Dependencies
 node_modules/
 
