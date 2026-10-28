@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-28T03:12:02Z",
+  "title": "Design System: Assume the Possible",
+  "extensions": {
+    "colorMeta": {
+      "night": { "role": "neutral", "displayName": "Night" },
+      "lantern": { "role": "primary", "displayName": "Lantern" },
+      "horizon": { "role": "secondary", "displayName": "Horizon" },
+      "parchment": { "role": "neutral", "displayName": "Parchment" }
+    },
+    "shadows": [
+      {
+        "name": "light-card",
+        "value": "0 1px 2px rgba(3,19,21,0.1), 0 1px 1px rgba(3,19,21,0.06)",
+        "purpose": "Existing light-mode card depth."
+      },
+      {
+        "name": "dark-card",
+        "value": "0 1px 2px rgba(0,0,0,0.45), 0 1px 1px rgba(0,0,0,0.3)",
+        "purpose": "Existing dark-mode card depth."
+      }
+    ],
+    "motion": [
+      { "name": "duration", "value": "200ms", "purpose": "Existing shared state transitions." },
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22,0.61,0.36,1)",
+        "purpose": "Existing shared easing; reduced motion is respected."
+      }
+    ],
+    "breakpoints": [
+      { "name": "stack", "value": "920px" },
+      { "name": "narrow", "value": "560px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Lantern action with readable Night label.",
+      "html": "<button class=\"ds-primary\">Wander the garden</button>",
+      "css": ".ds-primary{background:var(--action);color:var(--on-action);border:1px solid var(--night);border-radius:var(--radius);padding:12px 24px;font:17px var(--font-display);letter-spacing:.04em}.ds-primary:hover{background:var(--action-hover)}.ds-primary:active{background:var(--action-press)}.ds-primary:focus-visible{outline:2px solid var(--focus);outline-offset:4px}"
+    },
+    {
+      "name": "Ghost button",
+      "kind": "button",
+      "description": "Existing outlined secondary action.",
+      "html": "<button class=\"ds-ghost\">What is this place?</button>",
+      "css": ".ds-ghost{background:transparent;color:var(--fg-1);border:1px solid var(--rule-strong);border-radius:var(--radius);padding:12px 24px;font:17px var(--font-display)}.ds-ghost:hover{background:var(--bg-sunken)}.ds-ghost:focus-visible{outline:2px solid var(--focus);outline-offset:4px}"
+    },
+    {
+      "name": "Project filter",
+      "kind": "chip",
+      "description": "Selected status filter with text and fill state.",
+      "html": "<button class=\"ds-chip\">All</button>",
+      "css": ".ds-chip{background:var(--action);color:var(--on-action);border:1px solid var(--night);border-radius:999px;padding:8px 16px;font:12px var(--font-mono);text-transform:uppercase;letter-spacing:.04em}.ds-chip:hover{background:var(--action-hover)}.ds-chip:focus-visible{outline:2px solid var(--focus);outline-offset:4px}"
+    },
+    {
+      "name": "Reading card",
+      "kind": "card",
+      "description": "Existing linked reading-card shell.",
+      "html": "<a class=\"ds-card\" href=\"/writing/\">Writing</a>",
+      "css": ".ds-card{display:block;background:var(--bg-raised);color:var(--fg-1);border:1px solid var(--rule-soft);border-radius:var(--radius-md);padding:20px;text-decoration:none;font-family:var(--font-body)}.ds-card:hover{border-color:var(--rule-strong)}.ds-card:focus-visible{outline:2px solid var(--focus);outline-offset:4px}"
+    },
+    {
+      "name": "Navigation link",
+      "kind": "nav",
+      "description": "Existing navigation with explicit active underline.",
+      "html": "<a class=\"ds-nav\" href=\"/writing/\" aria-current=\"page\">Writing</a>",
+      "css": ".ds-nav{display:inline-block;color:var(--brand);border-radius:var(--radius);padding:8px 12px;font:17px var(--font-body);text-decoration:underline;text-underline-offset:.3em}.ds-nav:hover{background:var(--bg-sunken);color:var(--fg-1)}.ds-nav:focus-visible{outline:2px solid var(--focus);outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Guide",
+    "overview": "This is an identity and palette application, not a homepage redesign. The approved mark and supporting palette join the existing workshop imagery, editorial typography, page hierarchy, and interactions.",
+    "rules": [],
+    "dos": [
+      "Use src/site.ts for shared identity and default metadata.",
+      "Keep the portable and published approved SVG byte-identical."
+    ],
+    "donts": [
+      "Do not add A.1, new artwork, raster derivatives, or a font migration without separate approval."
+    ]
+  }
+}

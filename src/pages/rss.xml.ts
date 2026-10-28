@@ -3,6 +3,7 @@ import { getCollection } from "astro:content"
 import type { APIContext } from "astro"
 import MarkdownIt from "markdown-it"
 import sanitizeHtml from "sanitize-html"
+import { SITE_DESCRIPTION, SITE_NAME } from "../site"
 
 const parser = new MarkdownIt()
 
@@ -40,8 +41,8 @@ export async function GET(context: APIContext) {
   )
 
   return rss({
-    title: "Broadcast Cache",
-    description: "Thoughts, writing, and projects from Ron Roy",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
     site: context.site!,
     items,
   })

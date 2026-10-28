@@ -2,6 +2,7 @@
 import Nav from "../components/Nav.astro"
 import Footer from "../components/Footer.astro"
 import "../styles/global.css"
+import { IDENTITY_MARK, SITE_DESCRIPTION, SITE_NAME } from "../site"
 
 interface Props {
   title: string
@@ -11,7 +12,7 @@ interface Props {
   contained?: boolean
 }
 
-const { title, description = "Ron's Broadcast Cache", contained = true } = Astro.props
+const { title, description = SITE_DESCRIPTION, contained = true } = Astro.props
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
@@ -19,19 +20,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/webp" href="/favicon.webp" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <title>{title} | Broadcast Cache</title>
+    <link rel="icon" type="image/svg+xml" href={IDENTITY_MARK} />
+    <meta name="apple-mobile-web-app-title" content={SITE_NAME} />
+    <title>{title} | {SITE_NAME}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
+    <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:image" content={new URL("/og-image.png", Astro.site)} />
+    <meta property="og:image" content={new URL("/assets/two-cities.webp", Astro.site)} />
     <meta property="og:type" content="website" />
     <!-- RSS autodiscovery -->
-    <link rel="alternate" type="application/rss+xml" title="Broadcast Cache" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title={SITE_NAME} href="/rss.xml" />
     <!-- Prevent flash of wrong theme. Default dark; honor the saved
          preference (and migrate the legacy "theme" key if present). -->
     <script is:inline>

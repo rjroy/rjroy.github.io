@@ -1,5 +1,9 @@
 # Agent Instructions
 
+## Brand identity
+
+The site name is **Assume the Possible**. Follow `brand/BRAND.md` and the scoped integration notes in `brand/README.md`. Use the approved `brand/assets/approved-a5.svg` unchanged; the public copy must remain byte-identical. Brand artwork is excluded from the site's CC BY license. Do not regenerate, recolor, crop, texture, or alter the mark. A.1 artwork and homepage recomposition require separate approval.
+
 This project uses **bd** (beads) for issue tracking. Run `bd prime` for full workflow context.
 
 > **Architecture in one line:** Issues live in a local Dolt database

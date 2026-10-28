@@ -1,4 +1,6 @@
 ---
+import { IDENTITY_MARK, SITE_NAME } from "../site"
+
 const currentPath = Astro.url.pathname
 
 const navLinks = [
@@ -17,8 +19,8 @@ function isActive(href: string): boolean {
 <nav class="nav">
   <div class="nav-inner">
     <a class="brand" href="/">
-      <img src="/assets/personal-grayscale.webp" alt="" width="34" height="34" />
-      <span class="brand-name">Broadcast Cache<small>Ron's working notebook</small></span>
+      <img src={IDENTITY_MARK} alt="" width="34" height="34" />
+      <span class="brand-name">{SITE_NAME}<small>Ron's working notebook</small></span>
     </a>
 
     <div class="nav-links">

@@ -3,7 +3,7 @@
   "configVersion": 0,
   "workspaces": {
     "": {
-      "name": "@jackyzha0/quartz",
+      "name": "assume-the-possible",
       "dependencies": {
         "@astrojs/check": "^0.9.12",
         "@astrojs/rss": "^4.0.15",

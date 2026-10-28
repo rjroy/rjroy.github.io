@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro"
 import { getCollection } from "astro:content"
+import { IDENTITY_MARK } from "../../site"
 
 const allProjects = await getCollection("projects")
 
@@ -79,7 +80,7 @@ const showFilters = present.size > 1
                 </div>
               ) : (
                 <div class="proj-thumb placeholder">
-                  <img src="/assets/personal-grayscale.webp" alt="" width="56" height="56" />
+                  <img src={IDENTITY_MARK} alt="" width="56" height="56" />
                 </div>
               )}
               <div class="proj-body">

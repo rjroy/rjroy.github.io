@@ -23,9 +23,9 @@ This is a place to share what I am building and learning. Some pieces are polish
 
 ## How It's Written
 
-I work with [Claude Code](https://claude.ai/code) as my ghost writer. I provide the ideas, direction, and editorial judgment. Claude helps me get words on the page.
+I work with agents as ghostwriters. I provide the ideas, direction, and editorial judgment. Agents help me get words on the page.
 
-Sometimes I'll dictate rough thoughts and ask Claude to shape them into coherent prose. Other times I'll describe what I want to communicate and let Claude draft it. I always review, edit, and take responsibility for what gets published.
+Sometimes I'll dictate rough thoughts and ask an agent to shape them into coherent prose. Other times I'll describe what I want to communicate and let an agent draft it. I always review, edit, and take responsibility for what gets published.
 
 This isn't about hiding AI involvement. It's about being transparent: the thinking is mine, the collaboration is real, and the tool is acknowledged. If you're curious about this workflow, that's part of what I'm exploring here.
 
