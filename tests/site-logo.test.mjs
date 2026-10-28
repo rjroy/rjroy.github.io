@@ -59,7 +59,7 @@ export default { ...config, cacheDir: "./.astro-cache" }
       await run(
         process.execPath,
         [
-          path.join(repository, "node_modules/astro/astro.js"),
+          path.join(repository, "node_modules/astro/bin/astro.mjs"),
           "build",
           "--config",
           "astro.fixture.config.mjs",

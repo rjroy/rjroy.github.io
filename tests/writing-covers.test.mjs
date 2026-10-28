@@ -11,6 +11,8 @@ const repository = fileURLToPath(new URL("../", import.meta.url))
 const cover = "/Writing/Covered/Chosen-Cover.svg"
 const bodyImage = "/Writing/Covered/Body-Topper.svg"
 const bodyAlt = "The original body illustration"
+// remark-callout 1.1.1 requires an explicit title, including before the upgrade:
+// https://github.com/rk-terence/gz-remark-callout/issues/4
 const body = `# Fixture covered essay
 
 ![${bodyAlt}](${bodyImage})
@@ -20,6 +22,11 @@ Original opening paragraph.
 ## Original section
 
 Original closing paragraph.
+
+Read [[Writing/Plain/index|the plain essay]].
+
+> [!NOTE] Fixture *note* title
+> Fixture callout text. Read [[Writing/Plain/index|the plain essay from a callout]].
 `
 const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="9"></svg>'
 
@@ -99,7 +106,7 @@ Nested content stays out of the top-level listing.
     }
 
     try {
-      await run(process.execPath, [path.join(repository, "node_modules/astro/astro.js"), "build", "--config", "astro.fixture.config.mjs"], {
+      await run(process.execPath, [path.join(repository, "node_modules/astro/bin/astro.mjs"), "build", "--config", "astro.fixture.config.mjs"], {
         cwd: root,
         env: { ...process.env, ASTRO_TELEMETRY_DISABLED: "1", TZ: "UTC" },
         timeout: 120_000,
@@ -166,5 +173,17 @@ Nested content stays out of the top-level listing.
     assert.match(article(covered), /Original closing paragraph\./)
     assert.ok(article(covered).indexOf(images[0]) < article(covered).indexOf("Original opening paragraph."))
     assert.ok(!covered.includes(cover), "do not add a second article-page hero from cover metadata")
+  })
+
+  it("renders fixture wiki links and callouts through the Markdown plugin pipeline", async () => {
+    const html = await readFile(path.join(root, "dist/writing/covered/index.html"), "utf8")
+    const markup = article(html)
+    assert.match(markup, /<a\b[^>]*href=["']\/writing\/plain\/["'][^>]*>the plain essay<\/a>/)
+    const callout = markup.match(/<blockquote\b[^>]*class=["']callout note["'][^>]*>([\s\S]*?)<\/blockquote>/)?.[1]
+    assert.ok(callout, "retain the styled callout container and normalized type")
+    assert.match(callout, /<div\b[^>]*class=["']callout-title note["'][^>]*>[\s\S]*?<p>Fixture <em>note<\/em> title<\/p>\s*<\/div>/)
+    assert.match(callout, /<div\b[^>]*class=["']callout-content["'][^>]*>\s*<p>Fixture callout text\./)
+    assert.match(callout, /<a\b[^>]*href=["']\/writing\/plain\/["'][^>]*>the plain essay from a callout<\/a>/)
+    assert.doesNotMatch(markup, /\[!NOTE\]|\[\[/, "consume callout and wiki-link syntax")
   })
 })

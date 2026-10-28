@@ -1,11 +1,16 @@
 import { defineConfig } from "astro/config"
-import tailwind from "@astrojs/tailwind"
+import tailwind from "@tailwindcss/vite"
+import { unified } from "@astrojs/markdown-remark"
 import remarkWikiLink from "@flowershow/remark-wiki-link"
 import remarkCallout from "remark-callout"
 import { globbySync } from "globby"
 import { cpSync } from "node:fs"
 import { readFile, realpath, stat } from "node:fs/promises"
 import { extname, isAbsolute, join, relative, resolve, sep } from "node:path"
+
+// @astrojs/check requires TypeScript 6's JavaScript compiler API. The latest
+// remark-wiki-link 4.x npm releases omit their compiled dist files; keep 3.4.0
+// until a usable release is published.
 
 // Build file lists for wiki-link resolution at config time.
 // The plugin matches wiki-link targets against these paths using
@@ -142,12 +147,13 @@ function copyContentImages() {
 export default defineConfig({
   site: "https://rjroy.github.io",
   output: "static",
-  integrations: [tailwind(), copyContentImages()],
+  compressHTML: true,
+  integrations: [copyContentImages()],
   vite: {
-    plugins: [contentImageDevServer()],
+    plugins: [tailwind(), contentImageDevServer()],
   },
   markdown: {
-    remarkPlugins: [
+    processor: unified({ remarkPlugins: [
       [
         remarkWikiLink,
         {
@@ -186,6 +192,6 @@ export default defineConfig({
         },
       ],
       remarkCallout,
-    ],
+    ] }),
   },
 })

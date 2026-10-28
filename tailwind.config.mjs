@@ -3,6 +3,15 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: ["selector", '[data-theme="dark"]'],
   theme: {
+    // Preserve Tailwind 3's effective screen/container sizes. Tailwind 4's
+    // rem caps would scale with this site's 17px root font instead.
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
         // The CSS tokens own both themes; do not maintain a second palette.

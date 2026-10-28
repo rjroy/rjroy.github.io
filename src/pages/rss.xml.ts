@@ -7,6 +7,11 @@ import { SITE_DESCRIPTION, SITE_NAME } from "../site"
 
 const parser = new MarkdownIt()
 
+function renderBody(entry: { id: string; body?: string }) {
+  if (entry.body === undefined) throw new Error(`RSS entry ${entry.id} has no Markdown body`)
+  return sanitizeHtml(parser.render(entry.body))
+}
+
 export async function GET(context: APIContext) {
   const thoughts = await getCollection("thoughts")
   const writing = await getCollection("writing")
@@ -16,7 +21,7 @@ export async function GET(context: APIContext) {
     title: entry.data.title,
     pubDate: entry.data.date,
     link: `/thoughts/${entry.id.toLowerCase()}/`,
-    content: sanitizeHtml(parser.render(entry.body)),
+    content: renderBody(entry),
   }))
 
   // Build RSS items from Writing
@@ -31,7 +36,7 @@ export async function GET(context: APIContext) {
       pubDate: entry.data.date || new Date(0),
       description: entry.data.description || "",
       link: `/writing/${slug}/`,
-      content: sanitizeHtml(parser.render(entry.body)),
+      content: renderBody(entry),
     }
   })
 

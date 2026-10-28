@@ -84,7 +84,7 @@ function isActive(href: string): boolean {
         stroke-width="1.75"
         stroke-linecap="round"
         stroke-linejoin="round"
-        hidden><path d="M6 6l12 12M18 6L6 18"></path></svg
+        style="display: none"><path d="M6 6l12 12M18 6L6 18"></path></svg
       >
     </button>
   </div>
@@ -135,8 +135,8 @@ function isActive(href: string): boolean {
       navToggle.addEventListener("click", function () {
         var open = navMobile.classList.toggle("open")
         navToggle.setAttribute("aria-expanded", String(open))
-        navToggle.querySelector(".menu-icon").hidden = open
-        navToggle.querySelector(".close-icon").hidden = !open
+        navToggle.querySelector(".menu-icon").style.display = open ? "none" : ""
+        navToggle.querySelector(".close-icon").style.display = open ? "" : "none"
       })
     }
   })()

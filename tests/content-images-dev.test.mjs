@@ -76,7 +76,7 @@ export default { ...config, cacheDir: "./.astro-cache" }
     const port = await availablePort()
     origin = `http://127.0.0.1:${port}`
     child = spawn(process.execPath, [
-      path.join(repository, "node_modules/astro/astro.js"),
+      path.join(repository, "node_modules/astro/bin/astro.mjs"),
       "dev",
       "--config", "astro.fixture.config.mjs",
       "--host", "127.0.0.1",

@@ -30,7 +30,7 @@ const displayTags = (tags: string[]) => tags.filter((t) => !structuralTags.has(t
 // Only offer filter chips for statuses that actually appear, and only when
 // there's real variety to filter on (otherwise the row is a no-op toggle).
 const present = new Set(projects.map((p) => p.data.status))
-const filters = ["all", "active", "maintained", "archived"].filter(
+const filters = (["all", "active", "maintained", "archived"] as const).filter(
   (f) => f === "all" || present.has(f),
 )
 const showFilters = present.size > 1

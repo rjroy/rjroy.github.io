@@ -1,12 +1,10 @@
-/* New design system: tokens (variables + fonts) and the component layer
-   from the claude.ai/design handoff. Imported first so PostCSS can hoist
-   them; element base styles live below in @layer base. */
+/* Keep the pre-migration cascade: base, components, then utilities.
+   Tailwind establishes the native layer order before our component import;
+   tokens remain unlayered so the approved palette and fonts stay authoritative. */
 @import "./tokens.css";
-@import "./components.css";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "./components.css" layer(components);
+@config "../../tailwind.config.mjs";
 
 @layer base {
   /* ---------------------------------------------------------------
