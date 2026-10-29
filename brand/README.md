@@ -6,6 +6,8 @@ The user approved the rounded-corner revision already supplied in the portable m
 
 The user approved the site name **Assume the Possible**, unchanged A.5 publication, and supporting palette application. Content, typography, navigation, URLs, homepage composition, and light/dark choice are preserved. The source kit's PNG uses superseded colors and is deliberately omitted. A.1 and the companion PDF are not part of this phase.
 
+The current brand adjustment trials Horizon `#5E8BD6` for site accents and local palette documentation only. The user explicitly excluded the logo: approved SVG masters, public copies, and raster icons remain unchanged, including their original blue.
+
 The upstream guide acquired Libre Baskerville / Source Sans 3 typography during implementation. This phase's explicit instruction to preserve existing typography takes precedence: IM Fell English SC, Vollkorn, and JetBrains Mono remain. No font files are copied or migrated.
 
 Brand artwork is all rights reserved, not CC BY; see `public/brand-artwork-license.txt`. The declared browser icon remains the unchanged SVG. The Apple-touch declaration remains absent; updating the two raster files below does not change page-head behavior. Social previews retain the earlier `/assets/two-cities.webp` landscape rather than the previously missing `/og-image.png`.

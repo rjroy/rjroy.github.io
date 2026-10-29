@@ -49,7 +49,8 @@
   /* Approved core colors: do not substitute earlier gold/blue values. */
   --night: #031315;
   --lantern: #efb83f;
-  --horizon: #26a9db;
+  --horizon: #5e8bd6;
+  --mystery: #8871C5;
   --parchment: #fef6e1;
 
   /* Light surfaces and readable text. Bright accents are not light-mode ink. */
@@ -58,10 +59,10 @@
   --bg-sunken: color-mix(in srgb, var(--night) 7%, var(--parchment));
   --bg-inverse: var(--night);
   --fg: var(--night);
-  --fg-1: var(--night);
-  --fg-2: color-mix(in srgb, var(--night) 80%, var(--parchment));
-  --fg-3: color-mix(in srgb, var(--night) 72%, var(--parchment));
-  --fg-muted: var(--fg-3);
+  --fg-1: color-mix(in srgb, var(--night) 80%, var(--lantern));
+  --fg-2: color-mix(in srgb, var(--night) 80%, var(--horizon));
+  --fg-3: color-mix(in srgb, var(--night) 60%, var(--horizon));
+  --fg-muted: color-mix(in srgb, var(--night) 40%, var(--horizon));
   --fg-on-dark: var(--parchment);
 
   --rule: color-mix(in srgb, var(--night) 28%, var(--parchment));
@@ -194,10 +195,10 @@
   --bg-inverse: var(--parchment);
 
   --fg: var(--parchment);
-  --fg-1: var(--parchment);
-  --fg-2: color-mix(in srgb, var(--parchment) 80%, var(--night));
-  --fg-3: color-mix(in srgb, var(--parchment) 65%, var(--night));
-  --fg-muted: var(--fg-3);
+  --fg-1: color-mix(in srgb, var(--parchment) 10%, var(--lantern));
+  --fg-2: color-mix(in srgb, var(--parchment) 40%, var(--horizon));
+  --fg-3: color-mix(in srgb, var(--parchment) 40%, var(--lantern));
+  --fg-muted: color-mix(in srgb, var(--parchment) 60%, var(--horizon));
 
   --rule: color-mix(in srgb, var(--parchment) 24%, var(--night));
   --rule-strong: color-mix(in srgb, var(--parchment) 55%, var(--night));
@@ -208,11 +209,11 @@
   --link: var(--horizon);
   --link-hover: var(--parchment);
   --focus: var(--horizon);
-  --success: var(--horizon);
-  --warning: var(--lantern);
-  --danger: var(--lantern);
-  --info: var(--horizon);
-  --rune: var(--horizon);
+  --success: var(--lantern);
+  --warning: color-mix(in srgb, var(--parchment) 30%, var(--mystery));
+  --danger: color-mix(in srgb, var(--lantern) 30%, var(--mystery));
+  --info: var(--lantern);
+  --rune: var(--lantern);
 
   /* Shadows — deeper, more contrast against dark */
   --shadow-xs: 0 1px 0 rgba(0, 0, 0, 0.4);

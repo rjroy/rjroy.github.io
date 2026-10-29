@@ -4,7 +4,7 @@ description: The Guide identity applied to Ron's existing public working noteboo
 colors:
   night: "#031315"
   lantern: "#EFB83F"
-  horizon: "#26A9DB"
+  horizon: "#5E8BD6"
   parchment: "#FEF6E1"
 typography:
   display:

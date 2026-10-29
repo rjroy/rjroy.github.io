@@ -54,10 +54,10 @@ The approved palette has **exactly four core colors**:
 | --- | --- | --- |
 | **Night** | `#031315` | Primary background and silhouette |
 | **Lantern** | `#EFB83F` | Warmth, possibility, keystone, fantasy-side accents |
-| **Horizon** | `#26A9DB` | Discovery, future, sci-fi-side accents |
+| **Horizon** | `#5E8BD6` | Discovery, future, sci-fi-side accents |
 | **Parchment** | `#FEF6E1` | Arch, path, negative space, light surfaces |
 
-The gold and blue above are the **refined, approved values**; older values `#FEBE38` and `#1AB7F1` are superseded. The updated SVG supplied for the latest brand-guide revision uses the refined values.
+The gold is the **refined, approved value**; older values `#FEBE38` and `#1AB7F1` are superseded. Horizon `#5E8BD6` is the current site-accent trial. Approved artwork remains unchanged and retains its original Horizon blue `#26A9DB`.
 
 ### Color usage
 
