@@ -10,7 +10,7 @@ The current brand adjustment trials Horizon `#5E8BD6` for site accents and local
 
 The upstream guide acquired Libre Baskerville / Source Sans 3 typography during implementation. This phase's explicit instruction to preserve existing typography takes precedence: IM Fell English SC, Vollkorn, and JetBrains Mono remain. No font files are copied or migrated.
 
-Brand artwork is all rights reserved, not CC BY; see `public/brand-artwork-license.txt`. The declared browser icon remains the unchanged SVG. The Apple-touch declaration remains absent; updating the two raster files below does not change page-head behavior. Social previews retain the earlier `/assets/two-cities.webp` landscape rather than the previously missing `/og-image.png`.
+Brand artwork is all rights reserved, not CC BY; see `public/brand-artwork-license.txt`. The declared browser icon remains the unchanged SVG. The Apple-touch declaration remains absent; updating the two raster files below does not change page-head behavior. The user separately authorized the supplied `/assets/approved-a1.webp` for social previews, replacing `/assets/two-cities.webp` without altering either image.
 
 The user subsequently supplied and authorized `bg.webp` as the homepage background. It was moved losslessly to `public/assets/guide-landscape.webp` after copy verification (SHA256 `145ed921467c09d02d36ddd4bdf15b886408dfb64e6583f4e0af1d746bc4cc6f`). This is the exact supplied artwork, not generated art or an A.5 modification. The mobile background position keeps the guide in view, with a stronger mobile overlay for text contrast; composition, content, fonts, and social metadata are unchanged. Runtime acceptance remains the user's decision.
 
