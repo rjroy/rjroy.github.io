@@ -18,7 +18,7 @@ tags:
 
 Trust is the foundation. I extend it fully from the start. Everyone I work with gets my belief in their competence and good faith. That belief is who I am and I work as I am. It is not currency to be used.
 
-What the job needs, separately, is a way to calibrate alignment. Feedback has to land. When it can't, that's the hardest part of the work. {This doesn't feel true and needs adjustment. "calibrarte alignment" I'm not even sure I know what that means.} 
+I think I'm a teacher at heart. Throughout my life, I've been the person people came to with questions, and I liked sharing the answers. I used to think this was about my skill. There was ego there too. I enjoyed being the hero, asking someone to hold my drink while I saved the company. But after five years in management, I've found there's so much more to be gained by holding someone else's drink.
 
 ---
 
