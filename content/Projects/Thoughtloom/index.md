@@ -3,7 +3,7 @@ title: Thoughtloom
 description: Rebuilding an AI-assisted thinking tool after the first attempt let every interface change reshape the application.
 date: 2026-11-08
 status: active
-cover: /Projects/thoughtloom/screenshots/brand-imagery.webp
+cover: /Projects/Thoughtloom/screenshots/brand-imagery.webp
 tags:
   - area
   - knowledge-management
