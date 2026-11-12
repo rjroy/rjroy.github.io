@@ -299,7 +299,7 @@ def prepare(source_dir, output):
     if decoded_png != bytes(atlas) or decoded_webp != decoded_png:
         raise ValueError("lossless RGBA roundtrip failed")
     metadata = {
-        "status": "placed-for-delivery-not-integrated", "schemaVersion": 1,
+        "status": "integrated-runtime-accepted", "schemaVersion": 1,
         "image": "moth-atlas.webp", "referenceImage": "assets/moth/candidate/moth-atlas.png",
         "imagePathBasis": "relative to this metadata file", "referenceImagePathBasis": "repository root",
         "sourcePathBasis": "assets/moth/sources/ relative to repository root",

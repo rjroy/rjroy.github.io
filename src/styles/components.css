@@ -127,6 +127,18 @@ img[hidden],
   text-decoration: underline;
   text-underline-offset: 0.3em;
 }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+.nav-actions .icon-btn {
+  width: 44px;
+  height: 44px;
+  margin-left: 0;
+  flex-shrink: 0;
+}
 
 .icon-btn {
   width: 40px;
@@ -162,6 +174,37 @@ img[hidden],
 }
 
 /* ---------- Buttons ---------- */
+.moth-sprite {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  pointer-events: none;
+}
+.moth-control-icon {
+  display: flex;
+}
+.moth-control {
+  position: relative;
+}
+.moth-control::after {
+  content: "";
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 7px;
+  height: 7px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.moth-control[aria-pressed="true"] {
+  background: var(--brand-soft);
+}
+.moth-control[aria-pressed="true"]::after {
+  background: currentColor;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -1066,13 +1109,16 @@ img[hidden],
   .nav-links {
     display: none;
   }
+  .nav-actions {
+    margin-left: auto;
+  }
   .nav-toggle {
     display: inline-flex;
   }
   .nav-mobile.open {
     display: block;
     position: absolute;
-    top: 64px;
+    top: 100%;
     left: 0;
     right: 0;
     background: color-mix(in srgb, var(--bg-raised) 96%, transparent);
@@ -1092,7 +1138,7 @@ img[hidden],
   .hero-bg {
     background-position: 72% 38%;
   }
-  /* The approved name is longer; keep both controls inside the same nav. */
+  /* Keep the full site name and all three controls inside the compact bar. */
   .nav-inner {
     gap: var(--space-2);
     padding-inline: var(--space-4);
@@ -1176,6 +1222,12 @@ img[hidden],
 
 /* Respect a visitor's reduced-motion preference: kill the looping
    lantern pulse and the entrance/hover transforms, keep color fades. */
+@media (max-width: 360px) {
+  .nav .brand-name small {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .btn-primary {
     animation: none;

@@ -1,6 +1,7 @@
 ---
 import Nav from "../components/Nav.astro"
 import Footer from "../components/Footer.astro"
+import Moth from "../components/Moth.astro"
 import "../styles/global.css"
 import { IDENTITY_MARK, SITE_DESCRIPTION, SITE_NAME } from "../site"
 
@@ -60,5 +61,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
       )
     }
     <Footer />
+    <Moth />
   </body>
 </html>

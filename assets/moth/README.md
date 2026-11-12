@@ -1,8 +1,8 @@
 # Moth atlas
 
-Status: the user chose to place the atlas and metadata in public for delivery. **No page animation is implemented or runtime behavior accepted.** Preparation review: `rjroy_github_io-6xf`.
+Status: the atlas and metadata are delivered from `public`, the page animation is integrated, and the user has accepted the runtime. Preparation review: `rjroy_github_io-6xf`.
 
-The user authorized transparent, body-aligned derivatives of the two supplied sheets, including a combined atlas and previews. No new artwork was generated or painted. Original source files, the approved brand mark, site components and behavior are unchanged. Source authorship and licensing beyond the supplied artwork are not established here.
+The user authorized transparent, body-aligned derivatives of the two supplied sheets, including a combined atlas and previews. No new artwork was generated or painted. The original source files and approved brand mark remain unchanged. Source authorship and licensing beyond the supplied artwork are not established here.
 
 ## Review
 
@@ -17,11 +17,11 @@ The example cell is **104 × 80 CSS pixels at 10 frames/second**, not a settled 
 - Turning reads right → front → left. The reverse sequence is exactly the opposite order. This is not a full 360-degree rotation. Turning previews ping-pong for convenient review; the metadata specifies one-shot turns.
 - Original dark shadows were retained between overlapping wings and body parts. Simple global color removal lost these shadows and was rejected during preparation.
 - At native resolution, some tiny dark edge flecks and short dark bridges remain around fine fur/antenna gaps, most visible on light backgrounds. These are less apparent at the example size. Teal-composited input cannot reveal exact original coverage or hidden edge colors. This candidate favors retaining the supplied character over aggressive erosion of its dark details.
-- Pivot registration is consistent, but a flight-to-turn pose switch is not guaranteed seamless. Actual page size, timing, reduced-motion treatment, movement and transition behavior remain separate integration decisions.
+- Pivot registration is consistent, but a flight-to-turn pose switch is not guaranteed seamless. Actual page size, timing, reduced-motion treatment, movement and transition behavior were separate integration decisions.
 
 ## Delivery choice
 
-One **4 × 4 atlas, 1664 × 1280 pixels**, holds the eight flight frames followed by the eight turn frames. Equal integer-sized cells avoid the originals' fractional 313.5-pixel columns. A single future request can preload both motions and avoid a second-image transition delay. It also downloads turning frames even when they are unused, a deliberate tradeoff for this small family.
+One **4 × 4 atlas, 1664 × 1280 pixels**, holds the eight flight frames followed by the eight turn frames. Equal integer-sized cells avoid the originals' fractional 313.5-pixel columns. A single request loads both motions and avoids a second-image transition delay. It also downloads turning frames even when they are unused, a deliberate tradeoff for this small family.
 
 | File | Bytes | Role |
 | --- | ---: | --- |
@@ -29,11 +29,9 @@ One **4 × 4 atlas, 1664 × 1280 pixels**, holds the eight flight frames followe
 | Scratch `moth-atlas.png` | 1,356,119 | Regenerable full-resolution transparent reference |
 | `../../public/assets/moth-atlas.json` | — | Exact crops, source pivots, atlas rectangles, bounds, sequences and tools |
 
-Lossless WebP is **23.43% smaller** than PNG, with **byte-identical decoded RGBA, including partial alpha and transparent-pixel RGB**. No lossy or indexed-color compromise was needed. Both decode to 8,519,680 RGBA bytes; this is an image storage calculation, not measured browser/GPU memory. Retaining full source detail avoids silently deciding the eventual UI size. A smaller delivery resolution should be chosen only after that size is approved.
+Lossless WebP is **23.43% smaller** than PNG, with **byte-identical decoded RGBA, including partial alpha and transparent-pixel RGB**. No lossy or indexed-color compromise was needed. Both decode to 8,519,680 RGBA bytes; this is an image storage calculation, not measured browser/GPU memory. Full source detail was retained during preparation rather than deciding the UI size at that stage.
 
-The atlas and JSON metadata are tracked in `public/assets`; the original PNG sheets, recipe and tests are tracked in `assets/moth`. Generated `candidate/` and `review/` directories are ignored optional local artifacts, outside `public`. No page animation is implemented, and no build or deployment changes were made.
-
-Any future page integration and runtime decisions require separate authorization. No site build was run for this asset-only task.
+The atlas and JSON metadata are tracked in `public/assets`; the original PNG sheets, recipe and tests are tracked in `assets/moth`. Generated `candidate/` and `review/` directories are ignored optional local artifacts, outside `public`. The atlas is now used by the accepted page animation.
 
 ## Assembly contract
 
@@ -88,4 +86,4 @@ chromium --headless --disable-gpu --no-sandbox --hide-scrollbars \
 
 The historical `review/contact-sheet.png`, if retained locally, is a 1280 × 1340 overview; the animated area represents one sampled moment. It is optional review evidence, not required for reproduction. Scratch full-resolution inspection composites may remain in `/tmp/opencode/moth-atlas-light-final.png` and `/tmp/opencode/moth-atlas-dark-final.png` from the original session.
 
-The user's commit `4020cef` was left untouched. No commit, push, sync, page integration or runtime acceptance was performed for this relocation.
+At the time of the original relocation, no page integration or runtime acceptance had taken place.
