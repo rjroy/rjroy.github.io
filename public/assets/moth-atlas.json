@@ -1,0 +1,662 @@
+{
+  "status": "integrated-runtime-accepted",
+  "schemaVersion": 1,
+  "image": "moth-atlas.webp",
+  "referenceImage": "assets/moth/candidate/moth-atlas.png",
+  "imagePathBasis": "relative to this metadata file",
+  "referenceImagePathBasis": "repository root",
+  "sourcePathBasis": "assets/moth/sources/ relative to repository root",
+  "width": 1664,
+  "height": 1280,
+  "columns": 4,
+  "rows": 4,
+  "cell": [
+    416,
+    320
+  ],
+  "pivot": [
+    208,
+    176
+  ],
+  "coordinateSystem": "top-left, pixels, x-right y-down",
+  "scale": "1 source pixel = 1 atlas pixel; translation only; matte edge uncompositing, no repainting",
+  "sourceHashes": {
+    "moth-sprite-sheet.png": "d6d02e8fb7998015d6a83f1ebcd95459129b619694af570ae3f1bf9da04da079",
+    "moth-rotation-sprite-sheet.png": "4b9d1e5d06eb3dde643de7216e6177d4010efce294d535fd298026fda298955d"
+  },
+  "tools": {
+    "magick": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+    "cwebp": "1.6.0\nlibsharpyuv: 0.4.2"
+  },
+  "frames": [
+    {
+      "id": "flight-1",
+      "source": "moth-sprite-sheet.png",
+      "sourceCrop": [
+        0,
+        0,
+        314,
+        627
+      ],
+      "sourcePivot": [
+        201,
+        337
+      ],
+      "atlasRect": [
+        0,
+        0,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        18,
+        20,
+        314,
+        281
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        22,
+        25
+      ]
+    },
+    {
+      "id": "flight-2",
+      "source": "moth-sprite-sheet.png",
+      "sourceCrop": [
+        314,
+        0,
+        627,
+        627
+      ],
+      "sourcePivot": [
+        508,
+        348
+      ],
+      "atlasRect": [
+        416,
+        0,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        20,
+        15,
+        321,
+        275
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        21,
+        25
+      ]
+    },
+    {
+      "id": "flight-3",
+      "source": "moth-sprite-sheet.png",
+      "sourceCrop": [
+        627,
+        0,
+        940,
+        627
+      ],
+      "sourcePivot": [
+        819,
+        357
+      ],
+      "atlasRect": [
+        832,
+        0,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        23,
+        15,
+        323,
+        278
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        21,
+        25
+      ]
+    },
+    {
+      "id": "flight-4",
+      "source": "moth-sprite-sheet.png",
+      "sourceCrop": [
+        940,
+        0,
+        1254,
+        627
+      ],
+      "sourcePivot": [
+        1126,
+        370
+      ],
+      "atlasRect": [
+        1248,
+        0,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        54,
+        12,
+        301,
+        276
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        22,
+        25
+      ]
+    },
+    {
+      "id": "flight-5",
+      "source": "moth-sprite-sheet.png",
+      "sourceCrop": [
+        0,
+        627,
+        314,
+        1254
+      ],
+      "sourcePivot": [
+        197,
+        942
+      ],
+      "atlasRect": [
+        0,
+        320,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        71,
+        23,
+        284,
+        293
+      ],
+      "estimatedBackgroundRGB": [
+        2,
+        21,
+        25
+      ]
+    },
+    {
+      "id": "flight-6",
+      "source": "moth-sprite-sheet.png",
+      "sourceCrop": [
+        314,
+        627,
+        627,
+        1254
+      ],
+      "sourcePivot": [
+        508,
+        929
+      ],
+      "atlasRect": [
+        416,
+        320,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        49,
+        24,
+        295,
+        289
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        21,
+        25
+      ]
+    },
+    {
+      "id": "flight-7",
+      "source": "moth-sprite-sheet.png",
+      "sourceCrop": [
+        627,
+        627,
+        940,
+        1254
+      ],
+      "sourcePivot": [
+        819,
+        910
+      ],
+      "atlasRect": [
+        832,
+        320,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        22,
+        28,
+        315,
+        290
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        21,
+        25
+      ]
+    },
+    {
+      "id": "flight-8",
+      "source": "moth-sprite-sheet.png",
+      "sourceCrop": [
+        940,
+        627,
+        1254,
+        1254
+      ],
+      "sourcePivot": [
+        1127,
+        895
+      ],
+      "atlasRect": [
+        1248,
+        320,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        23,
+        32,
+        322,
+        292
+      ],
+      "estimatedBackgroundRGB": [
+        2,
+        21,
+        25
+      ]
+    },
+    {
+      "id": "turn-1",
+      "source": "moth-rotation-sprite-sheet.png",
+      "sourceCrop": [
+        0,
+        0,
+        314,
+        627
+      ],
+      "sourcePivot": [
+        211,
+        337
+      ],
+      "atlasRect": [
+        0,
+        640,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        11,
+        19,
+        301,
+        281
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        22,
+        27
+      ]
+    },
+    {
+      "id": "turn-2",
+      "source": "moth-rotation-sprite-sheet.png",
+      "sourceCrop": [
+        314,
+        0,
+        627,
+        627
+      ],
+      "sourcePivot": [
+        525,
+        341
+      ],
+      "atlasRect": [
+        416,
+        640,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        31,
+        8,
+        281,
+        281
+      ],
+      "estimatedBackgroundRGB": [
+        0,
+        22,
+        28
+      ]
+    },
+    {
+      "id": "turn-3",
+      "source": "moth-rotation-sprite-sheet.png",
+      "sourceCrop": [
+        627,
+        0,
+        940,
+        627
+      ],
+      "sourcePivot": [
+        813,
+        341
+      ],
+      "atlasRect": [
+        832,
+        640,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        58,
+        12,
+        296,
+        286
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        22,
+        28
+      ]
+    },
+    {
+      "id": "turn-4",
+      "source": "moth-rotation-sprite-sheet.png",
+      "sourceCrop": [
+        940,
+        0,
+        1254,
+        627
+      ],
+      "sourcePivot": [
+        1103,
+        343
+      ],
+      "atlasRect": [
+        1248,
+        640,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        49,
+        17,
+        334,
+        276
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        22,
+        27
+      ]
+    },
+    {
+      "id": "turn-5",
+      "source": "moth-rotation-sprite-sheet.png",
+      "sourceCrop": [
+        0,
+        627,
+        314,
+        1254
+      ],
+      "sourcePivot": [
+        140,
+        920
+      ],
+      "atlasRect": [
+        0,
+        960,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        107,
+        8,
+        357,
+        280
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        22,
+        28
+      ]
+    },
+    {
+      "id": "turn-6",
+      "source": "moth-rotation-sprite-sheet.png",
+      "sourceCrop": [
+        314,
+        627,
+        627,
+        1254
+      ],
+      "sourcePivot": [
+        437,
+        918
+      ],
+      "atlasRect": [
+        416,
+        960,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        128,
+        9,
+        353,
+        281
+      ],
+      "estimatedBackgroundRGB": [
+        0,
+        22,
+        28
+      ]
+    },
+    {
+      "id": "turn-7",
+      "source": "moth-rotation-sprite-sheet.png",
+      "sourceCrop": [
+        627,
+        627,
+        940,
+        1254
+      ],
+      "sourcePivot": [
+        735,
+        913
+      ],
+      "atlasRect": [
+        832,
+        960,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        123,
+        13,
+        375,
+        280
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        22,
+        28
+      ]
+    },
+    {
+      "id": "turn-8",
+      "source": "moth-rotation-sprite-sheet.png",
+      "sourceCrop": [
+        940,
+        627,
+        1254,
+        1254
+      ],
+      "sourcePivot": [
+        1047,
+        909
+      ],
+      "atlasRect": [
+        1248,
+        960,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        109,
+        19,
+        392,
+        279
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        22,
+        27
+      ]
+    }
+  ],
+  "sequences": {
+    "flight": {
+      "frames": [
+        "flight-1",
+        "flight-2",
+        "flight-3",
+        "flight-4",
+        "flight-5",
+        "flight-6",
+        "flight-7",
+        "flight-8"
+      ],
+      "loop": true,
+      "exampleFrameDurationMs": 100
+    },
+    "turnRightToLeft": {
+      "frames": [
+        "turn-1",
+        "turn-2",
+        "turn-3",
+        "turn-4",
+        "turn-5",
+        "turn-6",
+        "turn-7",
+        "turn-8"
+      ],
+      "loop": false,
+      "exampleFrameDurationMs": 100
+    },
+    "turnLeftToRight": {
+      "frames": [
+        "turn-8",
+        "turn-7",
+        "turn-6",
+        "turn-5",
+        "turn-4",
+        "turn-3",
+        "turn-2",
+        "turn-1"
+      ],
+      "loop": false,
+      "exampleFrameDurationMs": 100
+    }
+  },
+  "matte": {
+    "backgroundDistanceRGB": 28,
+    "shadowClosingDiskRadiusPixels": 5,
+    "edgeReferenceRadiusPixels": 2,
+    "minimumEdgeAlpha": 0.12
+  },
+  "delivery": {
+    "pngBytes": 1356119,
+    "webpBytes": 1038398,
+    "decodedRGBAIdentical": true,
+    "decodedRGBABytes": 8519680
+  },
+  "preview": {
+    "cellWidthCSSPixels": 104,
+    "cellHeightCSSPixels": 80,
+    "frameDurationMs": 100,
+    "note": "example only, not a site size/timing decision"
+  },
+  "limitations": [
+    "Turning covers right to front to left, not 360 degrees.",
+    "Original frame drawing differences remain; anchors are manually reviewed landmarks.",
+    "Teal-composited source cannot reveal exact original edge coverage or hidden colors.",
+    "Switching flight to turn is not a guaranteed seamless pose match.",
+    "No site integration or runtime acceptance is implied."
+  ]
+}

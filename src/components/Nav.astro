@@ -1,5 +1,6 @@
 ---
 import { IDENTITY_MARK, SITE_NAME } from "../site"
+import mothOutline from "../../assets/moth/icon/moth-outline.svg?raw"
 
 const currentPath = Astro.url.pathname
 
@@ -20,78 +21,14 @@ function isActive(href: string): boolean {
   <div class="nav-inner">
     <a class="brand" href="/">
       <img src={IDENTITY_MARK} alt="" width="34" height="34" />
-      <span class="brand-name">{SITE_NAME}<small>Ron's working notebook</small></span>
+      <span class="brand-name">
+        {SITE_NAME}
+        <small>Ron's working notebook</small>
+      </span>
     </a>
 
     <div class="nav-links">
-      {
-        navLinks.map((link) => (
-          <a
-            class:list={["nav-link", isActive(link.href) && "active"]}
-            href={link.href}
-            aria-current={isActive(link.href) ? "page" : undefined}
-          >
-            {link.label}
-          </a>
-        ))
-      }
-    </div>
-
-    <button class="icon-btn" id="themeToggle" aria-label="Toggle light and dark">
-      <svg
-        class="sun-icon"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.75"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        ><circle cx="12" cy="12" r="4"></circle><path
-          d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
-        ></path></svg
-      >
-      <svg
-        class="moon-icon"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.75"
-        stroke-linecap="round"
-        stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg
-      >
-    </button>
-
-    <button
-      class="icon-btn nav-toggle"
-      id="navToggle"
-      aria-label="Toggle menu"
-      aria-expanded="false"
-    >
-      <svg
-        class="menu-icon"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.75"
-        stroke-linecap="round"
-        stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg
-      >
-      <svg
-        class="close-icon"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.75"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        style="display: none"><path d="M6 6l12 12M18 6L6 18"></path></svg
-      >
-    </button>
-  </div>
-
-  <div class="nav-mobile" id="navMobile">
-    {
-      navLinks.map((link) => (
+      {navLinks.map((link) => (
         <a
           class:list={["nav-link", isActive(link.href) && "active"]}
           href={link.href}
@@ -99,8 +36,89 @@ function isActive(href: string): boolean {
         >
           {link.label}
         </a>
-      ))
-    }
+      ))}
+    </div>
+
+    <div class="nav-actions">
+      <button
+        class="icon-btn moth-control"
+        type="button"
+        aria-label="Hide moth"
+        title="Hide moth"
+        aria-pressed="true"
+        hidden
+      >
+        <span class="moth-control-icon" aria-hidden="true" set:html={mothOutline} />
+      </button>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle light and dark">
+        <svg
+          class="sun-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+        </svg>
+        <svg
+          class="moon-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+        </svg>
+      </button>
+
+      <button
+        class="icon-btn nav-toggle"
+        id="navToggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <svg
+          class="menu-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg
+          class="close-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          style="display: none"
+        >
+          <path d="M6 6l12 12M18 6L6 18"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-mobile" id="navMobile">
+    {navLinks.map((link) => (
+      <a
+        class:list={["nav-link", isActive(link.href) && "active"]}
+        href={link.href}
+        aria-current={isActive(link.href) ? "page" : undefined}
+      >
+        {link.label}
+      </a>
+    ))}
   </div>
 </nav>
 
