@@ -27,6 +27,15 @@ SOURCES = [
         "anchors": [(211, 337), (525, 341), (813, 341), (1103, 343),
                     (140, 920), (437, 918), (735, 913), (1047, 909)],
     },
+    {
+        "file": "moth-read-sprite-sheet.png",
+        "sha256": "d97bce65c15327fcb07384ff1a7b11f3cafca6fa53e311080b8d4e1d37f8e685",
+        "prefix": "read",
+        # Full-source landmarks. Approved registration offsets place poses 3 and 4
+        # 3 and 5 pixels lower than their anatomical landmarks, respectively.
+        "anchors": [(201, 337), (505, 353), (817, 355), (1117, 365),
+                    (196, 939), (511, 922), (821, 904), (1127, 884)],
+    },
 ]
 CELL = (416, 320)
 PIVOT = (208, 176)
@@ -198,7 +207,7 @@ def sequences():
     }
 
 
-def make_previews(output, temp, frames):
+def make_previews(output, temp, frames, records):
     previews = output / "review"
     previews.mkdir(exist_ok=True)
     for index, frame in enumerate(frames):
@@ -213,10 +222,10 @@ def make_previews(output, temp, frames):
             command += ["-loop", "0", "-define", "webp:lossless=true",
                         previews / f"{name}-{theme}.webp"]
             run(command)
-    write_review_html(output)
+    write_review_html(output, records)
 
 
-def write_review_html(output):
+def write_review_html(output, records):
     # Standalone review only. Deliberately outside Astro routes and public assets.
     html = '''<!doctype html>
 <html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
@@ -227,7 +236,7 @@ h1{font-size:28px;margin:0 0 8px}h2{font-size:20px;margin:20px 0 10px}p{margin:8
 .grid{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;max-width:1200px}
 .tile{min-width:0;padding:8px;text-align:center;border:1px solid #8886;border-radius:4px}
 .sprite{width:104px;height:80px;margin:auto;background-image:url('../moth-atlas.png');
-background-size:416px 320px;background-repeat:no-repeat}
+ background-size:416px __ATLAS_HEIGHT__px;background-repeat:no-repeat}
 .checker{background-color:#eee;background-image:conic-gradient(#c7c7c7 25%,transparent 0 50%,#c7c7c7 0 75%,transparent 0);background-size:16px 16px}
 .light{background:#fef6e1}.dark{background:#031315;color:#fef6e1}
 .label{font:12px monospace;margin-top:8px}.animations{display:flex;gap:16px;flex-wrap:wrap}
@@ -244,11 +253,12 @@ background-size:416px 320px;background-repeat:no-repeat}
 for(const theme of ['checker','light','dark']){
  const heading=document.createElement('h2');heading.textContent=theme+' contact sheet';contacts.append(heading);
  const grid=document.createElement('div');grid.className='grid';contacts.append(grid);
- for(let i=0;i<16;i++){
+ const ids=__FRAME_IDS__;
+ for(let i=0;i<ids.length;i++){
   const tile=document.createElement('div');tile.className='tile '+theme;
   const sprite=document.createElement('div');sprite.className='sprite';
   sprite.style.backgroundPosition=`${-(i%4)*104}px ${-Math.floor(i/4)*80}px`;
-  const label=document.createElement('div');label.className='label';label.textContent=(i<8?'flight-':'turn-')+(i%8+1);
+  const label=document.createElement('div');label.className='label';label.textContent=ids[i];
   tile.append(sprite,label);grid.append(tile);
  }
 }
@@ -259,6 +269,8 @@ for(const theme of ['light','dark'])for(const name of ['flight','turn-both-direc
 }
 </script></html>
 '''
+    html = html.replace("__ATLAS_HEIGHT__", str(math.ceil(len(records) / 4) * 80))
+    html = html.replace("__FRAME_IDS__", json.dumps([record["id"] for record in records]))
     (output / "review" / "index.html").write_text(html)
 
 
@@ -303,7 +315,7 @@ def prepare(source_dir, output):
         "image": "moth-atlas.webp", "referenceImage": "assets/moth/candidate/moth-atlas.png",
         "imagePathBasis": "relative to this metadata file", "referenceImagePathBasis": "repository root",
         "sourcePathBasis": "assets/moth/sources/ relative to repository root",
-        "width": width, "height": height, "columns": 4, "rows": 4,
+        "width": width, "height": height, "columns": 4, "rows": height // CELL[1],
         "cell": list(CELL), "pivot": list(PIVOT), "coordinateSystem": "top-left, pixels, x-right y-down",
         "scale": "1 source pixel = 1 atlas pixel; translation only; matte edge uncompositing, no repainting",
         "sourceHashes": {s["file"]: s["sha256"] for s in SOURCES},
@@ -322,7 +334,7 @@ def prepare(source_dir, output):
     }
     (output / "moth-atlas.json").write_text(json.dumps(metadata, indent=2) + "\n")
     with tempfile.TemporaryDirectory(prefix="moth-", dir="/tmp/opencode") as temp:
-        make_previews(output, Path(temp), frames)
+        make_previews(output, Path(temp), frames, records)
     for source in SOURCES:
         if hashlib.sha256((source_dir / source["file"]).read_bytes()).hexdigest() != source["sha256"]:
             raise ValueError("source changed during preparation")

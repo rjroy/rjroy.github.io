@@ -1,14 +1,83 @@
 """Controlled synthetic tests. Real-asset reproduction is a separate verification."""
 
 import unittest
+import hashlib
+import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
 import prepare
 import verify
 
 
 class PreparationTests(unittest.TestCase):
+    def test_read_source_is_registered_after_existing_sources(self):
+        sources = prepare.SOURCES
+        self.assertEqual([source["prefix"] for source in sources], ["flight", "turn", "read"])
+        self.assertEqual(sources[2]["file"], "moth-read-sprite-sheet.png")
+        self.assertEqual(len(sources[2]["anchors"]), 8)
+
+    def test_prepare_packs_three_synthetic_sheets_without_moving_original_frames(self):
+        with TemporaryDirectory() as temp:
+            root = Path(temp)
+            sources = []
+            for prefix in ("flight", "turn", "read"):
+                data = prefix.encode()
+                filename = f"{prefix}.png"
+                (root / filename).write_bytes(data)
+                sources.append({"file": filename, "sha256": hashlib.sha256(data).hexdigest(),
+                                "prefix": prefix, "anchors": [(0, 0)] * 8})
+
+            encoded = {}
+
+            def write_png(path, rgba, width, height):
+                encoded["rgba"] = bytes(rgba)
+                path.write_bytes(b"png")
+
+            def run(command):
+                if command[0] == "cwebp":
+                    Path(command[-1]).write_bytes(b"webp")
+                    return b""
+                if command[1] == "identify":
+                    return b"1254x1254"
+                if str(command[1]).endswith(("moth-atlas.png", "moth-atlas.webp")):
+                    return encoded["rgba"]
+                return b"synthetic source"
+
+            with (patch.object(prepare, "SOURCES", sources),
+                  patch.object(prepare, "check_tools", return_value={}),
+                  patch.object(prepare, "run", side_effect=run),
+                  patch.object(prepare, "crop_boxes", return_value=[(0, 0, 1, 1)] * 8),
+                  patch.object(prepare, "crop_rgb", return_value=b"rgb"),
+                  patch.object(prepare, "matte", return_value=(bytes([1, 2, 3, 255]), (0, 0, 0))),
+                  patch.object(prepare, "write_png", side_effect=write_png),
+                  patch.object(prepare, "make_previews")):
+                output = root / "output"
+                prepare.prepare(root, output)
+
+            metadata = json.loads((output / "moth-atlas.json").read_text())
+            self.assertEqual((metadata["columns"], metadata["rows"]), (4, 6))
+            self.assertEqual((metadata["width"], metadata["height"]), (1664, 1920))
+            self.assertEqual(metadata["cell"], [416, 320])
+            self.assertEqual(metadata["pivot"], [208, 176])
+            frames = metadata["frames"]
+            self.assertEqual([frame["id"] for frame in frames],
+                             [f"{prefix}-{i}" for prefix in ("flight", "turn", "read")
+                              for i in range(1, 9)])
+            for index, frame in enumerate(frames):
+                self.assertEqual(frame["atlasRect"], [index % 4 * 416, index // 4 * 320, 416, 320])
+                self.assertEqual(frame["pivot"], [208, 176])
+                self.assertEqual(frame["visibleBounds"], [208, 176, 209, 177])
+                self.assertEqual(frame["source"], sources[index // 8]["file"])
+            sequences = metadata["sequences"]
+            self.assertEqual(sequences["flight"]["frames"], [f"flight-{i}" for i in range(1, 9)])
+            self.assertTrue(sequences["flight"]["loop"])
+            self.assertEqual(sequences["turnRightToLeft"]["frames"], [f"turn-{i}" for i in range(1, 9)])
+            self.assertEqual(sequences["turnLeftToRight"]["frames"], [f"turn-{i}" for i in range(8, 0, -1)])
+            self.assertFalse(sequences["turnRightToLeft"]["loop"])
+            self.assertFalse(sequences["turnLeftToRight"]["loop"])
+
     def test_verification_uses_scratch_previews_without_local_artifacts(self):
         with TemporaryDirectory() as temp:
             root = Path(temp)

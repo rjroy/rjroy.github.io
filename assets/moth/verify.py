@@ -46,8 +46,10 @@ def verify():
     if not ({0, 255} <= alphas and any(0 < a < 255 for a in alphas)):
         raise AssertionError("expected transparent, opaque and partial-alpha pixels")
     ids = {frame["id"] for frame in metadata["frames"]}
-    if len(ids) != 16:
-        raise AssertionError("expected sixteen unique frames")
+    expected_ids = {f"{prefix}-{index}" for prefix in ("flight", "turn", "read")
+                    for index in range(1, 9)}
+    if len(metadata["frames"]) != 24 or ids != expected_ids:
+        raise AssertionError("expected 24 unique flight, turn and read frames")
     for sequence in metadata["sequences"].values():
         if any(frame not in ids for frame in sequence["frames"]):
             raise AssertionError("sequence references an unknown frame")
