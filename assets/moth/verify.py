@@ -46,15 +46,15 @@ def verify():
     if not ({0, 255} <= alphas and any(0 < a < 255 for a in alphas)):
         raise AssertionError("expected transparent, opaque and partial-alpha pixels")
     ids = {frame["id"] for frame in metadata["frames"]}
-    expected_ids = {f"{prefix}-{index}" for prefix in ("flight", "turn", "read")
-                    for index in range(1, 9)}
-    if len(metadata["frames"]) != 24 or ids != expected_ids:
-        raise AssertionError("expected 24 unique flight, turn and read frames")
+    expected_ids = {f"{prefix}-{index}" for prefix, count in (("flight", 8), ("turn", 8), ("read", 16))
+                    for index in range(1, count + 1)}
+    if len(metadata["frames"]) != 32 or ids != expected_ids:
+        raise AssertionError("expected 32 unique flight, turn and read frames")
     for sequence in metadata["sequences"].values():
         if any(frame not in ids for frame in sequence["frames"]):
             raise AssertionError("sequence references an unknown frame")
-    if metadata["sequences"].get("read", {}).get("frames") != [f"read-{i}" for i in range(1, 9)]:
-        raise AssertionError("read sequence must contain the eight poses in source order")
+    if metadata["sequences"].get("read", {}).get("frames") != [f"read-{i}" for i in range(1, 17)]:
+        raise AssertionError("read sequence must contain the sixteen poses in source order")
     for frame in metadata["frames"]:
         x, y, w, h = frame["atlasRect"]
         if x < 0 or y < 0 or x + w > width or y + h > height:

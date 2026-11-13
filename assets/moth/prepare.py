@@ -28,13 +28,17 @@ SOURCES = [
                     (140, 920), (437, 918), (735, 913), (1047, 909)],
     },
     {
-        "file": "moth-read-sprite-sheet.png",
-        "sha256": "d97bce65c15327fcb07384ff1a7b11f3cafca6fa53e311080b8d4e1d37f8e685",
+        "file": "moth-read2-sprite-sheet.png",
+        "sha256": "ec107244866561350588714d653370af998c97bd0f6654dab256895c895b1a32",
         "prefix": "read",
-        # Full-source landmarks. Approved registration offsets place poses 3 and 4
-        # 3 and 5 pixels lower than their anatomical landmarks, respectively.
-        "anchors": [(201, 337), (505, 353), (817, 355), (1117, 365),
-                    (196, 939), (511, 922), (821, 904), (1127, 884)],
+        "rows": 4,
+        "scale": 1.2,
+        # Full-source landmarks. The twelfth pose is placed one scaled pixel lower.
+        "anchors": [(189, 183), (502, 175), (812, 161), (1124, 150),
+                    (190, 458), (502, 463), (812, 470), (1120, 475),
+                    (185, 790), (489, 801), (799, 807), (1105, 815),
+                    (178, 1120), (493, 1113), (808, 1106), (1121, 1101)],
+        "offsets": {11: (0, 1)},
     },
 ]
 CELL = (416, 320)
@@ -64,11 +68,11 @@ def check_tools():
     return versions
 
 
-def crop_boxes(width, height):
+def crop_boxes(width, height, rows=2):
     """Integer, exhaustive partition. Original column boundaries are fractional."""
-    return [(round(c * width / 4), r * (height // 2),
-             round((c + 1) * width / 4), (r + 1) * (height // 2))
-            for r in range(2) for c in range(4)]
+    return [(round(c * width / 4), round(r * height / rows),
+             round((c + 1) * width / 4), round((r + 1) * height / rows))
+            for r in range(rows) for c in range(4)]
 
 
 def crop_rgb(rgb, width, box):
@@ -176,6 +180,17 @@ def register(rgba, width, height, anchor, cell=CELL, pivot=PIVOT):
     return result, bounds
 
 
+def scale_rgba(rgba, width, height, scale):
+    """Resize a matted crop using the approved preview's ImageMagick operation."""
+    scaled_width, scaled_height = round(width * scale), round(height * scale)
+    scaled = run(["magick", "-size", f"{width}x{height}", "-depth", "8", "rgba:-",
+                  "-resize", f"{scaled_width}x{scaled_height}!", "-depth", "8", "rgba:-"],
+                 bytes(rgba))
+    if len(scaled) != scaled_width * scaled_height * 4:
+        raise ValueError("resized RGBA dimensions do not match output")
+    return scaled, scaled_width, scaled_height
+
+
 def write_png(path, rgba, width, height):
     run(["magick", "-size", f"{width}x{height}", "-depth", "8", "rgba:-",
          "-strip", "-define", "png:exclude-chunks=date,time", "-define",
@@ -204,7 +219,7 @@ def sequences():
                             "exampleFrameDurationMs": 100},
         "turnLeftToRight": {"frames": [f"turn-{i}" for i in range(8, 0, -1)], "loop": False,
                             "exampleFrameDurationMs": 100},
-        "read": {"frames": [f"read-{i}" for i in range(1, 9)], "loop": True},
+        "read": {"frames": [f"read-{i}" for i in range(1, 17)], "loop": True},
     }
 
 
@@ -290,18 +305,32 @@ def prepare(source_dir, output):
         if dimensions != "1254x1254":
             raise ValueError(f"unexpected dimensions: {dimensions}")
         rgb = run(["magick", path, "-depth", "8", "rgb:-"])
-        for index, (box, anchor) in enumerate(zip(crop_boxes(1254, 1254), source["anchors"])):
+        boxes = crop_boxes(1254, 1254, source.get("rows", 2))
+        if len(boxes) != len(source["anchors"]):
+            raise ValueError(f"crop/anchor count mismatch: {path}")
+        for index, (box, anchor) in enumerate(zip(boxes, source["anchors"])):
             width, height = box[2] - box[0], box[3] - box[1]
             rgba, background = matte(crop_rgb(rgb, 1254, box), width, height)
             local_anchor = (anchor[0] - box[0], anchor[1] - box[1])
+            offset = source.get("offsets", {}).get(index, (0, 0))
+            if "scale" in source:
+                rgba, scaled_width, scaled_height = scale_rgba(rgba, width, height, source["scale"])
+                local_anchor = (round(local_anchor[0] * scaled_width / width),
+                                round(local_anchor[1] * scaled_height / height))
+                width, height = scaled_width, scaled_height
+            local_anchor = (local_anchor[0] - offset[0], local_anchor[1] - offset[1])
             registered, bounds = register(rgba, width, height, local_anchor)
             frame_index = len(frames)
             frames.append(registered)
-            records.append({"id": f"{source['prefix']}-{index + 1}", "source": source["file"],
+            record = {"id": f"{source['prefix']}-{index + 1}", "source": source["file"],
                             "sourceCrop": list(box), "sourcePivot": list(anchor),
                             "atlasRect": [frame_index % 4 * CELL[0], frame_index // 4 * CELL[1], *CELL],
                             "pivot": list(PIVOT), "visibleBounds": list(bounds),
-                            "estimatedBackgroundRGB": list(background)})
+                            "estimatedBackgroundRGB": list(background)}
+            if "scale" in source:
+                record.update({"scale": source["scale"], "scaledSize": [width, height],
+                               "registrationOffset": list(offset)})
+            records.append(record)
     atlas, width, height = pack(frames)
     png, webp = output / "moth-atlas.png", output / "moth-atlas.webp"
     write_png(png, atlas, width, height)
@@ -318,7 +347,7 @@ def prepare(source_dir, output):
         "sourcePathBasis": "assets/moth/sources/ relative to repository root",
         "width": width, "height": height, "columns": 4, "rows": height // CELL[1],
         "cell": list(CELL), "pivot": list(PIVOT), "coordinateSystem": "top-left, pixels, x-right y-down",
-        "scale": "1 source pixel = 1 atlas pixel; translation only; matte edge uncompositing, no repainting",
+        "scale": "flight and turn: 1 source pixel = 1 atlas pixel; read: 1.2x RGBA resize; matte edge uncompositing, no repainting",
         "sourceHashes": {s["file"]: s["sha256"] for s in SOURCES},
         "tools": versions, "frames": records, "sequences": sequences(),
         "matte": {"backgroundDistanceRGB": 28, "shadowClosingDiskRadiusPixels": 5,

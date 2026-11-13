@@ -206,7 +206,7 @@ for (const scenario of [
       Object.defineProperty(globalThis, name, { configurable: true, writable: true, value })
       t.after(() => original ? Object.defineProperty(globalThis, name, original) : delete globalThis[name])
     }
-    t.mock.method(Math, "random", () => 0.5)
+    t.mock.method(Math, "random", () => time === 9000 ? 0.1 : 0.5)
     await startMoth()
     // With the controlled RNG, advance through the initial pause, travel, and
     // enough of the next pause for any attention turn to complete.
@@ -231,7 +231,7 @@ for (const scenario of [
   })
 }
 
-function readingFixture(t, readSequence = { frames: Array.from({ length: 8 }, (_, i) => `read-${i + 1}`) }) {
+function readingFixture(t, readSequence = { frames: Array.from({ length: 16 }, (_, i) => `read-${i + 1}`) }, choices = [0.1, 0.1]) {
   const draws = []
   let time = 0
   const context = {
@@ -266,7 +266,7 @@ function readingFixture(t, readSequence = { frames: Array.from({ length: 8 }, (_
     frames: [
       { id: "flight", atlasRect: [0, 0, 100, 100] },
       { id: "turn", atlasRect: [100, 0, 100, 100] },
-      ...Array.from({ length: 8 }, (_, i) => ({ id: `read-${i + 1}`, atlasRect: [300 + i * 100, 0, 100, 100] })),
+      ...Array.from({ length: 16 }, (_, i) => ({ id: `read-${i + 1}`, atlasRect: [300 + i * 100, 0, 100, 100] })),
     ],
     sequences: {
       flight: { frames: ["flight"] },
@@ -288,7 +288,9 @@ function readingFixture(t, readSequence = { frames: Array.from({ length: 8 }, (_
     Object.defineProperty(globalThis, name, { configurable: true, writable: true, value })
     t.after(() => original ? Object.defineProperty(globalThis, name, original) : delete globalThis[name])
   }
-  t.mock.method(Math, "random", () => 0.5)
+  // All other random choices use 0.5. Arrival ticks independently select the
+  // visit variant; values near 0.25 also keep the existing timing windows stable.
+  t.mock.method(Math, "random", () => time === 9000 ? choices[0] : time === 17000 ? choices[1] : 0.5)
   return {
     draws, frames, canvas, control, document,
     step(nextTime) {
@@ -301,30 +303,45 @@ function readingFixture(t, readSequence = { frames: Array.from({ length: 8 }, (_
   }
 }
 
-it("reads in order at a target, pauses at endpoints, and flies on departure", async (t) => {
-  const fixture = readingFixture(t)
+it("reads all 16 poses at uniform 110ms cadence and flies on departure", async (t) => {
+  const fixture = readingFixture(t, undefined, [0.249, 0.25])
   await startMoth()
-  for (let time = 0; time <= 18000; time += 50) fixture.step(time)
+  for (let time = 0; time <= 18000; time += 10) fixture.step(time)
   const { draws } = fixture
   assert.ok(draws.filter(({ time }) => time < 9000).every(({ sourceX }) => sourceX < 300),
     "initial idle and travel must not use reading poses")
-  const hover = draws.filter(({ time }) => time >= 9000 && time < 15000)
+  const hover = draws.filter(({ time }) => time >= 9000 && time < 14000)
   const runs = []
   for (const { sourceX } of hover) {
     if (runs.at(-1)?.sourceX === sourceX) runs.at(-1).count++
     else runs.push({ sourceX, count: 1 })
   }
-  assert.deepEqual(runs.slice(0, 9).map(({ sourceX }) => sourceX),
-    [300, 400, 500, 600, 700, 800, 900, 1000, 300],
-    "each investigation starts at read-1 and loops forward through all eight poses")
-  assert.ok(runs[3].count > runs[1].count && runs[7].count > runs[1].count,
-    "both look endpoints must pause longer than an intermediate pose")
-  assert.ok(draws.filter(({ time }) => time >= 15000 && time < 17500)
+  assert.deepEqual(runs.slice(0, 17).map(({ sourceX }) => sourceX),
+    [...Array.from({ length: 16 }, (_, i) => 300 + 100 * i), 300],
+    "each selected visit loops forward through all sixteen poses")
+  assert.deepEqual(runs.slice(0, 16).map(({ count }) => count), Array(16).fill(11),
+    "every pose lasts 110ms, without the old endpoint holds")
+  assert.ok(draws.filter(({ time }) => time >= 14000 && time < 16500)
     .some(({ sourceX }) => sourceX === 0), "departure resumes flight without waiting for a read cycle")
 })
 
+for (const [first, second, firstReads] of [[0.249, 0.25, true], [0.25, 0.249, false]]) {
+  it(`selects one stable visit variant at threshold ${first}, then reevaluates ${second}`, async (t) => {
+    const fixture = readingFixture(t, undefined, [first, second])
+    await startMoth()
+    for (let time = 0; time <= 19500; time += 10) fixture.step(time)
+    const firstHover = fixture.draws.filter(({ time }) => time >= 9050 && time < 13950)
+    const secondHover = fixture.draws.filter(({ time }) => time >= 17050 && time < 19450)
+    assert.ok(firstHover.length && secondHover.length)
+    assert.ok(firstHover.every(({ sourceX }) => firstReads ? sourceX >= 300 : sourceX === 0),
+      "first visit must keep its selected variant despite later RNG values")
+    assert.ok(secondHover.every(({ sourceX }) => firstReads ? sourceX === 0 : sourceX >= 300),
+      "next target visit must make a fresh selection and keep it")
+  })
+}
+
 it("does not fast-forward reading while the tab is hidden", async (t) => {
-  const fixture = readingFixture(t)
+  const fixture = readingFixture(t, undefined, [0.249, 0.25])
   await startMoth()
   for (let time = 0; time <= 9800; time += 50) fixture.step(time)
   const before = fixture.draws.at(-1).sourceX

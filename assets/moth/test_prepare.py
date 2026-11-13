@@ -15,30 +15,46 @@ class PreparationTests(unittest.TestCase):
     def test_read_source_is_registered_after_existing_sources(self):
         sources = prepare.SOURCES
         self.assertEqual([source["prefix"] for source in sources], ["flight", "turn", "read"])
-        self.assertEqual(sources[2]["file"], "moth-read-sprite-sheet.png")
-        self.assertEqual(len(sources[2]["anchors"]), 8)
+        self.assertEqual(sources[2]["file"], "moth-read2-sprite-sheet.png")
+        self.assertEqual(len(sources[2]["anchors"]), 16)
 
     def test_prepare_packs_three_synthetic_sheets_without_moving_original_frames(self):
         with TemporaryDirectory() as temp:
             root = Path(temp)
             sources = []
-            for prefix in ("flight", "turn", "read"):
+            fixture_specs = (
+                {"prefix": "flight", "rows": 2},
+                {"prefix": "turn", "rows": 2},
+                {"prefix": "read", "rows": 4, "scale": 1.2, "offsets": {11: (0, 1)}},
+            )
+            for spec in fixture_specs:
+                prefix = spec["prefix"]
                 data = prefix.encode()
                 filename = f"{prefix}.png"
                 (root / filename).write_bytes(data)
-                sources.append({"file": filename, "sha256": hashlib.sha256(data).hexdigest(),
-                                "prefix": prefix, "anchors": [(0, 0)] * 8})
+                source = {**spec, "file": filename, "sha256": hashlib.sha256(data).hexdigest(),
+                          "anchors": [(0, 0)] * (spec["rows"] * 4)}
+                sources.append(source)
 
             encoded = {}
+            registrations = []
+
+            def register(rgba, width, height, anchor, **kwargs):
+                registrations.append((width, height, anchor))
+                return bytes(416 * 320 * 4), (208, 176, 209, 177)
 
             def write_png(path, rgba, width, height):
                 encoded["rgba"] = bytes(rgba)
                 path.write_bytes(b"png")
 
-            def run(command):
+            def run(command, data=None):
                 if command[0] == "cwebp":
                     Path(command[-1]).write_bytes(b"webp")
                     return b""
+                if "-resize" in command:
+                    self.assertEqual(data, bytes([1, 2, 3, 255]))
+                    width, height = map(int, command[command.index("-resize") + 1].rstrip("!").split("x"))
+                    return bytes([1, 2, 3, 255]) * (width * height)
                 if command[1] == "identify":
                     return b"1254x1254"
                 if str(command[1]).endswith(("moth-atlas.png", "moth-atlas.webp")):
@@ -48,28 +64,28 @@ class PreparationTests(unittest.TestCase):
             with (patch.object(prepare, "SOURCES", sources),
                   patch.object(prepare, "check_tools", return_value={}),
                   patch.object(prepare, "run", side_effect=run),
-                  patch.object(prepare, "crop_boxes", return_value=[(0, 0, 1, 1)] * 8),
                   patch.object(prepare, "crop_rgb", return_value=b"rgb"),
                   patch.object(prepare, "matte", return_value=(bytes([1, 2, 3, 255]), (0, 0, 0))),
+                  patch.object(prepare, "register", side_effect=register),
                   patch.object(prepare, "write_png", side_effect=write_png),
                   patch.object(prepare, "make_previews")):
                 output = root / "output"
                 prepare.prepare(root, output)
 
             metadata = json.loads((output / "moth-atlas.json").read_text())
-            self.assertEqual((metadata["columns"], metadata["rows"]), (4, 6))
-            self.assertEqual((metadata["width"], metadata["height"]), (1664, 1920))
+            self.assertEqual((metadata["columns"], metadata["rows"]), (4, 8))
+            self.assertEqual((metadata["width"], metadata["height"]), (1664, 2560))
             self.assertEqual(metadata["cell"], [416, 320])
             self.assertEqual(metadata["pivot"], [208, 176])
             frames = metadata["frames"]
             self.assertEqual([frame["id"] for frame in frames],
-                             [f"{prefix}-{i}" for prefix in ("flight", "turn", "read")
-                              for i in range(1, 9)])
+                             [f"{prefix}-{i}" for prefix, count in (("flight", 8), ("turn", 8), ("read", 16))
+                              for i in range(1, count + 1)])
             for index, frame in enumerate(frames):
                 self.assertEqual(frame["atlasRect"], [index % 4 * 416, index // 4 * 320, 416, 320])
                 self.assertEqual(frame["pivot"], [208, 176])
                 self.assertEqual(frame["visibleBounds"], [208, 176, 209, 177])
-                self.assertEqual(frame["source"], sources[index // 8]["file"])
+                self.assertEqual(frame["source"], sources[min(index // 8, 2)]["file"])
             sequences = metadata["sequences"]
             self.assertEqual(sequences["flight"]["frames"], [f"flight-{i}" for i in range(1, 9)])
             self.assertTrue(sequences["flight"]["loop"])
@@ -77,7 +93,39 @@ class PreparationTests(unittest.TestCase):
             self.assertEqual(sequences["turnLeftToRight"]["frames"], [f"turn-{i}" for i in range(8, 0, -1)])
             self.assertFalse(sequences["turnRightToLeft"]["loop"])
             self.assertFalse(sequences["turnLeftToRight"]["loop"])
-            self.assertEqual(sequences["read"]["frames"], [f"read-{i}" for i in range(1, 9)])
+            self.assertEqual(sequences["read"]["frames"], [f"read-{i}" for i in range(1, 17)])
+            self.assertEqual(len({tuple(frame["sourceCrop"]) for frame in frames[16:]}), 16,
+                             "read crops must cover the 4x4 source rather than 4x2")
+            for index, frame in enumerate(frames):
+                left, top, right, bottom = frame["sourceCrop"]
+                source_width, source_height = right - left, bottom - top
+                source_index = min(index // 8, 2)
+                spec = fixture_specs[source_index]
+                local_index = index - (0, 8, 16)[source_index]
+                scale = spec.get("scale", 1)
+                width, height = round(source_width * scale), round(source_height * scale)
+                offset_x, offset_y = spec.get("offsets", {}).get(local_index, (0, 0))
+                anchor = (round(-left * width / source_width) - offset_x,
+                          round(-top * height / source_height) - offset_y)
+                self.assertEqual(registrations[index], (width, height, anchor), frame["id"])
+
+    def test_scale_rgba_resizes_to_rounded_dimensions_with_approved_command(self):
+        rgba = bytes(range(60))  # 5 x 3 owned RGBA pixels
+        scaled = bytes(range(96))  # 6 x 4 controlled output
+        with patch.object(prepare, "run", return_value=scaled) as run:
+            result, width, height = prepare.scale_rgba(rgba, 5, 3, 1.2)
+        self.assertEqual((width, height), (6, 4))
+        self.assertEqual(result, scaled)
+        run.assert_called_once_with(
+            ["magick", "-size", "5x3", "-depth", "8", "rgba:-", "-resize", "6x4!",
+             "-depth", "8", "rgba:-"], rgba)
+
+    def test_scale_rgba_rejects_incorrect_output_length(self):
+        rgba = bytes(5 * 3 * 4)
+        for length in (95, 97):
+            with self.subTest(length=length), patch.object(prepare, "run", return_value=bytes(length)):
+                with self.assertRaisesRegex(ValueError, "resized RGBA dimensions"):
+                    prepare.scale_rgba(rgba, 5, 3, 1.2)
 
     def test_verification_uses_scratch_previews_without_local_artifacts(self):
         with TemporaryDirectory() as temp:

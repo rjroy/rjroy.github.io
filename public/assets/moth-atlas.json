@@ -7,9 +7,9 @@
   "referenceImagePathBasis": "repository root",
   "sourcePathBasis": "assets/moth/sources/ relative to repository root",
   "width": 1664,
-  "height": 1920,
+  "height": 2560,
   "columns": 4,
-  "rows": 6,
+  "rows": 8,
   "cell": [
     416,
     320
@@ -19,11 +19,11 @@
     176
   ],
   "coordinateSystem": "top-left, pixels, x-right y-down",
-  "scale": "1 source pixel = 1 atlas pixel; translation only; matte edge uncompositing, no repainting",
+  "scale": "flight and turn: 1 source pixel = 1 atlas pixel; read: 1.2x RGBA resize; matte edge uncompositing, no repainting",
   "sourceHashes": {
     "moth-sprite-sheet.png": "d6d02e8fb7998015d6a83f1ebcd95459129b619694af570ae3f1bf9da04da079",
     "moth-rotation-sprite-sheet.png": "4b9d1e5d06eb3dde643de7216e6177d4010efce294d535fd298026fda298955d",
-    "moth-read-sprite-sheet.png": "d97bce65c15327fcb07384ff1a7b11f3cafca6fa53e311080b8d4e1d37f8e685"
+    "moth-read2-sprite-sheet.png": "ec107244866561350588714d653370af998c97bd0f6654dab256895c895b1a32"
   },
   "tools": {
     "magick": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
@@ -592,16 +592,16 @@
     },
     {
       "id": "read-1",
-      "source": "moth-read-sprite-sheet.png",
+      "source": "moth-read2-sprite-sheet.png",
       "sourceCrop": [
         0,
         0,
         314,
-        627
+        314
       ],
       "sourcePivot": [
-        201,
-        337
+        189,
+        183
       ],
       "atlasRect": [
         0,
@@ -614,29 +614,38 @@
         176
       ],
       "visibleBounds": [
-        23,
         19,
-        316,
-        280
+        25,
+        328,
+        275
       ],
       "estimatedBackgroundRGB": [
         1,
         21,
         25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        377,
+        377
+      ],
+      "registrationOffset": [
+        0,
+        0
       ]
     },
     {
       "id": "read-2",
-      "source": "moth-read-sprite-sheet.png",
+      "source": "moth-read2-sprite-sheet.png",
       "sourceCrop": [
         314,
         0,
         627,
-        627
+        314
       ],
       "sourcePivot": [
-        505,
-        353
+        502,
+        175
       ],
       "atlasRect": [
         416,
@@ -649,29 +658,38 @@
         176
       ],
       "visibleBounds": [
-        28,
-        2,
-        322,
-        268
+        17,
+        24,
+        325,
+        277
       ],
       "estimatedBackgroundRGB": [
-        0,
+        1,
         21,
         25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        376,
+        377
+      ],
+      "registrationOffset": [
+        0,
+        0
       ]
     },
     {
       "id": "read-3",
-      "source": "moth-read-sprite-sheet.png",
+      "source": "moth-read2-sprite-sheet.png",
       "sourceCrop": [
         627,
         0,
         940,
-        627
+        314
       ],
       "sourcePivot": [
-        817,
-        355
+        812,
+        161
       ],
       "atlasRect": [
         832,
@@ -684,33 +702,350 @@
         176
       ],
       "visibleBounds": [
-        27,
-        2,
-        320,
-        268
+        20,
+        35,
+        328,
+        276
       ],
       "estimatedBackgroundRGB": [
-        0,
+        1,
         21,
         25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        376,
+        377
+      ],
+      "registrationOffset": [
+        0,
+        0
       ]
     },
     {
       "id": "read-4",
-      "source": "moth-read-sprite-sheet.png",
+      "source": "moth-read2-sprite-sheet.png",
       "sourceCrop": [
         940,
         0,
         1254,
-        627
+        314
       ],
       "sourcePivot": [
-        1117,
-        365
+        1124,
+        150
       ],
       "atlasRect": [
         1248,
         1280,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        16,
+        37,
+        329,
+        278
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        21,
+        25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        377,
+        377
+      ],
+      "registrationOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "read-5",
+      "source": "moth-read2-sprite-sheet.png",
+      "sourceCrop": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "sourcePivot": [
+        190,
+        458
+      ],
+      "atlasRect": [
+        0,
+        1600,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        15,
+        36,
+        329,
+        281
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        21,
+        25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        377,
+        376
+      ],
+      "registrationOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "read-6",
+      "source": "moth-read2-sprite-sheet.png",
+      "sourceCrop": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "sourcePivot": [
+        502,
+        463
+      ],
+      "atlasRect": [
+        416,
+        1600,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        16,
+        31,
+        330,
+        279
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        21,
+        25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        376,
+        376
+      ],
+      "registrationOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "read-7",
+      "source": "moth-read2-sprite-sheet.png",
+      "sourceCrop": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "sourcePivot": [
+        812,
+        470
+      ],
+      "atlasRect": [
+        832,
+        1600,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        19,
+        23,
+        332,
+        277
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        21,
+        25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        376,
+        376
+      ],
+      "registrationOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "read-8",
+      "source": "moth-read2-sprite-sheet.png",
+      "sourceCrop": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "sourcePivot": [
+        1120,
+        475
+      ],
+      "atlasRect": [
+        1248,
+        1600,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        21,
+        17,
+        334,
+        277
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        21,
+        25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        377,
+        376
+      ],
+      "registrationOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "read-9",
+      "source": "moth-read2-sprite-sheet.png",
+      "sourceCrop": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "sourcePivot": [
+        185,
+        790
+      ],
+      "atlasRect": [
+        0,
+        1920,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        20,
+        18,
+        335,
+        277
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        21,
+        25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        377,
+        376
+      ],
+      "registrationOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "read-10",
+      "source": "moth-read2-sprite-sheet.png",
+      "sourceCrop": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "sourcePivot": [
+        489,
+        801
+      ],
+      "atlasRect": [
+        416,
+        1920,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        32,
+        6,
+        336,
+        267
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        22,
+        25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        376,
+        376
+      ],
+      "registrationOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "read-11",
+      "source": "moth-read2-sprite-sheet.png",
+      "sourceCrop": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "sourcePivot": [
+        799,
+        807
+      ],
+      "atlasRect": [
+        832,
+        1920,
         416,
         320
       ],
@@ -720,32 +1055,41 @@
       ],
       "visibleBounds": [
         36,
-        2,
-        322,
-        259
+        5,
+        325,
+        265
       ],
       "estimatedBackgroundRGB": [
-        0,
-        21,
+        1,
+        22,
         25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        376,
+        376
+      ],
+      "registrationOffset": [
+        0,
+        0
       ]
     },
     {
-      "id": "read-5",
-      "source": "moth-read-sprite-sheet.png",
+      "id": "read-12",
+      "source": "moth-read2-sprite-sheet.png",
       "sourceCrop": [
-        0,
+        940,
         627,
-        314,
-        1254
+        1254,
+        940
       ],
       "sourcePivot": [
-        196,
-        939
+        1105,
+        815
       ],
       "atlasRect": [
-        0,
-        1600,
+        1248,
+        1920,
         416,
         320
       ],
@@ -754,33 +1098,42 @@
         176
       ],
       "visibleBounds": [
-        29,
-        5,
-        320,
-        262
+        60,
+        2,
+        316,
+        257
       ],
       "estimatedBackgroundRGB": [
         1,
         21,
         25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        377,
+        376
+      ],
+      "registrationOffset": [
+        0,
+        1
       ]
     },
     {
-      "id": "read-6",
-      "source": "moth-read-sprite-sheet.png",
+      "id": "read-13",
+      "source": "moth-read2-sprite-sheet.png",
       "sourceCrop": [
+        0,
+        940,
         314,
-        627,
-        627,
         1254
       ],
       "sourcePivot": [
-        511,
-        922
+        178,
+        1120
       ],
       "atlasRect": [
-        416,
-        1600,
+        0,
+        2240,
         416,
         320
       ],
@@ -789,33 +1142,86 @@
         176
       ],
       "visibleBounds": [
-        23,
-        14,
-        316,
-        279
+        51,
+        13,
+        308,
+        269
       ],
       "estimatedBackgroundRGB": [
-        0,
+        1,
         21,
         25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        377,
+        377
+      ],
+      "registrationOffset": [
+        0,
+        0
       ]
     },
     {
-      "id": "read-7",
-      "source": "moth-read-sprite-sheet.png",
+      "id": "read-14",
+      "source": "moth-read2-sprite-sheet.png",
+      "sourceCrop": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "sourcePivot": [
+        493,
+        1113
+      ],
+      "atlasRect": [
+        416,
+        2240,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        32,
+        18,
+        318,
+        276
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        21,
+        25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        376,
+        377
+      ],
+      "registrationOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "read-15",
+      "source": "moth-read2-sprite-sheet.png",
       "sourceCrop": [
         627,
-        627,
+        940,
         940,
         1254
       ],
       "sourcePivot": [
-        821,
-        904
+        808,
+        1106
       ],
       "atlasRect": [
         832,
-        1600,
+        2240,
         416,
         320
       ],
@@ -824,50 +1230,68 @@
         176
       ],
       "visibleBounds": [
-        23,
-        26,
-        315,
+        25,
+        29,
+        329,
+        285
+      ],
+      "estimatedBackgroundRGB": [
+        1,
+        21,
+        25
+      ],
+      "scale": 1.2,
+      "scaledSize": [
+        376,
+        377
+      ],
+      "registrationOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "read-16",
+      "source": "moth-read2-sprite-sheet.png",
+      "sourceCrop": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "sourcePivot": [
+        1121,
+        1101
+      ],
+      "atlasRect": [
+        1248,
+        2240,
+        416,
+        320
+      ],
+      "pivot": [
+        208,
+        176
+      ],
+      "visibleBounds": [
+        22,
+        34,
+        333,
         289
       ],
       "estimatedBackgroundRGB": [
         1,
         21,
         25
-      ]
-    },
-    {
-      "id": "read-8",
-      "source": "moth-read-sprite-sheet.png",
-      "sourceCrop": [
-        940,
-        627,
-        1254,
-        1254
       ],
-      "sourcePivot": [
-        1127,
-        884
+      "scale": 1.2,
+      "scaledSize": [
+        377,
+        377
       ],
-      "atlasRect": [
-        1248,
-        1600,
-        416,
-        320
-      ],
-      "pivot": [
-        208,
-        176
-      ],
-      "visibleBounds": [
-        27,
-        37,
-        318,
-        304
-      ],
-      "estimatedBackgroundRGB": [
-        1,
-        21,
-        25
+      "registrationOffset": [
+        0,
+        0
       ]
     }
   ],
@@ -923,7 +1347,15 @@
         "read-5",
         "read-6",
         "read-7",
-        "read-8"
+        "read-8",
+        "read-9",
+        "read-10",
+        "read-11",
+        "read-12",
+        "read-13",
+        "read-14",
+        "read-15",
+        "read-16"
       ],
       "loop": true
     }
@@ -935,10 +1367,10 @@
     "minimumEdgeAlpha": 0.12
   },
   "delivery": {
-    "pngBytes": 2035496,
-    "webpBytes": 1588980,
+    "pngBytes": 2762409,
+    "webpBytes": 2228886,
     "decodedRGBAIdentical": true,
-    "decodedRGBABytes": 12779520
+    "decodedRGBABytes": 17039360
   },
   "preview": {
     "cellWidthCSSPixels": 104,

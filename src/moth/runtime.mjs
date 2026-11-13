@@ -7,7 +7,7 @@ const TUNING = {
   visits: [6, 10],
   turn: 380,
   frame: 100,
-  read: [400, 250, 250, 600, 250, 250, 250, 950],
+  read: 110,
   drift: [8, 16],
   directionThreshold: 20,
   maxDelta: 50,
@@ -117,6 +117,7 @@ export async function startMoth() {
   let duration = between(TUNING.investigate)
   let total = 0
   let readElapsed = 0
+  let readingVisit = false
   let visits = 0
   let nextAway = Math.round(between(TUNING.visits))
   let previous = null
@@ -183,17 +184,12 @@ export async function startMoth() {
     context.setTransform(ratio, 0, 0, ratio, 0, 0)
     context.clearRect(0, 0, width, height)
     context.save()
-    const reading = !still && !turn && state === "investigate" && hasReadingTarget()
+    const reading = !still && !turn && state === "investigate" && readingVisit && hasReadingTarget()
     const sequence = turn && !still ? atlas.metadata.sequences[turn.sequence]
       : reading ? atlas.metadata.sequences.read : atlas.metadata.sequences.flight
-    let readIndex = 0
-    if (reading) {
-      let remaining = readElapsed % TUNING.read.reduce((sum, duration) => sum + duration, 0)
-      while (remaining >= TUNING.read[readIndex]) remaining -= TUNING.read[readIndex++]
-    }
     const index = turn && !still
       ? Math.min(sequence.frames.length - 1, Math.floor(turn.elapsed / TUNING.turn * sequence.frames.length))
-      : reading ? readIndex % sequence.frames.length
+      : reading ? Math.floor(readElapsed / TUNING.read) % sequence.frames.length
         : still ? 0 : Math.floor(total / TUNING.frame) % sequence.frames.length
     const frame = atlas.frames.get(sequence.frames[index])
     const [sx, sy, sw, sh] = frame.atlasRect
@@ -212,7 +208,7 @@ export async function startMoth() {
     lastTime = time
     elapsed += delta
     total += delta
-    if (state === "investigate" && !turn && hasReadingTarget()) readElapsed += delta
+    if (state === "investigate" && readingVisit && !turn && hasReadingTarget()) readElapsed += delta
     if (turn) {
       turn.elapsed += delta
       if (turn.elapsed >= TUNING.turn) turn = null
@@ -226,9 +222,11 @@ export async function startMoth() {
       }
       if (progress === 1) {
         state = state === "leaving" ? "away" : "investigate"
+        readingVisit = false
         if (state === "investigate") {
           visits++
           if (hasReadingTarget()) {
+            readingVisit = Math.random() < 0.25
             const rect = previous.getBoundingClientRect()
             faceToward((rect.left + rect.right) / 2)
           }
