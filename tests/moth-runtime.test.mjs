@@ -55,7 +55,7 @@ it("renders above buttons and remains stationary under reduced motion", async (t
   const metadata = {
     image: "fixture.webp", cell: [100, 100], pivot: [50, 50],
     frames: [{ id: "still", atlasRect: [0, 0, 100, 100] }],
-    sequences: Object.fromEntries(["flight", "turnRightToLeft", "turnLeftToRight"].map(
+    sequences: Object.fromEntries(["flight", "turnRightToLeft", "turnLeftToRight", "read"].map(
       (name) => [name, { frames: ["still"] }],
     )),
   }
@@ -184,11 +184,13 @@ for (const scenario of [
         { id: "flight", atlasRect: [0, 0, 100, 100] },
         { id: "right-left", atlasRect: [100, 0, 100, 100] },
         { id: "left-right", atlasRect: [200, 0, 100, 100] },
+        { id: "read", atlasRect: [300, 0, 100, 100] },
       ],
       sequences: {
         flight: { frames: ["flight"] },
         turnRightToLeft: { frames: ["right-left"] },
         turnLeftToRight: { frames: ["left-right"] },
+        read: { frames: ["read"] },
       },
     }
     const globals = {
@@ -219,12 +221,156 @@ for (const scenario of [
     assert.ok(scenario.facing === "left" ? pivot > scenario.right : pivot < scenario.left,
       "fixture must hover on the intended side of the heading")
     const attentionDraws = draws.filter((draw) => draw.time >= 9000)
-    assert.equal(attentionDraws.at(-1).sourceX, 0, "the turn must finish during the pause")
+    assert.equal(attentionDraws.at(-1).sourceX, 300, "reading must follow the arrival turn")
     assert.equal(attentionDraws.at(-1).mirrored, scenario.facing === "left", "hover must face the heading")
     if (scenario.turn !== null) {
       assert.ok(attentionDraws.some((draw) => draw.sourceX === scenario.turn), "use the appropriate existing turn sequence")
     } else {
-      assert.ok(attentionDraws.every((draw) => draw.sourceX === 0), "already facing the heading must not turn")
+      assert.ok(attentionDraws.every((draw) => draw.sourceX === 300), "already facing the heading must not turn")
     }
+  })
+}
+
+function readingFixture(t, readSequence = { frames: Array.from({ length: 8 }, (_, i) => `read-${i + 1}`) }) {
+  const draws = []
+  let time = 0
+  const context = {
+    setTransform() {}, clearRect() {}, save() {}, restore() {}, translate() {}, scale() {},
+    drawImage(_image, sourceX) {
+      const left = Number(canvas.style.transform.match(/translate\(([-\d.]+)px/)[1])
+      draws.push({ time, sourceX, pivotX: left + parseFloat(canvas.style.width) / 2 })
+    },
+  }
+  const canvas = { dataset: {}, style: {}, hidden: true, getContext: () => context }
+  const control = new EventTarget()
+  control.hidden = true
+  control.setAttribute = () => {}
+  control.getBoundingClientRect = () => ({ left: 0, right: 40, top: 0, bottom: 40 })
+  const heading = {
+    textContent: "A heading", closest: () => null, checkVisibility: () => true,
+    getBoundingClientRect: () => ({ left: 200, right: 400, top: 300, bottom: 340 }),
+  }
+  const document = new EventTarget()
+  document.hidden = false
+  document.querySelector = (selector) => selector === ".moth-sprite" ? canvas : control
+  document.querySelectorAll = () => [heading]
+  const window = new EventTarget()
+  Object.assign(window, { innerWidth: 1000, innerHeight: 800, devicePixelRatio: 1 })
+  const motion = new EventTarget()
+  motion.matches = false
+  window.matchMedia = () => motion
+  const frames = new Map()
+  let nextFrame = 0
+  const metadata = {
+    image: "fixture.webp", cell: [100, 100], pivot: [50, 50],
+    frames: [
+      { id: "flight", atlasRect: [0, 0, 100, 100] },
+      { id: "turn", atlasRect: [100, 0, 100, 100] },
+      ...Array.from({ length: 8 }, (_, i) => ({ id: `read-${i + 1}`, atlasRect: [300 + i * 100, 0, 100, 100] })),
+    ],
+    sequences: {
+      flight: { frames: ["flight"] },
+      turnRightToLeft: { frames: ["turn"] },
+      turnLeftToRight: { frames: ["turn"] },
+      ...(readSequence === null ? {} : { read: readSequence }),
+    },
+  }
+  const globals = {
+    document, window, location: { href: "https://example.test/" },
+    localStorage: { getItem: () => null, setItem() {} },
+    fetch: async () => ({ ok: true, json: async () => metadata }),
+    Image: class { async decode() {} },
+    requestAnimationFrame: (callback) => { frames.set(++nextFrame, callback); return nextFrame },
+    cancelAnimationFrame: (id) => frames.delete(id),
+  }
+  for (const [name, value] of Object.entries(globals)) {
+    const original = Object.getOwnPropertyDescriptor(globalThis, name)
+    Object.defineProperty(globalThis, name, { configurable: true, writable: true, value })
+    t.after(() => original ? Object.defineProperty(globalThis, name, original) : delete globalThis[name])
+  }
+  t.mock.method(Math, "random", () => 0.5)
+  return {
+    draws, frames, canvas, control, document,
+    step(nextTime) {
+      time = nextTime
+      const entry = frames.entries().next().value
+      assert.ok(entry, "fixture must have a scheduled animation frame")
+      frames.delete(entry[0])
+      entry[1](time)
+    },
+  }
+}
+
+it("reads in order at a target, pauses at endpoints, and flies on departure", async (t) => {
+  const fixture = readingFixture(t)
+  await startMoth()
+  for (let time = 0; time <= 18000; time += 50) fixture.step(time)
+  const { draws } = fixture
+  assert.ok(draws.filter(({ time }) => time < 9000).every(({ sourceX }) => sourceX < 300),
+    "initial idle and travel must not use reading poses")
+  const hover = draws.filter(({ time }) => time >= 9000 && time < 15000)
+  const runs = []
+  for (const { sourceX } of hover) {
+    if (runs.at(-1)?.sourceX === sourceX) runs.at(-1).count++
+    else runs.push({ sourceX, count: 1 })
+  }
+  assert.deepEqual(runs.slice(0, 9).map(({ sourceX }) => sourceX),
+    [300, 400, 500, 600, 700, 800, 900, 1000, 300],
+    "each investigation starts at read-1 and loops forward through all eight poses")
+  assert.ok(runs[3].count > runs[1].count && runs[7].count > runs[1].count,
+    "both look endpoints must pause longer than an intermediate pose")
+  assert.ok(draws.filter(({ time }) => time >= 15000 && time < 17500)
+    .some(({ sourceX }) => sourceX === 0), "departure resumes flight without waiting for a read cycle")
+})
+
+it("does not fast-forward reading while the tab is hidden", async (t) => {
+  const fixture = readingFixture(t)
+  await startMoth()
+  for (let time = 0; time <= 9800; time += 50) fixture.step(time)
+  const before = fixture.draws.at(-1).sourceX
+  assert.ok(before >= 300, "fixture must be reading at the target")
+  fixture.document.hidden = true
+  fixture.document.dispatchEvent(new Event("visibilitychange"))
+  assert.equal(fixture.frames.size, 0)
+  fixture.document.hidden = false
+  fixture.document.dispatchEvent(new Event("visibilitychange"))
+  fixture.step(30000)
+  assert.equal(fixture.draws.at(-1).sourceX, before, "resumption must not skip reading poses")
+})
+
+it("does not read when wandering without a usable target", async (t) => {
+  const fixture = readingFixture(t)
+  fixture.document.querySelectorAll = () => []
+  await startMoth()
+  for (let time = 0; time <= 20000; time += 50) fixture.step(time)
+  assert.ok(fixture.draws.every(({ sourceX }) => sourceX < 300),
+    "targetless investigation must not use reading poses")
+})
+
+it("uses flight poses while leaving the viewport", async (t) => {
+  const fixture = readingFixture(t)
+  await startMoth()
+  for (let time = 0; time <= 100000; time += 50) fixture.step(time)
+  const offscreen = fixture.draws.filter(({ pivotX }) => pivotX > 1000)
+  assert.ok(offscreen.length, "controlled visits must eventually leave the viewport")
+  assert.ok(offscreen.some(({ sourceX }) => sourceX === 0),
+    "offscreen travel must use flight poses")
+  assert.ok(offscreen.some(({ sourceX }) => sourceX === 100),
+    "the offscreen return turn must retain priority over flight")
+  assert.ok(offscreen.every(({ sourceX }) => sourceX === 0 || sourceX === 100),
+    "offscreen travel and turns must not use reading poses")
+})
+
+for (const [name, sequence] of [["missing", null], ["empty", { frames: [] }],
+  ["unknown frame", { frames: ["not-a-frame"] }]]) {
+  it(`disables the control for a ${name} read sequence`, async (t) => {
+    const fixture = readingFixture(t, sequence)
+    const errors = t.mock.method(console, "error", () => {})
+    await startMoth()
+    assert.equal(fixture.control.hidden, true)
+    assert.equal(fixture.canvas.hidden, true)
+    assert.equal(fixture.frames.size, 0)
+    assert.equal(errors.mock.callCount(), 1)
+    assert.match(String(errors.mock.calls[0].arguments[1]), /Invalid atlas sequence: read/)
   })
 }

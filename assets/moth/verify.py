@@ -53,6 +53,8 @@ def verify():
     for sequence in metadata["sequences"].values():
         if any(frame not in ids for frame in sequence["frames"]):
             raise AssertionError("sequence references an unknown frame")
+    if metadata["sequences"].get("read", {}).get("frames") != [f"read-{i}" for i in range(1, 9)]:
+        raise AssertionError("read sequence must contain the eight poses in source order")
     for frame in metadata["frames"]:
         x, y, w, h = frame["atlasRect"]
         if x < 0 or y < 0 or x + w > width or y + h > height:

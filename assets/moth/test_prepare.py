@@ -77,6 +77,7 @@ class PreparationTests(unittest.TestCase):
             self.assertEqual(sequences["turnLeftToRight"]["frames"], [f"turn-{i}" for i in range(8, 0, -1)])
             self.assertFalse(sequences["turnRightToLeft"]["loop"])
             self.assertFalse(sequences["turnLeftToRight"]["loop"])
+            self.assertEqual(sequences["read"]["frames"], [f"read-{i}" for i in range(1, 9)])
 
     def test_verification_uses_scratch_previews_without_local_artifacts(self):
         with TemporaryDirectory() as temp:

@@ -204,6 +204,7 @@ def sequences():
                             "exampleFrameDurationMs": 100},
         "turnLeftToRight": {"frames": [f"turn-{i}" for i in range(8, 0, -1)], "loop": False,
                             "exampleFrameDurationMs": 100},
+        "read": {"frames": [f"read-{i}" for i in range(1, 9)], "loop": True},
     }
 
 

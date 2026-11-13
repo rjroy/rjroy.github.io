@@ -7,6 +7,7 @@ const TUNING = {
   visits: [6, 10],
   turn: 380,
   frame: 100,
+  read: [400, 250, 250, 600, 250, 250, 250, 950],
   drift: [8, 16],
   directionThreshold: 20,
   maxDelta: 50,
@@ -76,8 +77,9 @@ async function loadAtlas() {
   image.src = new URL(metadata.image, metadataURL).href
   await image.decode()
   const frames = new Map(metadata.frames.map((frame) => [frame.id, frame]))
-  for (const name of ["flight", "turnRightToLeft", "turnLeftToRight"]) {
-    if (!metadata.sequences[name]?.frames.length || metadata.sequences[name].frames.some((id) => !frames.has(id))) {
+  for (const name of ["flight", "turnRightToLeft", "turnLeftToRight", "read"]) {
+    if (!Array.isArray(metadata.sequences[name]?.frames) || !metadata.sequences[name].frames.length ||
+        metadata.sequences[name].frames.some((id) => !frames.has(id))) {
       throw new Error(`Invalid atlas sequence: ${name}`)
     }
   }
@@ -114,6 +116,7 @@ export async function startMoth() {
   let elapsed = 0
   let duration = between(TUNING.investigate)
   let total = 0
+  let readElapsed = 0
   let visits = 0
   let nextAway = Math.round(between(TUNING.visits))
   let previous = null
@@ -153,6 +156,13 @@ export async function startMoth() {
     beginTravel(next.point)
   }
 
+  function hasReadingTarget() {
+    if (!previous || previous.isConnected === false) return false
+    const rect = previous.getBoundingClientRect()
+    const text = previous.textContent || previous.getAttribute("aria-label") || ""
+    return isUsableTarget({ rect, text, hidden: hidden(previous) }, viewport())
+  }
+
   function draw(still = false) {
     const width = window.innerWidth <= 560 ? 76 : 96
     const [cellWidth, cellHeight] = atlas.metadata.cell
@@ -173,10 +183,18 @@ export async function startMoth() {
     context.setTransform(ratio, 0, 0, ratio, 0, 0)
     context.clearRect(0, 0, width, height)
     context.save()
-    const sequence = turn && !still ? atlas.metadata.sequences[turn.sequence] : atlas.metadata.sequences.flight
+    const reading = !still && !turn && state === "investigate" && hasReadingTarget()
+    const sequence = turn && !still ? atlas.metadata.sequences[turn.sequence]
+      : reading ? atlas.metadata.sequences.read : atlas.metadata.sequences.flight
+    let readIndex = 0
+    if (reading) {
+      let remaining = readElapsed % TUNING.read.reduce((sum, duration) => sum + duration, 0)
+      while (remaining >= TUNING.read[readIndex]) remaining -= TUNING.read[readIndex++]
+    }
     const index = turn && !still
       ? Math.min(sequence.frames.length - 1, Math.floor(turn.elapsed / TUNING.turn * sequence.frames.length))
-      : still ? 0 : Math.floor(total / TUNING.frame) % sequence.frames.length
+      : reading ? readIndex % sequence.frames.length
+        : still ? 0 : Math.floor(total / TUNING.frame) % sequence.frames.length
     const frame = atlas.frames.get(sequence.frames[index])
     const [sx, sy, sw, sh] = frame.atlasRect
     if (!turn && facing === "left") {
@@ -194,6 +212,7 @@ export async function startMoth() {
     lastTime = time
     elapsed += delta
     total += delta
+    if (state === "investigate" && !turn && hasReadingTarget()) readElapsed += delta
     if (turn) {
       turn.elapsed += delta
       if (turn.elapsed >= TUNING.turn) turn = null
@@ -209,14 +228,12 @@ export async function startMoth() {
         state = state === "leaving" ? "away" : "investigate"
         if (state === "investigate") {
           visits++
-          if (previous && previous.isConnected !== false) {
+          if (hasReadingTarget()) {
             const rect = previous.getBoundingClientRect()
-            const text = previous.textContent || previous.getAttribute("aria-label") || ""
-            if (isUsableTarget({ rect, text, hidden: hidden(previous) }, viewport())) {
-              faceToward((rect.left + rect.right) / 2)
-            }
+            faceToward((rect.left + rect.right) / 2)
           }
         }
+        readElapsed = 0
         elapsed = 0
         duration = between(state === "away" ? TUNING.away : TUNING.investigate)
         origin = { ...position }

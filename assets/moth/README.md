@@ -2,7 +2,7 @@
 
 Status: the atlas and metadata are delivered from `public`, the page animation is integrated, and the user has accepted the runtime. Preparation review: `rjroy_github_io-6xf`.
 
-The user authorized transparent, body-aligned derivatives of the supplied flight and turn sheets, and later authorized adding the supplied read sheet to the combined atlas. No new artwork was generated or painted. The original source files and approved brand mark remain unchanged. Source authorship and licensing beyond the supplied artwork are not established here. The eight read poses are inert atlas assets: no reading sequence or runtime behavior has been added.
+The user authorized transparent, body-aligned derivatives of the supplied flight and turn sheets, and later authorized adding and activating the supplied read poses. No new artwork was generated or painted. The original source files and approved brand mark remain unchanged. Source authorship and licensing beyond the supplied artwork are not established here.
 
 ## Review
 
@@ -21,7 +21,7 @@ The example cell is **104 × 80 CSS pixels at 10 frames/second**, not a settled 
 
 ## Delivery choice
 
-One **4 × 6 atlas, 1664 × 1920 pixels**, holds the eight flight frames, eight turn frames, then eight read poses. The first 16 frame rectangles and decoded pixels remain unchanged. Equal integer-sized cells avoid the originals' fractional 313.5-pixel columns. A single request loads all frames; the read poses are not used by the runtime.
+One **4 × 6 atlas, 1664 × 1920 pixels**, holds the eight flight frames, eight turn frames, then eight read poses. The first 16 frame rectangles and decoded pixels remain unchanged. Equal integer-sized cells avoid the originals' fractional 313.5-pixel columns. A single request loads all frames.
 
 | File | Bytes | Role |
 | --- | ---: | --- |
@@ -42,7 +42,7 @@ The atlas and JSON metadata are tracked in `public/assets`; the original PNG she
 - `flight`: `flight-1` through `flight-8`, looping.
 - `turnRightToLeft`: `turn-1` through `turn-8`, one-shot.
 - `turnLeftToRight`: `turn-8` through `turn-1`, one-shot.
-- `read-1` through `read-8` are registered frames only, with no sequence or runtime use.
+- `read`: `read-1` through `read-8`, looping in source order during investigation of a usable target, after any arrival turn. Initial idle and targetless wandering retain flight frames. Runtime holds the poses for 400, 250, 250, 600, 250, 250, 250 and 950 ms respectively; departure does not wait for the cycle.
 - The user approved placing `read-3` 3 pixels and `read-4` 5 pixels lower than their anatomical landmarks would place them, preserving antennae and the minimum 2-pixel padding. Their recorded source pivots are registration anchors, not the anatomical landmarks.
 - The 100 ms frame duration is an example only, recorded separately in metadata.
 
